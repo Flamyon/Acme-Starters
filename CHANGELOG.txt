@@ -9,14 +9,10 @@ Fechas en formato DD-MM-YYYY.
 - Estructura inicial de documentación (README, CHANGELOG, LICENSE).
 - Acta de Constitucion
 - Identification Form
+- Crear los datos de muestra de administradores (administrator1/administrator1 y administrator2/administrator2).
+- Personalizacion de Banner
 
-### Pendiente (para completar Nivel C)
-- Personalización visual (colores, banners, logos).
-- Plan para datos de prueba requeridos:
-  - administradores `administrator1/administrator1` y `administrator2/administrator2`
-  - cuentas por rol `inventor1..3`, `spokesperson1..3`, `fundraiser1..3`, `sponsor1..3`, `auditor1..3`
-- Implementar modelos `Model-C01.uxf` … `Model-C05.uxf`.
-- Implementar restricciones de `Model-CG.ufx`.
-- Implementar i18n ES/EN y formatos (boolean, fecha/hora, dinero, número).
-- Cargar sample data completa
+### Pendiente (para requisitos 0)
+- Personalización visual (colores, logos).
 - Definir forma de trabajo por ramas ...
+- Implementar restricciones de `Model-CG.ufx`
