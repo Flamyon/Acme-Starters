@@ -1,21 +1,33 @@
-# README.txt
-#
-# Copyright (C) 2012-2026 Rafael Corchuelo.
-#
-# In keeping with the traditional purpose of furthering education and research, it is
-# the policy of the copyright owner to permit non-commercial use and redistribution of
-# this software. It has been tested carefully, but it is not guaranteed for any particular
-# purposes.  The copyright owner does not offer any warranties or representations, nor do
-# they accept any liabilities with respect to them.
+# Acme-Starters-C
 
-This is a starter project.  It is intended to be a core learning asset for the students
-who have enrolled the Design and Testing subject of the Software Engineering curriculum of the 
-University of Seville.  This project helps them start working on their new information system 
-projects.
+Sistema web de información para **Acme Starters, Inc.** (empresa ficticia) orientado a gestionar su negocio y publicar contenido (inventions/campaigns/strategies/sponsorships/audit reports) según el rol del usuario.
 
-To get this project up and running, please follow the guideline in the theory/lab 
-materials, taking into account that you must link the appropriate version of 
-the Acme-Framework excluding the following resources:
+## Alcance (Nivel C)
+Este repositorio implementa los requisitos obligatorios del **Nivel C**, incluyendo:
+- Inicialización del proyecto “Hello-World” como **Acme-Starters-C**.
+- Datos de prueba con **2 cuentas administrador**:
+  - `administrator1/administrator1`
+  - `administrator2/administrator2`
+- Datos de prueba con **3 cuentas por rol**:
+  - Inventor: `inventor1/inventor1`, `inventor2/inventor2`, `inventor3/inventor3`
+  - Spokesperson: `spokesperson1/spokesperson1`, `spokesperson2/spokesperson2`, `spokesperson3/spokesperson3`
+  - Fundraiser: `fundraiser1/fundraiser1`, `fundraiser2/fundraiser2`, `fundraiser3/fundraiser3`
+  - Sponsor: `sponsor1/sponsor1`, `sponsor2/sponsor2`, `sponsor3/sponsor3`
+  - Auditor: `auditor1/auditor1`, `auditor2/auditor2`, `auditor3/auditor3`
+- Interfaz disponible en **inglés y español**, con internacionalización correcta de booleanos, fechas/horas, dinero y números.
+- Implementación del modelo de datos de cada estudiante (Model-C01…C05) y las restricciones de `Model-CG.ufx`.
 
+> Nota: En informes de la asignatura no se incluyen nombres ni identificadores del grupo; si se referencia a alguien, se usa “Student 1..5”.
 
- 
+## Funcionalidad por roles (resumen)
+- **Cualquier principal**: listar/mostrar entidades **publicadas** y navegar a sus partes (y ver el perfil asociado).
+- **Principal autenticado**: adquirir el rol correspondiente si aún no lo tiene, y actualizar su perfil de rol.
+- **Rol específico (inventor/spokesperson/fundraiser/sponsor/auditor)**:
+  - gestionar sus entidades (crear/editar/borrar) y sus partes,
+  - **publicar** (bloquea edición/borrado y publica automáticamente las partes).
+
+## Changelog
+Ver `CHANGELOG.md`.
+
+## Licencia
+MIT (ver `LICENSE`).
