@@ -18,4 +18,5 @@ Fechas en formato DD-MM-YYYY.
 - Implementar modelos `Model-C01.uxf` … `Model-C05.uxf`.
 - Implementar restricciones de `Model-CG.ufx`.
 - Implementar i18n ES/EN y formatos (boolean, fecha/hora, dinero, número).
-- Cargar sample data completa (incluyendo el “último usuario sin datos asociados” por rol, si aplica en vuestro diseño).
+- Cargar sample data completa
+- Definir forma de trabajo por ramas ...
