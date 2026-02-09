@@ -17,5 +17,5 @@ To get this project up and running, please follow the guideline in the theory/la
 materials, taking into account that you must link the appropriate version of 
 the Acme-Framework excluding the following resources:
 
-- **/fragments/**
+
  
