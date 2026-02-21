@@ -16,6 +16,9 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidHeader;
+import acme.constraints.ValidText;
+import acme.constraints.ValidTicker;
 import acme.realms.Sponsor;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,17 +34,17 @@ public class Sponsorship extends AbstractEntity {
 	//Attributes -------------------------------------------------------------
 
 	@Mandatory
-	// @ValidTicker: NO está en los componentes del framework
+	@ValidTicker
 	@Column(unique = true)
 	private String				ticker;
 
 	@Mandatory
-	// @ValidHeader: NO está en los componentes del framework
+	@ValidHeader
 	@Column
 	private String				name;
 
 	@Mandatory
-	// @ValidText: NO está en los componentes del framework
+	@ValidText
 	@Column
 	private String				description;
 
