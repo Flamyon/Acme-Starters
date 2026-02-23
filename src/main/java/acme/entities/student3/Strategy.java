@@ -2,6 +2,7 @@
 package acme.entities.student3;
 
 import java.time.Duration;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,16 +12,17 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import acme.client.components.basis.AbstractEntity;
-import acme.client.components.datatypes.Moment;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
-import acme.client.helpers.SpringHelper;
 import acme.constraints.ValidHeader;
+import acme.constraints.ValidStrategy;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
 import acme.realms.Fundraiser;
@@ -28,6 +30,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
+@ValidStrategy
 @Getter
 @Setter
 public class Strategy extends AbstractEntity {
@@ -52,12 +55,12 @@ public class Strategy extends AbstractEntity {
 	@Mandatory
 	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Moment				startMoment;
+	private Date				startMoment;
 
 	@Mandatory
 	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Moment				endMoment;
+	private Date				endMoment;
 
 	@Optional
 	@ValidUrl
@@ -69,7 +72,9 @@ public class Strategy extends AbstractEntity {
 	@Column
 	private Boolean				draftMode;
 
-	// Derived attributes
+	@Transient
+	@Autowired
+	private StrategyRepository	repository;
 
 
 	@Transient
@@ -81,10 +86,9 @@ public class Strategy extends AbstractEntity {
 
 	@Transient
 	public Double getExpectedPercentage() {
-		StrategyRepository repository;
-		repository = SpringHelper.getBean(StrategyRepository.class);
-		return repository.expectedPercentage(this.getId());
+		return this.repository.expectedPercentage(this.getId());
 	};
+
 	// DB relation
 
 
