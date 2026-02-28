@@ -1,0 +1,15 @@
+key,name,surname,email,cv,achievements,licensed
+# base entity
+spokesperson-01,John,Doe,john.doe@example.org,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",TRUE
+# cv - standard variations (min, min+delta, max-delta, max)
+spokesperson-02,John,Doe,john.doe@example.org,"L","Lorem ipsum dolor sit amet, consectetur adipiscing",TRUE
+spokesperson-03,John,Doe,john.doe@example.org,"Lo","Lorem ipsum dolor sit amet, consectetur adipiscing",TRUE
+spokesperson-04,John,Doe,john.doe@example.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dol","Lorem ipsum dolor sit amet, consectetur adipiscing",TRUE
+spokesperson-05,John,Doe,john.doe@example.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolo","Lorem ipsum dolor sit amet, consectetur adipiscing",TRUE
+# achievements - standard variations (min, min+delta, max-delta, max)
+spokesperson-06,John,Doe,john.doe@example.org,"Lorem ipsum dolor sit amet, consectetur adipiscing","L",TRUE
+spokesperson-07,John,Doe,john.doe@example.org,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lo",TRUE
+spokesperson-08,John,Doe,john.doe@example.org,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dol",TRUE
+spokesperson-09,John,Doe,john.doe@example.org,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolo",TRUE
+# licensed - standard variations (true, false)
+spokesperson-10,John,Doe,john.doe@example.org,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",FALSE

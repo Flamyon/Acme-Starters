@@ -1,0 +1,60 @@
+key,name,surname,email,moreInfo,key:userAccount
+#BASE,"","","","",""
+spokesperson-01,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+#NAME,"","","","",""
+spokesperson-02,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-03,L,Dolor sit amet,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-04,Lo,Dolor sit amet,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-05,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod t",Dolor sit amet,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-06,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod te",Dolor sit amet,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-07,โลเร็ม อิปซัม,Dolor sit amet,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-08,لوريم إيبسوم,Dolor sit amet,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-09,洛伦·伊普森,Dolor sit amet,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-10,<marquee>Hacked</marquee>,Dolor sit amet,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-11,<script>alert(‘Hacked!’);</script>,Dolor sit amet,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-12,' or 'A' = 'A,Dolor sit amet,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+#SURNAME,"","","","",""
+spokesperson-13,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-14,Lorem ipsum,L,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-15,Lorem ipsum,Lo,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-16,Lorem ipsum,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod t",acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-17,Lorem ipsum,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod te",acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-18,Lorem ipsum,โลเร็ม อิปซัม,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-19,Lorem ipsum,لوريم إيبسوم,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-20,Lorem ipsum,洛伦·伊普森,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-21,Lorem ipsum,<marquee>Hacked</marquee>,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-22,Lorem ipsum,<script>alert(‘Hacked!’);</script>,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-23,Lorem ipsum,' or 'A' = 'A,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+#EMAIL,"","","","",""
+spokesperson-24,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-25,Lorem ipsum,Dolor sit amet,a@b.e,http://lorem.com/ipsum,userAccount-01
+spokesperson-26,Lorem ipsum,Dolor sit amet,a@b.es,http://lorem.com/ipsum,userAccount-01
+spokesperson-27,Lorem ipsum,Dolor sit amet,a@b.esx,http://lorem.com/ipsum,userAccount-01
+spokesperson-28,Lorem ipsum,Dolor sit amet,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-29,Lorem ipsum,Dolor sit amet,user.name@domain.com,http://lorem.com/ipsum,userAccount-01
+spokesperson-30,Lorem ipsum,Dolor sit amet,user+tag@domain.com,http://lorem.com/ipsum,userAccount-01
+spokesperson-31,Lorem ipsum,Dolor sit amet,123456789@numbers.com,http://lorem.com/ipsum,userAccount-01
+spokesperson-32,Lorem ipsum,Dolor sit amet,email@sub.domain.com,http://lorem.com/ipsum,userAccount-01
+spokesperson-33,Lorem ipsum,Dolor sit amet,first-last@domain.com,http://lorem.com/ipsum,userAccount-01
+spokesperson-34,Lorem ipsum,Dolor sit amet,valid_email@domain.com,http://lorem.com/ipsum,userAccount-01
+#MOREINFO,"","","","",""
+spokesperson-35,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-36,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://a.b,userAccount-01
+spokesperson-37,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",userAccount-01
+spokesperson-38,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",userAccount-01
+spokesperson-39,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://www.lorem-ipsum.org,userAccount-01
+spokesperson-40,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,https://www.lorem-ipsum.org,userAccount-01
+spokesperson-41,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://www.lorem-ipsum.org/dolor/sit.html,userAccount-01
+spokesperson-42,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://www.lorem-ipsum.org/dolor/sit.html#dolor,userAccount-01
+spokesperson-43,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://example.org?a=1&b=2,userAccount-01
+spokesperson-44,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://example.org?,userAccount-01
+spokesperson-45,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://example.org?a,userAccount-01
+spokesperson-46,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://example.org?a&b,userAccount-01
+spokesperson-47,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://example.org/,userAccount-01
+spokesperson-48,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://example.org/a,userAccount-01
+spokesperson-49,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://example.org/a/b?,userAccount-01
+spokesperson-50,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://example.org/a/b?a&b,userAccount-01
+#KEY:USERACCOUNT,"","","","",""
+spokesperson-51,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-01
+spokesperson-52,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-02
+spokesperson-53,Lorem ipsum,Dolor sit amet,acme@lorem-ipsum.org,http://lorem.com/ipsum,userAccount-03
