@@ -10,7 +10,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
-import javax.validation.constraints.AssertTrue;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
@@ -24,7 +25,12 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidCampaign
 public class Campaign extends AbstractEntity {
+
+	@Transient
+	@Autowired
+	private CampaignRepository	campaignRepository;
 
 	// --- SerialVersionUID ---
 
@@ -73,37 +79,20 @@ public class Campaign extends AbstractEntity {
 		if (this.startMoment == null || this.endMoment == null)
 			return 0.0;
 
-		// 1. Calculamos la diferencia en milisegundos
 		long diffInMillies = this.endMoment.getTime() - this.startMoment.getTime();
 
-		// 2. Pasamos a días (1 día = 1000ms * 60s * 60m * 24h)
 		double days = diffInMillies / (1000.0 * 60 * 60 * 24);
 
-		// 3. Pasamos a meses (se suele asumir el mes contable de 30 días)
 		double months = days / 30.0;
 
-		// 4. Redondeamos al decimal más cercano (rounded to the nearest decimal)
 		return Math.round(months * 10.0) / 10.0;
 	}
 
 	@Transient
 	public Double getEffort() {
-		//necesito campaings para calcularlo
-		return 0.0;
-
-	}
-
-	@AssertTrue(message = "A published campaign must have at least one milestone")
-	public boolean isPublishedWithMilestones() {
-		//Necesito campaings para comprobarlo
-		return true;
-	}
-
-	@AssertTrue(message = "Start moment must be before end moment")
-	public boolean isValidTimeInterval() {
-		if (this.startMoment != null && this.endMoment != null)
-			return this.startMoment.before(this.endMoment);
-		return true;
+		Double effort;
+		effort = this.campaignRepository.findEffortByCampaignId(this.getId());
+		return effort;
 	}
 
 
