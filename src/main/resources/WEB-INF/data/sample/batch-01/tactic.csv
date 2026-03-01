@@ -4,7 +4,7 @@ tactic-01,"Tactic Name","Notes text",50.0,SUBTLE,strategy-01
 #name - standard
 tactic-02,"T","Notes text",50.0,SUBTLE,strategy-01
 tactic-03,"Ta","Notes text",50.0,SUBTLE,strategy-01
-tactic-04,"Tactic Name with more text to test the maximum length","Notes text",50.0,SUBTLE,strategy-01
+tactic-04,"Tactic Name with more text to reach the seventy five character max allowed!","Notes text",50.0,SUBTLE,strategy-01
 tactic-05,"Tactic Name with unicode โลเร็ม อิปซัม","Notes text",50.0,SUBTLE,strategy-01
 tactic-06,"Tactic Name with unicode لوريم إيبسوم","Notes text",50.0,SUBTLE,strategy-01
 tactic-07,"Tactic Name with unicode 洛伦·伊普森","Notes text",50.0,SUBTLE,strategy-01
@@ -14,7 +14,7 @@ tactic-10,' or 'A' = 'A,"Notes text",50.0,SUBTLE,strategy-01
 #notes - standard
 tactic-11,"Tactic Name","N",50.0,SUBTLE,strategy-01
 tactic-12,"Tactic Name","No",50.0,SUBTLE,strategy-01
-tactic-13,"Tactic Name","Notes text with more content to reach the maximum length",50.0,SUBTLE,strategy-01
+tactic-13,"Tactic Name","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",50.0,SUBTLE,strategy-01
 tactic-14,"Tactic Name","Notes text with unicode โลเร็ม อิปซัม",50.0,SUBTLE,strategy-01
 tactic-15,"Tactic Name","Notes text with unicode لوريم إيبسوم",50.0,SUBTLE,strategy-01
 tactic-16,"Tactic Name","Notes text with unicode 洛伦·伊普森",50.0,SUBTLE,strategy-01
@@ -29,6 +29,7 @@ tactic-23,"Tactic Name","Notes text",100.0,SUBTLE,strategy-01
 #kind - standard
 tactic-24,"Tactic Name","Notes text",50.0,AGGRESSIVE,strategy-01
 tactic-25,"Tactic Name","Notes text",50.0,TENDER,strategy-01
-#strategy - standard
+#key:strategy - standard
 tactic-26,"Tactic Name","Notes text",50.0,SUBTLE,strategy-02
 tactic-27,"Tactic Name","Notes text",50.0,SUBTLE,strategy-03
+tactic-28,"Tactic Name","Notes text",50.0,SUBTLE,strategy-34

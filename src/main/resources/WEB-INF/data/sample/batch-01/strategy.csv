@@ -1,59 +1,46 @@
 key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:fundraiser
-#BASE,"","","","","","","",""
-strategy-01,STR-0001,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-#TICKER,"","","","","","","",""
-strategy-02,STR-0001,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-03,AB10-user_99,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-04,ZY88-123456,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-05,RE00-Password,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-#NAME,"","","","","","","",""
-strategy-06,STR-0006,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-07,STR-0007,"S","Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-08,STR-0008,"St","Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-09,STR-0009,"Strategy Name with more text to test the maximum length","Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-10,STR-0010,"Strategy Name with unicode โลเร็ม อิปซัม","Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-11,STR-0011,"Strategy Name with unicode لوريم إيبسوم","Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-12,STR-0012,"Strategy Name with unicode 洛伦·伊普森","Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-13,STR-0013,<marquee>Hacked</marquee>,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-14,STR-0014,<script>alert('Hacked!');</script>,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-15,STR-0015,' or 'A' = 'A,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-#DESCRIPTION,"","","","","","","",""
-strategy-16,STR-0016,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-17,STR-0017,Strategy Name,"D",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-18,STR-0018,Strategy Name,"De",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-19,STR-0019,Strategy Name,"Description text with more content to reach the maximum length",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-20,STR-0020,Strategy Name,"Description text with unicode โลเร็ม อิปซัม",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-21,STR-0021,Strategy Name,"Description text with unicode لوريم إيبسوم",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-22,STR-0022,Strategy Name,"Description text with unicode 洛伦·伊普森",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-23,STR-0023,Strategy Name,<marquee>Hacked</marquee>,2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-24,STR-0024,Strategy Name,<script>alert('Hacked!');</script>,2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-25,STR-0025,Strategy Name,' or 'A' = 'A,2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-26,STR-0026,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-#ENDMOMENT,"","","","","","","",""
-strategy-27,STR-0027,Strategy Name,"Description text",2025/01/01 0:00,2025/08/01 0:00,http://example.com,true,fundraiser-01
-strategy-28,STR-0028,Strategy Name,"Description text",2025/01/01 0:00,2025/08/01 0:01,http://example.com,true,fundraiser-01
-strategy-29,STR-0029,Strategy Name,"Description text",2025/01/01 0:00,2200/12/31 23:59,http://example.com,true,fundraiser-01
-strategy-30,STR-0030,Strategy Name,"Description text",2025/01/01 0:00,2201/01/01 0:00,http://example.com,true,fundraiser-01
-#MOREINFO,"","","","","","","",""
-strategy-31,STR-0031,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-32,STR-0032,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://a.b,true,fundraiser-01
-strategy-33,STR-0033,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,"http://www.example.org/path/to/resource/with/more/characters/to/test/limits",true,fundraiser-01
-strategy-34,STR-0034,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,"http://www.example.org/path/to/resource/with/more/characters/to/test/limits/X",true,fundraiser-01
-strategy-35,STR-0035,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://www.example.org,true,fundraiser-01
-strategy-36,STR-0036,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,https://www.example.org,true,fundraiser-01
-strategy-37,STR-0037,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://www.example.org/path.html,true,fundraiser-01
-strategy-38,STR-0038,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://www.example.org/path.html#anchor,true,fundraiser-01
-strategy-39,STR-0039,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.org?a=1&b=2,true,fundraiser-01
-strategy-40,STR-0040,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.org?,true,fundraiser-01
-strategy-41,STR-0041,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.org?a,true,fundraiser-01
-strategy-42,STR-0042,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.org?a&b,true,fundraiser-01
-strategy-43,STR-0043,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.org/,true,fundraiser-01
-strategy-44,STR-0044,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.org/a,true,fundraiser-01
-strategy-45,STR-0045,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.org/a/b?,true,fundraiser-01
-strategy-46,STR-0046,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.org/a/b?a&b,true,fundraiser-01
-#DRAFTMODE,"","","","","","","",""
-strategy-47,STR-0047,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,false,fundraiser-01
-#KEY:FOREIGN,"","","","","","","",""
-strategy-48,STR-0048,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-01
-strategy-49,STR-0049,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-02
-strategy-50,STR-0050,Strategy Name,"Description text",2025/01/01 0:00,2025/09/01 10:00,http://example.com,true,fundraiser-03
+#base - entity
+strategy-01,ST00-Str01,Strategy Name,"Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+#ticker - standard
+strategy-02,AB10-user_99,Strategy Name,"Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-03,ZY88-Passwd10,Strategy Name,"Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-04,RE00-12345,Strategy Name,"Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-05,XW55-abcde,Strategy Name,"Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+#name - standard
+strategy-06,ST00-Str06,"S","Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-07,ST00-Str07,"St","Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-08,ST00-Str08,"Strategy with more text to reach the seventy five character max length used","Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-09,ST00-Str09,"Strategy Name with unicode โลเร็ม อิปซัม","Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-10,ST00-Str10,"Strategy Name with unicode لوريم إيبسوم","Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-11,ST00-Str11,"Strategy Name with unicode 洛伦·伊普森","Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-12,ST00-Str12,<marquee>Hacked</marquee>,"Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-13,ST00-Str13,<script>alert('Hacked!');</script>,"Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-14,ST00-Str14,' or 'A' = 'A,"Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+#description - standard
+strategy-15,ST00-Str15,Strategy Name,"D",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-16,ST00-Str16,Strategy Name,"De",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-17,ST00-Str17,Strategy Name,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-18,ST00-Str18,Strategy Name,"Description text with unicode โลเร็ม อิปซัม",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-19,ST00-Str19,Strategy Name,"Description text with unicode لوريم إيبسوم",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-20,ST00-Str20,Strategy Name,"Description text with unicode 洛伦·伊普森",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-21,ST00-Str21,Strategy Name,<marquee>Hacked</marquee>,2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-22,ST00-Str22,Strategy Name,<script>alert('Hacked!');</script>,2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-23,ST00-Str23,Strategy Name,' or 'A' = 'A,2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+#endMoment - standard
+strategy-24,ST00-Str24,Strategy Name,"Description text",2027/01/01 0:00,2027/06/01 0:00,http://example.com,true,fundraiser-01
+strategy-25,ST00-Str25,Strategy Name,"Description text",2027/01/01 0:00,2028/12/31 23:59,http://example.com,true,fundraiser-01
+strategy-26,ST00-Str26,Strategy Name,"Description text",2027/01/01 0:00,2030/01/01 0:00,http://example.com,true,fundraiser-01
+#moreInfo - standard
+strategy-27,ST00-Str27,Strategy Name,"Description text",2027/01/01 0:00,2027/09/01 10:00,,true,fundraiser-01
+strategy-28,ST00-Str28,Strategy Name,"Description text",2027/01/01 0:00,2027/09/01 10:00,http://a.b,true,fundraiser-01
+strategy-29,ST00-Str29,Strategy Name,"Description text",2027/01/01 0:00,2027/09/01 10:00,https://www.example.org,true,fundraiser-01
+strategy-30,ST00-Str30,Strategy Name,"Description text",2027/01/01 0:00,2027/09/01 10:00,http://www.example.org/path.html,true,fundraiser-01
+strategy-31,ST00-Str31,Strategy Name,"Description text",2027/01/01 0:00,2027/09/01 10:00,http://www.example.org/path.html#anchor,true,fundraiser-01
+strategy-32,ST00-Str32,Strategy Name,"Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.org?a=1&b=2,true,fundraiser-01
+strategy-33,ST00-Str33,Strategy Name,"Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.org/a/b?a&b,true,fundraiser-01
+#draftMode - standard
+strategy-34,ST00-Str34,Strategy Name,"Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.com,false,fundraiser-01
+#key:fundraiser - standard
+strategy-35,ST00-Str35,Strategy Name,"Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-01
+strategy-36,ST00-Str36,Strategy Name,"Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-02
+strategy-37,ST00-Str37,Strategy Name,"Description text",2027/01/01 0:00,2027/09/01 10:00,http://example.com,true,fundraiser-03
