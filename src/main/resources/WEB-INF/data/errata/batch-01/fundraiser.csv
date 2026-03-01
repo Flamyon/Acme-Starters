@@ -1,0 +1,16 @@
+key,bank,statement,agent
+#BASE,"","",""
+fundraiser-01,Bank Name,"Statement text",TRUE
+#BANK,"","",""
+fundraiser-02,,"Statement text",TRUE
+fundraiser-03,"B","Statement text",TRUE
+fundraiser-04,"Ba","Statement text",TRUE
+fundraiser-05,"Bank Name with more text to reach the maximum length allowed for this field in the system",TRUE
+#STATEMENT,"","",""
+fundraiser-06,Bank Name,,TRUE
+fundraiser-07,Bank Name,"S",TRUE
+fundraiser-08,Bank Name,"St",TRUE
+fundraiser-09,Bank Name,"Statement text with more content to reach the maximum length allowed for this field in the system",TRUE
+#AGENT,"","",""
+fundraiser-10,Bank Name,"Statement text",""
+fundraiser-11,Bank Name,"Statement text",FALSE

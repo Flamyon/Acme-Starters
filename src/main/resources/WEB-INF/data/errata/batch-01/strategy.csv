@@ -1,0 +1,31 @@
+key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:fundraiser
+#BASE,"","","","","","","",""
+strategy-01,STR-0001,Strategy Name,"Description text",2026/06/01 10:00,2026/12/31 23:59,http://example.com,true,fundraiser-01
+#TICKER,"","","","","","","",""
+strategy-02,,"Strategy Name","Description text",2026/06/01 10:00,2026/12/31 23:59,http://example.com,true,fundraiser-01
+strategy-03,ST-0001,Strategy Name,"Description text",2026/06/01 10:00,2026/12/31 23:59,http://example.com,true,fundraiser-01
+strategy-04,STR-001,Strategy Name,"Description text",2026/06/01 10:00,2026/12/31 23:59,http://example.com,true,fundraiser-01
+strategy-05,str-0001,Strategy Name,"Description text",2026/06/01 10:00,2026/12/31 23:59,http://example.com,true,fundraiser-01
+#NAME,"","","","","","","",""
+strategy-06,STR-0006,,"Description text",2026/06/01 10:00,2026/12/31 23:59,http://example.com,true,fundraiser-01
+strategy-07,STR-0007,"Strategy Name with more text to test the maximum length",2026/06/01 10:00,2026/12/31 23:59,http://example.com,true,fundraiser-01
+#DESCRIPTION,"","","","","","","",""
+strategy-08,STR-0008,Strategy Name,,2026/06/01 10:00,2026/12/31 23:59,http://example.com,true,fundraiser-01
+strategy-09,STR-0009,Strategy Name,"Description text with more content to reach the maximum length",2026/06/01 10:00,2026/12/31 23:59,http://example.com,true,fundraiser-01
+#STARTMOMENT,"","","","","","","",""
+strategy-10,STR-0010,Strategy Name,"Description text","",2026/12/31 23:59,http://example.com,true,fundraiser-01
+strategy-11,STR-0011,Strategy Name,"Description text",1999/12/31 23:59,2026/12/31 23:59,http://example.com,true,fundraiser-01
+strategy-12,STR-0012,Strategy Name,"Description text",2027/01/01 10:00,2026/12/31 23:59,http://example.com,true,fundraiser-01
+#ENDMOMENT,"","","","","","","",""
+strategy-13,STR-0013,Strategy Name,"Description text",2026/06/01 10:00,"",http://example.com,true,fundraiser-01
+strategy-14,STR-0014,Strategy Name,"Description text",2026/06/01 10:00,1999/12/31 23:59,http://example.com,true,fundraiser-01
+strategy-15,STR-0015,Strategy Name,"Description text",2026/06/01 10:00,2026/05/01 10:00,http://example.com,true,fundraiser-01
+#MOREINFO,"","","","","","","",""
+strategy-16,STR-0016,Strategy Name,"Description text",2026/06/01 10:00,2026/12/31 23:59,http://,true,fundraiser-01
+strategy-17,STR-0017,Strategy Name,"Description text",2026/06/01 10:00,2026/12/31 23:59,ftp://,true,fundraiser-01
+strategy-18,STR-0018,Strategy Name,"Description text",2026/06/01 10:00,2026/12/31 23:59,http://a,true,fundraiser-01
+strategy-19,STR-0019,Strategy Name,"Description text",2026/06/01 10:00,2026/12/31 23:59,"http://www.example.org/path/to/resource/with/more/characters/to/test/limits",true,fundraiser-01
+#DRAFTMODE,"","","","","","","",""
+strategy-20,STR-0020,Strategy Name,"Description text",2026/06/01 10:00,2026/12/31 23:59,http://example.com,"",fundraiser-01
+#KEY:FUNDRAISER,"","","","","","","",""
+strategy-21,STR-0021,Strategy Name,"Description text",2026/06/01 10:00,2026/12/31 23:59,http://example.com,true,

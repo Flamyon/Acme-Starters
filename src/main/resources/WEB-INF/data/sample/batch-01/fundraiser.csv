@@ -1,0 +1,32 @@
+key,bank,statement,agent,key:userAccount
+#BASE,"","","",""
+fundraiser-01,Bank Name,"Statement text",TRUE,userAccount-01
+#BANK,"","","",""
+fundraiser-02,Bank Name,"Statement text",TRUE,userAccount-01
+fundraiser-03,"B","Statement text",TRUE,userAccount-01
+fundraiser-04,"Ba","Statement text",TRUE,userAccount-01
+fundraiser-05,"Bank Name with more text to reach the maximum length allowed",TRUE,userAccount-01
+fundraiser-06,"Bank Name with unicode characters โลเร็ม อิปซัม",TRUE,userAccount-01
+fundraiser-07,"Bank Name with unicode characters لوريم إيبسوم",TRUE,userAccount-01
+fundraiser-08,"Bank Name with unicode characters 洛伦·伊普森",TRUE,userAccount-01
+fundraiser-09,<marquee>Hacked Bank</marquee>,"Statement text",TRUE,userAccount-01
+fundraiser-10,<script>alert('Hacked!');</script>,"Statement text",TRUE,userAccount-01
+fundraiser-11,' or 'A' = 'A,"Statement text",TRUE,userAccount-01
+#STATEMENT,"","","",""
+fundraiser-12,Bank Name,"Statement text",TRUE,userAccount-01
+fundraiser-13,Bank Name,"S",TRUE,userAccount-01
+fundraiser-14,Bank Name,"St",TRUE,userAccount-01
+fundraiser-15,Bank Name,"Statement text with more content to reach the maximum length",TRUE,userAccount-01
+fundraiser-16,Bank Name,"Statement text with unicode โลเร็ม อิปซัม",TRUE,userAccount-01
+fundraiser-17,Bank Name,"Statement text with unicode لوريم إيبسوم",TRUE,userAccount-01
+fundraiser-18,Bank Name,"Statement text with unicode 洛伦·伊普森",TRUE,userAccount-01
+fundraiser-19,Bank Name,<marquee>Hacked Statement</marquee>,TRUE,userAccount-01
+fundraiser-20,Bank Name,<script>alert('Hacked!');</script>,TRUE,userAccount-01
+fundraiser-21,Bank Name,' or 'A' = 'A,TRUE,userAccount-01
+fundraiser-22,Bank Name,"Statement text",TRUE,userAccount-01
+#AGENT,"","","",""
+fundraiser-23,Bank Name,"Statement text",FALSE,userAccount-01
+#KEY:USERACCOUNT,"","","",""
+fundraiser-24,Bank Name,"Statement text",TRUE,userAccount-01
+fundraiser-25,Bank Name,"Statement text",TRUE,userAccount-02
+fundraiser-26,Bank Name,"Statement text",TRUE,userAccount-03

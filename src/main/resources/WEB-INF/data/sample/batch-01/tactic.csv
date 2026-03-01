@@ -1,0 +1,34 @@
+key,name,notes,expectedPercentage,kind,key:strategy
+#base - entity
+tactic-01,"Tactic Name","Notes text",50.0,SUBTLE,strategy-01
+#name - standard
+tactic-02,"T","Notes text",50.0,SUBTLE,strategy-01
+tactic-03,"Ta","Notes text",50.0,SUBTLE,strategy-01
+tactic-04,"Tactic Name with more text to test the maximum length","Notes text",50.0,SUBTLE,strategy-01
+tactic-05,"Tactic Name with unicode โลเร็ม อิปซัม","Notes text",50.0,SUBTLE,strategy-01
+tactic-06,"Tactic Name with unicode لوريم إيبسوم","Notes text",50.0,SUBTLE,strategy-01
+tactic-07,"Tactic Name with unicode 洛伦·伊普森","Notes text",50.0,SUBTLE,strategy-01
+tactic-08,<marquee>Hacked</marquee>,"Notes text",50.0,SUBTLE,strategy-01
+tactic-09,<script>alert('Hacked!');</script>,"Notes text",50.0,SUBTLE,strategy-01
+tactic-10,' or 'A' = 'A,"Notes text",50.0,SUBTLE,strategy-01
+#notes - standard
+tactic-11,"Tactic Name","N",50.0,SUBTLE,strategy-01
+tactic-12,"Tactic Name","No",50.0,SUBTLE,strategy-01
+tactic-13,"Tactic Name","Notes text with more content to reach the maximum length",50.0,SUBTLE,strategy-01
+tactic-14,"Tactic Name","Notes text with unicode โลเร็ม อิปซัม",50.0,SUBTLE,strategy-01
+tactic-15,"Tactic Name","Notes text with unicode لوريم إيبسوم",50.0,SUBTLE,strategy-01
+tactic-16,"Tactic Name","Notes text with unicode 洛伦·伊普森",50.0,SUBTLE,strategy-01
+tactic-17,"Tactic Name",<marquee>Hacked</marquee>,50.0,SUBTLE,strategy-01
+tactic-18,"Tactic Name",<script>alert('Hacked!');</script>,50.0,SUBTLE,strategy-01
+tactic-19,"Tactic Name",' or 'A' = 'A,50.0,SUBTLE,strategy-01
+#expectedPercentage - standard
+tactic-20,"Tactic Name","Notes text",0.0,SUBTLE,strategy-01
+tactic-21,"Tactic Name","Notes text",0.01,SUBTLE,strategy-01
+tactic-22,"Tactic Name","Notes text",99.99,SUBTLE,strategy-01
+tactic-23,"Tactic Name","Notes text",100.0,SUBTLE,strategy-01
+#kind - standard
+tactic-24,"Tactic Name","Notes text",50.0,AGGRESSIVE,strategy-01
+tactic-25,"Tactic Name","Notes text",50.0,TENDER,strategy-01
+#strategy - standard
+tactic-26,"Tactic Name","Notes text",50.0,SUBTLE,strategy-02
+tactic-27,"Tactic Name","Notes text",50.0,SUBTLE,strategy-03
