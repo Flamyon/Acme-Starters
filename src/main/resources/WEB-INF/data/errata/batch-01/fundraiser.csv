@@ -1,0 +1,16 @@
+key,bank,statement,agent
+#BASE (valid entry to satisfy references)
+fundraiser-01,Bank Name,"Statement text",true
+
+#BANK,"","",""
+fundraiser-02,,"Statement text",TRUE
+fundraiser-03,"                    ","Statement text",TRUE
+fundraiser-04,"Bank Name with more text to reach more than the seventy five characters max!","Statement text",TRUE
+
+#STATEMENT,"","",""
+fundraiser-05,Bank Name,,TRUE
+fundraiser-06,Bank Name,"                         ",TRUE
+fundraiser-07,Bank Name,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",TRUE
+
+#AGENT,"","",""
+fundraiser-08,Bank Name,"Statement text",""
