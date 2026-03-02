@@ -15,4 +15,10 @@ public interface StrategyRepository extends AbstractRepository {
 
 	@Query("SELECT COUNT(t) FROM Tactic t WHERE t.strategy.id = :id")
 	Long countTacticsByStrategyId(@Param("id") int id);
+
+	@Query("SELECT COUNT(s) FROM Strategy s WHERE s.ticker = :ticker")
+	Long countByTicker(@Param("ticker") String ticker);
+
+	@Query("SELECT COUNT(s) FROM Strategy s WHERE s.ticker = :ticker AND s.id != :id")
+	Long countByTickerAndNotId(@Param("ticker") String ticker, @Param("id") int id);
 }

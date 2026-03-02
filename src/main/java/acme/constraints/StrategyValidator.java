@@ -44,23 +44,45 @@ public class StrategyValidator extends AbstractValidator<ValidStrategy, Strategy
 					tacticCount = this.repository.countTacticsByStrategyId(strategy.getId());
 					super.state(context, tacticCount > 0, "*", "acme.validation.strategy.no-tactics.message");
 				}
+
+				// Ticker uniqueness
 				{
-					Date now;
-					boolean startFuture;
-					boolean endFuture;
+					String ticker = strategy.getTicker();
+					if (ticker != null && !ticker.trim().isEmpty()) {
+						Long count;
+						if (strategy.getId() == 0)
+							count = this.repository.countByTicker(ticker);
+						else
+							count = this.repository.countByTickerAndNotId(ticker, strategy.getId());
 
-					now = MomentHelper.getCurrentMoment();
-					startFuture = MomentHelper.isAfter(strategy.getStartMoment(), now);
-					endFuture = MomentHelper.isAfter(strategy.getEndMoment(), now);
-
-					super.state(context, startFuture, "startMoment", "acme.validation.strategy.start-not-future.message");
-					super.state(context, endFuture, "endMoment", "acme.validation.strategy.end-not-future.message");
+						super.state(context, count == 0, "ticker", "acme.validation.strategy.ticker-duplicated.message");
+					}
 				}
-				{
-					boolean validInterval;
 
-					validInterval = MomentHelper.isBefore(strategy.getStartMoment(), strategy.getEndMoment());
-					super.state(context, validInterval, "endMoment", "acme.validation.strategy.invalid-interval.message");
+				// Date validations: explicit null checks before comparisons
+				{
+					Date now = MomentHelper.getCurrentMoment();
+					Date start = strategy.getStartMoment();
+					Date end = strategy.getEndMoment();
+
+					if (start == null) {
+						super.state(context, false, "startMoment", "acme.validation.strategy.start-null.message");
+					}
+
+					if (end == null) {
+						super.state(context, false, "endMoment", "acme.validation.strategy.end-null.message");
+					}
+
+					if (start != null && end != null) {
+						boolean startFuture = MomentHelper.isAfter(start, now);
+						boolean endFuture = MomentHelper.isAfter(end, now);
+
+						super.state(context, startFuture, "startMoment", "acme.validation.strategy.start-not-future.message");
+						super.state(context, endFuture, "endMoment", "acme.validation.strategy.end-not-future.message");
+
+						boolean validInterval = MomentHelper.isBefore(start, end);
+						super.state(context, validInterval, "endMoment", "acme.validation.strategy.invalid-interval.message");
+					}
 				}
 			}
 			result = !super.hasErrors(context);
