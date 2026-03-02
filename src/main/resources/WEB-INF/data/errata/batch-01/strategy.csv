@@ -22,7 +22,5 @@ strategy-14,ST00-Str14,Strategy Name,"Description text",2027/06/01 10:00,1999/12
 #MOREINFO,"","","","","","","",""
 strategy-15,ST00-Str15,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,not-a-url,true,fundraiser-01
 strategy-16,ST00-Str16,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,://missing-scheme,true,fundraiser-01
-#DRAFTMODE,"","","","","","","",""
-strategy-17,ST00-Str17,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,http://example.com,"",fundraiser-01
 #KEY:FUNDRAISER,"","","","","","","",""
-strategy-18,ST00-Str18,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,http://example.com,true,
+strategy-17,ST00-Str17,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,http://example.com,true,

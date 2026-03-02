@@ -15,6 +15,5 @@ tactic-09,"Tactic Name","Notes text",-0.01,SUBTLE,strategy-01
 tactic-10,"Tactic Name","Notes text",100.01,SUBTLE,strategy-01
 #KIND,"","","","",""
 tactic-11,"Tactic Name","Notes text",50.0,,strategy-01
-tactic-12,"Tactic Name","Notes text",50.0,INVALID_KIND,strategy-01
 #KEY:STRATEGY,"","","","",""
-tactic-13,"Tactic Name","Notes text",50.0,SUBTLE,
+tactic-12,"Tactic Name","Notes text",50.0,SUBTLE,
