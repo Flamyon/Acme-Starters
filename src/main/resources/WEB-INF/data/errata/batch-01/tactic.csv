@@ -1,19 +1,25 @@
 key,name,notes,expectedPercentage,kind,key:strategy
+
 #BASE,"","","","",""
-tactic-01,"Tactic Name","Notes text",50.0,SUBTLE,strategy-01
+#tactic-01,"Tactic Name","Notes text",50.0,SUBTLE,strategy-01
+
 #NAME,"","","","",""
 tactic-02,,"Notes text",50.0,SUBTLE,strategy-01
 tactic-03,"                      ","Notes text",50.0,SUBTLE,strategy-01
 tactic-04,"Tactic Name with more text to reach more than the seventy five chars limit!!","Notes text",50.0,SUBTLE,strategy-01
+
 #NOTES,"","","","",""
 tactic-05,"Tactic Name",,50.0,SUBTLE,strategy-01
 tactic-06,"Tactic Name","                      ",50.0,SUBTLE,strategy-01
 tactic-07,"Tactic Name","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",50.0,SUBTLE,strategy-01
+
 #EXPECTEDPERCENTAGE,"","","","",""
 tactic-08,"Tactic Name","Notes text",,SUBTLE,strategy-01
 tactic-09,"Tactic Name","Notes text",-0.01,SUBTLE,strategy-01
 tactic-10,"Tactic Name","Notes text",100.01,SUBTLE,strategy-01
+
 #KIND,"","","","",""
 tactic-11,"Tactic Name","Notes text",50.0,,strategy-01
+
 #KEY:STRATEGY,"","","","",""
 tactic-12,"Tactic Name","Notes text",50.0,SUBTLE,

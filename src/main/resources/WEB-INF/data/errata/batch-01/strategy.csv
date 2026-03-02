@@ -1,26 +1,37 @@
 key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:fundraiser
 #BASE,"","","","","","","",""
 strategy-01,ST00-Str01,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,http://example.com,true,fundraiser-01
+
 #TICKER,"","","","","","","",""
 strategy-02,,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,http://example.com,true,fundraiser-01
 strategy-03,st00-Abcde,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,http://example.com,true,fundraiser-01
 strategy-04,ST0-Abcde,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,http://example.com,true,fundraiser-01
 strategy-05,ST00-Abcd,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,http://example.com,true,fundraiser-01
 strategy-06,ST00-Abcdefghijk,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,http://example.com,true,fundraiser-01
+
 #NAME,"","","","","","","",""
 strategy-07,ST00-Str07,,"Description text",2027/06/01 10:00,2027/12/31 23:59,http://example.com,true,fundraiser-01
 strategy-08,ST00-Str08,"Strategy with more text to reach more than the seventy five characters max!!","Description text",2027/06/01 10:00,2027/12/31 23:59,http://example.com,true,fundraiser-01
+
 #DESCRIPTION,"","","","","","","",""
 strategy-09,ST00-Str09,Strategy Name,,2027/06/01 10:00,2027/12/31 23:59,http://example.com,true,fundraiser-01
 strategy-10,ST00-Str10,Strategy Name,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",2027/06/01 10:00,2027/12/31 23:59,http://example.com,true,fundraiser-01
+
 #STARTMOMENT,"","","","","","","",""
 strategy-11,ST00-Str11,Strategy Name,"Description text","",2027/12/31 23:59,http://example.com,true,fundraiser-01
 strategy-12,ST00-Str12,Strategy Name,"Description text",1999/12/31 23:59,2027/12/31 23:59,http://example.com,true,fundraiser-01
+
 #ENDMOMENT,"","","","","","","",""
 strategy-13,ST00-Str13,Strategy Name,"Description text",2027/06/01 10:00,"",http://example.com,true,fundraiser-01
 strategy-14,ST00-Str14,Strategy Name,"Description text",2027/06/01 10:00,1999/12/31 23:59,http://example.com,true,fundraiser-01
+
 #MOREINFO,"","","","","","","",""
 strategy-15,ST00-Str15,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,not-a-url,true,fundraiser-01
-strategy-16,ST00-Str16,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,://missing-scheme,true,fundraiser-01
+strategy-16,ST00-Str16,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,http://,true,fundraiser-01
+strategy-17,ST00-Str15,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,ftp://,true,fundraiser-01
+strategy-18,ST00-Str15,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,http://a,true,fundraiser-01
+strategy-19,ST00-Str16,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,ftp://a,true,fundraiser-01
+strategy-20,ST00-Str16,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/x,true,fundraiser-01
+
 #KEY:FUNDRAISER,"","","","","","","",""
-strategy-17,ST00-Str17,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,http://example.com,true,
+strategy-21,ST00-Str17,Strategy Name,"Description text",2027/06/01 10:00,2027/12/31 23:59,http://example.com,true,
