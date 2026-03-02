@@ -2,3 +2,4 @@ key,key:userAccount,bank,statement,agent
 fundraiser-01,user-account-fundraiser-01,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
 fundraiser-02,user-account-fundraiser-02,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false
 fundraiser-03,user-account-fundraiser-03,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false
+fundraiser-04,user-account-fundraiser-04,"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB","Boundary bank name with exactly 75 B characters",true
