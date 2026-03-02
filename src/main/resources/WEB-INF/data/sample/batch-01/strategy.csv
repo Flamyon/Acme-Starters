@@ -58,17 +58,18 @@ strategy-45,ST00-Str45,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, c
 strategy-46,ST00-Str46,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2027/01/01 0:00,2027/09/01 10:00,http://example.org/a,true,fundraiser-01
 strategy-47,ST00-Str47,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2027/01/01 0:00,2027/09/01 10:00,http://example.org/a/b?,true,fundraiser-01
 strategy-48,ST00-Str48,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2027/01/01 0:00,2027/09/01 10:00,http://example.org/a/b?a&b,true,fundraiser-01
+strategy-49,ST00-Str49,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2027/01/01 0:00,2027/09/01 10:00,,true,fundraiser-01
 
 #DRAFTMODE,"","","","","","","",""
-strategy-49,ST00-Str49,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2027/01/01 0:00,2027/09/01 10:00,http://lorem.com/ipsum,false,fundraiser-01
+strategy-50,ST00-Str50,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2027/01/01 0:00,2027/09/01 10:00,http://lorem.com/ipsum,false,fundraiser-01
 
 #KEY:FUNDRAISER,"","","","","","","",""
-strategy-50,ST00-Str50,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2027/01/01 0:00,2027/09/01 10:00,http://lorem.com/ipsum,true,fundraiser-01
 strategy-51,ST00-Str51,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2027/01/01 0:00,2027/09/01 10:00,http://lorem.com/ipsum,true,fundraiser-02
 strategy-52,ST00-Str52,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2027/01/01 0:00,2027/09/01 10:00,http://lorem.com/ipsum,true,fundraiser-03
+strategy-53,ST00-Str53,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2027/01/01 0:00,2027/09/01 10:00,http://lorem.com/ipsum,true,fundraiser-01
 
 #STARTMOMENT,"","","","","","","",""
-strategy-53,ST00-Str53,Lorem ipsum dolor sit amet,"Start at MIN (minimum allowed ahead): 2025/01/01 00:00",2025/01/01 00:00,2027/01/01 00:00,http://lorem.com/ipsum,true,fundraiser-01
 strategy-54,ST00-Str54,Lorem ipsum dolor sit amet,"Start at MIN + Δ (one minute after minimum): 2025/01/01 00:01",2025/01/01 00:01,2027/01/01 00:00,http://lorem.com/ipsum,true,fundraiser-01
 strategy-55,ST00-Str55,Lorem ipsum dolor sit amet,"Start at MAX - Δ (2200/12/31 23:58) and end at MAX (2200/12/31 23:59)",2200/12/31 23:58,2200/12/31 23:59,http://lorem.com/ipsum,true,fundraiser-01
 strategy-56,ST00-Str56,Lorem ipsum dolor sit amet,"Normal long-range valid interval",2027/04/01 00:00,2027/12/01 00:00,http://lorem.com/ipsum,true,fundraiser-01
+strategy-57,ST00-Str57,Lorem ipsum dolor sit amet,"Start at MIN (minimum allowed ahead): 2025/01/01 00:00",2025/01/01 00:00,2027/01/01 00:00,http://lorem.com/ipsum,true,fundraiser-01
