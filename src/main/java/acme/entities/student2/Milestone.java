@@ -9,6 +9,7 @@ import javax.validation.Valid;
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidNumber;
+import acme.constraints.ValidText;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,12 +24,12 @@ public class Milestone extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 	// --- Attributes ---
 	@Mandatory
-	//@ValidText
+	@ValidText
 	@Column
 	private String				title;
 
 	@Mandatory
-	//@ValidText
+	@ValidText
 	@Column
 	private String				achievements;
 
@@ -45,6 +46,6 @@ public class Milestone extends AbstractEntity {
 	@Mandatory
 	@ManyToOne
 	@Valid
-	private Campaign			campaigns;
+	private Campaign			campaign;
 
 }

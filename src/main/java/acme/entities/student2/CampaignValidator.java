@@ -1,8 +1,6 @@
 
 package acme.entities.student2;
 
-import java.util.Date;
-
 import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +26,6 @@ public class CampaignValidator extends AbstractValidator<ValidCampaign, Campaign
 
 	@Override
 	public boolean isValid(final Campaign campaign, final ConstraintValidatorContext context) {
-		// HINT: campaign can be null
 		assert context != null;
 
 		boolean result;
@@ -37,36 +34,34 @@ public class CampaignValidator extends AbstractValidator<ValidCampaign, Campaign
 			result = true;
 		else {
 
-			// REGLA 1: Campaigns cannot be published unless they have at least one milestone.
+			// REGLA 1: No publicada sin hitos (Esta se queda igual)
 			if (campaign.getDraftMode() != null && !campaign.getDraftMode()) {
 				boolean hasMilestones;
-
-				// Ojo: Si la campaña es nueva (id == 0), no tiene hitos guardados todavía.
 				if (campaign.getId() == 0)
 					hasMilestones = false;
 				else {
 					Long count = this.repository.countMilestones(campaign.getId());
 					hasMilestones = count != null && count > 0;
 				}
-
 				super.state(context, hasMilestones, "draftMode", "acme.validation.campaign.no-milestones.message");
 			}
 
-			// REGLA 2: startMoment/endMoment must be a valid time interval in future wrt. publication moment
+			// REGLA 2: Intervalo válido (SOLO comparamos inicio y fin, sin 'now')
 			if (campaign.getStartMoment() != null && campaign.getEndMoment() != null) {
-
-				// 2A: Valid time interval (El inicio debe ser anterior al fin)
+				// Comprobamos que el inicio sea anterior al fin
 				boolean validInterval = campaign.getStartMoment().before(campaign.getEndMoment());
+
 				super.state(context, validInterval, "endMoment", "acme.validation.campaign.invalid-interval.message");
+			}
 
-				// 2B: In future wrt the moment when a campaign is published
-				// Comprobamos que al publicar, la fecha de inicio no se haya quedado en el pasado
-				if (campaign.getDraftMode() != null && !campaign.getDraftMode()) {
-					Date now = new Date();
-					boolean futureStart = campaign.getStartMoment().after(now);
+			// REGLA 3: Ticker único (La que añadimos antes)
+			if (campaign.getTicker() != null && !campaign.getTicker().isBlank()) {
+				Campaign existingCampaign = this.repository.findByTicker(campaign.getTicker());
 
-					super.state(context, futureStart, "startMoment", "acme.validation.campaign.past-start-moment.message");
-				}
+				// Es válido si no existe otra con el mismo ticker, o si la que existe es la misma que editamos
+				boolean isUnique = existingCampaign == null || existingCampaign.getId() == campaign.getId();
+
+				super.state(context, isUnique, "ticker", "acme.validation.campaign.ticker.duplicate.message");
 			}
 
 			result = !super.hasErrors(context);

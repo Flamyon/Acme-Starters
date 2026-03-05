@@ -19,6 +19,8 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidText;
+import acme.constraints.ValidTicker;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -39,17 +41,17 @@ public class Campaign extends AbstractEntity {
 	// --- Attributes ---
 
 	@Mandatory
-	//@ValidTicker  // Valida el formato del ticker
+	@ValidTicker  // Valida el formato del ticker
 	@Column(unique = true)
 	private String				ticker;
 
 	@Mandatory
-	//@ValidText // Equivale a ValidHeader
+	@ValidText // Equivale a ValidHeader
 	@Column
 	private String				name;
 
 	@Mandatory
-	//@ValidText // Equivale a ValidText
+	@ValidText // Equivale a ValidText
 	@Column
 	private String				description;
 
@@ -99,6 +101,6 @@ public class Campaign extends AbstractEntity {
 	@ManyToOne(optional = false)
 	@Mandatory
 	@Valid
-	private Spokesperson spokeperson;
+	private Spokesperson spokesperson;
 
 }
