@@ -1,0 +1,27 @@
+key,name,notes,hours,kind,key:auditReport
+#BASE,"","","","",""
+audit-section-01,Section Name,Notes,50,PRELIMINARY,audit-report-01
+#NAME,"","","","",""
+audit-section-02,,Notes,50,PRELIMINARY,audit-report-01
+audit-section-03,"               ",Notes,50,PRELIMINARY,audit-report-01
+audit-section-04,Unnecessarily big name just to pass the limit and train the system with wrong data,Notes,50,PRELIMINARY,audit-report-01
+#NOTES,"","","","",""
+audit-section-05,Section Name,,50,PRELIMINARY,audit-report-01
+audit-section-06,Section Name,"                  ",50,PRELIMINARY,audit-report-01
+audit-section-07,Section Name,"O Romeo, Romeo, wherefore art thou Romeo? Deny thy father and refuse thy name. Or if thou wilt not, be but sworn my love And I’ll no longer be a Capulet. ‘Tis but thy name that is my enemy: Thou art thyself, though not a Montague.",50,PRELIMINARY,audit-report-01
+#HOURS,"","","","",""
+audit-section-08,Section Name,Notes,,PRELIMINARY,audit-report-01
+audit-section-09,Section Name,Notes,-13,PRELIMINARY,audit-report-01
+audit-section-10,Section Name,Notes,1000000,PRELIMINARY,audit-report-01
+#KIND,"","","","",""
+audit-section-11,Section Name,Notes,50,,audit-report-01
+#KEY:AUDITREPORT,"","","","",""
+audit-section-12,Section Name,Notes,50,PRELIMINARY,
+
+
+
+
+
+
+
+

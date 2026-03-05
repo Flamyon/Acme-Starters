@@ -52,6 +52,6 @@ public class AuditSection extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private AuditReport			auditreport;
+	private AuditReport			auditReport;
 
 }

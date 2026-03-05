@@ -1,14 +1,17 @@
 
 package acme.entities.student5;
 
-import java.time.Duration;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
@@ -16,7 +19,6 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
-import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
@@ -27,63 +29,76 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+//@ValidAuditReport
 public class AuditReport extends AbstractEntity {
 
+	@Transient
+	@Autowired
+	private AuditReportRepository	auditReportRepository;
+
 	//Serialisation version --------------------------------------------------
-	private static final long	serialVersionUID	= 1L;
+	private static final long		serialVersionUID	= 1L;
 
 	//Attributes -------------------------------------------------------------
 
 	@Mandatory
 	@ValidTicker
 	@Column(unique = true)
-	private String				ticker;
+	private String					ticker;
 
 	@Mandatory
 	@ValidHeader
 	@Column
-	private String				name;
+	private String					name;
 
 	@Mandatory
 	@ValidText
 	@Column
-	private String				description;
+	private String					description;
 
 	@Mandatory
 	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
-	// @Temporal(TemporalType.Timestamp) cambiar por column
-	@Column
-	private Date				startMoment;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date					startMoment;
 
 	@Mandatory
 	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
-	// @Temporal(TemporalType.Timestamp) cambiar por column
-	@Column
-	private Date				endMoment;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date					endMoment;
 
 	@Optional
 	@ValidUrl
 	@Column
-	private String				moreInfo;
+	private String					moreInfo;
 
 	@Mandatory
 	@Valid
 	@Column
-	private Boolean				draftMode;
+	private Boolean					draftMode;
 
 	// Derived attributes -----------------------------------------------------
 
 
 	@Transient
 	public Double getMonthsActive() {
-		Duration duration = MomentHelper.computeDuration(this.startMoment, this.endMoment);
-		double months = duration.toDays() / 30.;
-		return Math.round(months * 10) / 10.0;
+		if (this.startMoment == null || this.endMoment == null)
+			return 0.0;
+
+		long diffInMillies = this.endMoment.getTime() - this.startMoment.getTime();
+
+		double days = diffInMillies / (1000.0 * 60 * 60 * 24);
+
+		double months = days / 30.0;
+
+		return Math.round(months * 10.0) / 10.0;
 	}
-	/*
-	 * hours: - the numbers of hours of an audit report is the sum of the
-	 * individual number of hours in its audit sections.
-	 */
+
+	@Transient
+	public Double getHours() {
+		Double hours;
+		hours = this.auditReportRepository.findHoursByAuditReportId(this.getId());
+		return hours;
+	}
 
 	// Relationships ----------------------------------------------------------
 
