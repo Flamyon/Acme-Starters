@@ -1,7 +1,7 @@
 
 package acme.entities.student4;
 
-import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -20,9 +20,11 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidHeader;
+import acme.constraints.ValidSponsorship;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
 import acme.realms.Sponsor;
@@ -32,6 +34,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidSponsorship
 public class Sponsorship extends AbstractEntity {
 
 	//Serialisation version --------------------------------------------------
@@ -110,12 +113,17 @@ public class Sponsorship extends AbstractEntity {
 	 * nearest decimal.
 	 */
 
-	//TODO
+	@Mandatory
+	@ValidNumber
 	@Transient
 	public Double getMonthsActive() {
-		Duration duration = MomentHelper.computeDuration(this.startMoment, this.endMoment);
-		double months = duration.toDays() / 30.;
-		return Math.round(months * 10) / 10.;
+
+		if (this.startMoment == null || this.endMoment == null)
+			return null;
+
+		Double months = MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
+
+		return Math.round(months * 100.0) / 100.0;
 	}
 
 	// Relationships ----------------------------------------------------------
