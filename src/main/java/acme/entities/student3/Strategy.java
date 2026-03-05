@@ -1,7 +1,6 @@
 
 package acme.entities.student3;
 
-import java.time.Duration;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -20,7 +19,6 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
-import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidStrategy;
 import acme.constraints.ValidText;
@@ -79,8 +77,11 @@ public class Strategy extends AbstractEntity {
 
 	@Transient
 	public Double getMonthsActive() {
-		Duration duration = MomentHelper.computeDuration(this.startMoment, this.endMoment);
-		double months = duration.toDays() / 30.;
+		if (this.startMoment == null || this.endMoment == null)
+			return 0.0;
+
+		long durationInMillis = this.endMoment.getTime() - this.startMoment.getTime();
+		double months = (double) durationInMillis / (1000 * 60 * 60 * 24 * 30);
 		return Math.round(months * 10) / 10.0;
 	}
 
