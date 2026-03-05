@@ -7,8 +7,12 @@ user-account-provider-02,true,"UserIdentity{name: 'Martina', surname: 'коза 
 user-account-provider-03,true,"UserIdentity{name: 'Antonia', surname: 'אבטיח Æløzå', email: 'antonia@acme.com'}",provider3,provider3
 user-account-sponsor-01,true,"UserIdentity{name: 'Student', surname: 'Uno', email: 'st1@acme.com'}",sponsor1,sponsor1
 user-account-sponsor-02,true,"UserIdentity{name: 'Student', surname: 'Dos', email: 'st2@acme.com'}",sponsor2,sponsor2
+<<<<<<< HEAD
+user-account-sponsor-03,true,"UserIdentity{name: 'Student', surname: 'Tres', email: 's@acme.com'}",sponsor3,sponsor3
+=======
 user-account-sponsor-03,true,"UserIdentity{name: 'Student', surname: 'Tres', email: 's@acme.com'}",sponsor3,sponsor3
 user-account-fundraiser-01,true,"UserIdentity{name: 'Frank', surname: 'Fundraiser', email: 'frank@acme.com'}",fundraiser1,fundraiser1
 user-account-fundraiser-02,true,"UserIdentity{name: 'Sarah', surname: 'Writer', email: 'sarah@acme.com'}",fundraiser2,fundraiser2
 user-account-fundraiser-03,true,"UserIdentity{name: 'David', surname: 'Smith', email: 'david@acme.com'}",fundraiser3,fundraiser3
 user-account-fundraiser-04,true,"UserIdentity{name: 'New', surname: 'Fundraiser4', email: 'fund4@acme.com'}",fundraiser4,fundraiser4
+>>>>>>> ba1da9f0640e46eccec36fa3b9a623fda3b56419
