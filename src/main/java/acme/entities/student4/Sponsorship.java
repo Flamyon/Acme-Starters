@@ -56,7 +56,7 @@ public class Sponsorship extends AbstractEntity {
 
 	@Mandatory
 	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
-	@Temporal(TemporalType.TIMESTAMP) //Almacenará algo como 2023-10-25 15:30:00.000.
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date					startMoment;
 
 	@Mandatory
@@ -110,6 +110,7 @@ public class Sponsorship extends AbstractEntity {
 	 * nearest decimal.
 	 */
 
+	//TODO
 	@Transient
 	public Double getMonthsActive() {
 		Duration duration = MomentHelper.computeDuration(this.startMoment, this.endMoment);
