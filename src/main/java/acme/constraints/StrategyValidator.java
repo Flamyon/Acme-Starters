@@ -29,66 +29,71 @@ public class StrategyValidator extends AbstractValidator<ValidStrategy, Strategy
 
 	@Override
 	public boolean isValid(final Strategy strategy, final ConstraintValidatorContext context) {
-		// HINT: strategy can be null
 		assert context != null;
 
-		boolean result;
-
 		if (strategy == null)
-			result = true;
-		else {
-			if (!strategy.getDraftMode()) {
-				{
-					long tacticCount;
+			return true;
 
-					tacticCount = this.repository.countTacticsByStrategyId(strategy.getId());
-					super.state(context, tacticCount > 0, "*", "acme.validation.strategy.no-tactics.message");
-				}
+		boolean isValid = true;
 
-				// Ticker uniqueness
-				{
-					String ticker = strategy.getTicker();
-					if (ticker != null && !ticker.trim().isEmpty()) {
-						Long count;
-						if (strategy.getId() == 0)
-							count = this.repository.countByTicker(ticker);
-						else
-							count = this.repository.countByTickerAndNotId(ticker, strategy.getId());
-
-						super.state(context, count == 0, "ticker", "acme.validation.strategy.ticker-duplicated.message");
-					}
-				}
-
-				// Date validations: explicit null checks before comparisons
-				{
-					Date now = MomentHelper.getCurrentMoment();
-					Date start = strategy.getStartMoment();
-					Date end = strategy.getEndMoment();
-
-					if (start == null) {
-						super.state(context, false, "startMoment", "acme.validation.strategy.start-null.message");
-					}
-
-					if (end == null) {
-						super.state(context, false, "endMoment", "acme.validation.strategy.end-null.message");
-					}
-
-					if (start != null && end != null) {
-						boolean startFuture = MomentHelper.isAfter(start, now);
-						boolean endFuture = MomentHelper.isAfter(end, now);
-
-						super.state(context, startFuture, "startMoment", "acme.validation.strategy.start-not-future.message");
-						super.state(context, endFuture, "endMoment", "acme.validation.strategy.end-not-future.message");
-
-						boolean validInterval = MomentHelper.isBefore(start, end);
-						super.state(context, validInterval, "endMoment", "acme.validation.strategy.invalid-interval.message");
-					}
-				}
-			}
-			result = !super.hasErrors(context);
+		if (Boolean.FALSE.equals(strategy.getDraftMode())) {
+			isValid &= validateTactics(strategy, context);
+			isValid &= validateTicker(strategy, context);
+			isValid &= validateDates(strategy, context);
 		}
 
-		return result;
+		return isValid;
+	}
+
+	private boolean validateTactics(final Strategy strategy, final ConstraintValidatorContext context) {
+		long tacticCount = this.repository.countTacticsByStrategyId(strategy.getId());
+		super.state(context, tacticCount > 0, "*", "acme.validation.strategy.no-tactics.message");
+		return tacticCount > 0;
+	}
+
+	private boolean validateTicker(final Strategy strategy, final ConstraintValidatorContext context) {
+		String ticker = strategy.getTicker();
+		if (ticker != null && !ticker.trim().isEmpty()) {
+			Long count = strategy.getId() == 0
+				? this.repository.countByTicker(ticker)
+				: this.repository.countByTickerAndNotId(ticker, strategy.getId());
+
+			super.state(context, count == 0, "ticker", "acme.validation.strategy.ticker-duplicated.message");
+			return count == 0;
+		}
+		return true;
+	}
+
+	private boolean validateDates(final Strategy strategy, final ConstraintValidatorContext context) {
+		Date now = MomentHelper.getCurrentMoment();
+		Date start = strategy.getStartMoment();
+		Date end = strategy.getEndMoment();
+
+		boolean isValid = true;
+
+		if (start == null) {
+			super.state(context, false, "startMoment", "acme.validation.strategy.start-null.message");
+			isValid = false;
+		}
+
+		if (end == null) {
+			super.state(context, false, "endMoment", "acme.validation.strategy.end-null.message");
+			isValid = false;
+		}
+
+		if (start != null && end != null) {
+			boolean startFuture = MomentHelper.isAfter(start, now);
+			boolean endFuture = MomentHelper.isAfter(end, now);
+			boolean validInterval = MomentHelper.isBefore(start, end);
+
+			super.state(context, startFuture, "startMoment", "acme.validation.strategy.start-not-future.message");
+			super.state(context, endFuture, "endMoment", "acme.validation.strategy.end-not-future.message");
+			super.state(context, validInterval, "endMoment", "acme.validation.strategy.invalid-interval.message");
+
+			isValid &= startFuture && endFuture && validInterval;
+		}
+
+		return isValid;
 	}
 
 }
