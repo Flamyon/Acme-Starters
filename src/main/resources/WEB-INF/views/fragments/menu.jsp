@@ -38,16 +38,25 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRealm('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.sponsorships" access="permitAll()">
+   	 		<acme:menu-suboption code="master.menu.sponsorship.list" action="/any/sponsorship/list"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.sponsor" access="hasRealm('Sponsor')">
+    		<acme:menu-suboption code="master.menu.sponsor.sponsorships.manage" action="/any/sponsorship/list"/>
+    		<acme:menu-suboption code="master.menu.sponsor.donations.manage" action="/any/donation/list"/>
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>		
-		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
-			<acme:menu-suboption code="master.menu.user-account.general-profile" action="/authenticated/user-account/update"/>
-			<acme:menu-suboption code="master.menu.user-account.become-provider" action="/authenticated/provider/create" access="!hasRealm('Provider')"/>
-			<acme:menu-suboption code="master.menu.user-account.provider-profile" action="/authenticated/provider/update" access="hasRealm('Provider')"/>
-			<acme:menu-suboption code="master.menu.user-account.become-consumer" action="/authenticated/consumer/create" access="!hasRealm('Consumer')"/>
-			<acme:menu-suboption code="master.menu.user-account.consumer-profile" action="/authenticated/consumer/update" access="hasRealm('Consumer')"/>
-		</acme:menu-option>
-	</acme:menu-right>
+    <acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
+        <acme:menu-suboption code="master.menu.user-account.general-profile" action="/authenticated/user-account/update"/>
+        <acme:menu-suboption code="master.menu.user-account.become-provider" action="/authenticated/provider/create" access="!hasRealm('Provider')"/>
+        <acme:menu-suboption code="master.menu.user-account.provider-profile" action="/authenticated/provider/update" access="hasRealm('Provider')"/>
+        <acme:menu-suboption code="master.menu.user-account.become-sponsor" action="/student4/sponsor/create" access="!hasRealm('Sponsor')"/>
+        <acme:menu-suboption code="master.menu.user-account.sponsor-profile" action="/student4/sponsor/update" access="hasRealm('Sponsor')"/>
+    </acme:menu-option>
+</acme:menu-right>
 </acme:menu-bar>
 

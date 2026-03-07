@@ -1,6 +1,8 @@
 
 package acme.entities.student4;
 
+import java.util.Collection;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -27,4 +29,10 @@ public interface SponsorshipRepository extends AbstractRepository {
 	// conociendo su código de referencia.
 	@Query("select s from Sponsorship s where s.ticker = :ticker")
 	Sponsorship findSponsorshipByTicker(String ticker);
+
+	@Query("select s from Sponsorship s where s.id = :id")
+	Sponsorship findSponsorshipById(int id);
+
+	@Query("select s from Sponsorship s where s.draftMode = false")
+	Collection<Sponsorship> findPublishedSponsorships();
 }
