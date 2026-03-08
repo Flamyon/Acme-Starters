@@ -39,14 +39,7 @@
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 		
-		<acme:menu-option code="master.menu.sponsorships" access="permitAll()">
-   	 		<acme:menu-suboption code="master.menu.sponsorship.list" action="/any/sponsorship/list"/>
-		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.sponsor" access="hasRealm('Sponsor')">
-    		<acme:menu-suboption code="master.menu.sponsor.sponsorships.manage" action="/any/sponsorship/list"/>
-    		<acme:menu-suboption code="master.menu.sponsor.donations.manage" action="/any/donation/list"/>
-		</acme:menu-option>
+		<acme:menu-option code="master.menu.sponsorships.list" access="permitAll()" action="/any/sponsorship/list"/>
 	</acme:menu-left>
 
 	<acme:menu-right>		

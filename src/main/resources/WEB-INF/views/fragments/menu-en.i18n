@@ -27,9 +27,8 @@ master.menu.provider = Provider
 master.menu.provider.favourite-link = Favourite link
 
 # master.menu.Student4 ####################################################
-master.menu.sponsorship.list = Lista
-master.menu.sponsor.sponsorships.manage = Dirección Sponsors
-master.menu.sponsor.donations.manage = Dirección Donaciones
+master.menu.sponsorships.list = Sponsorships list
+master.menu.user-account.become-sponsor = Became sponsor
 
 # master.menu.consumer ##########################################################
 

@@ -8,10 +8,16 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.consumer.form.title = Detalles de consumidor
+any.donation.list.title = Lista de donaciones
+any.donation.list.label.name = Nombre
+any.donation.list.label.money = Cantidad aportada
+any.donation.list.label.kind = Tipo
 
-authenticated.consumer.form.label.company = Compañía
-authenticated.consumer.form.label.sector = Sector
+any.donation.form.title = Detalles de la donación
 
-authenticated.consumer.form.button.create = Registrar
-authenticated.consumer.form.button.update = Actualizar
+any.donation.form.label.name = Nombre:
+any.donation.form.label.money = Cantidad aportada:
+any.donation.form.label.kind = Tipo de donación:
+any.donation.form.label.notes = Notas adicionales:
+
+any.donation.form.button.return = Volver a la lista
