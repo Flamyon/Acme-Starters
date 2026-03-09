@@ -38,6 +38,10 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRealm('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.any.strategy" action="/any/strategy/list"/>
+		
+
 	</acme:menu-left>
 
 	<acme:menu-right>		
