@@ -80,8 +80,10 @@ public class Strategy extends AbstractEntity {
 		if (this.startMoment == null || this.endMoment == null)
 			return 0.0;
 
-		long durationInMillis = this.endMoment.getTime() - this.startMoment.getTime();
-		double months = (double) durationInMillis / (1000 * 60 * 60 * 24 * 30);
+		double durationInMillis = (double) this.endMoment.getTime() - this.startMoment.getTime();
+
+		double months = durationInMillis / (1000L * 60 * 60 * 24 * 30);
+
 		return Math.round(months * 10) / 10.0;
 	}
 
