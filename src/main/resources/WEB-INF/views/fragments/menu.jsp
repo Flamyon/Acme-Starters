@@ -44,6 +44,11 @@
 		<acme:menu-option code="master.menu.sponsorships" access="hasRealm('Sponsor')">
     		<acme:menu-suboption code="master.menu.sponsorships.unpublished" action="/sponsor/sponsorship/list"/>
 		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.fundraiser" access="hasRealm('Fundraiser')">
+			<acme:menu-suboption code="master.menu.fundraiser.strategy.list" action="/fundraiser/strategy/list"/>
+		</acme:menu-option>
+
 	</acme:menu-left>
 
 	<acme:menu-right>		
@@ -53,6 +58,9 @@
         <acme:menu-suboption code="master.menu.user-account.provider-profile" action="/authenticated/provider/update" access="hasRealm('Provider')"/>
         <acme:menu-suboption code="master.menu.user-account.become-sponsor" action="/student4/sponsor/create" access="!hasRealm('Sponsor')"/>
         <acme:menu-suboption code="master.menu.user-account.sponsor-profile" action="/student4/sponsor/update" access="hasRealm('Sponsor')"/>
+		<acme:menu-suboption code="master.menu.user-account.become-fundraiser" action="/authenticated/fundraiser/create" access="!hasRealm('Fundraiser')"/>
+		<acme:menu-suboption code="master.menu.user-account.fundraiser-profile" action="/authenticated/fundraiser/update" access="hasRealm('Fundraiser')"/>
+			
     </acme:menu-option>
 </acme:menu-right>
 </acme:menu-bar>

@@ -1,0 +1,21 @@
+# validation-es.i18n
+# Mensajes de validación globales resueltos por el MessageSource de Bean Validation.
+# BaseName pattern: /WEB-INF/views/**/validation*.i18n
+
+# ValidTicker
+acme.validation.ticker.message = El formato debe comenzar con dos letras mayúsculas, seguidas de dos números, un guión y entre 5 y 10 caracteres alfanuméricos (ejemplo: AA00-ABCDE123).
+
+# ValidStrategy (class-level)
+acme.validation.strategy.message = La estrategia no es válida.
+acme.validation.strategy.no-tactics.message = No se puede publicar una estrategia sin tácticas.
+acme.validation.strategy.ticker-duplicated.message = Este ticker ya está en uso por otra estrategia.
+acme.validation.strategy.start-null.message = La fecha de inicio es obligatoria.
+acme.validation.strategy.end-null.message = La fecha de fin es obligatoria.
+acme.validation.strategy.start-not-future.message = La fecha de inicio debe estar en el futuro en el momento de publicación.
+acme.validation.strategy.end-not-future.message = La fecha de fin debe estar en el futuro en el momento de publicación.
+acme.validation.strategy.invalid-interval.message = La fecha de inicio debe ser anterior a la fecha de fin.
+
+# ValidText / ValidHeader (compartidas entre entidades)
+acme.validation.text.message = El texto es demasiado largo (máx. 255 caracteres).
+acme.validation.header.message = La cabecera es demasiado larga (máx. 75 caracteres).
+acme.validation.object.message = Valor no válido.
