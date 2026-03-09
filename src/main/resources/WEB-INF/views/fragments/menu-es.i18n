@@ -13,6 +13,7 @@
 master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.anonymous.strategy = Listar estrategias
+master.menu.anonymous.sponsorships.published = Lista de patrocinios publicados
 
 # master.menu.administrator ###################################################
 
@@ -28,7 +29,6 @@ master.menu.provider = Proveedor
 master.menu.provider.favourite-link = Enlace favorito
 
 # master.menu.Student4 ####################################################
-master.menu.anonymous.sponsorships.published = Lista de patrocinios publicados
 master.menu.sponsorships.unpublished = Lista de patrocinios no publicados
 master.menu.sponsorships = Patrocinios
 master.menu.user-account.become-sponsor = Hacerse sponsor
