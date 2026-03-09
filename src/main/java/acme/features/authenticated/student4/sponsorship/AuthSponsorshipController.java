@@ -1,5 +1,5 @@
 
-package acme.features.student4.sponsor;
+package acme.features.authenticated.student4.sponsorship;
 
 import javax.annotation.PostConstruct;
 
@@ -8,16 +8,16 @@ import org.springframework.stereotype.Controller;
 
 import acme.client.components.principals.Any;
 import acme.client.controllers.AbstractController;
-import acme.realms.Sponsor;
+import acme.entities.student4.Sponsorship;
 
 @Controller
-public class SponsorController extends AbstractController<Any, Sponsor> {
+public class AuthSponsorshipController extends AbstractController<Any, Sponsorship> {
 
 	@PostConstruct
 	protected void initialise() {
 		super.setMediaType(MediaType.TEXT_HTML);
 
-		super.addBasicCommand("list", SponsorListService.class);
-		super.addBasicCommand("show", SponsorShowService.class);
+		super.addBasicCommand("list", AuthSponsorshipListService.class);
+		super.addBasicCommand("show", AuthSponsorshipShowService.class);
 	}
 }

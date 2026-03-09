@@ -1,5 +1,5 @@
 
-package acme.features.student4.donation;
+package acme.features.student4.any.donation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,12 +10,12 @@ import acme.client.services.AbstractService;
 import acme.entities.student4.Donation;
 
 @Service
-public class DonationShowService extends AbstractService<Any, Donation> {
+public class AnyDonationShowService extends AbstractService<Any, Donation> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private DonationRepository	repository;
+	private AnyDonationRepository	repository;
 
 	private Donation			donation;
 

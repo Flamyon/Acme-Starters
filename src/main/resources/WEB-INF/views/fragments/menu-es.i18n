@@ -27,7 +27,9 @@ master.menu.provider = Proveedor
 master.menu.provider.favourite-link = Enlace favorito
 
 # master.menu.Student4 ####################################################
-master.menu.sponsorships.list = Lista de patrocinios 
+master.menu.sponsorships.published = Lista de patrocinios publicados
+master.menu.sponsorships.unpublished = Lista de patrocinios no publicados
+master.menu.sponsorships = Patrocinios
 master.menu.user-account.become-sponsor = Hacerse sponsor
 
 # master.menu.consumer ##########################################################
