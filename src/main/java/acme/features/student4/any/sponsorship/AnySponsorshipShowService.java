@@ -1,17 +1,17 @@
 
-package acme.features.student4.sponsorship;
+package acme.features.student4.any.sponsorship;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.models.Tuple;
-import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.entities.student4.Sponsorship;
 import acme.entities.student4.SponsorshipRepository;
+import acme.realms.Sponsor;
 
 @Service
-public class Student4SponsorshipShowService extends AbstractService<Any, Sponsorship> {
+public class AnySponsorshipShowService extends AbstractService<Sponsor, Sponsorship> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -35,7 +35,7 @@ public class Student4SponsorshipShowService extends AbstractService<Any, Sponsor
 	public void authorise() {
 		boolean status;
 
-		status = this.sponsorship != null && !this.sponsorship.getDraftMode();
+		status = this.sponsorship != null;
 
 		super.setAuthorised(status);
 	}

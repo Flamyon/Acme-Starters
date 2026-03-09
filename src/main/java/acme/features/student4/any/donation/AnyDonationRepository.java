@@ -1,5 +1,5 @@
 
-package acme.features.student4.donation;
+package acme.features.student4.any.donation;
 
 import java.util.Collection;
 
@@ -10,7 +10,7 @@ import acme.client.repositories.AbstractRepository;
 import acme.entities.student4.Donation;
 
 @Repository
-public interface DonationRepository extends AbstractRepository {
+public interface AnyDonationRepository extends AbstractRepository {
 
 	@Query("select d from Donation d where d.sponsorship.id = :sponsorshipId")
 	Collection<Donation> findDonationsBySponsorshipId(int sponsorshipId);

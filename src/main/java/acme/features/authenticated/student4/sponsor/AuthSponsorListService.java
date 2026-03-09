@@ -1,22 +1,21 @@
 
-package acme.features.student4.sponsor;
+package acme.features.authenticated.student4.sponsor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.realms.Sponsor;
 
 @Service
-public class SponsorListService extends AbstractService<Any, Sponsor> {
+public class AuthSponsorListService extends AbstractService<Sponsor, Sponsor> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private SponsorRepository	repository;
+	private AuthSponsorRepository	repository;
 
-	private Sponsor				sponsor;
+	private Sponsor					sponsor;
 
 	// AbstractService interface -------------------------------------------
 

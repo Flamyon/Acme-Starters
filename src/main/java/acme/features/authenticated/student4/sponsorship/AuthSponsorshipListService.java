@@ -1,5 +1,5 @@
 
-package acme.features.student4.donation;
+package acme.features.authenticated.student4.sponsorship;
 
 import java.util.Collection;
 
@@ -8,27 +8,26 @@ import org.springframework.stereotype.Service;
 
 import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
-import acme.entities.student4.Donation;
+import acme.entities.student4.Sponsorship;
+import acme.entities.student4.SponsorshipRepository;
 
 @Service
-public class DonationListService extends AbstractService<Any, Donation> {
+public class AuthSponsorshipListService extends AbstractService<Any, Sponsorship> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private DonationRepository		repository;
+	private SponsorshipRepository	repository;
 
-	private Collection<Donation>	donations;
+	private Collection<Sponsorship>	sponsorships;
 
 	// AbstractService interface -------------------------------------------
 
 
 	@Override
 	public void load() {
-		int sponsorshipId;
-
-		sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
-		this.donations = this.repository.findDonationsBySponsorshipId(sponsorshipId);
+		;
+		this.sponsorships = this.repository.findPublishedSponsorships();
 	}
 
 	@Override
@@ -38,6 +37,6 @@ public class DonationListService extends AbstractService<Any, Donation> {
 
 	@Override
 	public void unbind() {
-		super.unbindObjects(this.donations, "name", "notes", "money", "kind");
+		super.unbindObjects(this.sponsorships, "ticker", "name", "description", "startMoment", "endMoment", "sponsor.identity.fullName");
 	}
 }

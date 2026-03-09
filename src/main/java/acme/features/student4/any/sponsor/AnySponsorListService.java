@@ -1,5 +1,5 @@
 
-package acme.features.student4.sponsor;
+package acme.features.student4.any.sponsor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,12 +9,12 @@ import acme.client.services.AbstractService;
 import acme.realms.Sponsor;
 
 @Service
-public class SponsorShowService extends AbstractService<Any, Sponsor> {
+public class AnySponsorListService extends AbstractService<Any, Sponsor> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private SponsorRepository	repository;
+	private AnySponsorRepository	repository;
 
 	private Sponsor				sponsor;
 
@@ -25,17 +25,13 @@ public class SponsorShowService extends AbstractService<Any, Sponsor> {
 	public void load() {
 		int id;
 
-		id = super.getRequest().getData("id", int.class);
+		id = super.getRequest().getData("sponsorshipId", int.class);
 		this.sponsor = this.repository.findSponsorById(id);
 	}
 
 	@Override
 	public void authorise() {
-		boolean status;
-
-		status = this.sponsor != null;
-
-		super.setAuthorised(status);
+		super.setAuthorised(true);
 	}
 
 	@Override
