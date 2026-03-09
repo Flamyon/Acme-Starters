@@ -20,6 +20,8 @@
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
+   			<acme:menu-suboption code="master.menu.anonymous.sponsorships.published" action="/any/sponsorship/list"/>
+			<acme:menu-suboption code="master.menu.anonymous.strategy" action="/any/strategy/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
