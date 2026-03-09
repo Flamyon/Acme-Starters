@@ -3,7 +3,7 @@ fundraiser.strategy.list.title = Strategies list
 
 fundraiser.strategy.list.label.ticker = Ticker
 fundraiser.strategy.list.label.name = Name
-fundraiser.strategy.list.label.description = Description
+
 
 fundraiser.strategy.form.label.ticker = Ticker
 fundraiser.strategy.form.label.name = Name

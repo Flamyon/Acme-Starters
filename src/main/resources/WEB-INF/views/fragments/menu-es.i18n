@@ -10,7 +10,7 @@
 
 # master.menu.anonymous #######################################################
 
-master.menu.anonymous = Anónimo
+master.menu.anonymous = Cualquiera
 master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.anonymous.strategy = Listar estrategias
 master.menu.anonymous.sponsorships.published = Lista de patrocinios publicados
