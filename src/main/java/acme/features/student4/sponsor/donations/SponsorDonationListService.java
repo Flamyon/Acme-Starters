@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.student4.donations;
+package acme.features.student4.sponsor.donations;
 
 import java.util.Collection;
 
@@ -11,14 +11,14 @@ import acme.entities.student4.Donation;
 import acme.realms.Sponsor;
 
 @Service
-public class AuthDonationListService extends AbstractService<Sponsor, Donation> {
+public class SponsorDonationListService extends AbstractService<Sponsor, Donation> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthDonationRepository	repository;
+	private SponsorDonationRepository	repository;
 
-	private Collection<Donation>	donations;
+	private Collection<Donation>		donations;
 
 	// AbstractService interface -------------------------------------------
 

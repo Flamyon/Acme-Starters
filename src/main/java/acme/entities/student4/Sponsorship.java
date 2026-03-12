@@ -92,7 +92,7 @@ public class Sponsorship extends AbstractEntity {
 
 
 	@Transient
-	public Money getTotalMoney() {
+	public Money totalMoney() {
 		Money totalMoney = new Money();
 		totalMoney.setCurrency("EUR");
 
@@ -116,7 +116,7 @@ public class Sponsorship extends AbstractEntity {
 	@Mandatory
 	@ValidNumber
 	@Transient
-	public Double getMonthsActive() {
+	public Double monthsActive() {
 
 		if (this.startMoment == null || this.endMoment == null)
 			return null;

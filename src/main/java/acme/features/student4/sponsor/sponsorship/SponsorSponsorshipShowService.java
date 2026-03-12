@@ -1,18 +1,18 @@
 
-package acme.features.authenticated.student4.sponsorship;
+package acme.features.student4.sponsor.sponsorship;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.datatypes.Money;
 import acme.client.components.models.Tuple;
-import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.entities.student4.Sponsorship;
 import acme.entities.student4.SponsorshipRepository;
+import acme.realms.Sponsor;
 
 @Service
-public class AuthSponsorshipShowService extends AbstractService<Any, Sponsorship> {
+public class SponsorSponsorshipShowService extends AbstractService<Sponsor, Sponsorship> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -59,7 +59,7 @@ public class AuthSponsorshipShowService extends AbstractService<Any, Sponsorship
 		tuple.put("totalMoney", totalMoney);
 
 		// monthsActive calculado aquí
-		months = this.sponsorship.getMonthsActive();
+		months = this.sponsorship.monthsActive();
 		tuple.put("monthsActive", months);
 	}
 }

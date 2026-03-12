@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.student4.donations;
+package acme.features.student4.sponsor.donations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,14 +10,14 @@ import acme.entities.student4.Donation;
 import acme.realms.Sponsor;
 
 @Service
-public class AuthDonationShowService extends AbstractService<Sponsor, Donation> {
+public class SponsorDonationShowService extends AbstractService<Sponsor, Donation> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthDonationRepository	repository;
+	private SponsorDonationRepository	repository;
 
-	private Donation				donation;
+	private Donation					donation;
 
 	// AbstractService interface -------------------------------------------
 
