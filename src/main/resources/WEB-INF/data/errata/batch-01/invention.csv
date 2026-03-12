@@ -1,0 +1,32 @@
+key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:inventor
+#TICKER,"","","","","","","",""
+invention-02,CM-0001,Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/06/01 10:00,2026/12/31 23:59,http://lorem.com/ipsum,true,inventor-01
+invention-03,CMP-001,Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/06/01 10:00,2026/12/31 23:59,http://lorem.com/ipsum,true,inventor-01
+invention-04,CMPP-0001,Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/06/01 10:00,2026/12/31 23:59,http://lorem.com/ipsum,true,inventor-01
+invention-05,cmp-0001,Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/06/01 10:00,2026/12/31 23:59,http://lorem.com/ipsum,true,inventor-01
+invention-06,"",Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/06/01 10:00,2026/12/31 23:59,http://lorem.com/ipsum,true,inventor-01
+#NAME,"","","","","","","",""
+invention-07,CMP-0007,,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/06/01 10:00,2026/12/31 23:59,http://lorem.com/ipsum,true,inventor-01
+invention-08,CMP-0008,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/06/01 10:00,2026/12/31 23:59,http://lorem.com/ipsum,true,inventor-01
+#DESCRIPTION,"","","","","","","",""
+invention-09,CMP-0009,Campaña Base,"",2026/06/01 10:00,2026/12/31 23:59,http://lorem.com/ipsum,true,inventor-01
+invention-10,CMP-0010,Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",2026/06/01 10:00,2026/12/31 23:59,http://lorem.com/ipsum,true,inventor-01
+#STARTMOMENT,"","","","","","","",""
+invention-11,CMP-0011,Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","",2026/12/31 23:59,http://lorem.com/ipsum,true,inventor-01
+invention-12,CMP-0012,Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",1999/12/31 23:59,2026/12/31 23:59,http://lorem.com/ipsum,true,inventor-01
+invention-13,CMP-0013,Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2027/01/01 10:00,2026/12/31 23:59,http://lorem.com/ipsum,true,inventor-01
+#ENDMOMENT,"","","","","","","",""
+invention-14,CMP-0014,Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/06/01 10:00,"",http://lorem.com/ipsum,true,inventor-01
+invention-15,CMP-0015,Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/06/01 10:00,1999/12/31 23:59,http://lorem.com/ipsum,true,inventor-01
+invention-16,CMP-0016,Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/06/01 10:00,2026/05/01 10:00,http://lorem.com/ipsum,true,inventor-01
+#MOREINFO,"","","","","","","",""
+invention-17,CMP-0017,Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/06/01 10:00,2026/12/31 23:59,http://,true,inventor-01
+invention-18,CMP-0018,Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/06/01 10:00,2026/12/31 23:59,ftp://,true,inventor-01
+invention-19,CMP-0019,Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/06/01 10:00,2026/12/31 23:59,http://a,true,inventor-01
+invention-20,CMP-0020,Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/06/01 10:00,2026/12/31 23:59,ftp://a,true,inventor-01
+invention-21,CMP-0021,Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/06/01 10:00,2026/12/31 23:59,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/x,true,inventor-01
+#DRAFTMODE,"","","","","","","",""
+invention-22,CMP-0022,Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/06/01 10:00,2026/12/31 23:59,http://lorem.com/ipsum,"",inventor-01
+#KEY:INVENTOR,"","","","","","","",""
+invention-23,CMP-0023,Campaña Base,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/06/01 10:00,2026/12/31 23:59,http://lorem.com/ipsum,true,""
+

@@ -1,0 +1,17 @@
+key,name,description,cost,kind,key:invention
+#NAME,"","","","",""
+part-01,"","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",EUR 50.0,CORE,invention-01
+part-02,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",EUR 50.0,CORE,invention-01
+#DESCRIPTION,"","","","",""
+part-03,"Lorem ipsum dolor sit amet, consectetu","",EUR 50.0,CORE,invention-01
+part-04,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",EUR 50.0,CORE,invention-01
+#COST,"","","","",""
+part-05,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","",CORE,invention-01
+part-06,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",EUR -0.01,CORE,invention-01
+part-07,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",EUR 1000000.01,CORE,invention-01
+part-08,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",USD 50.0,CORE,invention-01
+#KIND,"","","","",""
+part-09,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",EUR 50.0,,invention-01
+part-10,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",EUR 50.0,INVALID_KIND,invention-01
+#KEY:INVENTION,"","","","",""
+part-11,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",EUR 50.0,CORE,""
