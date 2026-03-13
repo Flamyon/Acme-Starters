@@ -108,8 +108,8 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 			"ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
 
 		tuple.put("draftMode", this.sponsorship.getDraftMode());
-		tuple.put("monthsActive", this.sponsorship.monthsActive());
-		tuple.put("totalMoney", this.sponsorship.totalMoney());
+		tuple.put("monthsActive", this.sponsorship.getMonthsActive());
+		tuple.put("totalMoney", this.sponsorship.getTotalMoney());
 
 	}
 }

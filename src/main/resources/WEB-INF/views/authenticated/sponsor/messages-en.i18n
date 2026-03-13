@@ -15,3 +15,10 @@ sponsor.sponsor.form.label.email = Email:
 sponsor.sponsor.form.label.address = Address:
 sponsor.sponsor.form.label.im = Instant Messaging:
 sponsor.sponsor.form.label.gold = Gold Member:
+
+authenticated.sponsor.form.title = Sponsor form
+authenticated.sponsor.form.value.true = Yes
+authenticated.sponsor.form.value.false = No
+
+authenticated.sponsor.form.button.create = Register
+authenticated.sponsor.form.button.update = Update

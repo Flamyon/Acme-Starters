@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import acme.client.services.AbstractService;
 import acme.entities.student4.Donation;
+import acme.entities.student4.Sponsorship;
 import acme.realms.Sponsor;
 
 @Service
@@ -38,6 +39,16 @@ public class SponsorDonationListService extends AbstractService<Sponsor, Donatio
 
 	@Override
 	public void unbind() {
-		super.unbindObjects(this.donations, "name", "notes", "money", "kind");
+		int sponsorshipId;
+		Sponsorship sponsorship;
+		boolean showCreate;
+
+		sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
+		sponsorship = this.repository.findSponsorshipById(sponsorshipId);
+		showCreate = sponsorship != null && sponsorship.getDraftMode() && sponsorship.getSponsor().isPrincipal();
+
+		super.getResponse().addGlobal("sponsorshipId", sponsorshipId);
+		super.getResponse().addGlobal("showCreate", showCreate);
+		super.unbindObjects(this.donations, "name", "money", "kind");
 	}
 }

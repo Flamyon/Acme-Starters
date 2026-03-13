@@ -8,22 +8,33 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+# ---------------------------------------------------------------------------
+# Sponsorship (Patrocinios)
+# ---------------------------------------------------------------------------
+
 sponsor.sponsorship.form.title = Detalles del patrocinio
 sponsor.sponsorship.list.title = Lista de patrocinios
 
-sponsor.sponsorship.form.label.ticker = Referencia:
+# Etiquetas de los campos
+sponsor.sponsorship.form.label.ticker = Ticker:
 sponsor.sponsorship.form.label.name = Nombre:
 sponsor.sponsorship.form.label.description = Descripción:
 sponsor.sponsorship.form.label.startMoment = Fecha de inicio:
 sponsor.sponsorship.form.label.endMoment = Fecha de fin:
-sponsor.sponsorship.form.label.moreInfo = Más información:
+sponsor.sponsorship.form.label.moreInfo = Más información (URL):
+sponsor.sponsorship.form.label.totalMoney = Dinero total:
+sponsor.sponsorship.form.label.monthsActive = Meses activo:
 
-sponsor.sponsorship.form.button.donations = Ver Donaciones
-sponsor.sponsorship.form.button.sponsor = Ver Perfil del Patrocinador
+# Botones de acción
+sponsor.sponsorship.form.button.donations = Ver donaciones
+sponsor.sponsorship.form.button.update = Actualizar
+sponsor.sponsorship.form.button.delete = Eliminar
+sponsor.sponsorship.form.button.publish = Publicar
+sponsor.sponsorship.form.button.create = Crear
 
-sponsor.sponsorship.list.label.ticker = Referencia
+# Etiquetas para la lista (opcional, para coherencia)
+sponsor.sponsorship.list.label.ticker = Ticker
 sponsor.sponsorship.list.label.name = Nombre
-sponsor.sponsorship.list.label.startMoment = Fecha de inicio
-sponsor.sponsorship.list.label.endMoment = Fecha de fin
-sponsor.sponsorship.form.label.monthsActive = Meses activo
-sponsor.sponsorship.form.label.totalMoney = Dinero total
+sponsor.sponsorship.list.label.startMoment = Fecha inicio
+sponsor.sponsorship.list.label.endMoment = Fecha fin
+sponsor.sponsorship.list.button.create = Crear
