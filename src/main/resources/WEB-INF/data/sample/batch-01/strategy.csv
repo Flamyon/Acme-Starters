@@ -65,11 +65,7 @@ strategy-50,ST00-Str50,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, c
 
 #KEY:FUNDRAISER,"","","","","","","",""
 strategy-51,ST00-Str51,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2027/01/01 00:00,2027/09/01 10:00,http://lorem.com/ipsum,true,fundraiser-02
-<<<<<<< HEAD
-strategy-52,ST00-Str52,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2027/01/01 00:00,2027/09/01 10:00,http://lorem.com/ipsum,true,fundraiser-03
-=======
 strategy-52,ST00-Str52,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2027/01/01 00:00,2027/09/01 10:00,http://lorem.com/ipsum,true,fundraiser-01
->>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705
 strategy-53,ST00-Str53,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2027/01/01 00:00,2027/09/01 10:00,http://lorem.com/ipsum,true,fundraiser-01
 
 #STARTMOMENT,"","","","","","","",""
