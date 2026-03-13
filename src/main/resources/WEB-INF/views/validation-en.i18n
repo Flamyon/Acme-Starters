@@ -1,0 +1,33 @@
+# validation-en.i18n
+# Global validation messages resolved by the Bean Validation message source.
+# BaseName pattern: /WEB-INF/views/**/validation*.i18n
+
+# ValidTicker
+acme.validation.ticker.message = The format must start with two uppercase letters, followed by two digits, a dash, and between 5 and 10 alphanumeric characters (e.g. AA00-ABCDE123).
+
+# ValidStrategy (class-level)
+acme.validation.strategy.message = The strategy is not valid.
+acme.validation.strategy.no-tactics.message = Cannot publish a strategy that has no tactics.
+acme.validation.strategy.ticker-duplicated.message = This ticker is already in use by another strategy.
+acme.validation.strategy.start-null.message = Start moment is required.
+acme.validation.strategy.end-null.message = End moment is required.
+acme.validation.strategy.start-not-future.message = Start moment must be in the future at publish time.
+acme.validation.strategy.end-not-future.message = End moment must be in the future at publish time.
+acme.validation.strategy.invalid-interval.message = Start moment must be before end moment.
+
+# ValidText / ValidHeader (shared across many entities)
+acme.validation.header.message = Must be between 1 and 75 characters
+acme.validation.text.message = Must be between 1 and 255 characters
+acme.validation.object.message = Invalid value.
+
+# ValidSponsorship
+acme.validation.ticker.message = Must match format XX00-XXXXX (e.g. ES22-Codigo1)
+
+acme.validation.sponsorship.duplicated-ticker.message = This ticker is already in use
+acme.validation.sponsorship.invalid-date-order.message = End date must be after start date
+acme.validation.sponsorship.date-not-future.message = Start date must be in the future
+acme.validation.sponsorship.missing-donations.message = A sponsorship must have at least one donation to be published
+acme.validation.sponsorship.dates.error = End date must be after start date
+acme.validation.sponsorship.startMoment.future = Start date must be in the future
+acme.validation.sponsorship.endMoment.future = End date must be in the future
+acme.validation.sponsorship.donations.error = Must have at least one donation to publish

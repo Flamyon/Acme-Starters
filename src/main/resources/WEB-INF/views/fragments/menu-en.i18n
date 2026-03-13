@@ -10,8 +10,16 @@
 
 # master.menu.anonymous #######################################################
 
+<<<<<<< HEAD
 master.menu.anonymous = Anonymous
 master.menu.anonymous.favourite-link = Favourite link
+=======
+master.menu.anonymous = Any
+master.menu.anonymous.favourite-link = Favourite link
+master.menu.anonymous.strategy = List strategies
+master.menu.anonymous.sponsorships.published = Published sponsorships list
+
+>>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705
 
 # master.menu.administrator ###################################################
 
@@ -26,9 +34,19 @@ master.menu.administrator.shut-system-down = Shut system down
 master.menu.provider = Provider
 master.menu.provider.favourite-link = Favourite link
 
+<<<<<<< HEAD
 # master.menu.Student4 ####################################################
 master.menu.sponsorships.published = Published sponsorships list
 master.menu.sponsorships.unpublished =Unpublished sponsorships list
+=======
+# master.menu.fundraiser ##########################################################
+
+master.menu.fundraiser = Fundraiser
+master.menu.fundraiser.strategy.list = My Strategies
+
+# master.menu.Student4 ####################################################
+master.menu.sponsorships.unpublished = Unpublished sponsorships list
+>>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705
 master.menu.sponsorships = Sponsorships
 master.menu.user-account.become-sponsor = Became sponsor
 master.menu.sponsor = Sponsor
@@ -46,3 +64,8 @@ master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.provider-profile = Provider profile
 master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.consumer-profile = Consumer profile
+<<<<<<< HEAD
+=======
+master.menu.user-account.become-fundraiser = Become a fundraiser
+master.menu.user-account.fundraiser-profile = Fundraiser profile
+>>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705

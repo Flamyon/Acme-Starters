@@ -16,7 +16,18 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
+<<<<<<< HEAD
 	<acme:list-column code="sponsor.donation.list.label.name" path="name" width="40%"/>
 	<acme:list-column code="sponsor.donation.list.label.money" path="money" width="30%"/>
 	<acme:list-column code="sponsor.donation.list.label.kind" path="kind" width="30%"/>
 </acme:list>
+=======
+	<acme:list-column code="sponsor.donation.list.label.name"  path="name"  width="40%"/>
+	<acme:list-column code="sponsor.donation.list.label.money" path="money" width="30%"/>
+	<acme:list-column code="sponsor.donation.list.label.kind"  path="kind"  width="30%"/>
+</acme:list>
+
+<jstl:if test="${showCreate == true}">
+	<acme:button code="sponsor.donation.list.button.create" action="/sponsor/donation/create?sponsorshipId=${sponsorshipId}"/>
+</jstl:if>
+>>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705

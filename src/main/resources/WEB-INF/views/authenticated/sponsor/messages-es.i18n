@@ -1,0 +1,28 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2026 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+sponsor.sponsor.form.title = Perfil del Patrocinador
+sponsor.sponsor.form.label.name = Nombre:
+sponsor.sponsor.form.label.surname = Apellidos:
+sponsor.sponsor.form.label.email = Correo electrónico:
+sponsor.sponsor.form.label.address = Dirección:
+sponsor.sponsor.form.label.im = Mensajería instantánea:
+<<<<<<< HEAD:src/main/resources/WEB-INF/views/sponsor/sponsor/messages-es.i18n
+sponsor.sponsor.form.label.gold = Miembro Gold:
+=======
+sponsor.sponsor.form.label.gold = Miembro Gold:
+
+authenticated.sponsor.form.title = Detalles de patrocinador
+authenticated.sponsor.form.value.true = Si
+authenticated.sponsor.form.value.false = No
+
+authenticated.sponsor.form.button.create = Registrar
+authenticated.sponsor.form.button.update = Actualizar
+>>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705:src/main/resources/WEB-INF/views/authenticated/sponsor/messages-es.i18n

@@ -17,8 +17,19 @@
 
 <acme:list>
 	<acme:list-column code="sponsor.sponsorship.list.label.ticker" path="ticker" width="15%"/>
+<<<<<<< HEAD
 	<acme:list-column code="sponsor.sponsorship.list.label.name" path="name" width="45%"/>
 	<acme:list-column code="sponsor.sponsorship.list.label.startMoment" path="startMoment" width="20%"/>
 	<acme:list-column code="sponsor.sponsorship.list.label.endMoment" path="endMoment" width="20%"/>
 	<acme:list-hidden path="sponsor.identity.fullName"/>
 </acme:list>
+=======
+	<acme:list-column code="sponsor.sponsorship.list.label.name" path="name" width="40%"/>
+	<acme:list-column code="sponsor.sponsorship.list.label.startMoment" path="startMoment" width="18%"/>
+	<acme:list-column code="sponsor.sponsorship.list.label.endMoment" path="endMoment" width="18%"/>
+	<acme:list-column code="sponsor.sponsorship.list.label.draftMode"   path="draftMode"   width="9%"/>
+	<acme:list-hidden path="sponsor.identity.fullName"/>
+</acme:list>
+
+<acme:button code="sponsor.sponsorship.list.button.create" action="/sponsor/sponsorship/create"/>
+>>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705

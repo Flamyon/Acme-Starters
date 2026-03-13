@@ -20,4 +20,14 @@ sponsor.donation.form.label.money = Amount donated:
 sponsor.donation.form.label.kind = Donation type:
 sponsor.donation.form.label.notes = Additional notes:
 
+<<<<<<< HEAD
 sponsor.donation.form.button.return = Back to list
+=======
+sponsor.donation.form.button.return = Back to list
+
+sponsor.donation.list.button.create = New donation
+
+sponsor.donation.form.button.create = Create
+sponsor.donation.form.button.update = Update
+sponsor.donation.form.button.delete = Delete
+>>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705

@@ -10,8 +10,15 @@
 
 # master.menu.anonymous #######################################################
 
+<<<<<<< HEAD
 master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
+=======
+master.menu.anonymous = Cualquiera
+master.menu.anonymous.favourite-link = Enlace favorito
+master.menu.anonymous.strategy = Listar estrategias
+master.menu.anonymous.sponsorships.published = Lista de patrocinios publicados
+>>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705
 
 # master.menu.administrator ###################################################
 
@@ -26,8 +33,17 @@ master.menu.administrator.shut-system-down = Parar el sistema
 master.menu.provider = Proveedor
 master.menu.provider.favourite-link = Enlace favorito
 
+<<<<<<< HEAD
 # master.menu.Student4 ####################################################
 master.menu.sponsorships.published = Lista de patrocinios publicados
+=======
+# master.menu.fundraiser ##########################################################
+
+master.menu.fundraiser = Recaudador
+master.menu.fundraiser.strategy.list = Mis estrategias
+
+# master.menu.Student4 ####################################################
+>>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705
 master.menu.sponsorships.unpublished = Lista de patrocinios no publicados
 master.menu.sponsorships = Patrocinios
 master.menu.user-account.become-sponsor = Hacerse sponsor
@@ -45,3 +61,8 @@ master.menu.user-account.become-provider = Hacerse proveedor
 master.menu.user-account.provider-profile = Perfil de proveedor
 master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.consumer-profile = Perfil de consumidor
+<<<<<<< HEAD
+=======
+master.menu.user-account.become-fundraiser = Hazte recaudador
+master.menu.user-account.fundraiser-profile = Perfil de recaudador
+>>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705
