@@ -20,8 +20,4 @@
 	<acme:list-column code="any.sponsorship.list.label.name" path="name" width="45%"/>
 	<acme:list-column code="any.sponsorship.list.label.startMoment" path="startMoment" width="20%"/>
 	<acme:list-column code="any.sponsorship.list.label.endMoment" path="endMoment" width="20%"/>
-<<<<<<< HEAD
-	<acme:list-hidden path="sponsor.identity.fullName"/>
-=======
->>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705
 </acme:list>

@@ -11,20 +11,10 @@
 --%>
 
 <%@page%>
-<<<<<<< HEAD
-
-=======
->>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-<<<<<<< HEAD
-	<acme:form-textbox code="sponsor.donation.form.label.name" path="name"/>
-	<acme:form-money code="sponsor.donation.form.label.money" path="money"/>	
-	<acme:form-textbox code="sponsor.donation.form.label.kind" path="kind"/>
-	<acme:form-textarea code="sponsor.donation.form.label.notes" path="notes"/>
-=======
     <acme:form-textbox code="sponsor.donation.form.label.name" path="name"/>
     <acme:form-money code="sponsor.donation.form.label.money" path="money"/>
     <acme:form-select code="sponsor.donation.form.label.kind" path="kind" choices="${kinds}"/>
@@ -43,5 +33,4 @@
                          action="/sponsor/donation/create?sponsorshipId=${sponsorshipId}"/>
         </jstl:when>
     </jstl:choose>
->>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705
 </acme:form>
