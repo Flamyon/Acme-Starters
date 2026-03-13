@@ -1,0 +1,21 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2026 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+any.auditSection.list.title = Lista de Secciones de Auditoría
+any.auditSection.form.title = Secciones de Auditoría
+
+any.auditSection.list.label.name = Nombre
+any.auditSection.list.label.hours = Horas
+any.auditSection.list.label.kind = Tipo
+
+any.auditSection.form.label.name = Nombre
+any.auditSection.form.label.notes = Notas
+any.auditSection.form.label.hours = Horas
+any.auditSection.form.label.kind = Tipo
