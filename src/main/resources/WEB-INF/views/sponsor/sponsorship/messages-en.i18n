@@ -37,6 +37,7 @@ sponsor.sponsorship.list.label.ticker = Ticker
 sponsor.sponsorship.list.label.name = Name
 sponsor.sponsorship.list.label.startMoment = Start Date
 sponsor.sponsorship.list.label.endMoment = End Date
+sponsor.sponsorship.list.label.draftMode = Draft
 
 # Action Buttons
 # -------------------------------------------------------------------

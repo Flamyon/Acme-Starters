@@ -34,7 +34,16 @@ public class SponsorDonationListService extends AbstractService<Sponsor, Donatio
 
 	@Override
 	public void authorise() {
-		super.setAuthorised(true);
+		boolean status;
+		int sponsorshipId;
+		Sponsorship sponsorship;
+
+		sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
+		sponsorship = this.repository.findSponsorshipById(sponsorshipId);
+
+		status = sponsorship != null && sponsorship.getSponsor().isPrincipal();
+
+		super.setAuthorised(status);
 	}
 
 	@Override

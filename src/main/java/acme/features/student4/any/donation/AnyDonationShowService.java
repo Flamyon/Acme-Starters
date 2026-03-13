@@ -17,7 +17,7 @@ public class AnyDonationShowService extends AbstractService<Any, Donation> {
 	@Autowired
 	private AnyDonationRepository	repository;
 
-	private Donation			donation;
+	private Donation				donation;
 
 	// AbstractService interface -------------------------------------------
 

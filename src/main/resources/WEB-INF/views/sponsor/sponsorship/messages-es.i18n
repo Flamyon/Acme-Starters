@@ -37,4 +37,6 @@ sponsor.sponsorship.list.label.ticker = Ticker
 sponsor.sponsorship.list.label.name = Nombre
 sponsor.sponsorship.list.label.startMoment = Fecha inicio
 sponsor.sponsorship.list.label.endMoment = Fecha fin
-sponsor.sponsorship.list.button.create = Crear
+sponsor.sponsorship.list.button.create = Crear patrocinio
+sponsor.sponsorship.list.label.draftMode = Borrador
+
