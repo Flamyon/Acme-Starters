@@ -21,3 +21,9 @@ sponsor.donation.form.label.kind = Donation type:
 sponsor.donation.form.label.notes = Additional notes:
 
 sponsor.donation.form.button.return = Back to list
+
+sponsor.donation.list.button.create = New donation
+
+sponsor.donation.form.button.create = Create
+sponsor.donation.form.button.update = Update
+sponsor.donation.form.button.delete = Delete

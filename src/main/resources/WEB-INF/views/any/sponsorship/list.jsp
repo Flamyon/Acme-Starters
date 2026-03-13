@@ -20,5 +20,4 @@
 	<acme:list-column code="any.sponsorship.list.label.name" path="name" width="45%"/>
 	<acme:list-column code="any.sponsorship.list.label.startMoment" path="startMoment" width="20%"/>
 	<acme:list-column code="any.sponsorship.list.label.endMoment" path="endMoment" width="20%"/>
-	<acme:list-hidden path="sponsor.identity.fullName"/>
 </acme:list>

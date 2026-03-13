@@ -1,23 +1,25 @@
 
-package acme.features.authenticated.student4.donations;
+package acme.features.student4.sponsor.donations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.models.Tuple;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
 import acme.entities.student4.Donation;
+import acme.entities.student4.DonationKind;
 import acme.realms.Sponsor;
 
 @Service
-public class AuthDonationShowService extends AbstractService<Sponsor, Donation> {
+public class SponsorDonationShowService extends AbstractService<Sponsor, Donation> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthDonationRepository	repository;
+	private SponsorDonationRepository	repository;
 
-	private Donation				donation;
+	private Donation					donation;
 
 	// AbstractService interface -------------------------------------------
 
@@ -34,7 +36,7 @@ public class AuthDonationShowService extends AbstractService<Sponsor, Donation> 
 	public void authorise() {
 		boolean status;
 
-		status = this.donation != null;
+		status = this.donation != null && this.donation.getSponsorship().getSponsor().isPrincipal();
 
 		super.setAuthorised(status);
 	}
@@ -42,9 +44,13 @@ public class AuthDonationShowService extends AbstractService<Sponsor, Donation> 
 	@Override
 	public void unbind() {
 		Tuple tuple;
-		tuple = super.unbindObject(this.donation, "name", "notes", "money", "kind");
-		int sponsorshipId = this.donation.getSponsorship().getId();
-		tuple.put("sponsorshipId", sponsorshipId);
+		SelectChoices choices;
 
+		choices = SelectChoices.from(DonationKind.class, this.donation.getKind());
+
+		tuple = super.unbindObject(this.donation, "name", "notes", "money", "kind");
+		tuple.put("sponsorshipId", this.donation.getSponsorship().getId());
+		tuple.put("draftMode", this.donation.getSponsorship().getDraftMode());
+		tuple.put("kinds", choices);
 	}
 }

@@ -1,17 +1,16 @@
 
-package acme.features.student4.any.sponsorship;
+package acme.features.student4.sponsor.sponsorship;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.components.models.Tuple;
-import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.entities.student4.Sponsorship;
 import acme.entities.student4.SponsorshipRepository;
+import acme.realms.Sponsor;
 
 @Service
-public class AnySponsorshipShowService extends AbstractService<Any, Sponsorship> {
+public class SponsorSponsorshipShowService extends AbstractService<Sponsor, Sponsorship> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -35,17 +34,19 @@ public class AnySponsorshipShowService extends AbstractService<Any, Sponsorship>
 	public void authorise() {
 		boolean status;
 
-		status = this.sponsorship != null;
+		// Owner always sees it; others only see published ones
+		status = this.sponsorship != null && //
+			(this.sponsorship.getSponsor().isPrincipal() || !this.sponsorship.getDraftMode());
 
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		Tuple tuple;
 
-		tuple = super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
+		super.unbindObject(this.sponsorship, //
+			"ticker", "name", "description", "startMoment", "endMoment", "moreInfo", //
+			"draftMode", "monthsActive", "totalMoney");
 
-		tuple.put("sponsorId", this.sponsorship.getSponsor().getId());
 	}
 }
