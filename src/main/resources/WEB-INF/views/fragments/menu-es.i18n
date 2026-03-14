@@ -26,6 +26,10 @@ master.menu.administrator.shut-system-down = Parar el sistema
 master.menu.provider = Proveedor
 master.menu.provider.favourite-link = Enlace favorito
 
+# master.menu.Student2 ####################################################
+master.menu.campaigns.list = Lista de campañas
+master.menu.user-account.become-spokesperson = Convertirse en portavoz
+
 # master.menu.Student4 ####################################################
 master.menu.sponsorships.list = Lista de patrocinios 
 master.menu.user-account.become-sponsor = Hacerse sponsor

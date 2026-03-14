@@ -1,9 +1,9 @@
 key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:spokesperson
 #BASE,"","","","","","","",""
-campaign-01,CP22-00001,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/01 0:00,2025/09/01 10:00,http://lorem.com/ipsum,true,spokesperson-01
+campaign-01,CP22-00001,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/01 0:00,2025/09/01 10:00,http://lorem.com/ipsum,false,spokesperson-01
 #TICKER,"","","","","","","",""
-campaign-02,CP22-00002,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/01 0:00,2025/09/01 10:00,http://lorem.com/ipsum,true,spokesperson-01
-campaign-03,AB10-user_99,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/01 0:00,2025/09/01 10:00,http://lorem.com/ipsum,true,spokesperson-01
+campaign-02,CP22-00002,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/01 0:00,2025/09/01 10:00,http://lorem.com/ipsum,false,spokesperson-01
+campaign-03,AB10-user_99,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/01 0:00,2025/09/01 10:00,http://lorem.com/ipsum,false,spokesperson-01
 campaign-04,ZY88-123456,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/01 0:00,2025/09/01 10:00,http://lorem.com/ipsum,true,spokesperson-01
 campaign-05,RE00-Password,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/01 0:00,2025/09/01 10:00,http://lorem.com/ipsum,true,spokesperson-01
 #NAME,"","","","","","","",""

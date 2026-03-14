@@ -19,8 +19,10 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidCampaign;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
+import acme.features.student2.any.campaign.CampaignRepository;
 import lombok.Getter;
 import lombok.Setter;
 

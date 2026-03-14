@@ -40,6 +40,7 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.sponsorships.list" access="permitAll()" action="/any/sponsorship/list"/>
+		<acme:menu-option code="master.menu.campaigns.list" access="permitAll()" action="/any/campaign/list"/>
 	</acme:menu-left>
 
 	<acme:menu-right>		
@@ -49,6 +50,7 @@
         <acme:menu-suboption code="master.menu.user-account.provider-profile" action="/authenticated/provider/update" access="hasRealm('Provider')"/>
         <acme:menu-suboption code="master.menu.user-account.become-sponsor" action="/student4/sponsor/create" access="!hasRealm('Sponsor')"/>
         <acme:menu-suboption code="master.menu.user-account.sponsor-profile" action="/student4/sponsor/update" access="hasRealm('Sponsor')"/>
+		<acme:menu-suboption code="master.menu.user-account.become-spokesperson" action="/student2/spokesperson/create" access="!hasRealm('Spokesperson')"/>
     </acme:menu-option>
 </acme:menu-right>
 </acme:menu-bar>

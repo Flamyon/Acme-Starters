@@ -1,5 +1,5 @@
 
-package acme.entities.student2;
+package acme.constraints;
 
 import javax.validation.ConstraintValidatorContext;
 
@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
+import acme.entities.student2.Campaign;
+import acme.features.student2.any.campaign.CampaignRepository;
 
 @Validator
 public class CampaignValidator extends AbstractValidator<ValidCampaign, Campaign> {

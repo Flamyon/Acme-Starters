@@ -1,0 +1,13 @@
+any.spokesperson.form.title = Spokesperson details
+any.spokesperson.list.title = Spokesperson list
+
+any.spokesperson.form.label.name = Name:
+any.spokesperson.form.label.surname = Surname:
+any.spokesperson.form.label.email = Email:
+any.spokesperson.form.label.cv = CV (URL):
+any.spokesperson.form.label.achievements = Achievements:
+any.spokesperson.form.label.licensed = Licensed:
+
+any.spokesperson.list.label.fullName = Full Name
+any.spokesperson.list.label.licensed = Licensed
+any.spokesperson.list.label.email = Email

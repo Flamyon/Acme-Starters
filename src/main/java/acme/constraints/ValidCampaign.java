@@ -1,5 +1,5 @@
 
-package acme.entities.student2;
+package acme.constraints;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
