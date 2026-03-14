@@ -19,3 +19,8 @@ acme.validation.strategy.invalid-interval.message = La fecha de inicio debe ser 
 acme.validation.text.message = El texto es demasiado largo (máx. 255 caracteres).
 acme.validation.header.message = La cabecera es demasiado larga (máx. 75 caracteres).
 acme.validation.object.message = Valor no válido.
+acme.validation.invention.no-parts.message = No se puede publicar una invencion sin partes.
+acme.validation.invention.start-not-future.message = La fecha de inicio debe estar en el futuro en el momento de publicacion.
+acme.validation.invention.end-not-future.message = La fecha de fin debe estar en el futuro en el momento de publicacion.
+acme.validation.invention.invalid-interval.message = La fecha de inicio debe ser anterior a la fecha de fin.
+

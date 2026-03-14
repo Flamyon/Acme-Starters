@@ -19,3 +19,6 @@ user-account-fundraiser-01,true,"UserIdentity{name: 'Frank', surname: 'Fundraise
 user-account-fundraiser-02,true,"UserIdentity{name: 'Sarah', surname: 'Writer', email: 'sarah@acme.com'}",fundraiser2,fundraiser2
 user-account-fundraiser-03,true,"UserIdentity{name: 'David', surname: 'Smith', email: 'david@acme.com'}",fundraiser3,fundraiser3
 user-account-fundraiser-04,true,"UserIdentity{name: 'New', surname: 'Fundraiser4', email: 'fund4@acme.com'}",fundraiser4,fundraiser4
+user-account-inventor-01,true,"UserIdentity{name: 'New', surname: 'Inventor1', email: 'inv1@acme.com'}",inventor1,inventor1
+user-account-inventor-02,true,"UserIdentity{name: 'New', surname: 'Inventor2', email: 'inv2@acme.com'}",inventor2,inventor2
+user-account-inventor-03,true,"UserIdentity{name: 'New', surname: 'Inventor3', email: 'inv3@acme.com'}",inventor3,inventor3

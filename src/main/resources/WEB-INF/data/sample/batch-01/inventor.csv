@@ -1,4 +1,4 @@
 key,key:userAccount,bio,keyWords,licensed
-inventor-01,user-account-consumer-01,"Licenciado en Periodismo.","Ganador del premio 2023.",true
-inventor-02,user-account-consumer-02,"Experto en RRPP.","Más de 50 campañas.",true
-inventor-03,user-account-consumer-03,"Especialista digital.","Crecimiento del 200%.",false
+inventor-01,user-account-inventor-01,"Licenciado en Periodismo.","Ganador del premio 2023.",true
+inventor-02,user-account-inventor-02,"Experto en RRPP.","Mas de 50 campanas.",true
+inventor-03,user-account-inventor-03,"Especialista digital.","Crecimiento del 200%.",false

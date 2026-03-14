@@ -13,6 +13,7 @@
 master.menu.anonymous = Any
 master.menu.anonymous.favourite-link = Favourite link
 master.menu.anonymous.strategy = List strategies
+master.menu.anonymous.invention = List inventions
 master.menu.anonymous.sponsorships.published = Published sponsorships list
 
 
@@ -33,6 +34,11 @@ master.menu.provider.favourite-link = Favourite link
 
 master.menu.fundraiser = Fundraiser
 master.menu.fundraiser.strategy.list = My Strategies
+
+# master.menu.inventor ##########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.invention.list = My Inventions
 
 # master.menu.Student4 ####################################################
 master.menu.sponsorships.unpublished = Unpublished sponsorships list
@@ -55,3 +61,9 @@ master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.consumer-profile = Consumer profile
 master.menu.user-account.become-fundraiser = Become a fundraiser
 master.menu.user-account.fundraiser-profile = Fundraiser profile
+master.menu.user-account.become-inventor = Become an inventor
+master.menu.user-account.inventor-profile = Inventor profile
+
+
+
+
