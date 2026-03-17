@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.entities.student4.Donation;
+import acme.entities.student4.Sponsorship;
 
 @Service
 public class AnyDonationListService extends AbstractService<Any, Donation> {
@@ -16,9 +17,11 @@ public class AnyDonationListService extends AbstractService<Any, Donation> {
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AnyDonationRepository		repository;
+	private AnyDonationRepository	repository;
 
 	private Collection<Donation>	donations;
+
+	private Sponsorship				sponsorship;
 
 	// AbstractService interface -------------------------------------------
 
@@ -28,12 +31,17 @@ public class AnyDonationListService extends AbstractService<Any, Donation> {
 		int sponsorshipId;
 
 		sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
+		this.sponsorship = this.repository.findSponsorshipById(sponsorshipId);
 		this.donations = this.repository.findDonationsBySponsorshipId(sponsorshipId);
 	}
 
 	@Override
 	public void authorise() {
-		super.setAuthorised(true);
+		boolean status;
+
+		status = this.sponsorship != null && !this.sponsorship.getDraftMode();
+
+		super.setAuthorised(status);
 	}
 
 	@Override

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.entities.student4.Sponsorship;
-import acme.entities.student4.SponsorshipRepository;
 
 @Service
 public class AnySponsorshipListService extends AbstractService<Any, Sponsorship> {
@@ -17,9 +16,9 @@ public class AnySponsorshipListService extends AbstractService<Any, Sponsorship>
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private SponsorshipRepository	repository;
+	private AnySponsorshipRepository	repository;
 
-	private Collection<Sponsorship>	sponsorships;
+	private Collection<Sponsorship>		sponsorships;
 
 	// AbstractService interface -------------------------------------------
 
