@@ -33,3 +33,14 @@ acme.validation.sponsorship.startMoment.future = La fecha de inicio debe ser fut
 acme.validation.sponsorship.endMoment.future = La fecha de fin debe ser futura
 acme.validation.sponsorship.donations.error = Debe tener al menos una donación para publicarse
 acme.validation.money.eur.error = Debe ser en EUR
+
+
+# ValidAuditReport
+
+acme.validation.ticker.message = Must match format XX00-XXXXX (e.g. ES94-00009)
+
+acme.validation.auditReport.duplicated-ticker.message = Este ticker ya está en uso
+acme.validation.auditReport.invalid-date-order.message = La fecha de fin debe ser posterior a la de inicio
+acme.validation.auditReport.date-not-future.message = La fecha de inicio debe ser futura
+acme.validation.auditReport.no-auditSections.message = Un reporte debe tener al menos una sección para poder publicarse
+acme.validation.auditReport.invalid-interval.message = La fecha de fin debe ser posterior a la de inicio

@@ -14,6 +14,7 @@ master.menu.anonymous = Cualquiera
 master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.anonymous.strategy = Listar estrategias
 master.menu.anonymous.sponsorships.published = Lista de patrocinios publicados
+master.menu.anonymous.audit-report = Lista reportes de auditoría
 
 # master.menu.administrator ###################################################
 
@@ -38,6 +39,12 @@ master.menu.sponsorships.unpublished = Lista de patrocinios no publicados
 master.menu.sponsorships = Patrocinios
 master.menu.user-account.become-sponsor = Hacerse sponsor
 
+# master.menu.auditor ####################################################
+
+master.menu.auditor = Reportes de Auditoría
+master.menu.user-account.become-auditor = Hazte auditor
+master.menu.auditor.audit-report.list = Lista de Reportes
+
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumidor
@@ -53,3 +60,5 @@ master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.consumer-profile = Perfil de consumidor
 master.menu.user-account.become-fundraiser = Hazte recaudador
 master.menu.user-account.fundraiser-profile = Perfil de recaudador
+master.menu.user-account.become-auditor = Hazte auditor
+master.menu.user-account.auditor-profile = Perfil de auditor

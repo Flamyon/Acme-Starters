@@ -19,3 +19,7 @@ user-account-fundraiser-01,true,"UserIdentity{name: 'Frank', surname: 'Fundraise
 user-account-fundraiser-02,true,"UserIdentity{name: 'Sarah', surname: 'Writer', email: 'sarah@acme.com'}",fundraiser2,fundraiser2
 user-account-fundraiser-03,true,"UserIdentity{name: 'David', surname: 'Smith', email: 'david@acme.com'}",fundraiser3,fundraiser3
 user-account-fundraiser-04,true,"UserIdentity{name: 'New', surname: 'Fundraiser4', email: 'fund4@acme.com'}",fundraiser4,fundraiser4
+user-account-auditor-01,true,"UserIdentity{name: 'Peter', surname: 'Parker', email: 'parker@acme.com'}",auditor1,auditor1
+user-account-auditor-02,true,"UserIdentity{name: 'Lois', surname: 'Griffin', email: 'griffin@acme.com'}",auditor2,auditor2
+user-account-auditor-03,true,"UserIdentity{name: 'Mr', surname: 'Robot', email: 'robot@acme.com'}",auditor3,auditor3
+user-account-auditor-04,true,"UserIdentity{name: 'Morgan', surname: 'Freeman', email: 'freeman@acme.com'}",auditor4,auditor4

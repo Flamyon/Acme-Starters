@@ -14,6 +14,7 @@ master.menu.anonymous = Any
 master.menu.anonymous.favourite-link = Favourite link
 master.menu.anonymous.strategy = List strategies
 master.menu.anonymous.sponsorships.published = Published sponsorships list
+master.menu.anonymous.audit-report = Published Audit Reports
 
 
 # master.menu.administrator ###################################################
@@ -40,6 +41,12 @@ master.menu.sponsorships = Sponsorships
 master.menu.user-account.become-sponsor = Became sponsor
 master.menu.sponsor = Sponsor
 
+# master.menu.auditor ####################################################
+
+master.menu.auditor = Audit Reports
+master.menu.user-account.become-auditor = Become auditor
+master.menu.auditor.audit-report.list = My Audit Reports
+
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumer
@@ -55,3 +62,5 @@ master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.consumer-profile = Consumer profile
 master.menu.user-account.become-fundraiser = Become a fundraiser
 master.menu.user-account.fundraiser-profile = Fundraiser profile
+master.menu.user-account.become-auditor = Become an auditor
+master.menu.user-account.auditor-profile = Auditor profile

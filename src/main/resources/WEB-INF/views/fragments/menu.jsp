@@ -22,6 +22,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
    			<acme:menu-suboption code="master.menu.anonymous.sponsorships.published" action="/any/sponsorship/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.strategy" action="/any/strategy/list"/>
+			<acme:menu-suboption code="master.menu.anonymous.audit-report" action="/any/audit-report/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
@@ -48,6 +49,10 @@
 		<acme:menu-option code="master.menu.fundraiser" access="hasRealm('Fundraiser')">
 			<acme:menu-suboption code="master.menu.fundraiser.strategy.list" action="/fundraiser/strategy/list"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.auditor" access="hasRealm('Auditor')">
+			<acme:menu-suboption code="master.menu.auditor.audit-report.list" action="/auditor/audit-report/list"/>
+		</acme:menu-option>
 
 	</acme:menu-left>
 
@@ -60,8 +65,11 @@
         <acme:menu-suboption code="master.menu.user-account.sponsor-profile" action="/authenticated/sponsor/update" access="hasRealm('Sponsor')"/>
 		<acme:menu-suboption code="master.menu.user-account.become-fundraiser" action="/authenticated/fundraiser/create" access="!hasRealm('Fundraiser')"/>
 		<acme:menu-suboption code="master.menu.user-account.fundraiser-profile" action="/authenticated/fundraiser/update" access="hasRealm('Fundraiser')"/>
+		<acme:menu-suboption code="master.menu.user-account.become-auditor" action="/authenticated/auditor/create" access="!hasRealm('Auditor')"/>
+		<acme:menu-suboption code="master.menu.user-account.auditor-profile" action="/authenticated/auditor/update" access="hasRealm('Auditor')"/>
 			
     </acme:menu-option>
 </acme:menu-right>
 </acme:menu-bar>
+
 
