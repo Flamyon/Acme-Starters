@@ -23,10 +23,10 @@ public interface CampaignRepository extends AbstractRepository {
 	@Query("select c from Campaign c where c.ticker = :ticker")
 	Campaign findByTicker(String ticker);
 
+	// --- Tus consultas adicionales de HEAD ---
 	@Query("select c from Campaign c where c.draftMode = false")
 	Collection<Campaign> findPublishedCampaigns();
 
 	@Query("select c from Campaign c where c.id = :id")
 	Campaign findCampaignById(int id);
-
 }

@@ -9,7 +9,7 @@
 # they accept any liabilities with respect to them.
 
 any.sponsorship.form.title = Detalles del patrocinio
-any.sponsorship.list.title = Lista de patrocinios
+any.sponsorship.list.title = Lista de patrocinios publicados
 
 any.sponsorship.form.label.ticker = Referencia:
 any.sponsorship.form.label.name = Nombre:
@@ -25,3 +25,5 @@ any.sponsorship.list.label.ticker = Referencia
 any.sponsorship.list.label.name = Nombre
 any.sponsorship.list.label.startMoment = Fecha de inicio
 any.sponsorship.list.label.endMoment = Fecha de fin
+any.sponsorship.form.label.monthsActive = Meses activo
+any.sponsorship.form.label.totalMoney = Dinero total

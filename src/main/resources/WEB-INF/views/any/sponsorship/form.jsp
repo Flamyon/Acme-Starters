@@ -22,6 +22,8 @@
 	<acme:form-moment code="any.sponsorship.form.label.startMoment" path="startMoment" readonly="true"/>
 	<acme:form-moment code="any.sponsorship.form.label.endMoment" path="endMoment" readonly="true"/>
 	<acme:form-url code="any.sponsorship.form.label.moreInfo" path="moreInfo" readonly="true"/>
+	<acme:form-money code="any.sponsorship.form.label.totalMoney" path="totalMoney" readonly="true"/>
+    <acme:form-double code="any.sponsorship.form.label.monthsActive" path="monthsActive" readonly="true"/>
 	<acme:button code="any.sponsorship.form.button.donations" action="/any/donation/list?sponsorshipId=${id}"/>
 	<acme:button code="any.sponsorship.form.button.sponsor" action="/any/sponsor/show?id=${sponsorId}"/>
 </acme:form>

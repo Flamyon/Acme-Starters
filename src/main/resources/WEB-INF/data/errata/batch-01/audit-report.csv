@@ -1,0 +1,37 @@
+key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:auditor
+#BASE,"","","","","","","",""
+audit-report-01,AR15-00001,report name,report's description,2026/01/01 0:00,2026/09/01 10:00,http://loquesea/si,true,auditor-01
+#TICKER,"","","","","","","",""
+audit-report-02,,report name,report's description,2026/01/01 0:00,2026/09/01 10:00,http://loquesea/si,true,auditor-01
+audit-report-03,ar15-Arbol,report name,report's description,2026/01/01 0:00,2026/09/01 10:00,http://loquesea/si,true,auditor-01
+audit-report-04,AR1-Arbol,report name,report's description,2026/01/01 0:00,2026/09/01 10:00,http://loquesea/si,true,auditor-01
+audit-report-05,AR15-Palo,report name,report's description,2026/01/01 0:00,2026/09/01 10:00,http://loquesea/si,true,auditor-01
+audit-report-06,AR15-Conglomerados,report name,report's description,2026/01/01 0:00,2026/09/01 10:00,http://loquesea/si,true,auditor-01
+#NAME,"","","","","","","",""
+audit-report-07,AR15-00007,,report's description,2026/01/01 0:00,2026/09/01 10:00,http://loquesea/si,true,auditor-01
+audit-report-08,AR15-00008,Unnecessarily big name just to pass the characters limit and break the matrix to save the world,report's description,2026/01/01 0:00,2026/09/01 10:00,http://loquesea/si,true,auditor-01
+#DESCRIPTION,"","","","","","","",""
+audit-report-09,AR15-00009,report name,,2026/01/01 0:00,2026/09/01 10:00,http://loquesea/si,true,auditor-01
+audit-report-10,AR15-00010,report name,"O Romeo, Romeo, wherefore art thou Romeo? Deny thy father and refuse thy name. Or if thou wilt not, be but sworn my love And I’ll no longer be a Capulet. ‘Tis but thy name that is my enemy: Thou art thyself, though not a Montague.",2026/01/01 0:00,2026/09/01 10:00,http://loquesea/si,true,auditor-01
+#STARTMOMENT,"","","","","","","",""
+audit-report-11,AR15-00011,report name,report's description,,2026/09/01 10:00,http://loquesea/si,true,auditor-01
+audit-report-12,AR15-00012,report name,report's description,1999/12/31 23:59,2026/09/01 10:00,http://loquesea/si,true,auditor-01
+audit-report-13,AR15-00013,report name,report's description,2027/01/01 10:00,2026/09/01 10:00,http://loquesea/si,true,auditor-01
+#ENDMOMENT,"","","","","","","",""
+audit-report-14,AR15-00014,report name,report's description,2026/01/01 0:00,,http://loquesea/si,true,auditor-01
+audit-report-15,AR15-00015,report name,report's description,2026/01/01 0:00,1999/12/31 23:59,http://loquesea/si,true,auditor-01
+audit-report-16,AR15-00016,report name,report's description,2026/01/01 0:00,2025/11/01 10:00,http://loquesea/si,true,auditor-01
+#MOREINFO,"","","","","","","",""
+audit-report-17,AR15-00017,report name,report's description,2026/01/01 0:00,2026/09/01 10:00,loquesea-si,true,auditor-01
+audit-report-18,AR15-00018,report name,report's description,2026/01/01 0:00,2026/09/01 10:00,http://,true,auditor-01
+audit-report-19,AR15-00019,report name,report's description,2026/01/01 0:00,2026/09/01 10:00,ftp://,true,auditor-01
+audit-report-20,AR15-00020,report name,report's description,2026/01/01 0:00,2026/09/01 10:00,http://a,true,auditor-01
+audit-report-21,AR15-00021,report name,report's description,2026/01/01 0:00,2026/09/01 10:00,ftp://a,true,auditor-01
+audit-report-22,AR15-00022,report name,report's description,2026/01/01 0:00,2026/09/01 10:00,http://loquesea/TwobothalikeindignityinfairVeronawherewelayourscenefromancientgrudgebreaktonewmutinywherecivilbloodmakescivilhandsunclean,true,auditor-01
+#DRAFTMODE,"","","","","","","",""
+audit-report-23,AR15-00023,report name,report's description,2026/01/01 0:00,2026/09/01 10:00,http://loquesea/si,,auditor-01
+#KEY:AUDITOR,"","","","","","","",""
+audit-report-24,AR15-00024,report name,report's description,2026/01/01 0:00,2026/09/01 10:00,http://loquesea/si,true,
+
+
+

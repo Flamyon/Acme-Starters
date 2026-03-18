@@ -12,6 +12,8 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
@@ -78,6 +80,7 @@ public class Sponsorship extends AbstractEntity {
 	// Derived attributes -----------------------------------------------------
 
 	@Transient
+	@Autowired
 	private SponsorshipRepository	sponsorshipRepository;
 
 	/*

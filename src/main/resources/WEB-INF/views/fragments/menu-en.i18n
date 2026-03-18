@@ -1,20 +1,17 @@
 # menu-en.i18n
 #
 # Copyright (C) 2012-2026 Rafael Corchuelo.
-#
-# In keeping with the traditional purpose of furthering education and research, it is
-# the policy of the copyright owner to permit non-commercial use and redistribution of
-# this software. It has been tested carefully, but it is not guaranteed for any particular
-# purposes.  The copyright owner does not offer any warranties or representations, nor do
-# they accept any liabilities with respect to them.
 
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Any
 master.menu.anonymous.favourite-link = Favourite link
 master.menu.anonymous.strategy = List strategies
-master.menu.anonymous.invention = List inventions
 master.menu.anonymous.sponsorships.published = Published sponsorships list
+# Agregados de develop y tuyos
+master.menu.anonymous.audit-report = Published Audit Reports
+master.menu.anonymous.invention = List inventions
+master.menu.anonymous.campaign = List campaigns
 
 
 # master.menu.administrator ###################################################
@@ -35,10 +32,15 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.fundraiser = Fundraiser
 master.menu.fundraiser.strategy.list = My Strategies
 
-# master.menu.inventor ##########################################################
+# master.menu.auditor ################################################
 
-master.menu.inventor = Inventor
-master.menu.inventor.invention.list = My Inventions
+master.menu.auditor = Audit Reports
+master.menu.auditor.audit-report.list = My Audit Reports
+
+# master.menu.spokesperson ################################################
+
+master.menu.spokesperson = Spokesperson
+master.menu.spokesperson.campaign.list = My Campaigns
 
 # master.menu.Student4 ####################################################
 master.menu.sponsorships.unpublished = Unpublished sponsorships list
@@ -61,17 +63,11 @@ master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.consumer-profile = Consumer profile
 master.menu.user-account.become-fundraiser = Become a fundraiser
 master.menu.user-account.fundraiser-profile = Fundraiser profile
+
+# Nuevos perfiles fusionados
+master.menu.user-account.become-auditor = Become an auditor
+master.menu.user-account.auditor-profile = Auditor profile
 master.menu.user-account.become-inventor = Become an inventor
 master.menu.user-account.inventor-profile = Inventor profile
-
-
-
-
-master.menu.anonymous.campaign = List campaigns
-master.menu.spokesperson = Spokesperson
-master.menu.spokesperson.campaign.list = My Campaigns
 master.menu.user-account.become-spokesperson = Become a spokesperson
 master.menu.user-account.spokesperson-profile = Spokesperson profile
-
-# master.menu.spokesperson ##########################################################
-

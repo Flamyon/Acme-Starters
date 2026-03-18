@@ -22,3 +22,7 @@ user-account-fundraiser-04,true,"UserIdentity{name: 'New', surname: 'Fundraiser4
 user-account-spokesperson-01,true,"UserIdentity{name: 'New', surname: 'Spokesperson1', email: 'sp1@acme.com'}",spokesperson1,spokesperson1
 user-account-spokesperson-02,true,"UserIdentity{name: 'New', surname: 'Spokesperson2', email: 'sp2@acme.com'}",spokesperson2,spokesperson2
 user-account-spokesperson-03,true,"UserIdentity{name: 'New', surname: 'Spokesperson3', email: 'sp3@acme.com'}",spokesperson3,spokesperson3
+user-account-auditor-01,true,"UserIdentity{name: 'Peter', surname: 'Parker', email: 'parker@acme.com'}",auditor1,auditor1
+user-account-auditor-02,true,"UserIdentity{name: 'Lois', surname: 'Griffin', email: 'griffin@acme.com'}",auditor2,auditor2
+user-account-auditor-03,true,"UserIdentity{name: 'Mr', surname: 'Robot', email: 'robot@acme.com'}",auditor3,auditor3
+user-account-auditor-04,true,"UserIdentity{name: 'Morgan', surname: 'Freeman', email: 'freeman@acme.com'}",auditor4,auditor4

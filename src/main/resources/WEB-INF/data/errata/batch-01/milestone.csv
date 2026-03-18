@@ -1,4 +1,4 @@
-key,title,achievements,effort,kind,key:campaign7890o
+key,title,achievements,effort,kind,key:campaign
 #TITLE (Validaciones: vacío o demasiado largo)
 milestone-02,"",The achievements text goes here.,20.0,TEASER,campaign-01
 milestone-03,This title is way too long because it exceeds the maximum number of characters allowed for a header in this framework which is usually around seventy five!,Achievements text,15.0,TEASER,campaign-01
