@@ -35,19 +35,13 @@ public class FundraiserTacticCreateService extends AbstractService<Fundraiser, T
 	@Override
 	public void authorise() {
 		boolean status = false;
+		Fundraiser fundraiser;
+		Strategy parent;
 
-		if (super.getRequest().getPrincipal().getActiveRealm().getClass() == Fundraiser.class) {
-			try {
-				int strategyId = super.getRequest().getData("strategyId", int.class);
-				Strategy parent = this.repo.findStrategyById(strategyId);
-				int principalId = super.getRequest().getPrincipal().getAccountId();
-				if (parent != null && parent.getFundraiser() != null && parent.getFundraiser().getUserAccount().getId() == principalId && parent.getDraftMode()) {
-					status = true;
-				}
-			} catch (Exception e) {
-				status = false;
-			}
-		}
+		fundraiser = (Fundraiser) super.getRequest().getPrincipal().getActiveRealm();
+		parent = this.repo.findStrategyById(super.getRequest().getData("strategyId", int.class));
+		if (parent != null && parent.getFundraiser() != null && parent.getFundraiser().getId() == fundraiser.getId() && parent.getDraftMode())
+			status = true;
 
 		super.setAuthorised(status);
 	}
