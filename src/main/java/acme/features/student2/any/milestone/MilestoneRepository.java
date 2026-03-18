@@ -8,6 +8,7 @@ import org.springframework.security.core.Transient;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.student2.Campaign;
 import acme.entities.student2.Milestone;
 
 @Transient
@@ -19,5 +20,8 @@ public interface MilestoneRepository extends AbstractRepository {
 
 	@Query("select m from Milestone m where m.id = :id")
 	Milestone findMilestoneById(int id);
+
+	@Query("select c from Campaign c where c.id = :id")
+	Campaign findCampaignById(int id);
 
 }

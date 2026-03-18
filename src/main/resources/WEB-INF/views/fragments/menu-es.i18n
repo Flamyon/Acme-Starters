@@ -65,10 +65,10 @@ master.menu.user-account.inventor-profile = Perfil de inventor
 
 
 
-#Student2
-master.menu.anonymous.campaign = Listar campañas
+
+master.menu.anonymous.campaign = Listar campanas
 master.menu.spokesperson = Portavoz
-master.menu.spokesperson.campaign.list = Mis campañas
+master.menu.spokesperson.campaign.list = Mis campanas
 master.menu.user-account.become-spokesperson = Hazte portavoz
 master.menu.user-account.spokesperson-profile = Perfil de portavoz
 

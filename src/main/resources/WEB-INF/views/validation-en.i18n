@@ -1,0 +1,30 @@
+# validation-en.i18n
+# Global validation messages resolved by the Bean Validation message source.
+# BaseName pattern: /WEB-INF/views/**/validation*.i18n
+
+# ValidTicker
+acme.validation.ticker.message = The format must start with two uppercase letters, followed by two digits, a dash, and between 5 and 10 alphanumeric characters (e.g. AA00-ABCDE123).
+
+# ValidStrategy (class-level)
+acme.validation.strategy.message = The strategy is not valid.
+acme.validation.strategy.no-tactics.message = Cannot publish a strategy that has no tactics.
+acme.validation.strategy.ticker-duplicated.message = This ticker is already in use by another strategy.
+acme.validation.strategy.start-null.message = Start moment is required.
+acme.validation.strategy.end-null.message = End moment is required.
+acme.validation.strategy.start-not-future.message = Start moment must be in the future at publish time.
+acme.validation.strategy.end-not-future.message = End moment must be in the future at publish time.
+acme.validation.strategy.invalid-interval.message = Start moment must be before end moment.
+
+# ValidText / ValidHeader (shared across many entities)
+acme.validation.text.message = The text is too long (max 255 characters).
+acme.validation.header.message = The header is too long (max 75 characters).
+acme.validation.object.message = Invalid value.
+acme.validation.invention.no-parts.message = Cannot publish an invention that has no parts.
+acme.validation.invention.start-not-future.message = Start moment must be in the future at publish time.
+acme.validation.invention.end-not-future.message = End moment must be in the future at publish time.
+acme.validation.invention.invalid-interval.message = Start moment must be before end moment.
+
+acme.validation.campaign.no-milestones.message = Cannot publish a campaign that has no milestones.
+acme.validation.campaign.start-not-future.message = Start moment must be in the future at publish time.
+acme.validation.campaign.end-not-future.message = End moment must be in the future at publish time.
+acme.validation.campaign.invalid-interval.message = Start moment must be before end moment.
