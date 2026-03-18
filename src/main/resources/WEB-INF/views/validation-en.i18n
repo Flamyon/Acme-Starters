@@ -1,5 +1,6 @@
 # validation-en.i18n
 # Global validation messages resolved by the Bean Validation message source.
+# BaseName pattern: /WEB-INF/views/**/validation*.i18n
 
 # ValidTicker
 acme.validation.ticker.message = The format must start with two uppercase letters, followed by two digits, a dash, and between 5 and 10 alphanumeric characters (e.g. AA00-ABCDE123).
@@ -14,13 +15,18 @@ acme.validation.strategy.start-not-future.message = Start moment must be in the 
 acme.validation.strategy.end-not-future.message = End moment must be in the future at publish time.
 acme.validation.strategy.invalid-interval.message = Start moment must be before end moment.
 
-# ValidText / ValidHeader (Shared)
+# ValidText / ValidHeader
 acme.validation.header.message = Must be between 1 and 75 characters
 acme.validation.text.message = Must be between 1 and 255 characters
 acme.validation.object.message = Invalid value.
 
-# ValidCampaign
+# ValidInvention
+acme.validation.invention.no-parts.message = Cannot publish an invention that has no parts.
+acme.validation.invention.start-not-future.message = Start moment must be in the future at publish time.
+acme.validation.invention.end-not-future.message = End moment must be in the future at publish time.
+acme.validation.invention.invalid-interval.message = Start moment must be before end moment.
 
+# ValidCampaign
 acme.validation.campaign.no-milestones.message = Cannot publish a campaign that has no milestones.
 acme.validation.campaign.start-not-future.message = Start moment must be in the future at publish time.
 acme.validation.campaign.end-not-future.message = End moment must be in the future at publish time.
@@ -38,8 +44,8 @@ acme.validation.sponsorship.donations.error = Must have at least one donation to
 acme.validation.money.eur.error = Must be EUR
 
 # ValidAuditReport
-acme.validation.audit-report.duplicated-ticker.message = This ticker is already in use 
-acme.validation.audit-report.ticker-duplicated.message = This ticker is already in use 
+acme.validation.audit-report.duplicated-ticker.message = This ticker is already in use
+acme.validation.audit-report.ticker-duplicated.message = This ticker is already in use
 acme.validation.audit-report.invalid-date-order.message = End date must be after start date
 acme.validation.audit-report.date-not-future.message = Start date must be in the future
 acme.validation.auditReport.no-auditSections.message = An audit report must have at least one audit section to be published

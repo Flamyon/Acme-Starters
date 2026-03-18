@@ -1,0 +1,20 @@
+# messages-es.i18n
+
+any.invention.form.title = Invencion
+any.invention.list.title = Lista de invenciones
+
+any.invention.list.label.ticker = Ticker
+any.invention.list.label.name = Nombre
+any.invention.list.label.description = Descripcion
+
+any.invention.form.label.ticker = Ticker
+any.invention.form.label.name = Nombre
+any.invention.form.label.startMoment = Fecha de inicio
+any.invention.form.label.endMoment = Fecha de fin
+any.invention.form.label.description = Descripcion
+any.invention.form.label.moreInfo = Informacion adicional
+any.invention.form.label.monthsActive = Meses activa
+any.invention.form.label.cost = Coste
+
+any.invention.form.button.inventor = Ver inventor
+any.invention.form.button.part = Ver partes

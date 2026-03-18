@@ -1,0 +1,63 @@
+key,ticker,name,description,start-moment,end-moment,more-info,draft-mode,key:inventor
+# base entity
+invention-00,AC25-INV00,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,FALSE,inventor-01
+#Variantes de ticker
+invention-01,AA01-valid,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-02,AB01-valid,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-02
+invention-03,ZZ06-planfund,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,FALSE,inventor-02
+invention-04,AH04-strategy1,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-02
+#Variantes de name
+invention-05,AC25-INV05,Dispositivo electromagnetico de alta p,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-06,AC25-INV06,D,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-07,AC25-INV07,Di,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-08,AC25-INV08,Dispositivo electromagnetico de alta precision diseñado para revolucionar,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-09,AC25-INV09,Dispositivo electromagnetico de alta precision diseñado para revolucionarl,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-10,AC25-INV10,โลเร็ม อิปซัม,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-11,AC25-INV11,لوريم إيبسوم,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-12,AC25-INV12,洛伦·伊普森,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-13,AC25-INV13,<marquee>Hacked</marquee>,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-14,AC25-INV14,<script>alert(‘Hacked!’);</script>,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-15,AC25-INV15,' or 'A' = 'A,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+#Variantes de description
+invention-16,AC25-INV16,Lampara,Este revolucionario dispositivo mecanico diseñado por la corporacion Acme permite automatizar las tareas mas tediosas. Cuenta co,2026/04/01 08:00,2026/12/31 17:00,,TRUE,inventor-01
+invention-17,AC25-INV17,Lampara,E,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-18,AC25-INV18,Lampara,Es,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-19,AC25-INV19,Lampara,Este revolucionario dispositivo mecanico diseñado por la corporacion Acme permite automatizar las tareas mas tediosas. Cuenta con un motor de vapor en miniatura y engranajes de titanio que aseguran un rendimiento impecable durante años. Su estructura com,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-20,AC25-INV20,Lampara,Este revolucionario dispositivo mecanico diseñado por la corporacion Acme permite automatizar las tareas mas tediosas. Cuenta con un motor de vapor en miniatura y engranajes de titanio que aseguran un rendimiento impecable durante años. Su estructura comp,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-21,AC25-INV21,Lampara,โลเร็ม อิปซัม,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-22,AC25-INV22,Lampara,لوريم إيبسوم,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-23,AC25-INV23,Lampara,洛伦·伊普森,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-24,AC25-INV24,Lampara,<marquee>Hacked</marquee>,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-25,AC25-INV25,Lampara,<script>alert(‘Hacked!’);</script>,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-26,AC25-INV26,Lampara,' or 'A' = 'A ,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+#Variantes de start-moment
+invention-27,AC25-INV27,Lampara,Objeto para dar luz,2026/07/06 00:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-28,AC25-INV28,Lampara,Objeto para dar luz,2026/04/08 00:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-29,AC25-INV29,Lampara,Objeto para dar luz,2026/04/08 00:01,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-30,AC25-INV30,Lampara,Objeto para dar luz,2026/12/31 23:59,2027/1/1 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-31,AC25-INV31,Lampara,Objeto para dar luz,2026/04/01 00:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+#Variantes de end-moment
+invention-32,AC25-INV32,Lampara,Objeto para dar luz,2026/04/01 08:00,2027/11/20 00:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-33,AC25-INV33,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/10/08 00:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-34,AC25-INV34,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/10/08 00:01,http://lorem.com/ipsum,TRUE,inventor-01
+invention-35,AC25-INV35,Lampara,Objeto para dar luz,2026/04/01 08:00,2028/12/31 23:59,http://lorem.com/ipsum,TRUE,inventor-01
+invention-36,AC25-INV36,Lampara,Objeto para dar luz,2026/04/01 08:00,2029/01/01 00:00,http://lorem.com/ipsum,TRUE,inventor-01
+#Variantes de more-info
+invention-37,AC25-INV37,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-38,AC25-INV38,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://a.b,TRUE,inventor-01
+invention-39,AC25-INV39,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",TRUE,inventor-01
+invention-40,AC25-INV40,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",TRUE,inventor-01
+invention-41,AC25-INV41,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://www.lorem-ipsum.org,TRUE,inventor-01
+invention-42,AC25-INV42,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,https://www.lorem-ipsum.org,TRUE,inventor-01
+invention-43,AC25-INV43,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://www.lorem-ipsum.org/dolor/sit.html,TRUE,inventor-01
+invention-44,AC25-INV44,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://www.lorem-ipsum.org/dolor/sit.html#dolor,TRUE,inventor-01
+invention-45,AC25-INV45,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://example.org?a=1&b=2,TRUE,inventor-01
+invention-46,AC25-INV46,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://example.org?,TRUE,inventor-01
+invention-47,AC25-INV47,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://example.org?a,TRUE,inventor-01
+invention-48,AC25-INV48,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://example.org?a&b,TRUE,inventor-01
+invention-49,AC25-INV49,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://example.org/,TRUE,inventor-01
+invention-50,AC25-INV50,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://example.org/a,TRUE,inventor-01
+invention-51,AC25-INV51,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://example.org/a/b,TRUE,inventor-01
+invention-52,AC25-INV52,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://example.org/a/b?,TRUE,inventor-01
+invention-53,AC25-INV53,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://example.org/a/b?a&b,TRUE,inventor-01
+
