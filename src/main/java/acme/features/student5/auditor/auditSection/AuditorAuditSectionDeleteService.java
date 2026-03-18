@@ -64,6 +64,6 @@ public class AuditorAuditSectionDeleteService extends AbstractService<Auditor, A
 		tuple = super.unbindObject(this.auditSection, "name", "notes", "hours", "kind");
 		tuple.put("strategyId", super.getRequest().getData("strategyId", int.class));
 		tuple.put("draftMode", this.auditSection.getAuditReport().getDraftMode());
-		tuple.put("kinds", choices);
+		tuple.put("choices", choices);
 	}
 }
