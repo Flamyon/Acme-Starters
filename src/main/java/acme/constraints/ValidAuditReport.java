@@ -1,5 +1,5 @@
 
-package acme.entities.student5;
+package acme.constraints;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -14,12 +14,8 @@ import javax.validation.Payload;
 @Constraint(validatedBy = AuditReportValidator.class)
 public @interface ValidAuditReport {
 
-	// Standard validation properties -----------------------------------------
-
 	String message() default "";
 
 	Class<?>[] groups() default {};
-
 	Class<? extends Payload>[] payload() default {};
-
 }

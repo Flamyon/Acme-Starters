@@ -16,50 +16,67 @@ import acme.realms.Auditor;
 public class AuditorAuditSectionCreateService extends AbstractService<Auditor, AuditSection> {
 
 	@Autowired
-	private AuditorAuditSectionRepository	repo;
+	private AuditorAuditSectionRepository	repository;
 
-	private AuditReport						parentAuditReport;
-	private AuditSection					entityAuditSection;
+	private AuditSection					auditSection;
 
 
 	@Override
 	public void load() {
-		int auditReportId = super.getRequest().getData("auditReportId", int.class);
+		int auditReportId;
+		AuditReport auditReport;
 
-		this.parentAuditReport = this.repo.findAuditReportById(auditReportId);
+		auditReportId = super.getRequest().getData("AuditReportId", int.class);
+		auditReport = this.repository.findAuditReportById(auditReportId);
 
-		this.entityAuditSection = this.newObject(AuditSection.class);
-		this.entityAuditSection.setAuditReport(this.parentAuditReport);
-		this.entityAuditSection.getAuditReport().setDraftMode(true);
+		this.auditSection = super.newObject(AuditSection.class);
+		this.auditSection.setAuditReport(auditReport);
 	}
 
 	@Override
 	public void authorise() {
-		super.setAuthorised(super.getRequest().getPrincipal().getActiveRealm().getClass() == Auditor.class);
+		boolean status;
+
+		status = this.auditSection.getAuditReport() != null && //
+			this.auditSection.getAuditReport().getAuditor().isPrincipal() && //
+			this.auditSection.getAuditReport().getDraftMode();
+
+		super.setAuthorised(status);
 	}
 
 	@Override
 	public void bind() {
-		super.bindObject(this.entityAuditSection, "name", "notes", "hours", "kind");
+		super.bindObject(this.auditSection, "name", "notes", "hours", "kind");
 	}
 
 	@Override
 	public void validate() {
+		super.validateObject(this.auditSection);
+		{
+			boolean validPercentage;
+			double currentPercentage;
+
+			currentPercentage = this.auditSection.getAuditReport().getHours();
+			validPercentage = currentPercentage + this.auditSection.getHours() <= 1000;
+			super.state(validPercentage, "hours", "acme.validation.AuditSection.sumPercentages");
+		}
 	}
 
 	@Override
 	public void execute() {
-		this.repo.save(this.entityAuditSection);
+		this.repository.save(this.auditSection);
 	}
 
 	@Override
 	public void unbind() {
+		SelectChoices choices;
 		Tuple tuple;
-		SelectChoices choices = SelectChoices.from(SectionKind.class, this.entityAuditSection.getKind());
 
-		tuple = super.unbindObject(this.entityAuditSection, "name", "notes", "hours", "kind");
-		tuple.put("kind", this.entityAuditSection.getKind());
-		tuple.put("choices", choices);
-		tuple.put("auditReportId", this.entityAuditSection.getAuditReport().getId());
+		choices = SelectChoices.from(SectionKind.class, this.auditSection.getKind());
+
+		tuple = super.unbindObject(this.auditSection, "name", "notes", "hours", "kind");
+		tuple.put("AuditReportId", super.getRequest().getData("AuditReportId", int.class));
+		tuple.put("draftMode", this.auditSection.getAuditReport().getDraftMode());
+		tuple.put("kinds", choices);
 	}
 }

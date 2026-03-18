@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.models.Tuple;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.entities.student5.AuditReport;
 import acme.realms.Auditor;
@@ -42,8 +43,32 @@ public class AuditorAuditReportUpdateService extends AbstractService<Auditor, Au
 	@Override
 	public void validate() {
 		super.validateObject(this.entity);
-	}
 
+		// TICKER
+		if (!super.getErrors().hasErrors("ticker")) {
+
+			String ticker = this.entity.getTicker();
+
+			if (ticker != null && !ticker.trim().isEmpty()) {
+				AuditReport other = this.repo.findAuditReportByTicker(ticker);
+
+				boolean isDuplicate = other != null;
+
+				super.state(!isDuplicate, "ticker", "acme.validation.audit-report.ticker-duplicated.message");
+			}
+		}
+
+		// FECHAS
+		if (!super.getErrors().hasErrors("startMoment"))
+			super.state(this.entity.getStartMoment() != null, "startMoment", "acme.validation.audit-report.start-null.message");
+
+		if (!super.getErrors().hasErrors("endMoment"))
+			super.state(this.entity.getEndMoment() != null, "endMoment", "acme.validation.audit-report.end-null.message");
+
+		if (!super.getErrors().hasErrors("startMoment") && !super.getErrors().hasErrors("endMoment"))
+			if (this.entity.getStartMoment() != null && this.entity.getEndMoment() != null)
+				super.state(MomentHelper.isBefore(this.entity.getStartMoment(), this.entity.getEndMoment()), "endMoment", "acme.validation.audit-report.invalid-interval.message");
+	}
 	@Override
 	public void execute() {
 		this.repo.save(this.entity);

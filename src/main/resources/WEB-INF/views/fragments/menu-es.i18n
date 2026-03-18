@@ -41,8 +41,9 @@ master.menu.user-account.become-sponsor = Hacerse sponsor
 
 # master.menu.auditor ####################################################
 
-master.menu.auditor.audit-report = Reportes de Auditoría
+master.menu.auditor = Reportes de Auditoría
 master.menu.user-account.become-auditor = Hazte auditor
+master.menu.auditor.audit-report.list = Lista de Reportes
 
 # master.menu.consumer ##########################################################
 

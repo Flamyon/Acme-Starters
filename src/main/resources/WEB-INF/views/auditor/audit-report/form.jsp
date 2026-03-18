@@ -26,16 +26,16 @@
 	<jstl:if test="${_command != 'create' && draftMode}">
 		<acme:form-double code="auditor.audit-report.form.label.monthsActive" path="monthsActive" readonly="true"/>
 		<acme:form-integer code="auditor.audit-report.form.label.hours" path="hours" readonly="true"/>
-		<acme:submit code="auditor.audit-report.form.button.update" action="/auditor/auditReport/update"/>
-		<acme:submit code="auditor.audit-report.form.button.publish" action="/auditor/auditReport/publish"/>
-		<acme:submit code="auditor.audit-report.form.button.delete" action="/auditor/auditReport/delete"/>
+		<acme:submit code="auditor.audit-report.form.button.update" action="/auditor/audit-report/update"/>
+		<acme:submit code="auditor.audit-report.form.button.publish" action="/auditor/audit-report/publish"/>
+		<acme:submit code="auditor.audit-report.form.button.delete" action="/auditor/audit-report/delete"/>
 	</jstl:if>
 	
 	<jstl:if test="${_command != 'create'}">
-		<acme:button code="auditor.audit-report.form.button.audit-section" action="/auditor/auditSection/list?auditReportId=${id}"/>
+		<acme:button code="auditor.audit-report.form.button.audit-section" action="/auditor/audit-section/list?auditReportId=${id}"/>
 	</jstl:if>
 
 	<jstl:if test="${_command == 'create'}">
-		<acme:submit code="auditor.audit-report.form.button.create" action="/auditor/auditReport/create"/>
+		<acme:submit code="auditor.audit-report.form.button.create" action="/auditor/audit-report/create"/>
 	</jstl:if>
 </acme:form>

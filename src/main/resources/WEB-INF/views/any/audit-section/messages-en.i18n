@@ -9,7 +9,7 @@
 # they accept any liabilities with respect to them.
 
 any.auditSection.list.title = Audit Section list
-any.auditSection.form.title = Audit Section
+any.audit-section.form.title = Audit Section
 
 any.auditSection.list.label.name = Name
 any.auditSection.list.label.hours = Hours

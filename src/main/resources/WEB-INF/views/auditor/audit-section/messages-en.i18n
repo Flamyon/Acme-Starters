@@ -8,18 +8,18 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-auditor.auditSection.list.title = Audit Sections list
-auditor.auditSection.form.title = Audit Section
+auditor.audit-section.list.title = Audit Sections list
+auditor.audit-section.form.title = Audit Section
 
-auditor.auditSection.list.label.name = Name
-auditor.auditSection.list.label.hours = Hours
-auditor.auditSection.list.label.kind = Type
+auditor.audit-section.list.label.name = Name
+auditor.audit-section.list.label.hours = Hours
+auditor.audit-section.list.label.kind = Type
 
-auditor.auditSection.form.label.name = Name
-auditor.auditSection.form.label.notes = Notes
-auditor.auditSection.form.label.hours = Hours
-auditor.auditSection.form.label.kind = Type
+auditor.audit-section.form.label.name = Name
+auditor.audit-section.form.label.notes = Notes
+auditor.audit-section.form.label.hours = Hours
+auditor.audit-section.form.label.kind = Type
 
-auditor.auditSection.form.button.create = Create
-auditor.auditSection.form.button.update = Update
-auditor.auditSection.form.button.delete = Delete
+auditor.audit-section.form.button.create = Create
+auditor.audit-section.form.button.update = Update
+auditor.audit-section.form.button.delete = Delete

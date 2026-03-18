@@ -14,7 +14,7 @@ master.menu.anonymous = Any
 master.menu.anonymous.favourite-link = Favourite link
 master.menu.anonymous.strategy = List strategies
 master.menu.anonymous.sponsorships.published = Published sponsorships list
-master.menu.anonymous.audit-report = Audit Reports list
+master.menu.anonymous.audit-report = Published Audit Reports
 
 
 # master.menu.administrator ###################################################
@@ -43,8 +43,9 @@ master.menu.sponsor = Sponsor
 
 # master.menu.auditor ####################################################
 
-master.menu.auditor.audit-report.list = Audit Reports
+master.menu.auditor = Audit Reports
 master.menu.user-account.become-auditor = Become auditor
+master.menu.auditor.audit-report.list = My Audit Reports
 
 # master.menu.consumer ##########################################################
 

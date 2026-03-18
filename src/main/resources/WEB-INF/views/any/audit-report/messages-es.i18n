@@ -8,12 +8,15 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-any.auditReport.list.title = Lista de estrategias
-any.auditReport.form.title = Estrategia
+any.auditReport.list.title = Reportes de Auditoría Publicados
+any.auditReport.form.title = Reporte de auditoría
 
 any.auditReport.list.label.ticker = Ticker
 any.auditReport.list.label.name = Nombre
 any.auditReport.list.label.description = Descripción
+
+any.auditor.form.title = Auditor
+any.audit-section.list.title = Secciones de auditoría
 
 any.auditReport.form.label.ticker = Ticker
 any.auditReport.form.label.name = Nombre

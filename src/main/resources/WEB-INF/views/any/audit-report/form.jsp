@@ -27,6 +27,6 @@
 
 	<jstl:if test="${_command == 'show'}">
 		<acme:button code="any.auditReport.form.button.auditor" action="/any/auditor/show?auditReportId=${id}"/>
-		<acme:button code="any.auditReport.form.button.auditSection" action="/any/auditSection/list?auditReportId=${id}"/>
+		<acme:button code="any.auditReport.form.button.auditSection" action="/any/audit-section/list?auditReportId=${id}"/>
 	</jstl:if>
 </acme:form>

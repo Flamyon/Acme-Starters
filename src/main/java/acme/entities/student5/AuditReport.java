@@ -19,9 +19,9 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidAuditReport;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
-import acme.constraints.ValidTicker;
 import acme.realms.Auditor;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,7 +29,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-//@ValidAuditReport
+@ValidAuditReport
 public class AuditReport extends AbstractEntity {
 
 	@Transient
@@ -42,7 +42,7 @@ public class AuditReport extends AbstractEntity {
 	//Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidTicker
+	//@ValidTicker
 	@Column(unique = true)
 	private String					ticker;
 

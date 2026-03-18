@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.services.AbstractService;
+import acme.entities.student5.AuditReport;
 import acme.entities.student5.AuditSection;
 import acme.realms.Auditor;
 
@@ -14,31 +15,36 @@ import acme.realms.Auditor;
 public class AuditorAuditSectionListService extends AbstractService<Auditor, AuditSection> {
 
 	@Autowired
-	private AuditorAuditSectionRepository	repo;
+	AuditorAuditSectionRepository		repository;
 
-	private Collection<AuditSection>		auditSectionCollection;
+	private AuditReport					auditorReport;
+	private Collection<AuditSection>	auditSections;
 
 
 	@Override
 	public void load() {
 		int auditReportId;
-
 		auditReportId = super.getRequest().getData("auditReportId", int.class);
-		this.auditSectionCollection = this.repo.findAuditSectionsByAuditReportId(auditReportId);
+		this.auditorReport = this.repository.findAuditReportById(auditReportId);
+		this.auditSections = this.repository.findAuditSectionsByAuditReportId(auditReportId);
 	}
 
 	@Override
 	public void authorise() {
-		super.setAuthorised(true);
+		boolean status;
+		status = this.auditorReport != null && //
+			(this.auditorReport.getAuditor().isPrincipal() || !this.auditorReport.getDraftMode());
+		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		int auditReportId;
+		boolean showCreate;
 
-		auditReportId = super.getRequest().getData("auditReportId", int.class);
-		super.unbindObjects(this.auditSectionCollection, "name", "hours", "kind");
-		super.unbindGlobal("auditReportId", auditReportId);
-
+		super.unbindObjects(this.auditSections, "name", "hours", "kind");
+		showCreate = this.auditorReport.getDraftMode() && this.auditorReport.getAuditor().isPrincipal();
+		super.unbindGlobal("auditReportId", this.auditorReport.getId());
+		super.unbindGlobal("showCreate", showCreate);
 	}
+
 }
