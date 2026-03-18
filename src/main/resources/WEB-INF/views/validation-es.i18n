@@ -39,8 +39,9 @@ acme.validation.money.eur.error = Debe ser en EUR
 
 acme.validation.ticker.message = Must match format XX00-XXXXX (e.g. ES94-00009)
 
-acme.validation.auditReport.duplicated-ticker.message = Este ticker ya está en uso
-acme.validation.auditReport.invalid-date-order.message = La fecha de fin debe ser posterior a la de inicio
-acme.validation.auditReport.date-not-future.message = La fecha de inicio debe ser futura
-acme.validation.auditReport.no-auditSections.message = Un reporte debe tener al menos una sección para poder publicarse
-acme.validation.auditReport.invalid-interval.message = La fecha de fin debe ser posterior a la de inicio
+acme.validation.audit-report.duplicated-ticker.message = Este ticker ya está en uso
+acme.validation.audit-report.ticker-duplicated.message = Este ticker ya está en uso
+acme.validation.audit-report.invalid-date-order.message = La fecha de fin debe ser posterior a la de inicio
+acme.validation.audit-report.date-not-future.message = La fecha de inicio debe ser futura
+acme.validation.audit-report.no-auditSections.message = Un reporte debe tener al menos una sección para poder publicarse
+acme.validation.audit-report.invalid-interval.message = La fecha de fin debe ser posterior a la de inicio
