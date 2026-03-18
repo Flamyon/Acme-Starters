@@ -40,7 +40,8 @@ public class FundraiserTacticCreateService extends AbstractService<Fundraiser, T
 			try {
 				int strategyId = super.getRequest().getData("strategyId", int.class);
 				Strategy parent = this.repo.findStrategyById(strategyId);
-				if (parent != null && parent.getFundraiser().isPrincipal() && parent.getDraftMode()) {
+				int principalId = super.getRequest().getPrincipal().getAccountId();
+				if (parent != null && parent.getFundraiser() != null && parent.getFundraiser().getUserAccount().getId() == principalId && parent.getDraftMode()) {
 					status = true;
 				}
 			} catch (Exception e) {

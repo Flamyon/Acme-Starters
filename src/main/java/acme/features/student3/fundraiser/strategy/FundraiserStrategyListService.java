@@ -21,7 +21,7 @@ public class FundraiserStrategyListService extends AbstractService<Fundraiser, S
 
 	@Override
 	public void authorise() {
-		super.setAuthorised(true);
+		super.setAuthorised(super.getRequest().getPrincipal().getActiveRealm().getClass() == Fundraiser.class);
 	}
 
 	@Override

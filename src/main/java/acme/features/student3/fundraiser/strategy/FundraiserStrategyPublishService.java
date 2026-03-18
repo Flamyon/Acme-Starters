@@ -35,7 +35,8 @@ public class FundraiserStrategyPublishService extends AbstractService<Fundraiser
 	public void authorise() {
 		boolean status;
 
-		status = this.entity != null && this.entity.getDraftMode() && this.entity.getFundraiser().isPrincipal();
+		int principalId = super.getRequest().getPrincipal().getAccountId();
+		status = this.entity != null && this.entity.getDraftMode() && this.entity.getFundraiser() != null && this.entity.getFundraiser().getUserAccount().getId() == principalId;
 		super.setAuthorised(status);
 	}
 
