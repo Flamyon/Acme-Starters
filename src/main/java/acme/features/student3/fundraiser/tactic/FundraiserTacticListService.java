@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import acme.client.services.AbstractService;
 import acme.entities.student3.Tactic;
+import acme.entities.student3.Strategy;
 import acme.realms.Fundraiser;
 
 @Service
@@ -17,6 +18,7 @@ public class FundraiserTacticListService extends AbstractService<Fundraiser, Tac
 	private FundraiserTacticRepository	repo;
 
 	private Collection<Tactic>			tacticCollection;
+
 
 	@Override
 	public void load() {
@@ -28,7 +30,19 @@ public class FundraiserTacticListService extends AbstractService<Fundraiser, Tac
 
 	@Override
 	public void authorise() {
-		super.setAuthorised(true);
+		boolean status = false;
+
+		try {
+			int strategyId = super.getRequest().getData("strategyId", int.class);
+			Strategy strategy = this.repo.findStrategyById(strategyId);
+			int principalId = super.getRequest().getPrincipal().getAccountId();
+			if (strategy != null && strategy.getFundraiser() != null && strategy.getFundraiser().getUserAccount().getId() == principalId)
+				status = true;
+		} catch (Exception e) {
+			status = false;
+		}
+
+		super.setAuthorised(status);
 	}
 
 	@Override
@@ -39,5 +53,13 @@ public class FundraiserTacticListService extends AbstractService<Fundraiser, Tac
 		super.unbindObjects(this.tacticCollection, "name", "expectedPercentage", "kind");
 		super.unbindGlobal("strategyId", strategyId);
 
+		Strategy strategy = this.repo.findStrategyById(strategyId);
+		boolean draft = false;
+		if (strategy != null) {
+			Boolean dm = strategy.getDraftMode();
+			draft = (dm != null) ? dm : false;
+		}
+
+		super.unbindGlobal("draftMode", draft);
 	}
 }

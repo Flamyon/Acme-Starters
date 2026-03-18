@@ -32,6 +32,7 @@ acme.validation.sponsorship.dates.error = La fecha de fin debe ser posterior a l
 acme.validation.sponsorship.startMoment.future = La fecha de inicio debe ser futura
 acme.validation.sponsorship.endMoment.future = La fecha de fin debe ser futura
 acme.validation.sponsorship.donations.error = Debe tener al menos una donación para publicarse
+acme.validation.money.eur.error = Debe ser en EUR
 
 
 # ValidAuditReport

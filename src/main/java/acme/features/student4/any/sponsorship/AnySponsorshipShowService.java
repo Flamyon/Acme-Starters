@@ -8,7 +8,6 @@ import acme.client.components.models.Tuple;
 import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.entities.student4.Sponsorship;
-import acme.entities.student4.SponsorshipRepository;
 
 @Service
 public class AnySponsorshipShowService extends AbstractService<Any, Sponsorship> {
@@ -16,9 +15,9 @@ public class AnySponsorshipShowService extends AbstractService<Any, Sponsorship>
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private SponsorshipRepository	repository;
+	private AnySponsorshipRepository	repository;
 
-	private Sponsorship				sponsorship;
+	private Sponsorship					sponsorship;
 
 	// AbstractService interface -------------------------------------------
 
@@ -35,7 +34,7 @@ public class AnySponsorshipShowService extends AbstractService<Any, Sponsorship>
 	public void authorise() {
 		boolean status;
 
-		status = this.sponsorship != null;
+		status = this.sponsorship != null && !this.sponsorship.getDraftMode();
 
 		super.setAuthorised(status);
 	}
@@ -44,7 +43,7 @@ public class AnySponsorshipShowService extends AbstractService<Any, Sponsorship>
 	public void unbind() {
 		Tuple tuple;
 
-		tuple = super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
+		tuple = super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "monthsActive", "totalMoney");
 
 		tuple.put("sponsorId", this.sponsorship.getSponsor().getId());
 	}

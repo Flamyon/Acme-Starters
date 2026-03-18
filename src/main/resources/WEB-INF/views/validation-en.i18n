@@ -31,6 +31,7 @@ acme.validation.sponsorship.dates.error = End date must be after start date
 acme.validation.sponsorship.startMoment.future = Start date must be in the future
 acme.validation.sponsorship.endMoment.future = End date must be in the future
 acme.validation.sponsorship.donations.error = Must have at least one donation to publish
+acme.validation.money.eur.error = Must be EUR
 
 # ValidAuditReport
 acme.validation.ticker.message = Must match format XX00-XXXXX (e.g. ES94-00009)
