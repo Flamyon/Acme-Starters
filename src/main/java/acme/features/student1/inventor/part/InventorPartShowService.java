@@ -1,3 +1,4 @@
+
 package acme.features.student1.inventor.part;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +15,9 @@ import acme.entities.student1.PartKind;
 public class InventorPartShowService extends AbstractService<Inventor, Part> {
 
 	@Autowired
-	private InventorPartRepository repo;
+	private InventorPartRepository	repo;
 
-	private Part entityPart;
+	private Part					entityPart;
 
 
 	@Override
@@ -25,13 +26,17 @@ public class InventorPartShowService extends AbstractService<Inventor, Part> {
 
 		entityId = super.getRequest().getData("id", int.class);
 		this.entityPart = this.repo.findPartById(entityId);
+
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
+		int entityId;
 
-		status = this.entityPart != null;
+		entityId = super.getRequest().getData("id", int.class);
+		this.entityPart = this.repo.findPartById(entityId);
+		status = this.entityPart != null && this.entityPart.getInvention().getDraftMode() && this.entityPart.getInvention().getInventor().isPrincipal();
 		super.setAuthorised(status);
 	}
 

@@ -1,3 +1,4 @@
+
 package acme.features.student1.inventor.part;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +16,10 @@ import acme.entities.student1.PartKind;
 public class InventorPartCreateService extends AbstractService<Inventor, Part> {
 
 	@Autowired
-	private InventorPartRepository repo;
+	private InventorPartRepository	repo;
 
-	private Invention parentInvention;
-	private Part entityPart;
+	private Invention				parentInvention;
+	private Part					entityPart;
 
 
 	@Override
@@ -29,12 +30,16 @@ public class InventorPartCreateService extends AbstractService<Inventor, Part> {
 		this.parentInvention = this.repo.findInventionById(inventionId);
 		this.entityPart = this.newObject(Part.class);
 		this.entityPart.setInvention(this.parentInvention);
-		this.entityPart.getInvention().setDraftMode(true);
+		if (this.parentInvention != null)
+			this.entityPart.getInvention().setDraftMode(true);
 	}
 
 	@Override
 	public void authorise() {
-		super.setAuthorised(super.getRequest().getPrincipal().getActiveRealm().getClass() == Inventor.class);
+		boolean status;
+
+		status = this.parentInvention != null && this.parentInvention.getDraftMode() && this.parentInvention.getInventor().isPrincipal();
+		super.setAuthorised(status);
 	}
 
 	@Override
@@ -44,6 +49,7 @@ public class InventorPartCreateService extends AbstractService<Inventor, Part> {
 
 	@Override
 	public void validate() {
+		super.validateObject(this.entityPart);
 	}
 
 	@Override
