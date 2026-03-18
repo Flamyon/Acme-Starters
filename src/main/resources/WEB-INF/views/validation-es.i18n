@@ -5,7 +5,7 @@
 # ValidTicker
 acme.validation.ticker.message = El formato debe comenzar con dos letras mayúsculas, seguidas de dos números, un guión y entre 5 y 10 caracteres alfanuméricos (ejemplo: AA00-ABCDE123).
 
-# ValidStrategy (class-level)
+# ValidStrategy
 acme.validation.strategy.message = La estrategia no es válida.
 acme.validation.strategy.no-tactics.message = No se puede publicar una estrategia sin tácticas.
 acme.validation.strategy.ticker-duplicated.message = Este ticker ya está en uso por otra estrategia.
@@ -15,12 +15,39 @@ acme.validation.strategy.start-not-future.message = La fecha de inicio debe esta
 acme.validation.strategy.end-not-future.message = La fecha de fin debe estar en el futuro en el momento de publicación.
 acme.validation.strategy.invalid-interval.message = La fecha de inicio debe ser anterior a la fecha de fin.
 
-# ValidText / ValidHeader (compartidas entre entidades)
-acme.validation.text.message = El texto es demasiado largo (máx. 255 caracteres).
-acme.validation.header.message = La cabecera es demasiado larga (máx. 75 caracteres).
+# ValidText / ValidHeader
+acme.validation.header.message = Debe tener entre 1 y 75 caracteres
+acme.validation.text.message = Debe tener entre 1 y 255 caracteres
 acme.validation.object.message = Valor no válido.
-acme.validation.invention.no-parts.message = No se puede publicar una invencion sin partes.
+
+# ValidInvention
+acme.validation.invention.no-parts.message = No se puede publicar una invencion sin partes.
 acme.validation.invention.start-not-future.message = La fecha de inicio debe estar en el futuro en el momento de publicacion.
 acme.validation.invention.end-not-future.message = La fecha de fin debe estar en el futuro en el momento de publicacion.
 acme.validation.invention.invalid-interval.message = La fecha de inicio debe ser anterior a la fecha de fin.
+
+# ValidCampaign
+acme.validation.campaign.no-milestones.message = No se puede publicar una campaña sin hitos.
+acme.validation.campaign.start-not-future.message = La fecha de inicio debe estar en el futuro en el momento de publicación.
+acme.validation.campaign.end-not-future.message = La fecha de fin debe estar en el futuro en el momento de publicación.
+acme.validation.campaign.invalid-interval.message = La fecha de inicio debe ser anterior a la fecha de fin.
+
+# ValidSponsorship
+acme.validation.sponsorship.duplicated-ticker.message = Este ticker ya está en uso
+acme.validation.sponsorship.invalid-date-order.message = La fecha de fin debe ser posterior a la de inicio
+acme.validation.sponsorship.date-not-future.message = La fecha de inicio debe ser futura
+acme.validation.sponsorship.missing-donations.message = Un patrocinio debe tener al menos una donación para poder publicarse
+acme.validation.sponsorship.dates.error = La fecha de fin debe ser posterior a la de inicio
+acme.validation.sponsorship.startMoment.future = La fecha de inicio debe ser futura
+acme.validation.sponsorship.endMoment.future = La fecha de fin debe ser futura
+acme.validation.sponsorship.donations.error = Debe tener al menos una donación para publicarse
+acme.validation.money.eur.error = Debe ser en EUR
+
+# ValidAuditReport
+acme.validation.audit-report.duplicated-ticker.message = Este ticker ya está en uso
+acme.validation.audit-report.ticker-duplicated.message = Este ticker ya está en uso
+acme.validation.audit-report.invalid-date-order.message = La fecha de fin debe ser posterior a la de inicio
+acme.validation.audit-report.date-not-future.message = La fecha de inicio debe ser futura
+acme.validation.audit-report.no-auditSections.message = Un reporte debe tener al menos una sección para poder publicarse
+acme.validation.audit-report.invalid-interval.message = La fecha de fin debe ser posterior a la de inicio
 

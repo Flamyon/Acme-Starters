@@ -7,23 +7,63 @@
 # this software. It has been tested carefully, but it is not guaranteed for any particular
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
+<<<<<<< HEAD
 
 sponsor.sponsorship.form.title = Sponsorship details
 sponsor.sponsorship.list.title = Sponsorship list
 
+=======
+# ---------------------------------------------------------------------------
+# Sponsorship (Patrocinios)
+# ---------------------------------------------------------------------------
+
+# -------------------------------------------------------------------
+# Sponsorship - English Internationalization
+# -------------------------------------------------------------------
+
+# Titles
+# -------------------------------------------------------------------
+sponsor.sponsorship.form.title = Sponsorship details
+sponsor.sponsorship.list.title = Sponsorship list
+
+# Form Labels
+# -------------------------------------------------------------------
+>>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705
 sponsor.sponsorship.form.label.ticker = Ticker:
 sponsor.sponsorship.form.label.name = Name:
 sponsor.sponsorship.form.label.description = Description:
 sponsor.sponsorship.form.label.startMoment = Start Date:
 sponsor.sponsorship.form.label.endMoment = End Date:
 sponsor.sponsorship.form.label.moreInfo = More info:
+<<<<<<< HEAD
 
 sponsor.sponsorship.form.button.donations = View Donations
 sponsor.sponsorship.form.button.sponsor = View Sponsor Profile
 
+=======
+sponsor.sponsorship.form.label.totalMoney = Total Money:
+sponsor.sponsorship.form.label.monthsActive = Months Active:
+
+# List Labels (Table Headers)
+# -------------------------------------------------------------------
+>>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705
 sponsor.sponsorship.list.label.ticker = Ticker
 sponsor.sponsorship.list.label.name = Name
 sponsor.sponsorship.list.label.startMoment = Start Date
 sponsor.sponsorship.list.label.endMoment = End Date
+<<<<<<< HEAD
 sponsor.sponsorship.form.label.monthsActive = Months Active
 sponsor.sponsorship.form.label.totalMoney = Total Money
+=======
+sponsor.sponsorship.list.label.draftMode = Draft
+
+# Action Buttons
+# -------------------------------------------------------------------
+sponsor.sponsorship.form.button.create = Create
+sponsor.sponsorship.form.button.update = Update
+sponsor.sponsorship.form.button.delete = Delete
+sponsor.sponsorship.form.button.publish = Publish
+sponsor.sponsorship.form.button.donations = View Donations
+sponsor.sponsorship.form.button.sponsor = View Sponsor Profile
+sponsor.sponsorship.list.button.create = Create Sponsorship
+>>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705

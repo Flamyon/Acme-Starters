@@ -6,31 +6,27 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.entities.student4.Sponsorship;
-import acme.entities.student4.SponsorshipRepository;
-import acme.realms.Sponsor;
 
 @Service
-public class AnySponsorshipListService extends AbstractService<Sponsor, Sponsorship> {
+public class AnySponsorshipListService extends AbstractService<Any, Sponsorship> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private SponsorshipRepository	repository;
+	private AnySponsorshipRepository	repository;
 
-	private Collection<Sponsorship>	sponsorships;
+	private Collection<Sponsorship>		sponsorships;
 
 	// AbstractService interface -------------------------------------------
 
 
 	@Override
 	public void load() {
-		int sponsorId;
-		sponsorId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		this.sponsorships = this.repository.findSponsorshipsBySponsorId(sponsorId);
+		this.sponsorships = this.repository.findPublishedSponsorships();
 	}
-
 	@Override
 	public void authorise() {
 		super.setAuthorised(true);

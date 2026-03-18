@@ -1,0 +1,24 @@
+
+package acme.features.student5.any.auditSection;
+
+import java.util.Collection;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import acme.client.repositories.AbstractRepository;
+import acme.entities.student5.AuditReport;
+import acme.entities.student5.AuditSection;
+
+@Repository
+public interface AnyAuditSectionRepository extends AbstractRepository {
+
+	@Query("select ast from AuditSection ast where ast.auditReport.id = :id")
+	Collection<AuditSection> findAuditSectionsByAuditReportId(int id);
+
+	@Query("select ast from AuditSection ast where ast.id = :id")
+	AuditSection findAuditSectionById(int id);
+
+	@Query("select ar from AuditReport ar where ar.id = :id")
+	AuditReport findAuditReportById(int id);
+}

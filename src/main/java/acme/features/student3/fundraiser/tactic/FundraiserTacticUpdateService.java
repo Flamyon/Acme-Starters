@@ -31,8 +31,10 @@ public class FundraiserTacticUpdateService extends AbstractService<Fundraiser, T
 	@Override
 	public void authorise() {
 		boolean status;
+		Fundraiser fundraiser;
 
-		status = this.entityTactic != null && this.entityTactic.getStrategy().getDraftMode() && this.entityTactic.getStrategy().getFundraiser().isPrincipal();
+		fundraiser = (Fundraiser) super.getRequest().getPrincipal().getActiveRealm();
+		status = this.entityTactic != null && this.entityTactic.getStrategy() != null && this.entityTactic.getStrategy().getDraftMode() && this.entityTactic.getStrategy().getFundraiser() != null && this.entityTactic.getStrategy().getFundraiser().getId() == fundraiser.getId();
 		super.setAuthorised(status);
 	}
 

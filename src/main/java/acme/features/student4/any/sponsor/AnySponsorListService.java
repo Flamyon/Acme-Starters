@@ -16,7 +16,7 @@ public class AnySponsorListService extends AbstractService<Any, Sponsor> {
 	@Autowired
 	private AnySponsorRepository	repository;
 
-	private Sponsor				sponsor;
+	private Sponsor					sponsor;
 
 	// AbstractService interface -------------------------------------------
 

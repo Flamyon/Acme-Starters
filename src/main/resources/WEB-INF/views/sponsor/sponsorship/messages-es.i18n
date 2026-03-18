@@ -8,14 +8,27 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+<<<<<<< HEAD
 sponsor.sponsorship.form.title = Detalles del patrocinio
 sponsor.sponsorship.list.title = Lista de patrocinios
 
 sponsor.sponsorship.form.label.ticker = Referencia:
+=======
+# ---------------------------------------------------------------------------
+# Sponsorship (Patrocinios)
+# ---------------------------------------------------------------------------
+
+sponsor.sponsorship.form.title = Detalles del patrocinio
+sponsor.sponsorship.list.title = Lista de patrocinios
+
+# Etiquetas de los campos
+sponsor.sponsorship.form.label.ticker = Ticker:
+>>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705
 sponsor.sponsorship.form.label.name = Nombre:
 sponsor.sponsorship.form.label.description = Descripción:
 sponsor.sponsorship.form.label.startMoment = Fecha de inicio:
 sponsor.sponsorship.form.label.endMoment = Fecha de fin:
+<<<<<<< HEAD
 sponsor.sponsorship.form.label.moreInfo = Más información:
 
 sponsor.sponsorship.form.button.donations = Ver Donaciones
@@ -27,3 +40,24 @@ sponsor.sponsorship.list.label.startMoment = Fecha de inicio
 sponsor.sponsorship.list.label.endMoment = Fecha de fin
 sponsor.sponsorship.form.label.monthsActive = Meses activo
 sponsor.sponsorship.form.label.totalMoney = Dinero total
+=======
+sponsor.sponsorship.form.label.moreInfo = Más información (URL):
+sponsor.sponsorship.form.label.totalMoney = Dinero total:
+sponsor.sponsorship.form.label.monthsActive = Meses activo:
+
+# Botones de acción
+sponsor.sponsorship.form.button.donations = Ver donaciones
+sponsor.sponsorship.form.button.update = Actualizar
+sponsor.sponsorship.form.button.delete = Eliminar
+sponsor.sponsorship.form.button.publish = Publicar
+sponsor.sponsorship.form.button.create = Crear
+
+# Etiquetas para la lista (opcional, para coherencia)
+sponsor.sponsorship.list.label.ticker = Ticker
+sponsor.sponsorship.list.label.name = Nombre
+sponsor.sponsorship.list.label.startMoment = Fecha inicio
+sponsor.sponsorship.list.label.endMoment = Fecha fin
+sponsor.sponsorship.list.button.create = Crear patrocinio
+sponsor.sponsorship.list.label.draftMode = Borrador
+
+>>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705

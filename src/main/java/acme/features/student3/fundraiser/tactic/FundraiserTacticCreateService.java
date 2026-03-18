@@ -16,11 +16,10 @@ import acme.realms.Fundraiser;
 public class FundraiserTacticCreateService extends AbstractService<Fundraiser, Tactic> {
 
 	@Autowired
-	private FundraiserTacticRepository	repo;
+	private FundraiserTacticRepository repo;
 
-	private Strategy					parentStrategy;
-	private Tactic					entityTactic;
-
+	private Strategy parentStrategy;
+	private Tactic entityTactic;
 
 	@Override
 	public void load() {
@@ -35,7 +34,16 @@ public class FundraiserTacticCreateService extends AbstractService<Fundraiser, T
 
 	@Override
 	public void authorise() {
-		super.setAuthorised(super.getRequest().getPrincipal().getActiveRealm().getClass() == Fundraiser.class);
+		boolean status = false;
+		Fundraiser fundraiser;
+		Strategy parent;
+
+		fundraiser = (Fundraiser) super.getRequest().getPrincipal().getActiveRealm();
+		parent = this.repo.findStrategyById(super.getRequest().getData("strategyId", int.class));
+		if (parent != null && parent.getFundraiser() != null && parent.getFundraiser().getId() == fundraiser.getId() && parent.getDraftMode())
+			status = true;
+
+		super.setAuthorised(status);
 	}
 
 	@Override
@@ -45,6 +53,7 @@ public class FundraiserTacticCreateService extends AbstractService<Fundraiser, T
 
 	@Override
 	public void validate() {
+		super.validateObject(this.entityTactic);
 	}
 
 	@Override

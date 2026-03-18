@@ -1,0 +1,14 @@
+key,key:userAccount,cv,achievements,licensed
+
+#CV (Validaciones de URL obligatoria, vacía o mal formada)
+spokesperson-02,user-02,,"Logros ejemplo",TRUE
+spokesperson-03,user-03,"               ","Logros ejemplo",TRUE
+spokesperson-04,user-04,"esto-no-es-una-url","Logros ejemplo",TRUE
+
+#ACHIEVEMENTS (Validaciones de texto de logros)
+spokesperson-05,user-05,"http://www.cv.com",,TRUE
+spokesperson-06,user-06,"http://www.cv.com","          ",TRUE
+spokesperson-07,user-07,"http://www.cv.com","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",TRUE
+
+#LICENSED (Validación del booleano obligatorio)
+spokesperson-08,user-08,"http://www.cv.com","Logros ejemplo",""

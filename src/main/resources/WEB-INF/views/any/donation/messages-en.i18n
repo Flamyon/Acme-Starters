@@ -19,5 +19,5 @@ any.donation.form.label.name = Name:
 any.donation.form.label.money = Amount donated:
 any.donation.form.label.kind = Donation type:
 any.donation.form.label.notes = Additional notes:
-
 any.donation.form.button.return = Back to list
+any.donation.form.button.return = Back to sponsorship

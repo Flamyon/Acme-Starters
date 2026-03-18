@@ -1,0 +1,4 @@
+key,key:userAccount,firm,highlights,solicitor
+auditor-01,user-account-auditor-01,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetu",true
+auditor-02,user-account-auditor-02,random firm from my fellow,nba highlights,true
+auditor-03,user-account-auditor-03,"random firm from my fellow, just sayin","nba highlights, this is a highlight ye",false

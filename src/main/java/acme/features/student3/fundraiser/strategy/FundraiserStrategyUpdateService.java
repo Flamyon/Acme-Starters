@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import acme.client.components.models.Tuple;
 import acme.client.services.AbstractService;
 import acme.entities.student3.Strategy;
+import acme.client.helpers.MomentHelper;
 import acme.realms.Fundraiser;
 
 @Service
@@ -29,8 +30,10 @@ public class FundraiserStrategyUpdateService extends AbstractService<Fundraiser,
 	@Override
 	public void authorise() {
 		boolean status;
+		Fundraiser fundraiser;
 
-		status = this.entity != null && this.entity.getDraftMode() && this.entity.getFundraiser().isPrincipal();
+		fundraiser = (Fundraiser) super.getRequest().getPrincipal().getActiveRealm();
+		status = this.entity != null && this.entity.getDraftMode() && this.entity.getFundraiser() != null && this.entity.getFundraiser().getId() == fundraiser.getId();
 		super.setAuthorised(status);
 	}
 
@@ -42,6 +45,31 @@ public class FundraiserStrategyUpdateService extends AbstractService<Fundraiser,
 	@Override
 	public void validate() {
 		super.validateObject(this.entity);
+
+		// 1. ticker uniqueness (prevent DB unique-constraint errors)
+		String ticker = this.entity.getTicker();
+		if (ticker != null && !ticker.trim().isEmpty()) {
+			Strategy other = this.repo.findStrategyByTicker(ticker);
+			if (other != null && other.getId() != this.entity.getId()) {
+				super.state(false, "ticker", "acme.validation.strategy.ticker-duplicated.message");
+			}
+		}
+
+		// 2. date checks: start and end must be present and start < end
+		java.util.Date start = this.entity.getStartMoment();
+		java.util.Date end = this.entity.getEndMoment();
+
+		if (start == null) {
+			super.state(false, "startMoment", "acme.validation.strategy.start-null.message");
+		}
+
+		if (end == null) {
+			super.state(false, "endMoment", "acme.validation.strategy.end-null.message");
+		}
+
+		if (start != null && end != null) {
+			super.state(MomentHelper.isBefore(start, end), "endMoment", "acme.validation.strategy.invalid-interval.message");
+		}
 	}
 
 	@Override

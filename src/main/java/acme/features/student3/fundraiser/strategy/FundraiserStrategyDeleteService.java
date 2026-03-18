@@ -17,7 +17,8 @@ public class FundraiserStrategyDeleteService extends AbstractService<Fundraiser,
 	@Autowired
 	private FundraiserStrategyRepository	repo;
 
-	private Strategy					entity;
+	private Strategy						entity;
+
 
 	@Override
 	public void load() {
@@ -30,8 +31,10 @@ public class FundraiserStrategyDeleteService extends AbstractService<Fundraiser,
 	@Override
 	public void authorise() {
 		boolean status;
+		Fundraiser fundraiser;
 
-		status = this.entity != null && this.entity.getDraftMode() && this.entity.getFundraiser().isPrincipal();
+		fundraiser = (Fundraiser) super.getRequest().getPrincipal().getActiveRealm();
+		status = this.entity != null && this.entity.getDraftMode() && this.entity.getFundraiser() != null && this.entity.getFundraiser().getId() == fundraiser.getId();
 
 		super.setAuthorised(status);
 	}
