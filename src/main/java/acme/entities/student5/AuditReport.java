@@ -22,6 +22,7 @@ import acme.client.components.validation.ValidUrl;
 import acme.constraints.ValidAuditReport;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
+import acme.constraints.ValidTicker;
 import acme.realms.Auditor;
 import lombok.Getter;
 import lombok.Setter;
@@ -42,7 +43,7 @@ public class AuditReport extends AbstractEntity {
 	//Attributes -------------------------------------------------------------
 
 	@Mandatory
-	//@ValidTicker
+	@ValidTicker
 	@Column(unique = true)
 	private String					ticker;
 

@@ -44,19 +44,21 @@ public class AuditorAuditReportUpdateService extends AbstractService<Auditor, Au
 	public void validate() {
 		super.validateObject(this.entity);
 
-		// TICKER
-		if (!super.getErrors().hasErrors("ticker")) {
-
-			String ticker = this.entity.getTicker();
-
-			if (ticker != null && !ticker.trim().isEmpty()) {
-				AuditReport other = this.repo.findAuditReportByTicker(ticker);
-
-				boolean isDuplicate = other != null;
-
-				super.state(!isDuplicate, "ticker", "acme.validation.audit-report.ticker-duplicated.message");
-			}
-		}
+		/*
+		 * TICKER
+		 * if (!super.getErrors().hasErrors("ticker")) {
+		 * 
+		 * String ticker = this.entity.getTicker();
+		 * 
+		 * if (ticker != null && !ticker.trim().isEmpty()) {
+		 * AuditReport other = this.repo.findAuditReportByTicker(ticker);
+		 * 
+		 * boolean isDuplicate = other != null;
+		 * 
+		 * super.state(!isDuplicate, "ticker", "acme.validation.audit-report.ticker-duplicated.message");
+		 * }
+		 * }
+		 */
 
 		// FECHAS
 		if (!super.getErrors().hasErrors("startMoment"))

@@ -74,7 +74,7 @@ public class AuditorAuditSectionUpdateService extends AbstractService<Auditor, A
 		tuple = super.unbindObject(this.auditSection, "name", "notes", "hours", "kind");
 		tuple.put("AuditReportId", super.getRequest().getData("AuditReportId", int.class));
 		tuple.put("draftMode", this.auditSection.getAuditReport().getDraftMode());
-		tuple.put("kinds", choices);
+		tuple.put("choices", choices);
 	}
 
 }
