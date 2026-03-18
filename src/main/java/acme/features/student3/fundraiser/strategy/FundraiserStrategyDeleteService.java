@@ -31,9 +31,10 @@ public class FundraiserStrategyDeleteService extends AbstractService<Fundraiser,
 	@Override
 	public void authorise() {
 		boolean status;
+		Fundraiser fundraiser;
 
-		int principalId = super.getRequest().getPrincipal().getAccountId();
-		status = this.entity != null && this.entity.getDraftMode() && this.entity.getFundraiser() != null && this.entity.getFundraiser().getUserAccount().getId() == principalId;
+		fundraiser = (Fundraiser) super.getRequest().getPrincipal().getActiveRealm();
+		status = this.entity != null && this.entity.getDraftMode() && this.entity.getFundraiser() != null && this.entity.getFundraiser().getId() == fundraiser.getId();
 
 		super.setAuthorised(status);
 	}

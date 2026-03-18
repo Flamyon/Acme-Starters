@@ -31,16 +31,13 @@ public class FundraiserTacticListService extends AbstractService<Fundraiser, Tac
 	@Override
 	public void authorise() {
 		boolean status = false;
+		Strategy strategy;
+		Fundraiser fundraiser;
 
-		try {
-			int strategyId = super.getRequest().getData("strategyId", int.class);
-			Strategy strategy = this.repo.findStrategyById(strategyId);
-			int principalId = super.getRequest().getPrincipal().getAccountId();
-			if (strategy != null && strategy.getFundraiser() != null && strategy.getFundraiser().getUserAccount().getId() == principalId)
-				status = true;
-		} catch (Exception e) {
-			status = false;
-		}
+		strategy = this.repo.findStrategyById(super.getRequest().getData("strategyId", int.class));
+		fundraiser = (Fundraiser) super.getRequest().getPrincipal().getActiveRealm();
+		if (strategy != null && strategy.getFundraiser() != null && strategy.getFundraiser().getId() == fundraiser.getId())
+			status = true;
 
 		super.setAuthorised(status);
 	}
