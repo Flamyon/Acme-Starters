@@ -53,4 +53,4 @@ acme.validation.audit-report.invalid-date-order.message = La fecha de fin debe s
 acme.validation.audit-report.date-not-future.message = La fecha de inicio debe ser futura
 acme.validation.audit-report.no-auditSections.message = Un reporte debe tener al menos una sección para poder publicarse
 acme.validation.audit-report.invalid-interval.message = La fecha de fin debe ser posterior a la de inicio
-
+acme.validation.auditReport.no-auditSections.message = Un reporte debe tener al menos una sección para poder publicarse

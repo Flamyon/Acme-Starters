@@ -14,6 +14,9 @@ any.auditReport.form.title = Reporte de auditoría
 any.auditReport.list.label.ticker = Ticker
 any.auditReport.list.label.name = Nombre
 any.auditReport.list.label.description = Descripción
+any.auditReport.list.label.startMoment = Momento de inicio
+any.auditReport.list.label.endMoment = Momento de fin
+
 
 any.auditor.form.title = Auditor
 any.audit-section.list.title = Secciones de auditoría
@@ -25,7 +28,7 @@ any.auditReport.form.label.endMoment = Fecha de fin
 any.auditReport.form.label.description = Descripción
 any.auditReport.form.label.moreInfo = Información adicional
 any.auditReport.form.label.monthsActive = Meses activa
-any.auditReport.form.label.expectedPercentage = Porcentaje esperado
+any.auditReport.form.label.hours = Horas
  
-any.auditReport.form.button.fundraiser = Ver financiadores
-any.auditReport.form.button.tactic = Ver tácticas
+any.auditReport.form.button.auditor = Ver auditores
+any.auditReport.form.button.auditSection = Ver secciones de auditoría

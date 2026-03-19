@@ -23,7 +23,7 @@ auditor.audit-report.form.label.startMoment = Fecha de inicio
 auditor.audit-report.form.label.endMoment = Fecha de fin
 auditor.audit-report.form.label.moreInfo = Información extra
 auditor.audit-report.form.label.monthsActive = Meses activo
-auditor.audit-report.form.label.horas = Horas
+auditor.audit-report.form.label.hours = Horas
 
 auditor.audit-report.form.button.audit-section = Ver secciones de auditoría
 auditor.audit-report.form.button.create = Crear
