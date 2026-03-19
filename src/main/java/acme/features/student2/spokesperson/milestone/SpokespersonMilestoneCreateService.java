@@ -30,7 +30,11 @@ public class SpokespersonMilestoneCreateService extends AbstractService<Spokespe
 	}
 	@Override
 	public void authorise() {
-		super.setAuthorised(super.getRequest().getPrincipal().getActiveRealm().getClass() == Spokesperson.class && this.parent.getDraftMode());
+		boolean isSpokesperson = super.getRequest().getPrincipal().getActiveRealm().getClass() == Spokesperson.class;
+
+		boolean isValidCampaign = this.parent != null && this.parent.getDraftMode();
+
+		super.setAuthorised(isSpokesperson && isValidCampaign);
 	}
 	@Override
 	public void bind() {
