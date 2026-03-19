@@ -28,16 +28,14 @@ public class MilestoneShowService extends AbstractService<Any, Milestone> {
 
 		id = super.getRequest().getData("id", int.class);
 		this.milestone = this.repository.findMilestoneById(id);
-		this.campaign = this.milestone.getCampaign();
+		if (this.milestone != null)
+			this.campaign = this.milestone.getCampaign();
 	}
 
 	@Override
 	public void authorise() {
-		boolean status;
 
-		status = this.milestone != null && !this.campaign.getDraftMode();
-
-		super.setAuthorised(status);
+		super.setAuthorised(this.milestone != null && !this.campaign.getDraftMode());
 	}
 
 	@Override
