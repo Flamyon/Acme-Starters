@@ -27,11 +27,10 @@ public class SpokespersonMilestoneCreateService extends AbstractService<Spokespe
 		this.parent = this.repo.findCampaignById(campaignId);
 		this.entity = this.newObject(Milestone.class);
 		this.entity.setCampaign(this.parent);
-		this.entity.getCampaign().setDraftMode(true);
 	}
 	@Override
 	public void authorise() {
-		super.setAuthorised(super.getRequest().getPrincipal().getActiveRealm().getClass() == Spokesperson.class);
+		super.setAuthorised(super.getRequest().getPrincipal().getActiveRealm().getClass() == Spokesperson.class && this.parent.getDraftMode());
 	}
 	@Override
 	public void bind() {
