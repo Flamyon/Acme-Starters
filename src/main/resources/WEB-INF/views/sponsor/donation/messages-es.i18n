@@ -8,26 +8,32 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-sponsor.donation.list.title = Lista de donaciones
-sponsor.donation.list.label.name = Nombre
-sponsor.donation.list.label.money = Cantidad aportada
-sponsor.donation.list.label.kind = Tipo
+# -------------------------------------------------------------------
+# Donaciones (Donations) - Internacionalización en Español
+# -------------------------------------------------------------------
 
+# Títulos
+# -------------------------------------------------------------------
 sponsor.donation.form.title = Detalles de la donación
+sponsor.donation.list.title = Lista de donaciones
 
+# Etiquetas del Formulario
+# -------------------------------------------------------------------
 sponsor.donation.form.label.name = Nombre:
 sponsor.donation.form.label.money = Cantidad aportada:
 sponsor.donation.form.label.kind = Tipo de donación:
 sponsor.donation.form.label.notes = Notas adicionales:
 
-<<<<<<< HEAD
-sponsor.donation.form.button.return = Volver a la lista
-=======
-sponsor.donation.form.button.return = Volver a la lista
+# Etiquetas de la Lista (Cabeceras de Tabla)
+# -------------------------------------------------------------------
+sponsor.donation.list.label.name = Nombre
+sponsor.donation.list.label.money = Cantidad aportada
+sponsor.donation.list.label.kind = Tipo
 
-sponsor.donation.list.button.create = Nueva donación
-
+# Botones de Acción
+# -------------------------------------------------------------------
 sponsor.donation.form.button.create = Crear
 sponsor.donation.form.button.update = Actualizar
 sponsor.donation.form.button.delete = Eliminar
->>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705
+sponsor.donation.form.button.return = Volver a la lista
+sponsor.donation.list.button.create = Nueva donación

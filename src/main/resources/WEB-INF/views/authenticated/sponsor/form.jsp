@@ -16,14 +16,12 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-<<<<<<< HEAD:src/main/resources/WEB-INF/views/sponsor/sponsor/form.jsp
 	<acme:form-textbox code="sponsor.sponsor.form.label.name" path="identity.name"/>
 	<acme:form-textbox code="sponsor.sponsor.form.label.surname" path="identity.surname"/>
 	<acme:form-textbox code="sponsor.sponsor.form.label.email" path="identity.email"/>
 	<acme:form-textbox code="sponsor.sponsor.form.label.address" path="address"/>
 	<acme:form-textbox code="sponsor.sponsor.form.label.im" path="im"/>
 	<acme:form-textbox code="sponsor.sponsor.form.label.gold" path="gold"/>
-=======
 	<acme:form-textbox code="sponsor.sponsor.form.label.address" path="address"/>
 	<acme:form-textbox code="sponsor.sponsor.form.label.im" path="im"/>
 	<acme:form-select code="sponsor.sponsor.form.label.gold" path="gold" choices="${goldChoices}"/>
@@ -34,5 +32,4 @@
 	<jstl:if test="${_command == 'update'}">
 		<acme:submit code="authenticated.sponsor.form.button.update" action="/authenticated/sponsor/update"/>
 	</jstl:if>
->>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705:src/main/resources/WEB-INF/views/authenticated/sponsor/form.jsp
 </acme:form>

@@ -14,9 +14,6 @@ sponsor.sponsor.form.label.surname = Surname:
 sponsor.sponsor.form.label.email = Email:
 sponsor.sponsor.form.label.address = Address:
 sponsor.sponsor.form.label.im = Instant Messaging:
-<<<<<<< HEAD:src/main/resources/WEB-INF/views/sponsor/sponsor/messages-en.i18n
-sponsor.sponsor.form.label.gold = Gold Member:
-=======
 sponsor.sponsor.form.label.gold = Gold Member:
 
 authenticated.sponsor.form.title = Sponsor form
@@ -25,4 +22,3 @@ authenticated.sponsor.form.value.false = No
 
 authenticated.sponsor.form.button.create = Register
 authenticated.sponsor.form.button.update = Update
->>>>>>> 05ee1e65c64b3a95b052a8c1b0a8d2108cd84705:src/main/resources/WEB-INF/views/authenticated/sponsor/messages-en.i18n
