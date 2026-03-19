@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.client.components.models.Tuple;
 import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
+import acme.entities.student2.Campaign;
 import acme.entities.student2.Milestone;
 
 public class MilestoneShowService extends AbstractService<Any, Milestone> {
@@ -16,6 +17,8 @@ public class MilestoneShowService extends AbstractService<Any, Milestone> {
 
 	private Milestone			milestone;
 
+	private Campaign			campaign;
+
 	// AbstractService interface -------------------------------------------
 
 
@@ -25,13 +28,14 @@ public class MilestoneShowService extends AbstractService<Any, Milestone> {
 
 		id = super.getRequest().getData("id", int.class);
 		this.milestone = this.repository.findMilestoneById(id);
+		this.campaign = this.milestone.getCampaign();
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
 
-		status = this.milestone != null;
+		status = this.milestone != null && !this.campaign.getDraftMode();
 
 		super.setAuthorised(status);
 	}

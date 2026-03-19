@@ -35,5 +35,6 @@ public class SpokespersonMilestoneListService extends AbstractService<Spokespers
 		int campaignId = super.getRequest().getData("campaignId", int.class);
 		super.unbindObjects(this.milestones, "title", "effort", "kind");
 		super.unbindGlobal("campaignId", campaignId);
+		super.unbindGlobal("draftMode", this.campaign.getDraftMode());
 	}
 }

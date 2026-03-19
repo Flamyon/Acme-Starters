@@ -31,6 +31,9 @@ acme.validation.campaign.no-milestones.message = No se puede publicar una campa�
 acme.validation.campaign.start-not-future.message = La fecha de inicio debe estar en el futuro en el momento de publicación.
 acme.validation.campaign.end-not-future.message = La fecha de fin debe estar en el futuro en el momento de publicación.
 acme.validation.campaign.invalid-interval.message = La fecha de inicio debe ser anterior a la fecha de fin.
+acme.validation.campaign.ticker.duplicate.message = Este ticker ya está en uso
+acme.validation.campaign.invalid-date-order.message = La fecha de fin debe ser posterior a la de inicio
+acme.validation.sponsorship.missing-donations.message = Una campaña debe tener al menos un hito para poder publicarse
 
 # ValidSponsorship
 acme.validation.sponsorship.duplicated-ticker.message = Este ticker ya está en uso

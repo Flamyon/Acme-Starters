@@ -31,6 +31,9 @@ acme.validation.campaign.no-milestones.message = Cannot publish a campaign that 
 acme.validation.campaign.start-not-future.message = Start moment must be in the future at publish time.
 acme.validation.campaign.end-not-future.message = End moment must be in the future at publish time.
 acme.validation.campaign.invalid-interval.message = Start moment must be before end moment.
+acme.validation.campaign.ticker.duplicate.message = This ticker is already in use.
+acme.validation.campaign.invalid-date-order.message = End date must be after start date
+acme.validation.sponsorship.missing-donations.message = A campaign must have at least one milestone to be published
 
 # ValidSponsorship
 acme.validation.sponsorship.duplicated-ticker.message = This ticker is already in use
