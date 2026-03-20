@@ -26,6 +26,13 @@ public class InventorPartCreateService extends AbstractService<Inventor, Part> {
 	public void load() {
 		int inventionId;
 
+		if (!super.getRequest().hasData("inventionId", int.class)) {
+			this.entityPart = this.newObject(Part.class);
+			this.entityPart.setInvention(null);
+			this.parentInvention = null;
+			return;
+		}
+
 		inventionId = super.getRequest().getData("inventionId", int.class);
 		this.parentInvention = this.repo.findInventionById(inventionId);
 		this.entityPart = this.newObject(Part.class);
