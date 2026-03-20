@@ -28,6 +28,12 @@ public class AuditorAuditSectionCreateService extends AbstractService<Auditor, A
 		int auditReportId;
 		AuditReport auditReport;
 
+		if (!super.getRequest().hasData("auditReportId", int.class)) {
+			this.auditSection = super.newObject(AuditSection.class);
+			this.auditSection.setAuditReport(null);
+			return;
+		}
+
 		auditReportId = super.getRequest().getData("auditReportId", int.class);
 		auditReport = this.repository.findAuditReportById(auditReportId);
 
@@ -38,11 +44,14 @@ public class AuditorAuditSectionCreateService extends AbstractService<Auditor, A
 	@Override
 	public void authorise() {
 		boolean status;
+		AuditReport auditReport;
 
-		// Parent sponsorship must exist, be in draft, and belong to this sponsor
-		status = this.auditSection.getAuditReport() != null && //
-			this.auditSection.getAuditReport().getDraftMode() && //
-			this.auditSection.getAuditReport().getAuditor().isPrincipal();
+		auditReport = this.auditSection.getAuditReport();
+
+		status = auditReport != null && //
+			auditReport.getDraftMode() && //
+			auditReport.getAuditor() != null && //
+			auditReport.getAuditor().isPrincipal();
 
 		super.setAuthorised(status);
 	}
