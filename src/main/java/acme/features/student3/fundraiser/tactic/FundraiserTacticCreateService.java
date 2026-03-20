@@ -30,7 +30,6 @@ public class FundraiserTacticCreateService extends AbstractService<Fundraiser, T
 		if (this.parentStrategy != null) {
 			this.entityTactic = this.newObject(Tactic.class);
 			this.entityTactic.setStrategy(this.parentStrategy);
-			this.entityTactic.getStrategy().setDraftMode(true);
 		}
 	}
 
