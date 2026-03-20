@@ -1,0 +1,10 @@
+any.milestone.list.title = Milestones list
+any.milestone.form.title = Milestone
+any.milestone.list.label.title = Title
+any.milestone.list.label.effort = Effort
+any.milestone.list.label.kind = Type
+any.milestone.form.label.title = Title
+any.milestone.form.label.achievements = Achievements
+any.milestone.form.label.effort = Effort
+any.milestone.form.label.kind = Type
+any.milestone.form.button.campaign = Back to campaign

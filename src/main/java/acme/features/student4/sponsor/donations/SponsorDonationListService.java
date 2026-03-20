@@ -1,0 +1,63 @@
+
+package acme.features.student4.sponsor.donations;
+
+import java.util.Collection;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import acme.client.services.AbstractService;
+import acme.entities.student4.Donation;
+import acme.entities.student4.Sponsorship;
+import acme.realms.Sponsor;
+
+@Service
+public class SponsorDonationListService extends AbstractService<Sponsor, Donation> {
+
+	// Internal state ---------------------------------------------------------
+
+	@Autowired
+	private SponsorDonationRepository	repository;
+
+	private Collection<Donation>		donations;
+
+	// AbstractService interface -------------------------------------------
+
+
+	@Override
+	public void load() {
+		int sponsorshipId;
+
+		sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
+		this.donations = this.repository.findDonationsBySponsorshipId(sponsorshipId);
+	}
+
+	@Override
+	public void authorise() {
+		boolean status;
+		int sponsorshipId;
+		Sponsorship sponsorship;
+
+		sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
+		sponsorship = this.repository.findSponsorshipById(sponsorshipId);
+
+		status = sponsorship != null && sponsorship.getSponsor().isPrincipal();
+
+		super.setAuthorised(status);
+	}
+
+	@Override
+	public void unbind() {
+		int sponsorshipId;
+		Sponsorship sponsorship;
+		boolean showCreate;
+
+		sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
+		sponsorship = this.repository.findSponsorshipById(sponsorshipId);
+		showCreate = sponsorship != null && sponsorship.getDraftMode() && sponsorship.getSponsor().isPrincipal();
+
+		super.getResponse().addGlobal("sponsorshipId", sponsorshipId);
+		super.getResponse().addGlobal("showCreate", showCreate);
+		super.unbindObjects(this.donations, "name", "money", "kind");
+	}
+}

@@ -1,0 +1,13 @@
+key,firm,highlights,solicitor
+#BASE,"","","",""
+auditor-01,Firm,"Incredible Highlights",true
+#FIRM,"","","",""
+auditor-02,,"Incredible Highlights",true
+auditor-03,"                 ","Incredible Highlights",true
+auditor-04,Unnecessarily big name just to pass the limit and train the system with wrong data,"Incredible Highlights",true
+#HIGLIGHTS,"","","",""
+auditor-05,Firm,,true
+auditor-06,Firm,"                  ",true
+auditor-07,Firm,Unnecessarily big name just to pass the limit and train the system with wrong data,true
+#SOLICITOR,"","","",""
+auditor-08,Firm,"Incredible Highlights",

@@ -1,0 +1,11 @@
+key,key:userAccount,bio,keyWords,licensed
+#BIO,"","","",""
+inventor-01,user-account-consumer-01,"","Ganador del premio 2023.",true
+inventor-02,user-account-consumer-02,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i","Ganador del premio 2023.",true
+#KEYWORDS,"","","",""
+inventor-03,user-account-consumer-03,"Licenciado en Periodismo.","",true
+inventor-04,user-account-consumer-01,"Licenciado en Periodismo.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",true
+#LICENSED,"","","",""
+inventor-05,user-account-consumer-02,"Experto en RRPP.","Ganador del premio 2023.",""
+#KEY:USERACCOUNT,"","","",""
+inventor-06,"","Especialista digital.","Crecimiento del 200%.",false

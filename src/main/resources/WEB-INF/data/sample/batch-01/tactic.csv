@@ -1,0 +1,42 @@
+key,name,notes,expectedPercentage,kind,key:strategy
+#BASE,"","","","",""
+tactic-01,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.0,SUBTLE,strategy-28
+
+#NAME,"","","","",""
+tactic-02,L,"Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.0,SUBTLE,strategy-01
+tactic-03,Lo,"Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.0,SUBTLE,strategy-01
+tactic-04,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod t","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.0,SUBTLE,strategy-01
+tactic-05,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod te","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.0,SUBTLE,strategy-01
+tactic-06,โลเร็ม อิปซัม,"Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.0,SUBTLE,strategy-01
+tactic-07,لوريم إيبسوم,"Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.0,SUBTLE,strategy-01
+tactic-08,洛伦·伊普森,"Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.0,SUBTLE,strategy-01
+tactic-09,<marquee>Hacked</marquee>,"Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.0,SUBTLE,strategy-01
+tactic-10,<script>alert('Hacked!');</script>,"Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.0,SUBTLE,strategy-01
+tactic-11,' or 'A' = 'A,"Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.0,SUBTLE,strategy-01
+
+#NOTES,"","","","",""
+tactic-12,"Lorem ipsum dolor sit amet, consectetu",L,50.0,SUBTLE,strategy-01
+tactic-13,"Lorem ipsum dolor sit amet, consectetu",Lo,50.0,SUBTLE,strategy-01
+tactic-14,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",50.0,SUBTLE,strategy-01
+tactic-15,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",50.0,SUBTLE,strategy-01
+tactic-16,"Lorem ipsum dolor sit amet, consectetu",โลเร็ม อิปซัม,50.0,SUBTLE,strategy-01
+tactic-17,"Lorem ipsum dolor sit amet, consectetu",لوريم إيبسوم,50.0,SUBTLE,strategy-01
+tactic-18,"Lorem ipsum dolor sit amet, consectetu",洛伦·伊普森,50.0,SUBTLE,strategy-01
+tactic-19,"Lorem ipsum dolor sit amet, consectetu",<marquee>Hacked</marquee>,50.0,SUBTLE,strategy-01
+tactic-20,"Lorem ipsum dolor sit amet, consectetu",<script>alert('Hacked!');</script>,50.0,SUBTLE,strategy-01
+tactic-21,"Lorem ipsum dolor sit amet, consectetu",' or 'A' = 'A,50.0,SUBTLE,strategy-01
+
+#EXPECTEDPERCENTAGE,"","","","",""
+tactic-22,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",0.00,SUBTLE,strategy-01
+tactic-23,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",0.01,SUBTLE,strategy-01
+tactic-24,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",99.99,SUBTLE,strategy-01
+tactic-25,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",100.00,SUBTLE,strategy-01
+
+#KIND,"","","","",""
+tactic-26,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.0,AGGRESSIVE,strategy-01
+tactic-27,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.0,TENDER,strategy-01
+
+#KEY:STRATEGY,"","","","",""
+tactic-28,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.0,SUBTLE,strategy-01
+tactic-29,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.0,SUBTLE,strategy-02
+tactic-30,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.0,SUBTLE,strategy-50

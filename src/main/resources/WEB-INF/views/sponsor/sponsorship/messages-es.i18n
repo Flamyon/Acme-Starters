@@ -1,0 +1,47 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2026 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+# -------------------------------------------------------------------
+# Patrocinios (Sponsorship) - Internacionalización en Español
+# -------------------------------------------------------------------
+
+# Títulos
+# -------------------------------------------------------------------
+sponsor.sponsorship.form.title = Detalles del patrocinio
+sponsor.sponsorship.list.title = Lista de patrocinios
+
+# Etiquetas del Formulario
+# -------------------------------------------------------------------
+sponsor.sponsorship.form.label.ticker = Ticker:
+sponsor.sponsorship.form.label.name = Nombre:
+sponsor.sponsorship.form.label.description = Descripción:
+sponsor.sponsorship.form.label.startMoment = Fecha de inicio:
+sponsor.sponsorship.form.label.endMoment = Fecha de fin:
+sponsor.sponsorship.form.label.moreInfo = Más información (URL):
+sponsor.sponsorship.form.label.totalMoney = Dinero total:
+sponsor.sponsorship.form.label.monthsActive = Meses activo:
+
+# Etiquetas de la Lista (Cabeceras de Tabla)
+# -------------------------------------------------------------------
+sponsor.sponsorship.list.label.ticker = Ticker
+sponsor.sponsorship.list.label.name = Nombre
+sponsor.sponsorship.list.label.startMoment = Fecha de inicio
+sponsor.sponsorship.list.label.endMoment = Fecha de fin
+sponsor.sponsorship.list.label.draftMode = Borrador
+
+# Botones de Acción
+# -------------------------------------------------------------------
+sponsor.sponsorship.form.button.create = Crear
+sponsor.sponsorship.form.button.update = Actualizar
+sponsor.sponsorship.form.button.delete = Eliminar
+sponsor.sponsorship.form.button.publish = Publicar
+sponsor.sponsorship.form.button.donations = Ver donaciones
+sponsor.sponsorship.form.button.sponsor = Ver perfil del patrocinador
+sponsor.sponsorship.list.button.create = Crear patrocinio

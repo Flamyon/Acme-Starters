@@ -1,0 +1,16 @@
+any.campaign.form.title = Campana
+any.campaign.list.title = Lista de campanas
+any.campaign.list.label.ticker = Ticker
+any.campaign.list.label.name = Nombre
+any.campaign.list.label.startMoment = Fecha de inicio
+any.campaign.list.label.endMoment = Fecha de fin
+any.campaign.form.label.ticker = Ticker
+any.campaign.form.label.name = Nombre
+any.campaign.form.label.startMoment = Fecha de inicio
+any.campaign.form.label.endMoment = Fecha de fin
+any.campaign.form.label.description = Descripcion
+any.campaign.form.label.moreInfo = Informacion adicional
+any.campaign.form.label.monthsActive = Meses activa
+any.campaign.form.label.effort = Esfuerzo
+any.campaign.form.button.spokesperson = Ver portavoz
+any.campaign.form.button.milestones = Ver hitos

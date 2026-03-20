@@ -1,0 +1,4 @@
+key,enabled,identity,password,username
+user-account-sponsor-01,true,"UserIdentity{}",sponsor1,sponsor1
+user-account-sponsor-02,true,"UserIdentity{}",sponsor2,sponsor2
+user-account-sponsor-03,true,"UserIdentity{}",sponsor3,sponsor3
