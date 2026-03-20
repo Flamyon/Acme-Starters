@@ -23,10 +23,22 @@ public class SpokespersonMilestoneCreateService extends AbstractService<Spokespe
 
 	@Override
 	public void load() {
-		int campaignId = super.getRequest().getData("campaignId", int.class);
-		this.parent = this.repo.findCampaignById(campaignId);
-		this.entity = this.newObject(Milestone.class);
-		this.entity.setCampaign(this.parent);
+		int campaignId;
+		Campaign campaign;
+
+		if (!super.getRequest().hasData("campaignId", int.class)) {
+			this.entity = super.newObject(Milestone.class);
+			this.entity.setCampaign(null);
+			return;
+		}
+
+		campaignId = super.getRequest().getData("campaignId", int.class);
+		campaign = this.repo.findCampaignById(campaignId);
+
+		this.parent = campaign;
+
+		this.entity = super.newObject(Milestone.class);
+		this.entity.setCampaign(campaign);
 	}
 	@Override
 	public void authorise() {
