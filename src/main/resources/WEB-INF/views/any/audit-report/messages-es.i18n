@@ -20,6 +20,7 @@ any.auditReport.list.label.endMoment = Momento de fin
 
 any.auditor.form.title = Auditor
 any.audit-section.list.title = Secciones de auditoría
+any.audit-report.list.title = Secciones de Auditoría
 
 any.auditReport.form.label.ticker = Ticker
 any.auditReport.form.label.name = Nombre
