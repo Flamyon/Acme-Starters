@@ -36,7 +36,7 @@ public class InventorPartShowService extends AbstractService<Inventor, Part> {
 
 		entityId = super.getRequest().getData("id", int.class);
 		this.entityPart = this.repo.findPartById(entityId);
-		status = this.entityPart != null && this.entityPart.getInvention().getDraftMode() && this.entityPart.getInvention().getInventor().isPrincipal();
+		status = this.entityPart != null && this.entityPart.getInvention().getInventor().isPrincipal();
 		super.setAuthorised(status);
 	}
 
