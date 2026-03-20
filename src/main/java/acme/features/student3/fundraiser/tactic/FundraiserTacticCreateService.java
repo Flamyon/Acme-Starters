@@ -27,9 +27,11 @@ public class FundraiserTacticCreateService extends AbstractService<Fundraiser, T
 
 		this.parentStrategy = this.repo.findStrategyById(strategyId);
 
-		this.entityTactic = this.newObject(Tactic.class);
-		this.entityTactic.setStrategy(this.parentStrategy);
-		this.entityTactic.getStrategy().setDraftMode(true);
+		if (this.parentStrategy != null) {
+			this.entityTactic = this.newObject(Tactic.class);
+			this.entityTactic.setStrategy(this.parentStrategy);
+			this.entityTactic.getStrategy().setDraftMode(true);
+		}
 	}
 
 	@Override
@@ -39,7 +41,7 @@ public class FundraiserTacticCreateService extends AbstractService<Fundraiser, T
 		Strategy parent;
 
 		fundraiser = (Fundraiser) super.getRequest().getPrincipal().getActiveRealm();
-		parent = this.repo.findStrategyById(super.getRequest().getData("strategyId", int.class));
+		parent = this.parentStrategy;
 		if (parent != null && parent.getFundraiser() != null && parent.getFundraiser().getId() == fundraiser.getId() && parent.getDraftMode())
 			status = true;
 
