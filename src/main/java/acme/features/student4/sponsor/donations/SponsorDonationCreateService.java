@@ -28,6 +28,12 @@ public class SponsorDonationCreateService extends AbstractService<Sponsor, Donat
 		int sponsorshipId;
 		Sponsorship sponsorship;
 
+		if (!super.getRequest().hasData("sponsorshipId", int.class)) {
+			this.donation = super.newObject(Donation.class);
+			this.donation.setSponsorship(null);
+			return;
+		}
+
 		sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
 		sponsorship = this.repository.findSponsorshipById(sponsorshipId);
 
@@ -38,11 +44,14 @@ public class SponsorDonationCreateService extends AbstractService<Sponsor, Donat
 	@Override
 	public void authorise() {
 		boolean status;
+		Sponsorship sponsorship;
 
-		// Parent sponsorship must exist, be in draft, and belong to this sponsor
-		status = this.donation.getSponsorship() != null && //
-			this.donation.getSponsorship().getDraftMode() && //
-			this.donation.getSponsorship().getSponsor().isPrincipal();
+		sponsorship = this.donation.getSponsorship();
+
+		status = sponsorship != null && //
+			sponsorship.getDraftMode() && //
+			sponsorship.getSponsor() != null && //
+			sponsorship.getSponsor().isPrincipal();
 
 		super.setAuthorised(status);
 	}
