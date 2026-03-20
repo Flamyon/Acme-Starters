@@ -8,4 +8,7 @@
 	<acme:list-column code="inventor.part.list.label.cost" path="cost" width="30%"/>
 	<acme:list-column code="inventor.part.list.label.kind" path="kind" width="30%"/>
 </acme:list>
-		<acme:button code="inventor.part.form.button.create" action="/inventor/part/create?inventionId=${inventionId}"/>
+
+<jstl:if test="${draftMode}">
+	<acme:button code="inventor.part.form.button.create" action="/inventor/part/create?inventionId=${inventionId}"/>
+</jstl:if>
