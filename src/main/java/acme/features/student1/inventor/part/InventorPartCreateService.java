@@ -30,8 +30,6 @@ public class InventorPartCreateService extends AbstractService<Inventor, Part> {
 		this.parentInvention = this.repo.findInventionById(inventionId);
 		this.entityPart = this.newObject(Part.class);
 		this.entityPart.setInvention(this.parentInvention);
-		if (this.parentInvention != null)
-			this.entityPart.getInvention().setDraftMode(true);
 	}
 
 	@Override
