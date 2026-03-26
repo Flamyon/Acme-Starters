@@ -11,9 +11,11 @@
 	<acme:form-textbox code="fundraiser.strategy.form.label.description" path="description" readonly="${!draftMode}"/>
 	<acme:form-url code="fundraiser.strategy.form.label.moreInfo" path="moreInfo" readonly="${!draftMode}"/>
 	
-	<jstl:if test="${_command != 'create' && draftMode}">
+	<jstl:if test="${_command != 'create'}">
 		<acme:form-textbox code="fundraiser.strategy.form.label.monthsActive" path="monthsActive" readonly="true"/>
 		<acme:form-double code="fundraiser.strategy.form.label.expectedPercentage" path="expectedPercentage" readonly="true"/>
+	</jstl:if>
+	<jstl:if test="${_command != 'create' && draftMode}">
 		<acme:submit code="fundraiser.strategy.form.button.update" action="/fundraiser/strategy/update"/>
 		<acme:submit code="fundraiser.strategy.form.button.publish" action="/fundraiser/strategy/publish"/>
 		<acme:submit code="fundraiser.strategy.form.button.delete" action="/fundraiser/strategy/delete"/>
