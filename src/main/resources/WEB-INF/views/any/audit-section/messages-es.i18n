@@ -19,3 +19,4 @@ any.auditSection.form.label.name = Nombre
 any.auditSection.form.label.notes = Notas
 any.auditSection.form.label.hours = Horas
 any.auditSection.form.label.kind = Tipo
+any.audit-section.form.label.kind = Tipo

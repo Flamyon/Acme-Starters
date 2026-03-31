@@ -56,7 +56,7 @@ public class AuthenticatedAuditorCreateService extends AbstractService<Authentic
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.auditor, "fitm", "highlights", "solicitor");
+		super.unbindObject(this.auditor, "firm", "highlights", "solicitor");
 	}
 
 	@Override

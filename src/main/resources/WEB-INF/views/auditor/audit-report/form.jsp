@@ -23,9 +23,12 @@
 	<acme:form-moment code="auditor.audit-report.form.label.endMoment" path="endMoment" readonly="${!draftMode}"/>
 	<acme:form-url code="auditor.audit-report.form.label.moreInfo" path="moreInfo" readonly="${!draftMode}"/>
 	
-	<jstl:if test="${_command != 'create' && draftMode}">
+	<jstl:if test="${_command != 'create'}">
 		<acme:form-double code="auditor.audit-report.form.label.monthsActive" path="monthsActive" readonly="true"/>
 		<acme:form-integer code="auditor.audit-report.form.label.hours" path="hours" readonly="true"/>
+	</jstl:if>
+	
+	<jstl:if test="${_command != 'create' && draftMode}">
 		<acme:submit code="auditor.audit-report.form.button.update" action="/auditor/audit-report/update"/>
 		<acme:submit code="auditor.audit-report.form.button.publish" action="/auditor/audit-report/publish"/>
 		<acme:submit code="auditor.audit-report.form.button.delete" action="/auditor/audit-report/delete"/>

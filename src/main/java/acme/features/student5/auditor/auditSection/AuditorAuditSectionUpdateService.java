@@ -15,66 +15,37 @@ import acme.realms.Auditor;
 public class AuditorAuditSectionUpdateService extends AbstractService<Auditor, AuditSection> {
 
 	@Autowired
-	private AuditorAuditSectionRepository	repository;
-
-	private AuditSection					auditSection;
+	private AuditorAuditSectionRepository	repo;
+	private AuditSection					entity;
 
 
 	@Override
 	public void load() {
-		int id;
-		id = super.getRequest().getData("id", int.class);
-
-		this.auditSection = this.repository.findAuditSectionById(id);
+		this.entity = this.repo.findAuditSectionById(super.getRequest().getData("id", int.class));
 	}
-
 	@Override
 	public void authorise() {
-		boolean status;
-
-		status = this.auditSection.getAuditReport() != null && //
-			this.auditSection.getAuditReport().getAuditor().isPrincipal() && //
-			this.auditSection.getAuditReport().getDraftMode();
-
-		super.setAuthorised(status);
+		super.setAuthorised(this.entity != null && this.entity.getAuditReport().getDraftMode() && this.entity.getAuditReport().getAuditor().isPrincipal());
 	}
-
 	@Override
 	public void bind() {
-		super.bindObject(this.auditSection, "name", "notes", "hours", "kind");
+		super.bindObject(this.entity, "name", "notes", "hours", "kind");
 	}
-
 	@Override
 	public void validate() {
-		super.validateObject(this.auditSection);
-		/*
-		 * {
-		 * boolean validPercentage;
-		 * Double currentPercentage;
-		 * 
-		 * currentPercentage = this.AuditSection.getAuditReport().getExpectedPercentage();
-		 * validPercentage = currentPercentage + this.AuditSection.getExpectedPercentage() <= 100;
-		 * super.state(validPercentage, "expectedPercentage", "acme.validation.AuditSection.sumPercentages");
-		 * }
-		 */
+		super.validateObject(this.entity);
 	}
-
 	@Override
 	public void execute() {
-		this.repository.save(this.auditSection);
+		this.repo.save(this.entity);
 	}
 
 	@Override
 	public void unbind() {
-		SelectChoices choices;
-		Tuple tuple;
-
-		choices = SelectChoices.from(SectionKind.class, this.auditSection.getKind());
-
-		tuple = super.unbindObject(this.auditSection, "name", "notes", "hours", "kind");
-		tuple.put("AuditReportId", super.getRequest().getData("AuditReportId", int.class));
-		tuple.put("draftMode", this.auditSection.getAuditReport().getDraftMode());
-		tuple.put("choices", choices);
+		SelectChoices choices = SelectChoices.from(SectionKind.class, this.entity.getKind());
+		Tuple t = super.unbindObject(this.entity, "name", "notes", "hours", "kind");
+		t.put("kind", this.entity.getKind());
+		t.put("choices", choices);
+		t.put("draftMode", this.entity.getAuditReport().getDraftMode());
 	}
-
 }
