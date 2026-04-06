@@ -8,13 +8,10 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-sponsor.sponsor.form.title = Perfil del Patrocinador
-sponsor.sponsor.form.label.name = Nombre:
-sponsor.sponsor.form.label.surname = Apellidos:
-sponsor.sponsor.form.label.email = Correo electrónico:
-sponsor.sponsor.form.label.address = Dirección:
-sponsor.sponsor.form.label.im = Mensajería instantánea:
-sponsor.sponsor.form.label.gold = Miembro Gold:
+authenticated.sponsor.form.label.address = Dirección:
+authenticated.sponsor.form.label.im = Mensajería Instantanea:
+authenticated.sponsor.form.label.gold = Miembro Dorado
+
 
 authenticated.sponsor.form.title = Detalles de patrocinador
 authenticated.sponsor.form.value.true = Si

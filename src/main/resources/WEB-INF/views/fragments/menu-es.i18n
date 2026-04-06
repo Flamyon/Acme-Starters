@@ -46,7 +46,7 @@ master.menu.spokesperson = Portavoz
 master.menu.spokesperson.campaign.list = Mis campañas
 
 # master.menu.Student4 ####################################################
-master.menu.sponsorships.unpublished = Lista de patrocinios no publicados
+master.menu.sponsorships.unpublished = Lista de patrocinios
 master.menu.sponsorships = Patrocinios
 master.menu.user-account.become-sponsor = Hacerse sponsor
 
