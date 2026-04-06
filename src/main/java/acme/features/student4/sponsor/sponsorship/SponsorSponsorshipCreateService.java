@@ -33,7 +33,10 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 
 	@Override
 	public void authorise() {
-		super.setAuthorised(true);
+		boolean status;
+		status = !super.getRequest().hasData("id", int.class);
+
+		super.setAuthorised(status);
 	}
 
 	@Override
@@ -53,10 +56,6 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 
 	@Override
 	public void unbind() {
-
-		super.unbindObject(this.sponsorship, //
-			"ticker", "name", "description", "startMoment", "endMoment", "moreInfo", //
-			"draftMode", "monthsActive", "totalMoney");
-
+		super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
 	}
 }

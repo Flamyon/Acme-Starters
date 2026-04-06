@@ -16,15 +16,9 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-	<acme:form-textbox code="sponsor.sponsor.form.label.name" path="identity.name"/>
-	<acme:form-textbox code="sponsor.sponsor.form.label.surname" path="identity.surname"/>
-	<acme:form-textbox code="sponsor.sponsor.form.label.email" path="identity.email"/>
-	<acme:form-textbox code="sponsor.sponsor.form.label.address" path="address"/>
-	<acme:form-textbox code="sponsor.sponsor.form.label.im" path="im"/>
-	<acme:form-textbox code="sponsor.sponsor.form.label.gold" path="gold"/>
-	<acme:form-textbox code="sponsor.sponsor.form.label.address" path="address"/>
-	<acme:form-textbox code="sponsor.sponsor.form.label.im" path="im"/>
-	<acme:form-select code="sponsor.sponsor.form.label.gold" path="gold" choices="${goldChoices}"/>
+	<acme:form-textarea code="authenticated.sponsor.form.label.address" path="address"/>
+	<acme:form-textbox code="authenticated.sponsor.form.label.im" path="im"/>
+	<acme:form-checkbox code="authenticated.sponsor.form.label.gold" path="gold"/>
 	
 	<jstl:if test="${_command == 'create'}">
 		<acme:submit code="authenticated.sponsor.form.button.create" action="/authenticated/sponsor/create"/>

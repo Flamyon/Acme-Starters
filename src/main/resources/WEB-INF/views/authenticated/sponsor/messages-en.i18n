@@ -8,13 +8,9 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-sponsor.sponsor.form.title = Sponsor Profile
-sponsor.sponsor.form.label.name = Name:
-sponsor.sponsor.form.label.surname = Surname:
-sponsor.sponsor.form.label.email = Email:
-sponsor.sponsor.form.label.address = Address:
-sponsor.sponsor.form.label.im = Instant Messaging:
-sponsor.sponsor.form.label.gold = Gold Member:
+authenticated.sponsor.form.label.address = Address:
+authenticated.sponsor.form.label.im = Instant Messaging:
+authenticated.sponsor.form.label.gold = Gold Member:
 
 authenticated.sponsor.form.title = Sponsor form
 authenticated.sponsor.form.value.true = Yes
