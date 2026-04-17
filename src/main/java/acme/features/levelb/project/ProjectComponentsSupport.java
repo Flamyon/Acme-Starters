@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
 
 import acme.entities.levelb.ProjectRepository;
 import acme.entities.student1.Invention;
@@ -26,25 +27,26 @@ public final class ProjectComponentsSupport {
 
 		result = new ArrayList<>();
 
-		if (inventions != null)
-			for (Invention invention : inventions)
-				if (invention != null)
-					result.add(ProjectComponentsSupport.fromInvention(invention));
-
-		if (campaigns != null)
-			for (Campaign campaign : campaigns)
-				if (campaign != null)
-					result.add(ProjectComponentsSupport.fromCampaign(campaign));
-
-		if (strategies != null)
-			for (Strategy strategy : strategies)
-				if (strategy != null)
-					result.add(ProjectComponentsSupport.fromStrategy(strategy));
+		ProjectComponentsSupport.appendComponents(result, inventions, ProjectComponentsSupport::fromInvention);
+		ProjectComponentsSupport.appendComponents(result, campaigns, ProjectComponentsSupport::fromCampaign);
+		ProjectComponentsSupport.appendComponents(result, strategies, ProjectComponentsSupport::fromStrategy);
 
 		result.sort(Comparator.comparing(ProjectComponent::getStartMoment, Comparator.nullsLast(Comparator.naturalOrder())).thenComparing(ProjectComponent::getKindLabel).thenComparing(ProjectComponent::getTicker,
 			Comparator.nullsLast(String::compareToIgnoreCase)));
 
 		return result;
+	}
+
+	private static <T> void appendComponents(final List<ProjectComponent> destination, final Collection<T> source, final Function<T, ProjectComponent> mapper) {
+		assert destination != null;
+		assert mapper != null;
+
+		if (source == null)
+			return;
+
+		for (T element : source)
+			if (element != null)
+				destination.add(mapper.apply(element));
 	}
 
 	public static ProjectComponent fromInvention(final Invention invention) {
