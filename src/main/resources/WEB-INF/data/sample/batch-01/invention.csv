@@ -60,4 +60,6 @@ invention-50,AC25-INV50,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 
 invention-51,AC25-INV51,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://example.org/a/b,TRUE,inventor-01,
 invention-52,AC25-INV52,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://example.org/a/b?,TRUE,inventor-01,
 invention-53,AC25-INV53,Lampara,Objeto para dar luz,2026/04/01 08:00,2026/12/31 17:00,http://example.org/a/b?a&b,TRUE,inventor-01,
+invention-54,AC25-INV54,Lean invention,Short component attached to project-04 for minimum effort scenario,2031/01/01 08:00,2031/04/01 08:00,http://example.org/lean-invention,TRUE,inventor-01,project-04
+invention-55,AC25-INV55,Long invention,Long component attached to project-05 for maximum effort scenario,2031/01/01 08:00,2034/01/01 08:00,http://example.org/long-invention,TRUE,inventor-01,project-05
 

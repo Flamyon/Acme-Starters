@@ -73,3 +73,5 @@ strategy-54,ST00-Str54,Lorem ipsum dolor sit amet,"Start at MIN + Î” (one min
 strategy-55,ST00-Str55,Lorem ipsum dolor sit amet,"Start at MAX - Î” (2200/12/31 23:58) and end at MAX (2200/12/31 23:59)",2200/12/31 23:58,2200/12/31 23:59,http://lorem.com/ipsum,true,fundraiser-01,
 strategy-56,ST00-Str56,Lorem ipsum dolor sit amet,"Normal long-range valid interval",2027/04/01 00:00,2027/12/01 00:00,http://lorem.com/ipsum,true,fundraiser-01,
 strategy-57,ST00-Str57,Lorem ipsum dolor sit amet,"Start at MIN (minimum allowed ahead): 2025/01/01 00:00",2025/01/01 00:00,2027/01/01 00:00,http://lorem.com/ipsum,true,fundraiser-01,
+strategy-58,ST00-Str58,Lean strategy,"Short strategy attached to project-04 for minimum effort scenario",2031/01/01 08:00,2031/04/01 08:00,http://example.org/lean-strategy,true,fundraiser-01,project-04
+strategy-59,ST00-Str59,Long strategy,"Long strategy attached to project-05 for maximum effort scenario",2031/01/01 08:00,2034/01/01 08:00,http://example.org/long-strategy,true,fundraiser-01,project-05

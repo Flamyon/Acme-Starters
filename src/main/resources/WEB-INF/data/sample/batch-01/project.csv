@@ -3,3 +3,5 @@ key,title,keywords,description,kickOff,closeOut,draftMode,key:manager
 project-01,Acme Sensor Platform,"iot,hardware,analytics",Platform to coordinate sensor data ingestion and analysis for pilot customers,2030/01/10 10:00,2030/06/10 10:00,true,manager-01
 project-02,Green Logistics Optimiser,"sustainability,transport,operations",Project focused on optimising distribution routes and reducing emissions across hubs,2030/02/01 09:00,2030/09/01 18:00,true,manager-02
 project-03,Smart Support Assistant,"ai,helpdesk,automation",Internal initiative to automate repetitive support workflows and improve response quality,2030/03/15 08:30,2030/12/15 17:30,true,manager-03
+project-04,Lean Tracking Pilot,"tracking,lean,prototype",Small pilot with short-lived components to produce a low effort benchmark,2031/01/01 08:00,2031/06/01 18:00,true,manager-01
+project-05,Long Term Integration Program,"integration,platform,roadmap",Large program with long-running components to produce a high effort benchmark,2031/01/01 08:00,2034/03/01 18:00,true,manager-01

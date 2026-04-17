@@ -32,3 +32,4 @@ user-account-auditor-04,true,"UserIdentity{name: 'Morgan', surname: 'Freeman', e
 user-account-manager-01,true,"UserIdentity{name: 'Fran', surname: 'Rodriguez', email: 'fran@acme.com'}",manager1,manager1
 user-account-manager-02,true,"UserIdentity{name: 'Raquel', surname: 'Garcia', email: 'raq@acme.com'}",manager2,manager2
 user-account-manager-03,true,"UserIdentity{name: 'Elena', surname: 'Zamudia', email: 'ele@acme.com'}",manager3,manager3
+user-account-manager-04,true,"UserIdentity{name: 'Nora', surname: 'Lopez', email: 'nora@acme.com'}",manager4,manager4
