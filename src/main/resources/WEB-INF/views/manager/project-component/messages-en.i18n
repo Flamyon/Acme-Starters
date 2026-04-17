@@ -1,0 +1,25 @@
+manager.project-components.form.title = Project component
+manager.project-components.list.title = Project components
+manager.project-component.form.title = Project component
+manager.project-component.list.title = Project components
+
+manager.project-components.list.label.kind = Type
+manager.project-components.list.label.ticker = Ticker
+manager.project-components.list.label.name = Name
+manager.project-components.list.label.owner = Owner
+manager.project-components.list.label.draft = Draft
+manager.project-components.list.label.start = Start
+
+manager.project-components.form.label.kind = Type
+manager.project-components.form.label.ticker = Ticker
+manager.project-components.form.label.name = Name
+manager.project-components.form.label.owner = Owner
+manager.project-components.form.label.draft = Draft
+manager.project-components.form.label.start = Start
+manager.project-components.form.label.end = End
+manager.project-components.form.label.description = Description
+manager.project-components.form.label.moreInfo = Additional information
+
+manager.project-components.list.button.return = Return to project
+manager.project-components.form.button.return-list = Return to components
+manager.project-components.form.button.return-project = Return to project

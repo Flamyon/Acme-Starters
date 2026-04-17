@@ -1,4 +1,4 @@
-package acme.features.levelb.fundraiser.projectComponents;
+package acme.features.levelb.manager.projectComponents;
 
 import java.util.Collection;
 import java.util.List;
@@ -8,14 +8,14 @@ import org.springframework.stereotype.Service;
 
 import acme.client.components.models.Tuple;
 import acme.client.services.AbstractService;
-import acme.entities.levelb.MemberRole;
+import acme.entities.levelb.Project;
 import acme.entities.levelb.ProjectRepository;
 import acme.features.levelb.project.ProjectComponent;
 import acme.features.levelb.project.ProjectComponentsSupport;
-import acme.realms.Fundraiser;
+import acme.realms.Manager;
 
 @Service
-public class FundraiserProjectComponentsShowService extends AbstractService<Fundraiser, ProjectComponent> {
+public class ManagerProjectComponentsShowService extends AbstractService<Manager, ProjectComponent> {
 
 	@Autowired
 	private ProjectRepository repository;
@@ -43,19 +43,17 @@ public class FundraiserProjectComponentsShowService extends AbstractService<Fund
 	@Override
 	public void authorise() {
 		boolean status;
-		int userAccountId;
 		ProjectComponent authorised;
 
 		status = false;
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
 		authorised = null;
 
 		for (ProjectComponent candidate : this.candidates) {
-			Long memberships;
+			Project project;
 			boolean candidateAuthorised;
 
-			memberships = this.repository.countProjectMemberByProjectIdAndRoleKindAndUserAccountId(candidate.getProjectId(), userAccountId, MemberRole.FUNDRAISER);
-			candidateAuthorised = memberships != null && memberships > 0;
+			project = this.repository.findProjectById(candidate.getProjectId());
+			candidateAuthorised = project != null && project.getManager() != null && project.getManager().isPrincipal();
 
 			if (candidateAuthorised)
 				if (authorised == null)

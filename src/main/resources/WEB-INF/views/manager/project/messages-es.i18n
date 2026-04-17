@@ -22,3 +22,4 @@ manager.project.form.button.update = Actualizar
 manager.project.form.button.delete = Eliminar
 manager.project.form.button.publish = Publicar
 manager.project.form.button.members = Listar miembros
+manager.project.form.button.components = Listar componentes

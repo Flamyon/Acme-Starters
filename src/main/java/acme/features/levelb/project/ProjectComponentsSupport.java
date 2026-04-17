@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 
+import acme.entities.levelb.ProjectRepository;
 import acme.entities.student1.Invention;
 import acme.entities.student2.Campaign;
 import acme.entities.student3.Strategy;
@@ -50,7 +51,7 @@ public final class ProjectComponentsSupport {
 		ProjectComponent result;
 
 		result = new ProjectComponent();
-		result.setId(ProjectComponentsSupport.encode(ProjectComponent.Kind.INVENTION, invention.getId()));
+		result.setId(invention.getId());
 		result.setKind(ProjectComponent.Kind.INVENTION);
 		result.setSourceId(invention.getId());
 		result.setProjectId(invention.getProject() == null ? 0 : invention.getProject().getId());
@@ -72,7 +73,7 @@ public final class ProjectComponentsSupport {
 		ProjectComponent result;
 
 		result = new ProjectComponent();
-		result.setId(ProjectComponentsSupport.encode(ProjectComponent.Kind.CAMPAIGN, campaign.getId()));
+		result.setId(campaign.getId());
 		result.setKind(ProjectComponent.Kind.CAMPAIGN);
 		result.setSourceId(campaign.getId());
 		result.setProjectId(campaign.getProject() == null ? 0 : campaign.getProject().getId());
@@ -94,7 +95,7 @@ public final class ProjectComponentsSupport {
 		ProjectComponent result;
 
 		result = new ProjectComponent();
-		result.setId(ProjectComponentsSupport.encode(ProjectComponent.Kind.STRATEGY, strategy.getId()));
+		result.setId(strategy.getId());
 		result.setKind(ProjectComponent.Kind.STRATEGY);
 		result.setSourceId(strategy.getId());
 		result.setProjectId(strategy.getProject() == null ? 0 : strategy.getProject().getId());
@@ -106,6 +107,31 @@ public final class ProjectComponentsSupport {
 		result.setMoreInfo(strategy.getMoreInfo());
 		result.setDraftMode(strategy.getDraftMode());
 		result.setOwner(strategy.getFundraiser() != null && strategy.getFundraiser().getIdentity() != null ? strategy.getFundraiser().getIdentity().getFullName() : "-");
+
+		return result;
+	}
+
+	public static List<ProjectComponent> resolveBySourceId(final ProjectRepository repository, final int sourceId) {
+		assert repository != null;
+
+		List<ProjectComponent> result;
+		Invention invention;
+		Campaign campaign;
+		Strategy strategy;
+
+		result = new ArrayList<>();
+
+		invention = repository.findInventionById(sourceId);
+		if (invention != null)
+			result.add(ProjectComponentsSupport.fromInvention(invention));
+
+		campaign = repository.findCampaignById(sourceId);
+		if (campaign != null)
+			result.add(ProjectComponentsSupport.fromCampaign(campaign));
+
+		strategy = repository.findStrategyById(sourceId);
+		if (strategy != null)
+			result.add(ProjectComponentsSupport.fromStrategy(strategy));
 
 		return result;
 	}

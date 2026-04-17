@@ -20,10 +20,13 @@ public class ManagerProjectMemberShowService extends AbstractService<Manager, Pr
 
 	@Override
 	public void load() {
-		int id;
+		Integer id;
 
-		id = super.getRequest().getData("id", int.class);
-		this.projectMember = this.repository.findProjectMemberById(id);
+		id = super.getRequest().getData("id", Integer.class, null);
+		if (id == null)
+			this.projectMember = null;
+		else
+			this.projectMember = this.repository.findProjectMemberById(id.intValue());
 	}
 
 	@Override
