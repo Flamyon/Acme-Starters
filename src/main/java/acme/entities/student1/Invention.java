@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -22,6 +23,7 @@ import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
+import acme.entities.levelb.Project;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -100,6 +102,11 @@ public class Invention extends AbstractEntity {
 		return Math.round(months * 10.0) / 10.0;
 	}
 
+
+	@Valid
+	@JoinColumn(nullable = true)
+	@ManyToOne(optional = true)
+	private Project		project;
 
 	@Mandatory
 	@Valid

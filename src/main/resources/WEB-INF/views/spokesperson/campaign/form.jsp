@@ -4,6 +4,12 @@
 <acme:form>
 	<acme:form-textbox code="spokesperson.campaign.form.label.ticker" path="ticker" readonly="${!draftMode}"/>
 	<acme:form-textbox code="spokesperson.campaign.form.label.name" path="name" readonly="${!draftMode}"/>
+	<jstl:if test="${draftMode}">
+		<acme:form-select code="spokesperson.campaign.form.label.project" path="project" choices="${projects}" readonly="${!draftMode}"/>
+	</jstl:if>
+	<jstl:if test="${!draftMode}">
+		<acme:form-textbox code="spokesperson.campaign.form.label.project" path="projectTitle" readonly="true"/>
+	</jstl:if>
 	<acme:form-moment code="spokesperson.campaign.form.label.startMoment" path="startMoment" readonly="${!draftMode}"/>
 	<acme:form-moment code="spokesperson.campaign.form.label.endMoment" path="endMoment" readonly="${!draftMode}"/>
 	<acme:form-textbox code="spokesperson.campaign.form.label.description" path="description" readonly="${!draftMode}"/>

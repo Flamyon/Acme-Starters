@@ -6,6 +6,12 @@
 <acme:form>
 	<acme:form-textbox code="fundraiser.strategy.form.label.ticker" path="ticker" readonly="${!draftMode}"/>
 	<acme:form-textbox code="fundraiser.strategy.form.label.name" path="name" readonly="${!draftMode}"/>
+	<jstl:if test="${draftMode}">
+		<acme:form-select code="fundraiser.strategy.form.label.project" path="project" choices="${projects}" readonly="${!draftMode}"/>
+	</jstl:if>
+	<jstl:if test="${!draftMode}">
+		<acme:form-textbox code="fundraiser.strategy.form.label.project" path="projectTitle" readonly="true"/>
+	</jstl:if>
 	<acme:form-moment code="fundraiser.strategy.form.label.startMoment" path="startMoment" readonly="${!draftMode}"/>
 	<acme:form-moment code="fundraiser.strategy.form.label.endMoment" path="endMoment" readonly="${!draftMode}"/>
 	<acme:form-textbox code="fundraiser.strategy.form.label.description" path="description" readonly="${!draftMode}"/>

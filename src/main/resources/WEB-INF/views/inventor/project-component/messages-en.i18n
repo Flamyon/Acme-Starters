@@ -1,0 +1,25 @@
+inventor.project-components.form.title = Project component
+inventor.project-components.list.title = Project components
+inventor.project-component.form.title = Project component
+inventor.project-component.list.title = Project components
+
+inventor.project-components.list.label.kind = Type
+inventor.project-components.list.label.ticker = Ticker
+inventor.project-components.list.label.name = Name
+inventor.project-components.list.label.owner = Owner
+inventor.project-components.list.label.draft = Draft
+inventor.project-components.list.label.start = Start
+
+inventor.project-components.form.label.kind = Type
+inventor.project-components.form.label.ticker = Ticker
+inventor.project-components.form.label.name = Name
+inventor.project-components.form.label.owner = Owner
+inventor.project-components.form.label.draft = Draft
+inventor.project-components.form.label.start = Start
+inventor.project-components.form.label.end = End
+inventor.project-components.form.label.description = Description
+inventor.project-components.form.label.moreInfo = Additional information
+
+inventor.project-components.list.button.return = Return to project
+inventor.project-components.form.button.return-list = Return to components
+inventor.project-components.form.button.return-project = Return to project

@@ -15,6 +15,7 @@
 		<acme:menu-option code="master.menu.anonymous">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
    			<acme:menu-suboption code="master.menu.anonymous.sponsorships.published" action="/any/sponsorship/list"/>
+			<acme:menu-suboption code="master.menu.anonymous.project" action="/any/project/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.strategy" action="/any/strategy/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.audit-report" action="/any/audit-report/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.invention" action="/any/invention/list"/>
@@ -42,12 +43,18 @@
     		<acme:menu-suboption code="master.menu.sponsorships.unpublished" action="/sponsor/sponsorship/list"/>
 		</acme:menu-option>
 
+		<acme:menu-option code="master.menu.manager" access="hasRealm('Manager')">
+			<acme:menu-suboption code="master.menu.manager.project.list" action="/manager/project/list"/>
+		</acme:menu-option>
+
 		<acme:menu-option code="master.menu.fundraiser" access="hasRealm('Fundraiser')">
 			<acme:menu-suboption code="master.menu.fundraiser.strategy.list" action="/fundraiser/strategy/list"/>
+			<acme:menu-suboption code="master.menu.fundraiser.project.list" action="/fundraiser/project/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.inventor" access="hasRealm('Inventor')">
 			<acme:menu-suboption code="master.menu.inventor.invention.list" action="/inventor/invention/list"/>
+			<acme:menu-suboption code="master.menu.inventor.project.list" action="/inventor/project/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.auditor" access="hasRealm('Auditor')">
@@ -56,12 +63,15 @@
 
 		<acme:menu-option code="master.menu.spokesperson" access="hasRealm('Spokesperson')">
 			<acme:menu-suboption code="master.menu.spokesperson.campaign.list" action="/spokesperson/campaign/list"/>
+			<acme:menu-suboption code="master.menu.spokesperson.project.list" action="/spokesperson/project/list"/>
 		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-profile" action="/authenticated/user-account/update"/>
+			<acme:menu-suboption code="master.menu.user-account.become-manager" action="/authenticated/manager/create" access="!hasRealm('Manager')"/>
+			<acme:menu-suboption code="master.menu.user-account.manager-profile" action="/authenticated/manager/update" access="hasRealm('Manager')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-provider" action="/authenticated/provider/create" access="!hasRealm('Provider')"/>
 			<acme:menu-suboption code="master.menu.user-account.provider-profile" action="/authenticated/provider/update" access="hasRealm('Provider')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-sponsor" action="/authenticated/sponsor/create" access="!hasRealm('Sponsor')"/>

@@ -1,0 +1,25 @@
+fundraiser.project-components.form.title = Project component
+fundraiser.project-components.list.title = Project components
+fundraiser.project-component.form.title = Project component
+fundraiser.project-component.list.title = Project components
+
+fundraiser.project-components.list.label.kind = Type
+fundraiser.project-components.list.label.ticker = Ticker
+fundraiser.project-components.list.label.name = Name
+fundraiser.project-components.list.label.owner = Owner
+fundraiser.project-components.list.label.draft = Draft
+fundraiser.project-components.list.label.start = Start
+
+fundraiser.project-components.form.label.kind = Type
+fundraiser.project-components.form.label.ticker = Ticker
+fundraiser.project-components.form.label.name = Name
+fundraiser.project-components.form.label.owner = Owner
+fundraiser.project-components.form.label.draft = Draft
+fundraiser.project-components.form.label.start = Start
+fundraiser.project-components.form.label.end = End
+fundraiser.project-components.form.label.description = Description
+fundraiser.project-components.form.label.moreInfo = Additional information
+
+fundraiser.project-components.list.button.return = Return to project
+fundraiser.project-components.form.button.return-list = Return to components
+fundraiser.project-components.form.button.return-project = Return to project

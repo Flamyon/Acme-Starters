@@ -54,3 +54,13 @@ acme.validation.audit-report.date-not-future.message = La fecha de inicio debe s
 acme.validation.audit-report.no-auditSections.message = Un reporte debe tener al menos una sección para poder publicarse
 acme.validation.audit-report.invalid-interval.message = La fecha de fin debe ser posterior a la de inicio
 acme.validation.auditReport.no-auditSections.message = Un reporte debe tener al menos una sección para poder publicarse
+
+# ValidProject
+acme.validation.project.message = El proyecto no es valido.
+acme.validation.project.invalid-interval.message = La fecha de inicio debe ser anterior a la de cierre.
+acme.validation.project.invalid-keywords.message = Las palabras clave deben ser una lista separada por comas sin elementos vacios.
+acme.validation.project.too-many-keywords.message = Las palabras clave deben tener como maximo 10 elementos.
+acme.validation.project.no-inventions.message = Un proyecto debe tener al menos una invencion para publicarse.
+acme.validation.project.has-components.message = Un proyecto no se puede borrar mientras tenga componentes.
+acme.validation.project.unpublishable-components.message = Hay componentes que aun no se pueden publicar.
+acme.validation.project.component-owner-not-member.message = Todo propietario de componente debe estar nominado como miembro del proyecto.

@@ -6,6 +6,12 @@
 <acme:form>
 	<acme:form-textbox code="inventor.invention.form.label.ticker" path="ticker" readonly="${!draftMode}"/>
 	<acme:form-textbox code="inventor.invention.form.label.name" path="name" readonly="${!draftMode}"/>
+	<jstl:if test="${draftMode}">
+		<acme:form-select code="inventor.invention.form.label.project" path="project" choices="${projects}" readonly="${!draftMode}"/>
+	</jstl:if>
+	<jstl:if test="${!draftMode}">
+		<acme:form-textbox code="inventor.invention.form.label.project" path="projectTitle" readonly="true"/>
+	</jstl:if>
 	<acme:form-moment code="inventor.invention.form.label.startMoment" path="startMoment" readonly="${!draftMode}"/>
 	<acme:form-moment code="inventor.invention.form.label.endMoment" path="endMoment" readonly="${!draftMode}"/>
 	<acme:form-textbox code="inventor.invention.form.label.description" path="description" readonly="${!draftMode}"/>

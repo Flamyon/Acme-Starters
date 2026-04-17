@@ -1,11 +1,15 @@
 
 package acme.features.student3.fundraiser.strategy;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.models.Tuple;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
+import acme.entities.levelb.Project;
 import acme.entities.student3.Strategy;
 import acme.realms.Fundraiser;
 
@@ -39,10 +43,20 @@ public class FundraiserStrategyShowService extends AbstractService<Fundraiser, S
 	@Override
 	public void unbind() {
 		Tuple tuple;
+		SelectChoices projects;
+		Collection<Project> availableProjects;
+		Project selectedProject;
+
+		availableProjects = this.repo.findAvailableProjectsByMemberUserAccountId(this.entity.getFundraiser().getUserAccount().getId());
+		selectedProject = Boolean.TRUE.equals(this.entity.getDraftMode()) && this.entity.getProject() != null && availableProjects.stream().anyMatch(p -> p.getId() == this.entity.getProject().getId()) ? this.entity.getProject() : null;
+		projects = SelectChoices.from(availableProjects, "title", selectedProject);
 
 		tuple = super.unbindObject(this.entity, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
 		tuple.put("monthsActive", this.entity.getMonthsActive());
 		tuple.put("expectedPercentage", this.entity.getExpectedPercentage());
+		tuple.put("project", this.entity.getProject() == null ? 0 : this.entity.getProject().getId());
+		tuple.put("projectTitle", this.entity.getProject() == null ? "-" : this.entity.getProject().getTitle());
+		tuple.put("projects", projects);
 	}
 
 }

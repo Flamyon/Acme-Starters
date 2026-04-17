@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -22,6 +23,7 @@ import acme.client.components.validation.ValidUrl;
 import acme.constraints.ValidCampaign;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
+import acme.entities.levelb.Project;
 import acme.features.student2.any.campaign.CampaignRepository;
 import lombok.Getter;
 import lombok.Setter;
@@ -99,6 +101,11 @@ public class Campaign extends AbstractEntity {
 		return effort;
 	}
 
+
+	@ManyToOne(optional = true)
+	@JoinColumn(nullable = true)
+	@Valid
+	private Project		project;
 
 	@ManyToOne(optional = false)
 	@Mandatory
