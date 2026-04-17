@@ -2,3 +2,9 @@ key,key:project,key:member,roleKind
 project-member-01,project-01,member-01,INVENTOR
 project-member-02,project-01,member-02,SPOKESPERSON
 project-member-03,project-01,member-03,FUNDRAISER
+project-member-04,project-04,member-01,INVENTOR
+project-member-05,project-04,member-02,SPOKESPERSON
+project-member-06,project-04,member-03,FUNDRAISER
+project-member-07,project-05,member-01,INVENTOR
+project-member-08,project-05,member-02,SPOKESPERSON
+project-member-09,project-05,member-03,FUNDRAISER
