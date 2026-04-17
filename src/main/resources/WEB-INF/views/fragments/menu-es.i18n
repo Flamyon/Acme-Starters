@@ -42,6 +42,7 @@ master.menu.inventor.project.list = Mis proyectos
 
 master.menu.manager = Manager
 master.menu.manager.project.list = Mis proyectos
+master.menu.manager.show-dashboard = Mostrar dashboard
 
 # master.menu.auditor ################################################
 

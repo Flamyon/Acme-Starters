@@ -1,3 +1,4 @@
+
 package acme.features.levelb.project;
 
 import java.util.ArrayList;
@@ -12,9 +13,9 @@ import acme.entities.student3.Strategy;
 
 public final class ProjectComponentsSupport {
 
-	private static final int	CAMPAIGN_OFFSET	=	1_000_000_000;
-	private static final int	STRATEGY_OFFSET	=	-1_000_000_000;
-	private static final int	THRESHOLD		=	500_000_000;
+	private static final int	CAMPAIGN_OFFSET	= 1_000_000_000;
+	private static final int	STRATEGY_OFFSET	= -1_000_000_000;
+	private static final int	THRESHOLD		= 500_000_000;
 
 
 	private ProjectComponentsSupport() {
@@ -40,7 +41,8 @@ public final class ProjectComponentsSupport {
 				if (strategy != null)
 					result.add(ProjectComponentsSupport.fromStrategy(strategy));
 
-		result.sort(Comparator.comparing(ProjectComponent::getStartMoment, Comparator.nullsLast(Comparator.naturalOrder())).thenComparing(ProjectComponent::getKindLabel).thenComparing(ProjectComponent::getTicker, Comparator.nullsLast(String::compareToIgnoreCase)));
+		result.sort(Comparator.comparing(ProjectComponent::getStartMoment, Comparator.nullsLast(Comparator.naturalOrder())).thenComparing(ProjectComponent::getKindLabel).thenComparing(ProjectComponent::getTicker,
+			Comparator.nullsLast(String::compareToIgnoreCase)));
 
 		return result;
 	}
@@ -164,25 +166,6 @@ public final class ProjectComponentsSupport {
 		case INVENTION:
 		default:
 			result = encodedId;
-			break;
-		}
-
-		return result;
-	}
-
-	private static int encode(final ProjectComponent.Kind kind, final int sourceId) {
-		int result;
-
-		switch (kind) {
-		case CAMPAIGN:
-			result = sourceId + ProjectComponentsSupport.CAMPAIGN_OFFSET;
-			break;
-		case STRATEGY:
-			result = sourceId + ProjectComponentsSupport.STRATEGY_OFFSET;
-			break;
-		case INVENTION:
-		default:
-			result = sourceId;
 			break;
 		}
 

@@ -1,0 +1,11 @@
+manager.manager-dashboard.form.title = Manager dashboard
+
+manager.manager-dashboard.form.title.general = General indicators
+manager.manager-dashboard.form.title.project-effort = Project effort indicators (PMs)
+
+manager.manager-dashboard.form.label.total-projects = Total projects
+manager.manager-dashboard.form.label.deviation-from-other-managers-average = Deviation from other managers average
+manager.manager-dashboard.form.label.min-project-effort = Minimum project effort
+manager.manager-dashboard.form.label.max-project-effort = Maximum project effort
+manager.manager-dashboard.form.label.avg-project-effort = Average project effort
+manager.manager-dashboard.form.label.dev-project-effort = Project effort deviation
