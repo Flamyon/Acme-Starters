@@ -1,5 +1,8 @@
 package acme.features.levelb.inventor.projectComponents;
 
+import java.util.Collection;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,10 +10,7 @@ import acme.client.components.models.Tuple;
 import acme.client.services.AbstractService;
 import acme.entities.levelb.MemberRole;
 import acme.entities.levelb.ProjectRepository;
-import acme.entities.student1.Invention;
 import acme.entities.student1.Inventor;
-import acme.entities.student2.Campaign;
-import acme.entities.student3.Strategy;
 import acme.features.levelb.project.ProjectComponent;
 import acme.features.levelb.project.ProjectComponentsSupport;
 
@@ -22,59 +22,53 @@ public class InventorProjectComponentsShowService extends AbstractService<Invent
 
 	private ProjectComponent component;
 
+	private Collection<ProjectComponent> candidates;
+
 
 	@Override
 	public void load() {
-		Integer encodedId;
-		int sourceId;
-		ProjectComponent.Kind kind;
+		Integer sourceId;
 
-		encodedId = super.getRequest().getData("id", Integer.class, null);
-		if (encodedId == null) {
+		sourceId = super.getRequest().getData("id", Integer.class, null);
+		if (sourceId == null) {
 			this.component = null;
+			this.candidates = List.of();
 			return;
 		}
 
-		sourceId = ProjectComponentsSupport.decodeSourceId(encodedId);
-		kind = ProjectComponentsSupport.decodeKind(encodedId);
-
-		switch (kind) {
-		case INVENTION:
-			Invention invention;
-
-			invention = this.repository.findInventionById(sourceId);
-			this.component = invention == null ? null : ProjectComponentsSupport.fromInvention(invention);
-			break;
-		case CAMPAIGN:
-			Campaign campaign;
-
-			campaign = this.repository.findCampaignById(sourceId);
-			this.component = campaign == null ? null : ProjectComponentsSupport.fromCampaign(campaign);
-			break;
-		case STRATEGY:
-			Strategy strategy;
-
-			strategy = this.repository.findStrategyById(sourceId);
-			this.component = strategy == null ? null : ProjectComponentsSupport.fromStrategy(strategy);
-			break;
-		default:
-			this.component = null;
-			break;
-		}
+		this.component = null;
+		this.candidates = ProjectComponentsSupport.resolveBySourceId(this.repository, sourceId.intValue());
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-		Long memberships;
 		int userAccountId;
+		ProjectComponent authorised;
 
-		if (this.component == null)
-			status = false;
-		else {
-			userAccountId = super.getRequest().getPrincipal().getAccountId();
-			memberships = this.repository.countProjectMemberByProjectIdAndRoleKindAndUserAccountId(this.component.getProjectId(), userAccountId, MemberRole.INVENTOR);
-			status = memberships != null && memberships > 0;
+		status = false;
+		userAccountId = super.getRequest().getPrincipal().getAccountId();
+		authorised = null;
+
+		for (ProjectComponent candidate : this.candidates) {
+			Long memberships;
+			boolean candidateAuthorised;
+
+			memberships = this.repository.countProjectMemberByProjectIdAndRoleKindAndUserAccountId(candidate.getProjectId(), userAccountId, MemberRole.INVENTOR);
+			candidateAuthorised = memberships != null && memberships > 0;
+
+			if (candidateAuthorised)
+				if (authorised == null)
+					authorised = candidate;
+				else {
+					authorised = null;
+					break;
+				}
+		}
+
+		if (authorised != null) {
+			this.component = authorised;
+			status = true;
 		}
 
 		super.setAuthorised(status);

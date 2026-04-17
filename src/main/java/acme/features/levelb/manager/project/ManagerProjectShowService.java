@@ -21,10 +21,13 @@ public class ManagerProjectShowService extends AbstractService<Manager, Project>
 
 	@Override
 	public void load() {
-		int id;
+		Integer id;
 
-		id = super.getRequest().getData("id", int.class);
-		this.project = this.repository.findProjectByIdWithDetails(id);
+		id = super.getRequest().getData("id", Integer.class, null);
+		if (id == null)
+			this.project = null;
+		else
+			this.project = this.repository.findProjectByIdWithDetails(id.intValue());
 	}
 
 	@Override

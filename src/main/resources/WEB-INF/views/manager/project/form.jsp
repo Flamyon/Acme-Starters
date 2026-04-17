@@ -17,6 +17,7 @@
 
 	<jstl:if test="${_command != 'create'}">
 		<acme:button code="manager.project.form.button.members" action="/manager/project-member/list?projectId=${id}"/>
+		<acme:button code="manager.project.form.button.components" action="/manager/project-component/list?projectId=${id}"/>
 	</jstl:if>
 
 	<jstl:if test="${_command == 'create'}">

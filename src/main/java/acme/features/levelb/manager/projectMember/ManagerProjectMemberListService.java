@@ -47,7 +47,7 @@ public class ManagerProjectMemberListService extends AbstractService<Manager, Pr
 		super.getResponse().addGlobal("projectId", this.project.getId());
 		super.getResponse().addGlobal("projectTitle", this.project.getTitle());
 		super.getResponse().addGlobal("showCreate", showCreate);
-		super.unbindObjects(this.members, "memberFullName", "memberEmail", "roleLabel");
+		super.unbindObjects(this.members, "id", "memberFullName", "memberEmail", "roleLabel");
 	}
 
 }
