@@ -38,8 +38,8 @@ public class InventorInventionCreateService extends AbstractService<Inventor, In
 		int projectId;
 		Project project;
 
-		projectId = super.getRequest().getData("project", int.class);
-		project = this.repo.findProjectById(projectId);
+		projectId = super.getRequest().hasData("project", int.class) ? super.getRequest().getData("project", int.class) : 0;
+		project = projectId == 0 ? null : this.repo.findProjectById(projectId);
 		this.entity.setProject(project);
 
 		super.bindObject(this.entity, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
@@ -48,10 +48,16 @@ public class InventorInventionCreateService extends AbstractService<Inventor, In
 	@Override
 	public void validate() {
 		boolean validProject;
+		Long memberships;
 
 		super.validateObject(this.entity);
 
-		validProject = this.entity.getProject() != null && this.repo.countDraftMembershipByProjectAndUserAccountId(this.entity.getProject().getId(), this.entity.getInventor().getUserAccount().getId()) > 0;
+		if (this.entity.getProject() == null)
+			validProject = true;
+		else {
+			memberships = this.repo.countDraftMembershipByProjectAndUserAccountId(this.entity.getProject().getId(), this.entity.getInventor().getUserAccount().getId());
+			validProject = memberships != null && memberships > 0;
+		}
 		super.state(validProject, "project", "inventor.invention.form.error.project");
 	}
 
