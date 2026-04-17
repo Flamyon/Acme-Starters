@@ -1,0 +1,18 @@
+any.project.form.title = Published project
+any.project.list.title = Published projects
+
+any.project.list.label.title = Title
+any.project.list.label.kickOff = Kick-off
+any.project.list.label.closeOut = Close-out
+any.project.list.label.manager = Manager
+
+any.project.form.label.title = Title
+any.project.form.label.manager = Manager
+any.project.form.label.keywords = Keywords
+any.project.form.label.description = Description
+any.project.form.label.kickOff = Kick-off
+any.project.form.label.closeOut = Close-out
+any.project.form.label.members = Members
+any.project.form.label.inventions = Inventions
+any.project.form.label.campaigns = Campaigns
+any.project.form.label.strategies = Strategies

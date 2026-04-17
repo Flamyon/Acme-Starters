@@ -4,8 +4,9 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 	<acme:list>
-		<acme:list-column code="fundraiser.strategy.list.label.ticker" path="ticker" width="20%"/> 	
-		<acme:list-column code="fundraiser.strategy.list.label.name" path="name" width="40%"/>
-		<acme:list-column code="fundraiser.strategy.form.label.startMoment" path="startMoment" width="40%"/>
+		<acme:list-column code="fundraiser.strategy.list.label.ticker" path="ticker" width="18%"/> 	
+		<acme:list-column code="fundraiser.strategy.list.label.name" path="name" width="28%"/>
+		<acme:list-column code="fundraiser.strategy.form.label.startMoment" path="startMoment" width="27%"/>
+		<acme:list-column code="fundraiser.strategy.list.label.project" path="project.title" width="27%"/>
 	</acme:list>
 		<acme:button code="fundraiser.strategy.form.button.create" action="/fundraiser/strategy/create"/>

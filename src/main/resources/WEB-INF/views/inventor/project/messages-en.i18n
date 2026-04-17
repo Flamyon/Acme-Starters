@@ -1,0 +1,20 @@
+inventor.project.form.title = My project
+inventor.project.list.title = My projects
+
+inventor.project.list.label.title = Title
+inventor.project.list.label.kickOff = Kick-off
+inventor.project.list.label.closeOut = Close-out
+inventor.project.list.label.draftMode = Draft
+
+inventor.project.form.label.title = Title
+inventor.project.form.label.manager = Manager
+inventor.project.form.label.keywords = Keywords
+inventor.project.form.label.description = Description
+inventor.project.form.label.kickOff = Kick-off
+inventor.project.form.label.closeOut = Close-out
+inventor.project.form.label.members = Members
+inventor.project.form.label.inventions = Inventions
+inventor.project.form.label.campaigns = Campaigns
+inventor.project.form.label.strategies = Strategies
+
+inventor.project.form.button.components = View project components

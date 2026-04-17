@@ -53,3 +53,13 @@ acme.validation.audit-report.invalid-date-order.message = End date must be after
 acme.validation.audit-report.date-not-future.message = Start date must be in the future
 acme.validation.auditReport.no-auditSections.message = An audit report must have at least one audit section to be published
 acme.validation.audit-report.invalid-interval.message = End date must be after start date
+
+# ValidProject
+acme.validation.project.message = The project is not valid.
+acme.validation.project.invalid-interval.message = Kick-off moment must be before close-out moment.
+acme.validation.project.invalid-keywords.message = Keywords must be a comma-separated list without empty terms.
+acme.validation.project.too-many-keywords.message = Keywords must contain at most 10 terms.
+acme.validation.project.no-inventions.message = A project must have at least one invention to be published.
+acme.validation.project.has-components.message = A project cannot be deleted while it still has components.
+acme.validation.project.unpublishable-components.message = Some components are not publishable yet.
+acme.validation.project.component-owner-not-member.message = Every component owner must be nominated as a project member.

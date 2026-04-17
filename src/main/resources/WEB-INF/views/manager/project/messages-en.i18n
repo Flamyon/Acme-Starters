@@ -1,0 +1,24 @@
+manager.project.form.title = Project details
+manager.project.list.title = My projects
+
+manager.project.list.label.title = Title
+manager.project.list.label.kickOff = Kick-off
+manager.project.list.label.closeOut = Close-out
+manager.project.list.label.draftMode = Draft
+
+manager.project.form.label.title = Title
+manager.project.form.label.keywords = Keywords
+manager.project.form.label.description = Description
+manager.project.form.label.kickOff = Kick-off
+manager.project.form.label.closeOut = Close-out
+manager.project.form.label.members = Members
+manager.project.form.label.inventions = Inventions
+manager.project.form.label.campaigns = Campaigns
+manager.project.form.label.strategies = Strategies
+
+manager.project.list.button.create = Create project
+manager.project.form.button.create = Create
+manager.project.form.button.update = Update
+manager.project.form.button.delete = Delete
+manager.project.form.button.publish = Publish
+manager.project.form.button.members = List members

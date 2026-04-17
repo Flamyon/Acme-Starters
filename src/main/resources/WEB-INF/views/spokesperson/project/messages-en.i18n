@@ -1,0 +1,20 @@
+spokesperson.project.form.title = My project
+spokesperson.project.list.title = My projects
+
+spokesperson.project.list.label.title = Title
+spokesperson.project.list.label.kickOff = Kick-off
+spokesperson.project.list.label.closeOut = Close-out
+spokesperson.project.list.label.draftMode = Draft
+
+spokesperson.project.form.label.title = Title
+spokesperson.project.form.label.manager = Manager
+spokesperson.project.form.label.keywords = Keywords
+spokesperson.project.form.label.description = Description
+spokesperson.project.form.label.kickOff = Kick-off
+spokesperson.project.form.label.closeOut = Close-out
+spokesperson.project.form.label.members = Members
+spokesperson.project.form.label.inventions = Inventions
+spokesperson.project.form.label.campaigns = Campaigns
+spokesperson.project.form.label.strategies = Strategies
+
+spokesperson.project.form.button.components = View project components

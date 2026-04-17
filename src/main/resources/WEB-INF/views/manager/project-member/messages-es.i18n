@@ -1,0 +1,21 @@
+manager.project-member.form.title = Miembro del proyecto
+manager.project-member.list.title = Miembros del proyecto
+
+manager.project-member.list.label.fullName = Nombre completo
+manager.project-member.list.label.email = Correo
+manager.project-member.list.label.role = Rol
+
+manager.project-member.form.label.nominee = Candidato (rol)
+manager.project-member.form.label.fullName = Nombre completo
+manager.project-member.form.label.email = Correo
+manager.project-member.form.label.role = Rol
+
+manager.project-member.form.button.create = Nominar
+manager.project-member.form.button.delete = Eliminar
+manager.project-member.form.button.return = Volver
+manager.project-member.list.button.create = Nominar miembro
+manager.project-member.list.button.return = Volver al proyecto
+
+manager.project-member.form.error.nominee = Debe seleccionar un usuario.
+manager.project-member.form.error.unsupported-role = El usuario seleccionado debe tener rol Inventor, Spokesperson o Fundraiser.
+manager.project-member.form.error.duplicate = El usuario seleccionado ya tiene ese rol nominado en este proyecto.

@@ -37,7 +37,6 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 			super.state(context, uniqueAuditReport, "ticker", "acme.validation.audit-report.duplicated-ticker.message");
 		}
 		{
-			Date now = MomentHelper.getBaseMoment();
 			Date start = auditReport.getStartMoment();
 			Date end = auditReport.getEndMoment();
 

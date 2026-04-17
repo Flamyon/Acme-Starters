@@ -1,0 +1,20 @@
+fundraiser.project.form.title = Mi proyecto
+fundraiser.project.list.title = Mis proyectos
+
+fundraiser.project.list.label.title = Titulo
+fundraiser.project.list.label.kickOff = Inicio
+fundraiser.project.list.label.closeOut = Cierre
+fundraiser.project.list.label.draftMode = Borrador
+
+fundraiser.project.form.label.title = Titulo
+fundraiser.project.form.label.manager = Manager
+fundraiser.project.form.label.keywords = Palabras clave
+fundraiser.project.form.label.description = Descripcion
+fundraiser.project.form.label.kickOff = Inicio
+fundraiser.project.form.label.closeOut = Cierre
+fundraiser.project.form.label.members = Miembros
+fundraiser.project.form.label.inventions = Invenciones
+fundraiser.project.form.label.campaigns = Campanas
+fundraiser.project.form.label.strategies = Estrategias
+
+fundraiser.project.form.button.components = Ver componentes del proyecto

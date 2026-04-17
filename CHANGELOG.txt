@@ -2,7 +2,7 @@
 
 Fechas en formato DD-MM-YYYY.
 
-## [0.1.0] - 09-02-2026
+## [C] - 09-02-2026
 ### Añadido
 - Inicialización del repositorio para **Acme-Starters-C**.
 - Base del proyecto (“Hello-World”) instanciada y preparada.
@@ -11,8 +11,11 @@ Fechas en formato DD-MM-YYYY.
 - Identification Form
 - Crear los datos de muestra de administradores (administrator1/administrator1 y administrator2/administrator2).
 - Personalizacion de Banner
-
-### Pendiente (para requisitos 0)
 - Personalización visual (colores, logos).
 - Definir forma de trabajo por ramas ...
 - Implementar restricciones de `Model-CG.ufx`
+
+## [B] - 13-04-2026
+- Ya ha quedado entregada la version C
+- Se ha empezado la version B
+- Quedan pendientes todos los requisites de la versión B

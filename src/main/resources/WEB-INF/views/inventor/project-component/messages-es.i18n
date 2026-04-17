@@ -1,0 +1,25 @@
+inventor.project-components.form.title = Componente del proyecto
+inventor.project-components.list.title = Componentes del proyecto
+inventor.project-component.form.title = Componente del proyecto
+inventor.project-component.list.title = Componentes del proyecto
+
+inventor.project-components.list.label.kind = Tipo
+inventor.project-components.list.label.ticker = Ticker
+inventor.project-components.list.label.name = Nombre
+inventor.project-components.list.label.owner = Propietario
+inventor.project-components.list.label.draft = Borrador
+inventor.project-components.list.label.start = Inicio
+
+inventor.project-components.form.label.kind = Tipo
+inventor.project-components.form.label.ticker = Ticker
+inventor.project-components.form.label.name = Nombre
+inventor.project-components.form.label.owner = Propietario
+inventor.project-components.form.label.draft = Borrador
+inventor.project-components.form.label.start = Inicio
+inventor.project-components.form.label.end = Fin
+inventor.project-components.form.label.description = Descripcion
+inventor.project-components.form.label.moreInfo = Informacion adicional
+
+inventor.project-components.list.button.return = Volver al proyecto
+inventor.project-components.form.button.return-list = Volver a componentes
+inventor.project-components.form.button.return-project = Volver al proyecto

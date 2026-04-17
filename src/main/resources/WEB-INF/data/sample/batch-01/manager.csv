@@ -1,0 +1,4 @@
+key,key:userAccount,position,skills,isExecutive
+manager-01,user-account-manager-01,Project Lead,"planning, risk control, communication",true
+manager-02,user-account-manager-02,Delivery Manager,"stakeholder management, budgeting",false
+manager-03,user-account-manager-03,Innovation Manager,"product strategy, mentoring",true

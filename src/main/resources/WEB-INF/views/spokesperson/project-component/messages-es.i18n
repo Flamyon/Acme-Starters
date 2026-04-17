@@ -1,0 +1,25 @@
+spokesperson.project-components.form.title = Componente del proyecto
+spokesperson.project-components.list.title = Componentes del proyecto
+spokesperson.project-component.form.title = Componente del proyecto
+spokesperson.project-component.list.title = Componentes del proyecto
+
+spokesperson.project-components.list.label.kind = Tipo
+spokesperson.project-components.list.label.ticker = Ticker
+spokesperson.project-components.list.label.name = Nombre
+spokesperson.project-components.list.label.owner = Propietario
+spokesperson.project-components.list.label.draft = Borrador
+spokesperson.project-components.list.label.start = Inicio
+
+spokesperson.project-components.form.label.kind = Tipo
+spokesperson.project-components.form.label.ticker = Ticker
+spokesperson.project-components.form.label.name = Nombre
+spokesperson.project-components.form.label.owner = Propietario
+spokesperson.project-components.form.label.draft = Borrador
+spokesperson.project-components.form.label.start = Inicio
+spokesperson.project-components.form.label.end = Fin
+spokesperson.project-components.form.label.description = Descripcion
+spokesperson.project-components.form.label.moreInfo = Informacion adicional
+
+spokesperson.project-components.list.button.return = Volver al proyecto
+spokesperson.project-components.form.button.return-list = Volver a componentes
+spokesperson.project-components.form.button.return-project = Volver al proyecto

@@ -37,7 +37,6 @@ public class SponsorshipValidator extends AbstractValidator<ValidSponsorship, Sp
 			super.state(context, uniqueSponsorship, "ticker", "acme.validation.sponsorship.duplicated-ticker.message");
 		}
 		{
-			Date now = MomentHelper.getBaseMoment();
 			Date start = sponsorship.getStartMoment();
 			Date end = sponsorship.getEndMoment();
 

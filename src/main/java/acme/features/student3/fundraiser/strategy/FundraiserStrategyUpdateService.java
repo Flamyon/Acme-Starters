@@ -1,10 +1,14 @@
 
 package acme.features.student3.fundraiser.strategy;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.models.Tuple;
+import acme.client.components.views.SelectChoices;
+import acme.entities.levelb.Project;
 import acme.client.services.AbstractService;
 import acme.entities.student3.Strategy;
 import acme.client.helpers.MomentHelper;
@@ -33,18 +37,30 @@ public class FundraiserStrategyUpdateService extends AbstractService<Fundraiser,
 		Fundraiser fundraiser;
 
 		fundraiser = (Fundraiser) super.getRequest().getPrincipal().getActiveRealm();
-		status = this.entity != null && this.entity.getDraftMode() && this.entity.getFundraiser() != null && this.entity.getFundraiser().getId() == fundraiser.getId();
+		status = this.entity != null && Boolean.TRUE.equals(this.entity.getDraftMode()) && this.entity.getFundraiser() != null && this.entity.getFundraiser().getId() == fundraiser.getId();
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void bind() {
+		int projectId;
+		Project project;
+
+		projectId = super.getRequest().getData("project", int.class);
+		project = this.repo.findProjectById(projectId);
+		this.entity.setProject(project);
+
 		super.bindObject(this.entity, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
 	}
 
 	@Override
 	public void validate() {
+		boolean validProject;
+
 		super.validateObject(this.entity);
+
+		validProject = this.entity.getProject() != null && this.repo.countDraftMembershipByProjectAndUserAccountId(this.entity.getProject().getId(), this.entity.getFundraiser().getUserAccount().getId()) > 0;
+		super.state(validProject, "project", "fundraiser.strategy.form.error.project");
 
 		// 1. ticker uniqueness (prevent DB unique-constraint errors)
 		String ticker = this.entity.getTicker();
@@ -80,9 +96,19 @@ public class FundraiserStrategyUpdateService extends AbstractService<Fundraiser,
 	@Override
 	public void unbind() {
 		Tuple tuple;
+		SelectChoices projects;
+		Collection<Project> availableProjects;
+		Project selectedProject;
+
+		availableProjects = this.repo.findAvailableProjectsByMemberUserAccountId(this.entity.getFundraiser().getUserAccount().getId());
+		selectedProject = Boolean.TRUE.equals(this.entity.getDraftMode()) && this.entity.getProject() != null && availableProjects.stream().anyMatch(p -> p.getId() == this.entity.getProject().getId()) ? this.entity.getProject() : null;
+		projects = SelectChoices.from(availableProjects, "title", selectedProject);
 
 		tuple = super.unbindObject(this.entity, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
 		tuple.put("monthsActive", this.entity.getMonthsActive());
 		tuple.put("expectedPercentage", this.entity.getExpectedPercentage());
+		tuple.put("project", this.entity.getProject() == null ? 0 : this.entity.getProject().getId());
+		tuple.put("projectTitle", this.entity.getProject() == null ? "-" : this.entity.getProject().getTitle());
+		tuple.put("projects", projects);
 	}
 }

@@ -3,16 +3,19 @@ fundraiser.strategy.list.title = Strategies list
 
 fundraiser.strategy.list.label.ticker = Ticker
 fundraiser.strategy.list.label.name = Name
+fundraiser.strategy.list.label.project = Project
 
 
 fundraiser.strategy.form.label.ticker = Ticker
 fundraiser.strategy.form.label.name = Name
+fundraiser.strategy.form.label.project = Project
 fundraiser.strategy.form.label.startMoment = Start date
 fundraiser.strategy.form.label.endMoment = End date
 fundraiser.strategy.form.label.description = Description
 fundraiser.strategy.form.label.moreInfo = Additional information
 fundraiser.strategy.form.label.monthsActive = Months active
 fundraiser.strategy.form.label.expectedPercentage = Expected percentage
+fundraiser.strategy.form.error.project = You must select one of your draft projects.
 
 fundraiser.strategy.form.button.tactic = View tactics
 fundraiser.strategy.form.button.create = Create

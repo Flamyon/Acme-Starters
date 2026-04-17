@@ -3,16 +3,19 @@ fundraiser.strategy.form.title = Estrategia
 
 fundraiser.strategy.list.label.ticker = Ticker
 fundraiser.strategy.list.label.name = Nombre
+fundraiser.strategy.list.label.project = Proyecto
 
 
 fundraiser.strategy.form.label.ticker = Ticker
 fundraiser.strategy.form.label.name = Nombre
+fundraiser.strategy.form.label.project = Proyecto
 fundraiser.strategy.form.label.startMoment = Fecha de inicio
 fundraiser.strategy.form.label.endMoment = Fecha de fin
 fundraiser.strategy.form.label.description = Descripción
 fundraiser.strategy.form.label.moreInfo = Información adicional
 fundraiser.strategy.form.label.monthsActive = Meses activa
  fundraiser.strategy.form.label.expectedPercentage = Porcentaje esperado
+fundraiser.strategy.form.error.project = Debe seleccionar uno de sus proyectos en borrador.
 
 fundraiser.strategy.form.button.tactic = Ver tácticas
 fundraiser.strategy.form.button.create = Crear

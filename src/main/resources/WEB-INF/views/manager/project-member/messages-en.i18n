@@ -1,0 +1,21 @@
+manager.project-member.form.title = Project member
+manager.project-member.list.title = Project members
+
+manager.project-member.list.label.fullName = Full name
+manager.project-member.list.label.email = Email
+manager.project-member.list.label.role = Role
+
+manager.project-member.form.label.nominee = Nominee role
+manager.project-member.form.label.fullName = Full name
+manager.project-member.form.label.email = Email
+manager.project-member.form.label.role = Role
+
+manager.project-member.form.button.create = Nominate
+manager.project-member.form.button.delete = Remove
+manager.project-member.form.button.return = Return
+manager.project-member.list.button.create = Nominate member
+manager.project-member.list.button.return = Return to project
+
+manager.project-member.form.error.nominee = You must select a user.
+manager.project-member.form.error.unsupported-role = The selected user must have role Inventor, Spokesperson, or Fundraiser.
+manager.project-member.form.error.duplicate = The selected user already has that role nominated in this project.
