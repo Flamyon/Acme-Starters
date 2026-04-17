@@ -45,6 +45,7 @@
 
 		<acme:menu-option code="master.menu.manager" access="hasRealm('Manager')">
 			<acme:menu-suboption code="master.menu.manager.project.list" action="/manager/project/list"/>
+			<acme:menu-suboption code="master.menu.manager.show-dashboard" action="/manager/manager-dashboard/show"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.fundraiser" access="hasRealm('Fundraiser')">
