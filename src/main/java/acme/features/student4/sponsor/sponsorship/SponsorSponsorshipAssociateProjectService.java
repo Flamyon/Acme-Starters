@@ -1,4 +1,3 @@
-
 package acme.features.student4.sponsor.sponsorship;
 
 import java.util.ArrayList;
@@ -16,16 +15,13 @@ import acme.entities.student4.SponsorshipRepository;
 import acme.realms.Sponsor;
 
 @Service
-public class SponsorSponsorshipShowService extends AbstractService<Sponsor, Sponsorship> {
-
-	// Internal state ---------------------------------------------------------
+public class SponsorSponsorshipAssociateProjectService extends AbstractService<Sponsor, Sponsorship> {
 
 	@Autowired
 	private SponsorshipRepository	repository;
 
-	private Sponsorship				sponsorship;
-
-	// AbstractService interface -------------------------------------------
+	private Sponsorship			sponsorship;
+	private int					selectedProjectId;
 
 
 	@Override
@@ -40,22 +36,40 @@ public class SponsorSponsorshipShowService extends AbstractService<Sponsor, Spon
 	public void authorise() {
 		boolean status;
 
-		// Owner always sees it; others only see published ones
-		status = this.sponsorship != null && //
-			(this.sponsorship.getSponsor().isPrincipal() || !this.sponsorship.getDraftMode());
-
+		status = this.sponsorship != null && this.sponsorship.getSponsor() != null && this.sponsorship.getSponsor().isPrincipal() && Boolean.FALSE.equals(this.sponsorship.getDraftMode());
 		super.setAuthorised(status);
+	}
+
+	@Override
+	public void bind() {
+		Project project;
+
+		this.selectedProjectId = super.getRequest().hasData("project", int.class) ? super.getRequest().getData("project", int.class) : 0;
+		project = this.selectedProjectId == 0 ? null : this.repository.findPublishedProjectById(this.selectedProjectId);
+
+		this.sponsorship.setProject(project);
+	}
+
+	@Override
+	public void validate() {
+		super.validateObject(this.sponsorship);
+
+		super.state(this.selectedProjectId != 0, "project", "sponsor.sponsorship.form.error.project.required");
+		if (this.selectedProjectId != 0)
+			super.state(this.sponsorship.getProject() != null, "project", "sponsor.sponsorship.form.error.project.invalid");
+	}
+
+	@Override
+	public void execute() {
+		this.repository.save(this.sponsorship);
 	}
 
 	@Override
 	public void unbind() {
 		Tuple tuple;
 
-		tuple = super.unbindObject(this.sponsorship, //
-			"ticker", "name", "description", "startMoment", "endMoment", "moreInfo", //
-			"draftMode", "monthsActive", "totalMoney");
+		tuple = super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "monthsActive", "totalMoney");
 		this.putProjectData(tuple);
-
 	}
 
 	private void putProjectData(final Tuple tuple) {
@@ -95,6 +109,6 @@ public class SponsorSponsorshipShowService extends AbstractService<Sponsor, Spon
 		tuple.put("projectId", visibleProject == null ? 0 : visibleProject.getId());
 		tuple.put("projectTitle", visibleProject == null ? "-" : visibleProject.getTitle());
 		tuple.put("projects", projectChoices);
-
 	}
+
 }

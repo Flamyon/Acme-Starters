@@ -1,4 +1,3 @@
-
 package acme.features.student5.auditor.auditReport;
 
 import java.util.ArrayList;
@@ -15,30 +14,53 @@ import acme.entities.student5.AuditReport;
 import acme.realms.Auditor;
 
 @Service
-public class AuditorAuditReportShowService extends AbstractService<Auditor, AuditReport> {
+public class AuditorAuditReportAssociateProjectService extends AbstractService<Auditor, AuditReport> {
 
 	@Autowired
-	private AuditorAuditReportRepository	repo;
+	private AuditorAuditReportRepository	repository;
 
-	private AuditReport						entity;
+	private AuditReport					entity;
+	private int							selectedProjectId;
 
 
 	@Override
 	public void load() {
-		int entityId;
+		int id;
 
-		entityId = super.getRequest().getData("id", int.class);
-		this.entity = this.repo.findAuditReportById(entityId);
+		id = super.getRequest().getData("id", int.class);
+		this.entity = this.repository.findAuditReportById(id);
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
 
-		status = this.entity != null && //
-			(this.entity.getAuditor().isPrincipal() || !this.entity.getDraftMode());
-
+		status = this.entity != null && this.entity.getAuditor() != null && this.entity.getAuditor().isPrincipal() && Boolean.FALSE.equals(this.entity.getDraftMode());
 		super.setAuthorised(status);
+	}
+
+	@Override
+	public void bind() {
+		Project project;
+
+		this.selectedProjectId = super.getRequest().hasData("project", int.class) ? super.getRequest().getData("project", int.class) : 0;
+		project = this.selectedProjectId == 0 ? null : this.repository.findPublishedProjectById(this.selectedProjectId);
+
+		this.entity.setProject(project);
+	}
+
+	@Override
+	public void validate() {
+		super.validateObject(this.entity);
+
+		super.state(this.selectedProjectId != 0, "project", "auditor.audit-report.form.error.project.required");
+		if (this.selectedProjectId != 0)
+			super.state(this.entity.getProject() != null, "project", "auditor.audit-report.form.error.project.invalid");
+	}
+
+	@Override
+	public void execute() {
+		this.repository.save(this.entity);
 	}
 
 	@Override
@@ -61,7 +83,7 @@ public class AuditorAuditReportShowService extends AbstractService<Auditor, Audi
 		boolean selectedIncluded;
 		boolean isOwner;
 
-		projects = this.repo.findPublishedProjects();
+		projects = this.repository.findPublishedProjects();
 		if (projects == null)
 			projects = new ArrayList<>();
 

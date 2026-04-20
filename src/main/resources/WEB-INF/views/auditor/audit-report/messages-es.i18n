@@ -24,9 +24,15 @@ auditor.audit-report.form.label.endMoment = Fecha de fin
 auditor.audit-report.form.label.moreInfo = Información extra
 auditor.audit-report.form.label.monthsActive = Meses activo
 auditor.audit-report.form.label.hours = Horas
+auditor.audit-report.form.label.project = Proyecto
 
 auditor.audit-report.form.button.audit-section = Ver secciones de auditoría
 auditor.audit-report.form.button.create = Crear
 auditor.audit-report.form.button.update = Actualizar
 auditor.audit-report.form.button.publish = Publicar
 auditor.audit-report.form.button.delete = Eliminar
+auditor.audit-report.form.button.associate-project = Asociar proyecto
+auditor.audit-report.form.button.project = Ver proyecto
+
+auditor.audit-report.form.error.project.required = Debe seleccionar un proyecto publicado.
+auditor.audit-report.form.error.project.invalid = El proyecto seleccionado no esta disponible para asociarlo.

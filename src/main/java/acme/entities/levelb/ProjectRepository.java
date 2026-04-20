@@ -24,7 +24,7 @@ public interface ProjectRepository extends AbstractRepository {
 	@Query("select p from Project p where p.id = :id")
 	Project findProjectById(@Param("id") int id);
 
-	@Query("select distinct p from Project p left join fetch p.manager left join fetch p.members pm left join fetch pm.member m left join fetch m.userAccount left join fetch p.inventions i left join fetch p.campaigns c left join fetch p.strategies s where p.id=:id")
+	@Query("select distinct p from Project p left join fetch p.manager left join fetch p.members pm left join fetch pm.member m left join fetch m.userAccount left join fetch p.inventions i left join fetch p.campaigns c left join fetch p.strategies s left join fetch p.sponsorships sp left join fetch p.auditReports ar where p.id=:id")
 	Project findProjectByIdWithDetails(@Param("id") int id);
 
 	@Query("select p from Project p where p.manager.id = :managerId order by p.kickOff desc")

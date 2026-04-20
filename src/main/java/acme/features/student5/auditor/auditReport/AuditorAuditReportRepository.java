@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.levelb.Project;
 import acme.entities.student5.AuditReport;
 import acme.entities.student5.AuditSection;
 
@@ -27,4 +28,10 @@ public interface AuditorAuditReportRepository extends AbstractRepository {
 
 	@Query("select Count(ast) from AuditSection ast where ast.auditReport.id = :id")
 	Integer countAuditSectionsFromAuditReportId(int id);
+
+	@Query("select p from Project p where p.draftMode = false order by p.title asc")
+	Collection<Project> findPublishedProjects();
+
+	@Query("select p from Project p where p.id = :id and p.draftMode = false")
+	Project findPublishedProjectById(int id);
 }

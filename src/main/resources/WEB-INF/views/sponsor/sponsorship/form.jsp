@@ -24,10 +24,23 @@
     <acme:form-money code="sponsor.sponsorship.form.label.totalMoney" path="totalMoney" readonly="true"/>
     <acme:form-double code="sponsor.sponsorship.form.label.monthsActive" path="monthsActive" readonly="true"/>
 
+    <jstl:if test="${draftMode == false && isOwner}">
+        <acme:form-select code="sponsor.sponsorship.form.label.project" path="project" choices="${projects}"/>
+    </jstl:if>
+    <jstl:if test="${draftMode == false && !isOwner}">
+        <acme:form-textbox code="sponsor.sponsorship.form.label.project" path="projectTitle" readonly="true"/>
+    </jstl:if>
+
     <jstl:choose>
-    <jstl:when test="${_command == 'show' && draftMode == false}">
+    <jstl:when test="${acme:anyOf(_command, 'show|associate-project') && draftMode == false}">
         <acme:button code="sponsor.sponsorship.form.button.donations" 
                      action="/sponsor/donation/list?sponsorshipId=${id}"/>
+        <jstl:if test="${isOwner}">
+            <acme:submit code="sponsor.sponsorship.form.button.associate-project" action="/sponsor/sponsorship/associate-project"/>
+        </jstl:if>
+        <jstl:if test="${projectId != 0}">
+            <acme:button code="sponsor.sponsorship.form.button.project" action="/any/project/show?id=${projectId}"/>
+        </jstl:if>
     </jstl:when>
     <jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
         <acme:button code="sponsor.sponsorship.form.button.donations" 

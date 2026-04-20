@@ -33,10 +33,8 @@ public class ManagerProjectCreateService extends AbstractService<Manager, Projec
 	@Override
 	public void authorise() {
 		boolean status;
-		int id;
 
-		id = super.getRequest().hasData("id", int.class) ? super.getRequest().getData("id", int.class) : 0;
-		status = id <= 0;
+		status = !super.getRequest().hasData("id", int.class);
 		super.setAuthorised(status);
 	}
 

@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.levelb.Project;
 
 @Repository
 public interface SponsorshipRepository extends AbstractRepository {
@@ -47,4 +48,10 @@ public interface SponsorshipRepository extends AbstractRepository {
 
 	@Query("select s from Sponsorship s where s.sponsor.id = :sponsorId and s.draftMode = false")
 	Collection<Sponsorship> findPublishedSponsorshipsBySponsorId(int sponsorId);
+
+	@Query("select p from Project p where p.draftMode = false order by p.title asc")
+	Collection<Project> findPublishedProjects();
+
+	@Query("select p from Project p where p.id = :id and p.draftMode = false")
+	Project findPublishedProjectById(int id);
 }

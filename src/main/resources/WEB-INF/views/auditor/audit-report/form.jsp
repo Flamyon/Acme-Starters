@@ -22,10 +22,24 @@
 	<acme:form-moment code="auditor.audit-report.form.label.startMoment" path="startMoment" readonly="${!draftMode}"/>
 	<acme:form-moment code="auditor.audit-report.form.label.endMoment" path="endMoment" readonly="${!draftMode}"/>
 	<acme:form-url code="auditor.audit-report.form.label.moreInfo" path="moreInfo" readonly="${!draftMode}"/>
+
+	<jstl:if test="${_command != 'create' && !draftMode && isOwner}">
+		<acme:form-select code="auditor.audit-report.form.label.project" path="project" choices="${projects}"/>
+	</jstl:if>
+	<jstl:if test="${_command != 'create' && !draftMode && !isOwner}">
+		<acme:form-textbox code="auditor.audit-report.form.label.project" path="projectTitle" readonly="true"/>
+	</jstl:if>
 	
 	<jstl:if test="${_command != 'create'}">
 		<acme:form-double code="auditor.audit-report.form.label.monthsActive" path="monthsActive" readonly="true"/>
 		<acme:form-integer code="auditor.audit-report.form.label.hours" path="hours" readonly="true"/>
+	</jstl:if>
+
+	<jstl:if test="${_command != 'create' && !draftMode && isOwner}">
+		<acme:submit code="auditor.audit-report.form.button.associate-project" action="/auditor/audit-report/associate-project"/>
+	</jstl:if>
+	<jstl:if test="${_command != 'create' && projectId != 0}">
+		<acme:button code="auditor.audit-report.form.button.project" action="/any/project/show?id=${projectId}"/>
 	</jstl:if>
 	
 	<jstl:if test="${_command != 'create' && draftMode}">
