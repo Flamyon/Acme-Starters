@@ -38,3 +38,19 @@
 		<acme:footer-copyright code="master.company.name"/>
 	</acme:footer-logo>
 </acme:footer-panel>
+
+<jstl:if test="${adBanner != null}">
+	<div id="ad-banner-slot" class="text-center" style="margin: 1rem 0 0 0;">
+		<small class="text-muted"><acme:print code="master.footer.label.sponsored"/></small>
+		<div>
+			<a href="${adBanner.targetUrl}" target="_blank" rel="noopener noreferrer">
+				<img src="${adBanner.picture}" alt="sponsored-banner" class="img-fluid rounded" style="max-height: 64px; margin-top: .35rem; border: 1px solid #d9d9d9;"/>
+			</a>
+		</div>
+		<div style="margin-top: .25rem;">
+			<a href="${adBanner.targetUrl}" target="_blank" rel="noopener noreferrer" style="font-size: 0.9rem;">
+				<jstl:out value="${adBanner.slogan}"/>
+			</a>
+		</div>
+	</div>
+</jstl:if>
