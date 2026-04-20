@@ -23,6 +23,8 @@ import acme.constraints.ValidText;
 import acme.entities.student1.Invention;
 import acme.entities.student2.Campaign;
 import acme.entities.student3.Strategy;
+import acme.entities.student4.Sponsorship;
+import acme.entities.student5.AuditReport;
 import acme.realms.Manager;
 import lombok.Getter;
 import lombok.Setter;
@@ -87,5 +89,13 @@ public class Project extends AbstractEntity {
 	@Valid
 	@OneToMany(mappedBy = "project")
 	private Set<Strategy>		strategies		= new HashSet<>();
+
+	@Valid
+	@OneToMany(mappedBy = "project")
+	private Set<Sponsorship>	sponsorships	= new HashSet<>();
+
+	@Valid
+	@OneToMany(mappedBy = "project")
+	private Set<AuditReport>	auditReports	= new HashSet<>();
 
 }

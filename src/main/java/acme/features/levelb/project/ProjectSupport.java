@@ -12,6 +12,8 @@ import acme.entities.levelb.ProjectMember;
 import acme.entities.student1.Invention;
 import acme.entities.student2.Campaign;
 import acme.entities.student3.Strategy;
+import acme.entities.student4.Sponsorship;
+import acme.entities.student5.AuditReport;
 
 public final class ProjectSupport {
 
@@ -26,6 +28,8 @@ public final class ProjectSupport {
 		tuple.put("inventionsSummary", ProjectSupport.formatInventions(project.getInventions()));
 		tuple.put("campaignsSummary", ProjectSupport.formatCampaigns(project.getCampaigns()));
 		tuple.put("strategiesSummary", ProjectSupport.formatStrategies(project.getStrategies()));
+		tuple.put("sponsorshipsSummary", ProjectSupport.formatSponsorships(project.getSponsorships()));
+		tuple.put("auditReportsSummary", ProjectSupport.formatAuditReports(project.getAuditReports()));
 	}
 
 	private static String formatMembers(final Collection<ProjectMember> members) {
@@ -83,6 +87,36 @@ public final class ProjectSupport {
 			.filter(Objects::nonNull)
 			.sorted(Comparator.comparing(Strategy::getTicker, Comparator.nullsLast(String::compareToIgnoreCase)))
 			.map(s -> s.getTicker() + " - " + s.getName())
+			.collect(Collectors.joining(", "));
+
+		return result.isEmpty() ? "-" : result;
+	}
+
+	private static String formatSponsorships(final Collection<Sponsorship> sponsorships) {
+		if (sponsorships == null || sponsorships.isEmpty())
+			return "-";
+
+		String result;
+
+		result = sponsorships.stream()
+			.filter(s -> s != null && Boolean.FALSE.equals(s.getDraftMode()))
+			.sorted(Comparator.comparing(Sponsorship::getTicker, Comparator.nullsLast(String::compareToIgnoreCase)))
+			.map(s -> s.getTicker() + " - " + s.getName())
+			.collect(Collectors.joining(", "));
+
+		return result.isEmpty() ? "-" : result;
+	}
+
+	private static String formatAuditReports(final Collection<AuditReport> auditReports) {
+		if (auditReports == null || auditReports.isEmpty())
+			return "-";
+
+		String result;
+
+		result = auditReports.stream()
+			.filter(r -> r != null && Boolean.FALSE.equals(r.getDraftMode()))
+			.sorted(Comparator.comparing(AuditReport::getTicker, Comparator.nullsLast(String::compareToIgnoreCase)))
+			.map(r -> r.getTicker() + " - " + r.getName())
 			.collect(Collectors.joining(", "));
 
 		return result.isEmpty() ? "-" : result;

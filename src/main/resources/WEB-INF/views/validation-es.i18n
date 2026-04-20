@@ -44,6 +44,8 @@ acme.validation.sponsorship.dates.error = La fecha de fin debe ser posterior a l
 acme.validation.sponsorship.startMoment.future = La fecha de inicio debe ser futura
 acme.validation.sponsorship.endMoment.future = La fecha de fin debe ser futura
 acme.validation.sponsorship.donations.error = Debe tener al menos una donación para publicarse
+acme.validation.sponsorship.project-unpublished-sponsorship.message = Un patrocinio asociado a un proyecto debe estar publicado.
+acme.validation.sponsorship.project-unpublished-project.message = Un patrocinio solo puede asociarse a un proyecto publicado.
 acme.validation.money.eur.error = Debe ser en EUR
 
 # ValidAuditReport
@@ -54,6 +56,8 @@ acme.validation.audit-report.date-not-future.message = La fecha de inicio debe s
 acme.validation.audit-report.no-auditSections.message = Un reporte debe tener al menos una sección para poder publicarse
 acme.validation.audit-report.invalid-interval.message = La fecha de fin debe ser posterior a la de inicio
 acme.validation.auditReport.no-auditSections.message = Un reporte debe tener al menos una sección para poder publicarse
+acme.validation.audit-report.project-unpublished-audit-report.message = Un reporte de auditoria asociado a un proyecto debe estar publicado.
+acme.validation.audit-report.project-unpublished-project.message = Un reporte de auditoria solo puede asociarse a un proyecto publicado.
 
 # ValidProject
 acme.validation.project.message = El proyecto no es valido.

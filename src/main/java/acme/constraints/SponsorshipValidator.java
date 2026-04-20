@@ -46,6 +46,8 @@ public class SponsorshipValidator extends AbstractValidator<ValidSponsorship, Sp
 			}
 		}
 
+		this.validateProjectPublicationConsistency(sponsorship, context);
+
 		if (sponsorship.getDraftMode() != null && !sponsorship.getDraftMode()) {
 			{
 				Date now = MomentHelper.getBaseMoment();
@@ -64,5 +66,26 @@ public class SponsorshipValidator extends AbstractValidator<ValidSponsorship, Sp
 		}
 
 		return !super.hasErrors(context);
+	}
+
+	private boolean validateProjectPublicationConsistency(final Sponsorship sponsorship, final ConstraintValidatorContext context) {
+		boolean isValid;
+		boolean sponsorshipPublished;
+		boolean projectPublished;
+
+		if (sponsorship.getProject() == null)
+			return true;
+
+		isValid = true;
+
+		sponsorshipPublished = Boolean.FALSE.equals(sponsorship.getDraftMode());
+		super.state(context, sponsorshipPublished, "project", "acme.validation.sponsorship.project-unpublished-sponsorship.message");
+		isValid &= sponsorshipPublished;
+
+		projectPublished = sponsorship.getProject().getDraftMode() != null && !sponsorship.getProject().getDraftMode();
+		super.state(context, projectPublished, "project", "acme.validation.sponsorship.project-unpublished-project.message");
+		isValid &= projectPublished;
+
+		return isValid;
 	}
 }

@@ -15,6 +15,8 @@ manager.project.form.label.members = Miembros
 manager.project.form.label.inventions = Invenciones
 manager.project.form.label.campaigns = Campanas
 manager.project.form.label.strategies = Estrategias
+manager.project.form.label.sponsorships = Patrocinios
+manager.project.form.label.auditReports = Reportes de auditoria
 
 manager.project.list.button.create = Crear proyecto
 manager.project.form.button.create = Crear

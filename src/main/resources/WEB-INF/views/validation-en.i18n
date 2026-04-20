@@ -44,6 +44,8 @@ acme.validation.sponsorship.dates.error = End date must be after start date
 acme.validation.sponsorship.startMoment.future = Start date must be in the future
 acme.validation.sponsorship.endMoment.future = End date must be in the future
 acme.validation.sponsorship.donations.error = Must have at least one donation to publish
+acme.validation.sponsorship.project-unpublished-sponsorship.message = A sponsorship linked to a project must be published.
+acme.validation.sponsorship.project-unpublished-project.message = A sponsorship can only be linked to a published project.
 acme.validation.money.eur.error = Must be EUR
 
 # ValidAuditReport
@@ -53,6 +55,8 @@ acme.validation.audit-report.invalid-date-order.message = End date must be after
 acme.validation.audit-report.date-not-future.message = Start date must be in the future
 acme.validation.auditReport.no-auditSections.message = An audit report must have at least one audit section to be published
 acme.validation.audit-report.invalid-interval.message = End date must be after start date
+acme.validation.audit-report.project-unpublished-audit-report.message = An audit report linked to a project must be published.
+acme.validation.audit-report.project-unpublished-project.message = An audit report can only be linked to a published project.
 
 # ValidProject
 acme.validation.project.message = The project is not valid.

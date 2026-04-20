@@ -24,9 +24,15 @@ auditor.audit-report.form.label.endMoment = End date
 auditor.audit-report.form.label.moreInfo = Extra information
 auditor.audit-report.form.label.monthsActive = Months active
 auditor.audit-report.form.label.hours = Hours
+auditor.audit-report.form.label.project = Project
 
 auditor.audit-report.form.button.audit-section = View Audit Sections
 auditor.audit-report.form.button.create = Create
 auditor.audit-report.form.button.update = Update
 auditor.audit-report.form.button.publish = Publish
 auditor.audit-report.form.button.delete = Delete
+auditor.audit-report.form.button.associate-project = Associate project
+auditor.audit-report.form.button.project = View project
+
+auditor.audit-report.form.error.project.required = You must select a published project.
+auditor.audit-report.form.error.project.invalid = The selected project is not available for association.

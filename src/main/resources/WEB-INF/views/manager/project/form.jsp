@@ -14,6 +14,8 @@
 	<acme:form-textarea code="manager.project.form.label.inventions" path="inventionsSummary" readonly="true"/>
 	<acme:form-textarea code="manager.project.form.label.campaigns" path="campaignsSummary" readonly="true"/>
 	<acme:form-textarea code="manager.project.form.label.strategies" path="strategiesSummary" readonly="true"/>
+	<acme:form-textarea code="manager.project.form.label.sponsorships" path="sponsorshipsSummary" readonly="true"/>
+	<acme:form-textarea code="manager.project.form.label.auditReports" path="auditReportsSummary" readonly="true"/>
 
 	<jstl:if test="${_command != 'create'}">
 		<acme:button code="manager.project.form.button.members" action="/manager/project-member/list?projectId=${id}"/>

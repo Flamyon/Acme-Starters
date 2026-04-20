@@ -46,6 +46,8 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 			}
 		}
 
+		this.validateProjectPublicationConsistency(auditReport, context);
+
 		if (auditReport.getDraftMode() != null && !auditReport.getDraftMode()) {
 			{
 				Date now = MomentHelper.getBaseMoment();
@@ -64,5 +66,26 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 		}
 
 		return !super.hasErrors(context);
+	}
+
+	private boolean validateProjectPublicationConsistency(final AuditReport auditReport, final ConstraintValidatorContext context) {
+		boolean isValid;
+		boolean auditReportPublished;
+		boolean projectPublished;
+
+		if (auditReport.getProject() == null)
+			return true;
+
+		isValid = true;
+
+		auditReportPublished = Boolean.FALSE.equals(auditReport.getDraftMode());
+		super.state(context, auditReportPublished, "project", "acme.validation.audit-report.project-unpublished-audit-report.message");
+		isValid &= auditReportPublished;
+
+		projectPublished = auditReport.getProject().getDraftMode() != null && !auditReport.getProject().getDraftMode();
+		super.state(context, projectPublished, "project", "acme.validation.audit-report.project-unpublished-project.message");
+		isValid &= projectPublished;
+
+		return isValid;
 	}
 }

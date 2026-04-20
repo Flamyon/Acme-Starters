@@ -27,6 +27,7 @@ sponsor.sponsorship.form.label.endMoment = End Date:
 sponsor.sponsorship.form.label.moreInfo = More info:
 sponsor.sponsorship.form.label.totalMoney = Total Money:
 sponsor.sponsorship.form.label.monthsActive = Months Active:
+sponsor.sponsorship.form.label.project = Project:
 
 # List Labels (Table Headers)
 # -------------------------------------------------------------------
@@ -44,4 +45,9 @@ sponsor.sponsorship.form.button.delete = Delete
 sponsor.sponsorship.form.button.publish = Publish
 sponsor.sponsorship.form.button.donations = View Donations
 sponsor.sponsorship.form.button.sponsor = View Sponsor Profile
+sponsor.sponsorship.form.button.associate-project = Associate project
+sponsor.sponsorship.form.button.project = View project
 sponsor.sponsorship.list.button.create = Create Sponsorship
+
+sponsor.sponsorship.form.error.project.required = You must select a published project.
+sponsor.sponsorship.form.error.project.invalid = The selected project is not available for association.

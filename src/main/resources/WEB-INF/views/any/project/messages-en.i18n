@@ -16,3 +16,5 @@ any.project.form.label.members = Members
 any.project.form.label.inventions = Inventions
 any.project.form.label.campaigns = Campaigns
 any.project.form.label.strategies = Strategies
+any.project.form.label.sponsorships = Sponsorships
+any.project.form.label.auditReports = Audit reports
