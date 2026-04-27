@@ -16,7 +16,6 @@ import acme.entities.student2.Spokesperson;
 import acme.entities.student3.Strategy;
 import acme.realms.Fundraiser;
 import acme.realms.Manager;
-import acme.realms.Member;
 
 @Repository
 public interface ProjectRepository extends AbstractRepository {
@@ -24,7 +23,7 @@ public interface ProjectRepository extends AbstractRepository {
 	@Query("select p from Project p where p.id = :id")
 	Project findProjectById(@Param("id") int id);
 
-	@Query("select distinct p from Project p left join fetch p.manager left join fetch p.members pm left join fetch pm.member m left join fetch m.userAccount left join fetch p.inventions i left join fetch p.campaigns c left join fetch p.strategies s left join fetch p.sponsorships sp left join fetch p.auditReports ar where p.id=:id")
+	@Query("select distinct p from Project p left join fetch p.manager left join fetch p.members pm left join fetch pm.userAccount left join fetch p.inventions i left join fetch p.campaigns c left join fetch p.strategies s left join fetch p.sponsorships sp left join fetch p.auditReports ar where p.id=:id")
 	Project findProjectByIdWithDetails(@Param("id") int id);
 
 	@Query("select p from Project p where p.manager.id = :managerId order by p.kickOff desc")
@@ -33,47 +32,41 @@ public interface ProjectRepository extends AbstractRepository {
 	@Query("select p from Project p where p.draftMode = false order by p.kickOff desc")
 	Collection<Project> findPublishedProjects();
 
-	@Query("select distinct p from Project p join p.members pm where pm.member.userAccount.id = :userAccountId and pm.roleKind = :roleKind order by p.kickOff desc")
+	@Query("select distinct p from Project p join p.members pm where pm.userAccount.id = :userAccountId and pm.roleKind = :roleKind order by p.kickOff desc")
 	Collection<Project> findProjectsByRoleMemberUserAccountId(@Param("userAccountId") int userAccountId, @Param("roleKind") MemberRole roleKind);
 
-	@Query("select distinct p from Project p join p.members pm where p.draftMode = true and pm.member.userAccount.id = :userAccountId and pm.roleKind = :roleKind order by p.title asc")
+	@Query("select distinct p from Project p join p.members pm where p.draftMode = true and pm.userAccount.id = :userAccountId and pm.roleKind = :roleKind order by p.title asc")
 	Collection<Project> findDraftProjectsByRoleMemberUserAccountId(@Param("userAccountId") int userAccountId, @Param("roleKind") MemberRole roleKind);
 
-	@Query("select count(pm) from ProjectMember pm where pm.project.id = :projectId and pm.member.userAccount.id = :userAccountId and pm.roleKind = :roleKind")
+	@Query("select count(pm) from ProjectMember pm where pm.project.id = :projectId and pm.userAccount.id = :userAccountId and pm.roleKind = :roleKind")
 	Long countProjectMemberByProjectIdAndRoleKindAndUserAccountId(@Param("projectId") int projectId, @Param("userAccountId") int userAccountId, @Param("roleKind") MemberRole roleKind);
 
-	@Query("select count(pm) from ProjectMember pm where pm.project.id = :projectId and pm.project.draftMode = true and pm.member.userAccount.id = :userAccountId and pm.roleKind = :roleKind")
+	@Query("select count(pm) from ProjectMember pm where pm.project.id = :projectId and pm.project.draftMode = true and pm.userAccount.id = :userAccountId and pm.roleKind = :roleKind")
 	Long countDraftProjectMemberByProjectIdAndRoleKindAndUserAccountId(@Param("projectId") int projectId, @Param("userAccountId") int userAccountId, @Param("roleKind") MemberRole roleKind);
 
-	@Query("select count(pm) from ProjectMember pm where pm.project.id = :projectId and pm.member.id = :memberId and pm.roleKind = :roleKind")
-	Long countProjectMemberByProjectIdAndMemberIdAndRoleKind(@Param("projectId") int projectId, @Param("memberId") int memberId, @Param("roleKind") MemberRole roleKind);
+	@Query("select count(pm) from ProjectMember pm where pm.project.id = :projectId and pm.userAccount.id = :userAccountId and pm.roleKind = :roleKind")
+	Long countProjectMemberByProjectIdAndUserAccountIdAndRoleKind(@Param("projectId") int projectId, @Param("userAccountId") int userAccountId, @Param("roleKind") MemberRole roleKind);
 
-	@Query("select pm from ProjectMember pm join fetch pm.member m join fetch m.userAccount where pm.project.id = :projectId")
+	@Query("select pm from ProjectMember pm join fetch pm.userAccount where pm.project.id = :projectId")
 	Collection<ProjectMember> findProjectMembersByProjectId(@Param("projectId") int projectId);
 
-	@Query("select pm from ProjectMember pm join fetch pm.project p join fetch p.manager join fetch pm.member m join fetch m.userAccount where pm.id = :id")
+	@Query("select pm from ProjectMember pm join fetch pm.project p join fetch p.manager join fetch pm.userAccount where pm.id = :id")
 	ProjectMember findProjectMemberById(@Param("id") int id);
 
 	@Query("select count(pm) from ProjectMember pm where pm.project.id = :projectId")
 	Long countProjectMembersByProjectId(@Param("projectId") int projectId);
 
-	@Query("select i from Inventor i where not exists (select pm from ProjectMember pm where pm.project.id = :projectId and pm.member.userAccount.id = i.userAccount.id and pm.roleKind = :roleKind)")
+	@Query("select i from Inventor i where not exists (select pm from ProjectMember pm where pm.project.id = :projectId and pm.userAccount.id = i.userAccount.id and pm.roleKind = :roleKind)")
 	Collection<Inventor> findNomineeInventorsByProjectId(@Param("projectId") int projectId, @Param("roleKind") MemberRole roleKind);
 
-	@Query("select s from Spokesperson s where not exists (select pm from ProjectMember pm where pm.project.id = :projectId and pm.member.userAccount.id = s.userAccount.id and pm.roleKind = :roleKind)")
+	@Query("select s from Spokesperson s where not exists (select pm from ProjectMember pm where pm.project.id = :projectId and pm.userAccount.id = s.userAccount.id and pm.roleKind = :roleKind)")
 	Collection<Spokesperson> findNomineeSpokespersonsByProjectId(@Param("projectId") int projectId, @Param("roleKind") MemberRole roleKind);
 
-	@Query("select f from Fundraiser f where not exists (select pm from ProjectMember pm where pm.project.id = :projectId and pm.member.userAccount.id = f.userAccount.id and pm.roleKind = :roleKind)")
+	@Query("select f from Fundraiser f where not exists (select pm from ProjectMember pm where pm.project.id = :projectId and pm.userAccount.id = f.userAccount.id and pm.roleKind = :roleKind)")
 	Collection<Fundraiser> findNomineeFundraisersByProjectId(@Param("projectId") int projectId, @Param("roleKind") MemberRole roleKind);
 
 	@Query("select ua from UserAccount ua where ua.id = :id")
 	UserAccount findUserAccountById(@Param("id") int id);
-
-	@Query("select m from Member m where m.userAccount.id = :userAccountId")
-	Member findMemberByUserAccountId(@Param("userAccountId") int userAccountId);
-
-	@Query("select m from Manager m where m.userAccount.id = :userAccountId")
-	Manager findManagerByUserAccountId(@Param("userAccountId") int userAccountId);
 
 	@Query("select i from Inventor i where i.userAccount.id = :userAccountId")
 	Inventor findInventorByUserAccountId(@Param("userAccountId") int userAccountId);
