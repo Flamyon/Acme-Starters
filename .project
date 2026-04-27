@@ -39,10 +39,5 @@
 			<type>2</type>
 			<locationURI>WORKSPACE_LOC/Frameworks/Acme-Framework-26.4.0/target/classes</locationURI>
 		</link>
-		<link>
-			<name>target/classes</name>
-			<type>2</type>
-			<location>//C:/Users/franr/OneDrive/Escritorio/informatica_us/asignaturas/DP2/ent/Workspace-26/Projects/Acme-Starters-B/target/classes/</location>
-		</link>
 	</linkedResources>
 </projectDescription>
