@@ -18,11 +18,6 @@ import acme.entities.levelb.MemberRole;
 import acme.entities.levelb.Project;
 import acme.entities.levelb.ProjectMember;
 import acme.entities.levelb.ProjectRepository;
-import acme.entities.student1.Inventor;
-import acme.entities.student2.Spokesperson;
-import acme.realms.Manager;
-import acme.realms.Fundraiser;
-import acme.realms.Member;
 
 @Service
 public class ManagerProjectMemberCreateService extends AbstractService<Manager, ProjectMember> {
@@ -80,7 +75,6 @@ public class ManagerProjectMemberCreateService extends AbstractService<Manager, 
 	public void validate() {
 		boolean validNominee;
 		boolean uniqueInProject;
-		Member member;
 
 		validNominee = this.nomineeAccount != null && this.nomineeRoleKind != null;
 		super.state(validNominee, "nominee", "manager.project-member.form.error.nominee");
@@ -88,11 +82,7 @@ public class ManagerProjectMemberCreateService extends AbstractService<Manager, 
 		if (!validNominee)
 			return;
 
-		member = this.repository.findMemberByUserAccountId(this.nomineeAccount.getId());
-		if (member == null)
-			uniqueInProject = true;
-		else
-			uniqueInProject = this.repository.countProjectMemberByProjectIdAndMemberIdAndRoleKind(this.project.getId(), member.getId(), this.nomineeRoleKind) == 0;
+		uniqueInProject = this.repository.countProjectMemberByProjectIdAndUserAccountIdAndRoleKind(this.project.getId(), this.nomineeAccount.getId(), this.nomineeRoleKind) == 0;
 
 		super.state(uniqueInProject, "nominee", "manager.project-member.form.error.duplicate");
 	}
@@ -100,17 +90,8 @@ public class ManagerProjectMemberCreateService extends AbstractService<Manager, 
 	@Override
 	@Transactional
 	public void execute() {
-		Member member;
-
-		member = this.repository.findMemberByUserAccountId(this.nomineeAccount.getId());
-		if (member == null) {
-			member = super.newObject(Member.class);
-			member.setUserAccount(this.nomineeAccount);
-			this.repository.save(member);
-		}
-
 		this.projectMember.setProject(this.project);
-		this.projectMember.setMember(member);
+		this.projectMember.setUserAccount(this.nomineeAccount);
 		this.projectMember.setRoleKind(this.nomineeRoleKind);
 		this.repository.save(this.projectMember);
 	}

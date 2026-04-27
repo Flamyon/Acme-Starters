@@ -29,7 +29,7 @@ public interface ManagerDashboardRepository extends AbstractRepository {
 	@Query("select function('datediff', s.endMoment, s.startMoment) from Strategy s where s.project.id = :projectId")
 	List<Number> strategyDurationsInDaysByProjectId(@Param("projectId") int projectId);
 
-	@Query("select count(distinct pm.member.id) from ProjectMember pm where pm.project.id = :projectId")
+	@Query("select count(distinct pm.userAccount.id) from ProjectMember pm where pm.project.id = :projectId")
 	Long memberCountByProjectId(@Param("projectId") int projectId);
 
 }

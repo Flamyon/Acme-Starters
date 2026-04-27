@@ -57,7 +57,7 @@ public class ManagerProjectMemberDeleteService extends AbstractService<Manager, 
 		MemberRole roleKind;
 
 		projectId = this.projectMember.getProject().getId();
-		userAccountId = this.projectMember.getMember().getUserAccount().getId();
+		userAccountId = this.projectMember.getUserAccount().getId();
 		roleKind = this.projectMember.getRoleKind();
 
 		if (roleKind != null)
