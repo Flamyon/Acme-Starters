@@ -54,7 +54,6 @@ public class SponsorSponsorshipAssociateProjectService extends AbstractService<S
 	public void validate() {
 		super.validateObject(this.sponsorship);
 
-		super.state(this.selectedProjectId != 0, "project", "sponsor.sponsorship.form.error.project.required");
 		if (this.selectedProjectId != 0)
 			super.state(this.sponsorship.getProject() != null, "project", "sponsor.sponsorship.form.error.project.invalid");
 	}
@@ -79,6 +78,7 @@ public class SponsorSponsorshipAssociateProjectService extends AbstractService<S
 		Project selectedProject;
 		Project visibleProject;
 		SelectChoices projectChoices;
+		String selectedKey;
 		boolean selectedIncluded;
 		boolean isOwner;
 
@@ -100,8 +100,17 @@ public class SponsorSponsorshipAssociateProjectService extends AbstractService<S
 			selectedProject = null;
 
 		visibleProject = selectedProject;
+		selectedKey = visibleProject == null ? "0" : Integer.toString(visibleProject.getId());
+		projectChoices = new SelectChoices();
+		projectChoices.add("0", "---", "0".equals(selectedKey));
+		for (Project project : projects) {
+			String key;
+			String label;
 
-		projectChoices = SelectChoices.from(projects, "title", selectedProject);
+			key = Integer.toString(project.getId());
+			label = project.getTitle();
+			projectChoices.add(key, label, key.equals(selectedKey));
+		}
 		isOwner = this.sponsorship.getSponsor() != null && this.sponsorship.getSponsor().isPrincipal();
 
 		tuple.put("isOwner", isOwner);

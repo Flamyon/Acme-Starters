@@ -33,6 +33,7 @@ auditor.audit-report.form.button.publish = Publicar
 auditor.audit-report.form.button.delete = Eliminar
 auditor.audit-report.form.button.associate-project = Asociar proyecto
 auditor.audit-report.form.button.project = Ver proyecto
+auditor.audit-report.form.button.return-show = Volver al informe de auditoria
 
 auditor.audit-report.form.error.project.required = Debe seleccionar un proyecto publicado.
 auditor.audit-report.form.error.project.invalid = El proyecto seleccionado no esta disponible para asociarlo.
