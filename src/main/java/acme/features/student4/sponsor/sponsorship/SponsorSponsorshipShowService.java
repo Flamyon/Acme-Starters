@@ -25,10 +25,16 @@ public class SponsorSponsorshipShowService extends AbstractService<Sponsor, Spon
 
 	@Override
 	public void load() {
-		int id;
+		Integer id;
 
-		id = super.getRequest().getData("id", int.class);
-		this.sponsorship = this.repository.findSponsorshipById(id);
+		id = super.getRequest().getData("id", Integer.class, null);
+		if (id == null || id.intValue() == 0)
+			this.sponsorship = super.newObject(Sponsorship.class);
+		else {
+			this.sponsorship = this.repository.findSponsorshipById(id.intValue());
+			if (this.sponsorship == null)
+				this.sponsorship = super.newObject(Sponsorship.class);
+		}
 	}
 
 	@Override
@@ -36,8 +42,8 @@ public class SponsorSponsorshipShowService extends AbstractService<Sponsor, Spon
 		boolean status;
 
 		// Owner always sees it; others only see published ones
-		status = this.sponsorship != null && //
-			(this.sponsorship.getSponsor().isPrincipal() || !this.sponsorship.getDraftMode());
+		status = this.sponsorship != null && this.sponsorship.getId() != 0 && //
+			(this.sponsorship.getSponsor() != null && this.sponsorship.getSponsor().isPrincipal() || Boolean.FALSE.equals(this.sponsorship.getDraftMode()));
 
 		super.setAuthorised(status);
 	}
@@ -50,6 +56,7 @@ public class SponsorSponsorshipShowService extends AbstractService<Sponsor, Spon
 		tuple = super.unbindObject(this.sponsorship, //
 			"ticker", "name", "description", "startMoment", "endMoment", "moreInfo", //
 			"draftMode", "monthsActive", "totalMoney");
+		tuple.put("id", this.sponsorship.getId() != 0 ? this.sponsorship.getId() : 0);
 		isOwner = this.sponsorship.getSponsor() != null && this.sponsorship.getSponsor().isPrincipal();
 		tuple.put("isOwner", isOwner);
 		tuple.put("canAssociateProject", isOwner && Boolean.FALSE.equals(this.sponsorship.getDraftMode()));

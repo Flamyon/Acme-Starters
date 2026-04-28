@@ -27,17 +27,22 @@ public class ManagerProjectMemberDeleteService extends AbstractService<Manager, 
 
 	@Override
 	public void load() {
-		int id;
+		Integer id;
 
-		id = super.getRequest().getData("id", int.class);
-		this.projectMember = this.repository.findProjectMemberById(id);
+		this.projectMember = super.newObject(ProjectMember.class);
+		id = super.getRequest().getData("id", Integer.class, null);
+		if (id == null || id.intValue() == 0)
+			return;
+		this.projectMember = this.repository.findProjectMemberById(id.intValue());
+		if (this.projectMember == null)
+			this.projectMember = super.newObject(ProjectMember.class);
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
 
-		status = this.projectMember != null && this.projectMember.getProject() != null && this.projectMember.getProject().getManager() != null && this.projectMember.getProject().getManager().isPrincipal() && Boolean.TRUE.equals(this.projectMember.getProject().getDraftMode());
+		status = this.projectMember != null && this.projectMember.getId() != 0 && this.projectMember.getProject() != null && this.projectMember.getProject().getManager() != null && this.projectMember.getProject().getManager().isPrincipal() && Boolean.TRUE.equals(this.projectMember.getProject().getDraftMode());
 		super.setAuthorised(status);
 	}
 
@@ -55,6 +60,9 @@ public class ManagerProjectMemberDeleteService extends AbstractService<Manager, 
 		int projectId;
 		int userAccountId;
 		MemberRole roleKind;
+
+		if (this.projectMember.getId() == 0 || this.projectMember.getProject() == null || this.projectMember.getUserAccount() == null)
+			return;
 
 		projectId = this.projectMember.getProject().getId();
 		userAccountId = this.projectMember.getUserAccount().getId();
@@ -83,8 +91,8 @@ public class ManagerProjectMemberDeleteService extends AbstractService<Manager, 
 		Tuple tuple;
 
 		tuple = super.unbindObject(this.projectMember, "memberFullName", "memberEmail", "roleLabel");
-		tuple.put("projectId", this.projectMember.getProject().getId());
-		tuple.put("draftMode", this.projectMember.getProject().getDraftMode());
+		tuple.put("projectId", this.projectMember.getProject() == null ? 0 : this.projectMember.getProject().getId());
+		tuple.put("draftMode", this.projectMember.getProject() == null ? false : this.projectMember.getProject().getDraftMode());
 	}
 
 	private void detachInventorComponents(final int projectId, final int userAccountId) {

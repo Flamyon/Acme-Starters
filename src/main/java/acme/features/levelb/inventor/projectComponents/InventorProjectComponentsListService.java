@@ -57,8 +57,8 @@ public class InventorProjectComponentsListService extends AbstractService<Invent
 
 	@Override
 	public void unbind() {
-		super.getResponse().addGlobal("projectId", this.project.getId());
-		super.getResponse().addGlobal("projectTitle", this.project.getTitle());
+		super.getResponse().addGlobal("projectId", this.project == null ? 0 : this.project.getId());
+		super.getResponse().addGlobal("projectTitle", this.project == null ? "-" : this.project.getTitle());
 		super.unbindObjects(this.components, "id", "kindLabel", "ticker", "name", "owner", "draftMode", "startMoment", "endMoment");
 	}
 

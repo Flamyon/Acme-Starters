@@ -28,10 +28,16 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 
 	@Override
 	public void load() {
-		int id;
+		Integer id;
 
-		id = super.getRequest().getData("id", int.class);
-		this.sponsorship = this.repository.findSponsorshipById(id);
+		id = super.getRequest().getData("id", Integer.class, null);
+		if (id == null || id.intValue() == 0)
+			this.sponsorship = super.newObject(Sponsorship.class);
+		else {
+			this.sponsorship = this.repository.findSponsorshipById(id.intValue());
+			if (this.sponsorship == null)
+				this.sponsorship = super.newObject(Sponsorship.class);
+		}
 	}
 
 	@Override
@@ -39,8 +45,9 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 		boolean status;
 
 		status = this.sponsorship != null && //
-			this.sponsorship.getDraftMode() && //
-			this.sponsorship.getSponsor().isPrincipal();
+			this.sponsorship.getId() != 0 && //
+			Boolean.TRUE.equals(this.sponsorship.getDraftMode()) && //
+			this.sponsorship.getSponsor() != null && this.sponsorship.getSponsor().isPrincipal();
 
 		super.setAuthorised(status);
 	}
@@ -52,6 +59,8 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 
 	@Override
 	public void validate() {
+		if (this.sponsorship.getId() == 0)
+			return;
 
 		super.validateObject(this.sponsorship);
 		{
@@ -95,6 +104,9 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 
 	@Override
 	public void execute() {
+		if (this.sponsorship.getId() == 0)
+			return;
+
 		this.sponsorship.setDraftMode(false);
 		this.repository.save(this.sponsorship);
 	}
@@ -107,6 +119,7 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 		tuple = super.unbindObject(this.sponsorship, //
 			"ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
 
+		tuple.put("id", this.sponsorship.getId() != 0 ? this.sponsorship.getId() : 0);
 		tuple.put("draftMode", this.sponsorship.getDraftMode());
 		tuple.put("monthsActive", this.sponsorship.getMonthsActive());
 		tuple.put("totalMoney", this.sponsorship.getTotalMoney());

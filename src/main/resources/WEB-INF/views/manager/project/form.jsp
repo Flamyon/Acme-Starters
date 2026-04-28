@@ -17,16 +17,16 @@
 	<acme:form-textarea code="manager.project.form.label.sponsorships" path="sponsorshipsSummary" readonly="true"/>
 	<acme:form-textarea code="manager.project.form.label.auditReports" path="auditReportsSummary" readonly="true"/>
 
-	<jstl:if test="${_command != 'create'}">
+	<jstl:if test="${!empty id && id != 0}">
 		<acme:button code="manager.project.form.button.members" action="/manager/project-member/list?projectId=${id}"/>
 		<acme:button code="manager.project.form.button.components" action="/manager/project-component/list?projectId=${id}"/>
 	</jstl:if>
 
-	<jstl:if test="${_command == 'create'}">
+	<jstl:if test="${_command == 'create' || empty id || id == 0}">
 		<acme:submit code="manager.project.form.button.create" action="/manager/project/create"/>
 	</jstl:if>
 
-	<jstl:if test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode}">
+	<jstl:if test="${!empty id && id != 0 && acme:anyOf(_command, 'show|update|delete|publish') && draftMode}">
 		<acme:submit code="manager.project.form.button.update" action="/manager/project/update"/>
 		<acme:submit code="manager.project.form.button.delete" action="/manager/project/delete"/>
 		<acme:submit code="manager.project.form.button.publish" action="/manager/project/publish"/>
