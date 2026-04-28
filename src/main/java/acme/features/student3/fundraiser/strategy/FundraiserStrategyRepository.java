@@ -32,7 +32,7 @@ public interface FundraiserStrategyRepository extends AbstractRepository {
 	@Query("select p from Project p where p.id = :id")
 	Project findProjectById(int id);
 
-	@Query("select distinct p from Project p join p.members pm where p.draftMode = true and pm.userAccount.id = :userAccountId and pm.roleKind = acme.entities.levelb.MemberRole.FUNDRAISER order by p.title asc")
+	@Query("select distinct p from ProjectMember pm join pm.project p where p.draftMode = true and pm.userAccount.id = :userAccountId and pm.roleKind = acme.entities.levelb.MemberRole.FUNDRAISER order by p.title asc")
 	Collection<Project> findAvailableProjectsByMemberUserAccountId(int userAccountId);
 
 	@Query("select count(pm) from ProjectMember pm where pm.project.id = :projectId and pm.project.draftMode = true and pm.userAccount.id = :userAccountId and pm.roleKind = acme.entities.levelb.MemberRole.FUNDRAISER")

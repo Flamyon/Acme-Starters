@@ -51,7 +51,7 @@ public class SpokespersonProjectShowService extends AbstractService<Spokesperson
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
 		isMember = this.repository.countProjectMemberByProjectIdAndRoleKindAndUserAccountId(this.project.getId(), userAccountId, MemberRole.SPOKESPERSON) > 0;
 		tuple.put("showComponents", isMember);
-		ProjectSupport.putDetails(tuple, this.project);
+		ProjectSupport.putDetails(tuple, this.project, this.repository);
 	}
 
 }
