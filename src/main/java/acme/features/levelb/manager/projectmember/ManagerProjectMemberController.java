@@ -1,4 +1,4 @@
-package acme.features.levelb.manager.projectMember;
+package acme.features.levelb.manager.projectmember;
 
 import javax.annotation.PostConstruct;
 

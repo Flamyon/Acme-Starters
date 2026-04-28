@@ -1,10 +1,10 @@
-package acme.features.levelb.manager.projectMember;
+
+package acme.features.levelb.manager.projectmember;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,34 +20,39 @@ import acme.entities.levelb.ProjectMember;
 import acme.entities.levelb.ProjectRepository;
 import acme.entities.student1.Inventor;
 import acme.entities.student2.Spokesperson;
-import acme.realms.Manager;
 import acme.realms.Fundraiser;
-import acme.realms.Member;
+import acme.realms.Manager;
 
 @Service
 public class ManagerProjectMemberCreateService extends AbstractService<Manager, ProjectMember> {
 
 	@Autowired
-	private ProjectRepository repository;
+	private ProjectRepository	repository;
 
-	private ProjectMember projectMember;
+	private ProjectMember		projectMember;
 
-	private Project project;
+	private Project				project;
 
-	private String nomineeKey;
+	private String				nomineeKey;
 
-	private MemberRole nomineeRoleKind;
+	private MemberRole			nomineeRoleKind;
 
-	private UserAccount nomineeAccount;
+	private UserAccount			nomineeAccount;
 
 
 	@Override
 	public void load() {
-		int projectId;
+		Integer projectId;
 		String nomineeData;
 
-		projectId = super.getRequest().getData("projectId", int.class);
-		this.project = this.repository.findProjectById(projectId);
+		projectId = super.getRequest().getData("projectId", Integer.class, null);
+		if (projectId == null || projectId.intValue() == 0)
+			this.project = super.newObject(Project.class);
+		else {
+			this.project = this.repository.findProjectById(projectId.intValue());
+			if (this.project == null)
+				this.project = super.newObject(Project.class);
+		}
 
 		this.projectMember = super.newObject(ProjectMember.class);
 		this.projectMember.setProject(this.project);
@@ -68,7 +73,7 @@ public class ManagerProjectMemberCreateService extends AbstractService<Manager, 
 	public void authorise() {
 		boolean status;
 
-		status = this.project != null && this.project.getManager() != null && this.project.getManager().isPrincipal() && Boolean.TRUE.equals(this.project.getDraftMode());
+		status = this.project != null && this.project.getId() != 0 && this.project.getManager() != null && this.project.getManager().isPrincipal() && Boolean.TRUE.equals(this.project.getDraftMode());
 		super.setAuthorised(status);
 	}
 
@@ -80,7 +85,9 @@ public class ManagerProjectMemberCreateService extends AbstractService<Manager, 
 	public void validate() {
 		boolean validNominee;
 		boolean uniqueInProject;
-		Member member;
+
+		if (this.project.getId() == 0)
+			return;
 
 		validNominee = this.nomineeAccount != null && this.nomineeRoleKind != null;
 		super.state(validNominee, "nominee", "manager.project-member.form.error.nominee");
@@ -88,11 +95,7 @@ public class ManagerProjectMemberCreateService extends AbstractService<Manager, 
 		if (!validNominee)
 			return;
 
-		member = this.repository.findMemberByUserAccountId(this.nomineeAccount.getId());
-		if (member == null)
-			uniqueInProject = true;
-		else
-			uniqueInProject = this.repository.countProjectMemberByProjectIdAndMemberIdAndRoleKind(this.project.getId(), member.getId(), this.nomineeRoleKind) == 0;
+		uniqueInProject = this.repository.countProjectMemberByProjectIdAndUserAccountIdAndRoleKind(this.project.getId(), this.nomineeAccount.getId(), this.nomineeRoleKind) == 0;
 
 		super.state(uniqueInProject, "nominee", "manager.project-member.form.error.duplicate");
 	}
@@ -100,17 +103,11 @@ public class ManagerProjectMemberCreateService extends AbstractService<Manager, 
 	@Override
 	@Transactional
 	public void execute() {
-		Member member;
-
-		member = this.repository.findMemberByUserAccountId(this.nomineeAccount.getId());
-		if (member == null) {
-			member = super.newObject(Member.class);
-			member.setUserAccount(this.nomineeAccount);
-			this.repository.save(member);
-		}
+		if (this.project.getId() == 0 || this.nomineeAccount == null || this.nomineeRoleKind == null)
+			return;
 
 		this.projectMember.setProject(this.project);
-		this.projectMember.setMember(member);
+		this.projectMember.setUserAccount(this.nomineeAccount);
 		this.projectMember.setRoleKind(this.nomineeRoleKind);
 		this.repository.save(this.projectMember);
 	}
@@ -128,13 +125,19 @@ public class ManagerProjectMemberCreateService extends AbstractService<Manager, 
 		SelectChoices choices;
 		Tuple tuple;
 
-		inventors = this.repository.findNomineeInventorsByProjectId(this.project.getId(), MemberRole.INVENTOR);
-		spokespersons = this.repository.findNomineeSpokespersonsByProjectId(this.project.getId(), MemberRole.SPOKESPERSON);
-		fundraisers = this.repository.findNomineeFundraisersByProjectId(this.project.getId(), MemberRole.FUNDRAISER);
+		if (this.project.getId() == 0) {
+			inventors = List.of();
+			spokespersons = List.of();
+			fundraisers = List.of();
+		} else {
+			inventors = this.repository.findNomineeInventorsByProjectId(this.project.getId(), MemberRole.INVENTOR);
+			spokespersons = this.repository.findNomineeSpokespersonsByProjectId(this.project.getId(), MemberRole.SPOKESPERSON);
+			fundraisers = this.repository.findNomineeFundraisersByProjectId(this.project.getId(), MemberRole.FUNDRAISER);
+		}
 
-		sortedInventors = inventors.stream().sorted(this.roleComparator(ua -> ua.getUserAccount())).collect(Collectors.toList());
-		sortedSpokespersons = spokespersons.stream().sorted(this.roleComparator(ua -> ua.getUserAccount())).collect(Collectors.toList());
-		sortedFundraisers = fundraisers.stream().sorted(this.roleComparator(ua -> ua.getUserAccount())).collect(Collectors.toList());
+		sortedInventors = inventors.stream().sorted(this.roleComparator(ua -> ua.getUserAccount())).toList();
+		sortedSpokespersons = spokespersons.stream().sorted(this.roleComparator(ua -> ua.getUserAccount())).toList();
+		sortedFundraisers = fundraisers.stream().sorted(this.roleComparator(ua -> ua.getUserAccount())).toList();
 
 		validKeys = new ArrayList<>();
 		sortedInventors.forEach(i -> validKeys.add(this.keyOf(MemberRole.INVENTOR, i.getUserAccount().getId())));
@@ -228,7 +231,7 @@ public class ManagerProjectMemberCreateService extends AbstractService<Manager, 
 	}
 
 	private <T> Comparator<T> roleComparator(final java.util.function.Function<T, UserAccount> accountAccessor) {
-		return Comparator.comparing((T element) -> this.surnameOf(accountAccessor.apply(element))).thenComparing(element -> this.nameOf(accountAccessor.apply(element)));
+		return Comparator.comparing((final T element) -> this.surnameOf(accountAccessor.apply(element))).thenComparing(element -> this.nameOf(accountAccessor.apply(element)));
 	}
 
 	private String keyOf(final MemberRole roleKind, final int userAccountId) {

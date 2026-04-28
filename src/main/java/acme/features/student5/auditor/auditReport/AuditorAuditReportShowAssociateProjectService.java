@@ -14,13 +14,12 @@ import acme.entities.student5.AuditReport;
 import acme.realms.Auditor;
 
 @Service
-public class AuditorAuditReportAssociateProjectService extends AbstractService<Auditor, AuditReport> {
+public class AuditorAuditReportShowAssociateProjectService extends AbstractService<Auditor, AuditReport> {
 
 	@Autowired
 	private AuditorAuditReportRepository	repository;
 
 	private AuditReport					entity;
-	private int							selectedProjectId;
 
 
 	@Override
@@ -43,30 +42,6 @@ public class AuditorAuditReportAssociateProjectService extends AbstractService<A
 
 		status = this.entity != null && this.entity.getId() != 0 && this.entity.getAuditor() != null && this.entity.getAuditor().isPrincipal() && Boolean.FALSE.equals(this.entity.getDraftMode());
 		super.setAuthorised(status);
-	}
-
-	@Override
-	public void bind() {
-		Project project;
-
-		this.selectedProjectId = super.getRequest().hasData("project", int.class) ? super.getRequest().getData("project", int.class) : 0;
-		project = this.selectedProjectId == 0 ? null : this.repository.findPublishedProjectById(this.selectedProjectId);
-
-		this.entity.setProject(project);
-	}
-
-	@Override
-	public void validate() {
-		super.validateObject(this.entity);
-
-		if (this.selectedProjectId != 0)
-			super.state(this.entity.getProject() != null, "project", "auditor.audit-report.form.error.project.invalid");
-	}
-
-	@Override
-	public void execute() {
-		if (this.entity.getId() != 0)
-			this.repository.save(this.entity);
 	}
 
 	@Override
@@ -128,5 +103,4 @@ public class AuditorAuditReportAssociateProjectService extends AbstractService<A
 		tuple.put("projectTitle", visibleProject == null ? "-" : visibleProject.getTitle());
 		tuple.put("projects", projectChoices);
 	}
-
 }

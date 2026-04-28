@@ -1,4 +1,4 @@
-package acme.features.levelb.manager.projectComponents;
+package acme.features.levelb.manager.projectcomponents;
 
 import java.util.Collection;
 import java.util.List;
@@ -29,14 +29,11 @@ public class ManagerProjectComponentsShowService extends AbstractService<Manager
 	public void load() {
 		Integer sourceId;
 
+		this.component = super.newObject(ProjectComponent.class);
+		this.candidates = List.of();
 		sourceId = super.getRequest().getData("id", Integer.class, null);
-		if (sourceId == null) {
-			this.component = null;
-			this.candidates = List.of();
+		if (sourceId == null || sourceId.intValue() == 0)
 			return;
-		}
-
-		this.component = null;
 		this.candidates = ProjectComponentsSupport.resolveBySourceId(this.repository, sourceId.intValue());
 	}
 

@@ -1,4 +1,4 @@
-package acme.features.levelb.administrator.adBanner;
+package acme.features.levelb.administrator.adbanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ import acme.entities.levelb.AdBanner;
 import acme.entities.levelb.AdBannerRepository;
 
 @Service
-public class AdministratorAdBannerShowService extends AbstractService<Administrator, AdBanner> {
+public class AdministratorAdBannerDeleteService extends AbstractService<Administrator, AdBanner> {
 
 	@Autowired
 	private AdBannerRepository repository;
@@ -31,6 +31,21 @@ public class AdministratorAdBannerShowService extends AbstractService<Administra
 
 		status = this.adBanner != null;
 		super.setAuthorised(status);
+	}
+
+	@Override
+	public void bind() {
+		super.bindObject(this.adBanner, "slogan", "targetUrl", "picture");
+	}
+
+	@Override
+	public void validate() {
+		// Nothing to validate before deleting this entity.
+	}
+
+	@Override
+	public void execute() {
+		this.repository.delete(this.adBanner);
 	}
 
 	@Override

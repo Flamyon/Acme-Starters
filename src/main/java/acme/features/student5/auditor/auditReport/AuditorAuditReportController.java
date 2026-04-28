@@ -23,6 +23,7 @@ public class AuditorAuditReportController extends AbstractController<Auditor, Au
 		super.addBasicCommand("update", AuditorAuditReportUpdateService.class);
 		super.addBasicCommand("delete", AuditorAuditReportDeleteService.class);
 		super.addCustomCommand("publish", "update", AuditorAuditReportPublishService.class);
+		super.addCustomCommand("show-associate-project", "show", AuditorAuditReportShowAssociateProjectService.class);
 		super.addCustomCommand("associate-project", "update", AuditorAuditReportAssociateProjectService.class);
 	}
 

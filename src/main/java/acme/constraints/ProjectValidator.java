@@ -81,7 +81,7 @@ public class ProjectValidator extends AbstractValidator<ValidProject, Project> {
 		boolean hasInventions;
 
 		if (project.getId() == 0)
-			hasInventions = project.getInventions() != null && !project.getInventions().isEmpty();
+			hasInventions = false;
 		else {
 			Long inventionCount;
 

@@ -26,17 +26,23 @@ public class SponsorSponsorshipAssociateProjectService extends AbstractService<S
 
 	@Override
 	public void load() {
-		int id;
+		Integer id;
 
-		id = super.getRequest().getData("id", int.class);
-		this.sponsorship = this.repository.findSponsorshipById(id);
+		id = super.getRequest().getData("id", Integer.class, null);
+		if (id == null || id.intValue() == 0)
+			this.sponsorship = super.newObject(Sponsorship.class);
+		else {
+			this.sponsorship = this.repository.findSponsorshipById(id.intValue());
+			if (this.sponsorship == null)
+				this.sponsorship = super.newObject(Sponsorship.class);
+		}
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
 
-		status = this.sponsorship != null && this.sponsorship.getSponsor() != null && this.sponsorship.getSponsor().isPrincipal() && Boolean.FALSE.equals(this.sponsorship.getDraftMode());
+		status = this.sponsorship != null && this.sponsorship.getId() != 0 && this.sponsorship.getSponsor() != null && this.sponsorship.getSponsor().isPrincipal() && Boolean.FALSE.equals(this.sponsorship.getDraftMode());
 		super.setAuthorised(status);
 	}
 
@@ -54,14 +60,14 @@ public class SponsorSponsorshipAssociateProjectService extends AbstractService<S
 	public void validate() {
 		super.validateObject(this.sponsorship);
 
-		super.state(this.selectedProjectId != 0, "project", "sponsor.sponsorship.form.error.project.required");
 		if (this.selectedProjectId != 0)
 			super.state(this.sponsorship.getProject() != null, "project", "sponsor.sponsorship.form.error.project.invalid");
 	}
 
 	@Override
 	public void execute() {
-		this.repository.save(this.sponsorship);
+		if (this.sponsorship.getId() != 0)
+			this.repository.save(this.sponsorship);
 	}
 
 	@Override
@@ -69,6 +75,7 @@ public class SponsorSponsorshipAssociateProjectService extends AbstractService<S
 		Tuple tuple;
 
 		tuple = super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "monthsActive", "totalMoney");
+		tuple.put("id", this.sponsorship.getId() != 0 ? this.sponsorship.getId() : 0);
 		this.putProjectData(tuple);
 	}
 
@@ -79,6 +86,7 @@ public class SponsorSponsorshipAssociateProjectService extends AbstractService<S
 		Project selectedProject;
 		Project visibleProject;
 		SelectChoices projectChoices;
+		String selectedKey;
 		boolean selectedIncluded;
 		boolean isOwner;
 
@@ -100,8 +108,17 @@ public class SponsorSponsorshipAssociateProjectService extends AbstractService<S
 			selectedProject = null;
 
 		visibleProject = selectedProject;
+		selectedKey = visibleProject == null ? "0" : Integer.toString(visibleProject.getId());
+		projectChoices = new SelectChoices();
+		projectChoices.add("0", "---", "0".equals(selectedKey));
+		for (Project project : projects) {
+			String key;
+			String label;
 
-		projectChoices = SelectChoices.from(projects, "title", selectedProject);
+			key = Integer.toString(project.getId());
+			label = project.getTitle();
+			projectChoices.add(key, label, key.equals(selectedKey));
+		}
 		isOwner = this.sponsorship.getSponsor() != null && this.sponsorship.getSponsor().isPrincipal();
 
 		tuple.put("isOwner", isOwner);

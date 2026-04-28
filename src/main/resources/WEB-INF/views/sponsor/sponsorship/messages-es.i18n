@@ -46,7 +46,10 @@ sponsor.sponsorship.form.button.publish = Publicar
 sponsor.sponsorship.form.button.donations = Ver donaciones
 sponsor.sponsorship.form.button.sponsor = Ver perfil del patrocinador
 sponsor.sponsorship.form.button.associate-project = Asociar proyecto
+sponsor.sponsorship.form.button.manage-project-association = Gestionar asociacion con proyecto
+sponsor.sponsorship.form.button.save-project-association = Guardar asociacion con proyecto
 sponsor.sponsorship.form.button.project = Ver proyecto
+sponsor.sponsorship.form.button.return-show = Volver al patrocinio
 sponsor.sponsorship.list.button.create = Crear patrocinio
 
 sponsor.sponsorship.form.error.project.required = Debe seleccionar un proyecto publicado.

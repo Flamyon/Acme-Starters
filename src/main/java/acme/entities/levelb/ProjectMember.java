@@ -11,14 +11,14 @@ import javax.persistence.UniqueConstraint;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
+import acme.client.components.principals.UserAccount;
 import acme.client.components.validation.Mandatory;
-import acme.realms.Member;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Table(name = "project_member", uniqueConstraints = @UniqueConstraint(columnNames = {
-	"project_id", "member_id", "role_kind"
+	"project_id", "user_account_id", "role_kind"
 }))
 @Getter
 @Setter
@@ -34,7 +34,7 @@ public class ProjectMember extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Member member;
+	private UserAccount userAccount;
 
 	@Mandatory
 	@Column(name = "role_kind")
@@ -46,7 +46,7 @@ public class ProjectMember extends AbstractEntity {
 	public String getMemberFullName() {
 		String result;
 
-		result = this.member != null && this.member.getUserAccount() != null && this.member.getUserAccount().getIdentity() != null ? this.member.getUserAccount().getIdentity().getFullName() : "-";
+		result = this.userAccount != null && this.userAccount.getIdentity() != null ? this.userAccount.getIdentity().getFullName() : "-";
 
 		return result;
 	}
@@ -55,7 +55,7 @@ public class ProjectMember extends AbstractEntity {
 	public String getMemberEmail() {
 		String result;
 
-		result = this.member != null && this.member.getUserAccount() != null && this.member.getUserAccount().getIdentity() != null ? this.member.getUserAccount().getIdentity().getEmail() : "-";
+		result = this.userAccount != null && this.userAccount.getIdentity() != null ? this.userAccount.getIdentity().getEmail() : "-";
 
 		return result;
 	}

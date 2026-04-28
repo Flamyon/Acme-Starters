@@ -32,10 +32,7 @@ public class ManagerProjectCreateService extends AbstractService<Manager, Projec
 
 	@Override
 	public void authorise() {
-		boolean status;
-
-		status = !super.getRequest().hasData("id", int.class);
-		super.setAuthorised(status);
+		super.setAuthorised(super.getRequest().getPrincipal().getActiveRealm().getClass() == Manager.class);
 	}
 
 	@Override
@@ -58,7 +55,8 @@ public class ManagerProjectCreateService extends AbstractService<Manager, Projec
 		Tuple tuple;
 
 		tuple = super.unbindObject(this.project, "title", "keywords", "description", "kickOff", "closeOut", "draftMode");
-		ProjectSupport.putDetails(tuple, this.project);
+		tuple.put("id", this.project.getId() != 0 ? this.project.getId() : 0);
+		ProjectSupport.putDetails(tuple, this.project, this.repository);
 	}
 
 }

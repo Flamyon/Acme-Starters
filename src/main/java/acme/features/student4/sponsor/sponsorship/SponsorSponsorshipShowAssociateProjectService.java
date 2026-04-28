@@ -1,4 +1,4 @@
-package acme.features.student5.auditor.auditReport;
+package acme.features.student4.sponsor.sponsorship;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,17 +10,17 @@ import acme.client.components.models.Tuple;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
 import acme.entities.levelb.Project;
-import acme.entities.student5.AuditReport;
-import acme.realms.Auditor;
+import acme.entities.student4.Sponsorship;
+import acme.entities.student4.SponsorshipRepository;
+import acme.realms.Sponsor;
 
 @Service
-public class AuditorAuditReportAssociateProjectService extends AbstractService<Auditor, AuditReport> {
+public class SponsorSponsorshipShowAssociateProjectService extends AbstractService<Sponsor, Sponsorship> {
 
 	@Autowired
-	private AuditorAuditReportRepository	repository;
+	private SponsorshipRepository	repository;
 
-	private AuditReport					entity;
-	private int							selectedProjectId;
+	private Sponsorship				sponsorship;
 
 
 	@Override
@@ -29,11 +29,11 @@ public class AuditorAuditReportAssociateProjectService extends AbstractService<A
 
 		id = super.getRequest().getData("id", Integer.class, null);
 		if (id == null || id.intValue() == 0)
-			this.entity = super.newObject(AuditReport.class);
+			this.sponsorship = super.newObject(Sponsorship.class);
 		else {
-			this.entity = this.repository.findAuditReportById(id.intValue());
-			if (this.entity == null)
-				this.entity = super.newObject(AuditReport.class);
+			this.sponsorship = this.repository.findSponsorshipById(id.intValue());
+			if (this.sponsorship == null)
+				this.sponsorship = super.newObject(Sponsorship.class);
 		}
 	}
 
@@ -41,42 +41,16 @@ public class AuditorAuditReportAssociateProjectService extends AbstractService<A
 	public void authorise() {
 		boolean status;
 
-		status = this.entity != null && this.entity.getId() != 0 && this.entity.getAuditor() != null && this.entity.getAuditor().isPrincipal() && Boolean.FALSE.equals(this.entity.getDraftMode());
+		status = this.sponsorship != null && this.sponsorship.getId() != 0 && this.sponsorship.getSponsor() != null && this.sponsorship.getSponsor().isPrincipal() && Boolean.FALSE.equals(this.sponsorship.getDraftMode());
 		super.setAuthorised(status);
-	}
-
-	@Override
-	public void bind() {
-		Project project;
-
-		this.selectedProjectId = super.getRequest().hasData("project", int.class) ? super.getRequest().getData("project", int.class) : 0;
-		project = this.selectedProjectId == 0 ? null : this.repository.findPublishedProjectById(this.selectedProjectId);
-
-		this.entity.setProject(project);
-	}
-
-	@Override
-	public void validate() {
-		super.validateObject(this.entity);
-
-		if (this.selectedProjectId != 0)
-			super.state(this.entity.getProject() != null, "project", "auditor.audit-report.form.error.project.invalid");
-	}
-
-	@Override
-	public void execute() {
-		if (this.entity.getId() != 0)
-			this.repository.save(this.entity);
 	}
 
 	@Override
 	public void unbind() {
 		Tuple tuple;
 
-		tuple = super.unbindObject(this.entity, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
-		tuple.put("id", this.entity.getId() != 0 ? this.entity.getId() : 0);
-		tuple.put("monthsActive", this.entity.getMonthsActive());
-		tuple.put("hours", this.entity.getHours());
+		tuple = super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "monthsActive", "totalMoney");
+		tuple.put("id", this.sponsorship.getId() != 0 ? this.sponsorship.getId() : 0);
 		this.putProjectData(tuple);
 	}
 
@@ -95,7 +69,7 @@ public class AuditorAuditReportAssociateProjectService extends AbstractService<A
 		if (projects == null)
 			projects = new ArrayList<>();
 
-		selectedProject = this.entity.getProject();
+		selectedProject = this.sponsorship.getProject();
 		selectedIncluded = false;
 
 		if (selectedProject != null)
@@ -120,7 +94,7 @@ public class AuditorAuditReportAssociateProjectService extends AbstractService<A
 			label = project.getTitle();
 			projectChoices.add(key, label, key.equals(selectedKey));
 		}
-		isOwner = this.entity.getAuditor() != null && this.entity.getAuditor().isPrincipal();
+		isOwner = this.sponsorship.getSponsor() != null && this.sponsorship.getSponsor().isPrincipal();
 
 		tuple.put("isOwner", isOwner);
 		tuple.put("project", visibleProject == null ? 0 : visibleProject.getId());
@@ -128,5 +102,4 @@ public class AuditorAuditReportAssociateProjectService extends AbstractService<A
 		tuple.put("projectTitle", visibleProject == null ? "-" : visibleProject.getTitle());
 		tuple.put("projects", projectChoices);
 	}
-
 }

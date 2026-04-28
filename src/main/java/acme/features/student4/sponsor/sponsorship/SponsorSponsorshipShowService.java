@@ -1,16 +1,11 @@
 
 package acme.features.student4.sponsor.sponsorship;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.models.Tuple;
-import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
-import acme.entities.levelb.Project;
 import acme.entities.student4.Sponsorship;
 import acme.entities.student4.SponsorshipRepository;
 import acme.realms.Sponsor;
@@ -30,10 +25,16 @@ public class SponsorSponsorshipShowService extends AbstractService<Sponsor, Spon
 
 	@Override
 	public void load() {
-		int id;
+		Integer id;
 
-		id = super.getRequest().getData("id", int.class);
-		this.sponsorship = this.repository.findSponsorshipById(id);
+		id = super.getRequest().getData("id", Integer.class, null);
+		if (id == null || id.intValue() == 0)
+			this.sponsorship = super.newObject(Sponsorship.class);
+		else {
+			this.sponsorship = this.repository.findSponsorshipById(id.intValue());
+			if (this.sponsorship == null)
+				this.sponsorship = super.newObject(Sponsorship.class);
+		}
 	}
 
 	@Override
@@ -41,60 +42,23 @@ public class SponsorSponsorshipShowService extends AbstractService<Sponsor, Spon
 		boolean status;
 
 		// Owner always sees it; others only see published ones
-		status = this.sponsorship != null && //
-			(this.sponsorship.getSponsor().isPrincipal() || !this.sponsorship.getDraftMode());
+		status = this.sponsorship != null && this.sponsorship.getId() != 0 && //
+			(this.sponsorship.getSponsor() != null && this.sponsorship.getSponsor().isPrincipal() || Boolean.FALSE.equals(this.sponsorship.getDraftMode()));
 
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
+		boolean isOwner;
 		Tuple tuple;
 
 		tuple = super.unbindObject(this.sponsorship, //
 			"ticker", "name", "description", "startMoment", "endMoment", "moreInfo", //
 			"draftMode", "monthsActive", "totalMoney");
-		this.putProjectData(tuple);
-
-	}
-
-	private void putProjectData(final Tuple tuple) {
-		assert tuple != null;
-
-		Collection<Project> projects;
-		Project selectedProject;
-		Project visibleProject;
-		SelectChoices projectChoices;
-		boolean selectedIncluded;
-		boolean isOwner;
-
-		projects = this.repository.findPublishedProjects();
-		if (projects == null)
-			projects = new ArrayList<>();
-
-		selectedProject = this.sponsorship.getProject();
-		selectedIncluded = false;
-
-		if (selectedProject != null)
-			for (Project candidate : projects)
-				if (candidate != null && candidate.getId() == selectedProject.getId()) {
-					selectedIncluded = true;
-					break;
-				}
-
-		if (!selectedIncluded)
-			selectedProject = null;
-
-		visibleProject = selectedProject;
-
-		projectChoices = SelectChoices.from(projects, "title", selectedProject);
+		tuple.put("id", this.sponsorship.getId() != 0 ? this.sponsorship.getId() : 0);
 		isOwner = this.sponsorship.getSponsor() != null && this.sponsorship.getSponsor().isPrincipal();
-
 		tuple.put("isOwner", isOwner);
-		tuple.put("project", visibleProject == null ? 0 : visibleProject.getId());
-		tuple.put("projectId", visibleProject == null ? 0 : visibleProject.getId());
-		tuple.put("projectTitle", visibleProject == null ? "-" : visibleProject.getTitle());
-		tuple.put("projects", projectChoices);
-
+		tuple.put("canAssociateProject", isOwner && Boolean.FALSE.equals(this.sponsorship.getDraftMode()));
 	}
 }

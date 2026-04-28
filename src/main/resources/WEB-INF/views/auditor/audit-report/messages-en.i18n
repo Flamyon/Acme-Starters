@@ -32,7 +32,10 @@ auditor.audit-report.form.button.update = Update
 auditor.audit-report.form.button.publish = Publish
 auditor.audit-report.form.button.delete = Delete
 auditor.audit-report.form.button.associate-project = Associate project
+auditor.audit-report.form.button.manage-project-association = Manage project association
+auditor.audit-report.form.button.save-project-association = Save project association
 auditor.audit-report.form.button.project = View project
+auditor.audit-report.form.button.return-show = Back to audit report
 
 auditor.audit-report.form.error.project.required = You must select a published project.
 auditor.audit-report.form.error.project.invalid = The selected project is not available for association.

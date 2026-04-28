@@ -1,4 +1,4 @@
-package acme.features.levelb.administrator.adBanner;
+package acme.features.levelb.administrator.adbanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ import acme.entities.levelb.AdBanner;
 import acme.entities.levelb.AdBannerRepository;
 
 @Service
-public class AdministratorAdBannerUpdateService extends AbstractService<Administrator, AdBanner> {
+public class AdministratorAdBannerShowService extends AbstractService<Administrator, AdBanner> {
 
 	@Autowired
 	private AdBannerRepository repository;
@@ -31,21 +31,6 @@ public class AdministratorAdBannerUpdateService extends AbstractService<Administ
 
 		status = this.adBanner != null;
 		super.setAuthorised(status);
-	}
-
-	@Override
-	public void bind() {
-		super.bindObject(this.adBanner, "slogan", "targetUrl", "picture");
-	}
-
-	@Override
-	public void validate() {
-		super.validateObject(this.adBanner);
-	}
-
-	@Override
-	public void execute() {
-		this.repository.save(this.adBanner);
 	}
 
 	@Override

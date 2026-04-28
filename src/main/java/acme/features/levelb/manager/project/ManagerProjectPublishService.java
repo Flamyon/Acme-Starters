@@ -1,6 +1,7 @@
 package acme.features.levelb.manager.project;
 
 import java.util.Date;
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,17 +30,23 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 
 	@Override
 	public void load() {
-		int id;
+		Integer id;
 
-		id = super.getRequest().getData("id", int.class);
-		this.project = this.repository.findProjectByIdWithDetails(id);
+		id = super.getRequest().getData("id", Integer.class, null);
+		if (id == null || id.intValue() == 0)
+			this.project = super.newObject(Project.class);
+		else {
+			this.project = this.repository.findProjectByIdWithDetails(id.intValue());
+			if (this.project == null)
+				this.project = super.newObject(Project.class);
+		}
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
 
-		status = this.project != null && this.project.getManager() != null && this.project.getManager().isPrincipal() && Boolean.TRUE.equals(this.project.getDraftMode());
+		status = this.project != null && this.project.getId() != 0 && this.project.getManager() != null && this.project.getManager().isPrincipal() && Boolean.TRUE.equals(this.project.getDraftMode());
 		super.setAuthorised(status);
 	}
 
@@ -51,6 +58,9 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 	public void validate() {
 		boolean hasInventions;
 		boolean allComponentsPublishable;
+
+		if (this.project.getId() == 0)
+			return;
 
 		super.validateObject(this.project);
 
@@ -64,14 +74,25 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 	@Override
 	@Transactional
 	public void execute() {
-		this.project.getInventions().forEach(i -> i.setDraftMode(false));
-		this.project.getCampaigns().forEach(c -> c.setDraftMode(false));
-		this.project.getStrategies().forEach(s -> s.setDraftMode(false));
+		Collection<Invention> inventions;
+		Collection<Campaign> campaigns;
+		Collection<Strategy> strategies;
+
+		if (this.project.getId() == 0)
+			return;
+
+		inventions = this.repository.findInventionsByProjectId(this.project.getId());
+		campaigns = this.repository.findCampaignsByProjectId(this.project.getId());
+		strategies = this.repository.findStrategiesByProjectId(this.project.getId());
+
+		inventions.forEach(i -> i.setDraftMode(false));
+		campaigns.forEach(c -> c.setDraftMode(false));
+		strategies.forEach(s -> s.setDraftMode(false));
 		this.project.setDraftMode(false);
 
-		this.repository.saveAll(this.project.getInventions());
-		this.repository.saveAll(this.project.getCampaigns());
-		this.repository.saveAll(this.project.getStrategies());
+		this.repository.saveAll(inventions);
+		this.repository.saveAll(campaigns);
+		this.repository.saveAll(strategies);
 		this.repository.save(this.project);
 	}
 
@@ -80,7 +101,8 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 		Tuple tuple;
 
 		tuple = super.unbindObject(this.project, "title", "keywords", "description", "kickOff", "closeOut", "draftMode");
-		ProjectSupport.putDetails(tuple, this.project);
+		tuple.put("id", this.project.getId() != 0 ? this.project.getId() : 0);
+		ProjectSupport.putDetails(tuple, this.project, this.repository);
 	}
 
 	private boolean validateInventions() {
@@ -90,7 +112,7 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 		now = MomentHelper.getCurrentMoment();
 		isValid = true;
 
-		for (Invention invention : this.project.getInventions()) {
+		for (Invention invention : this.repository.findInventionsByProjectId(this.project.getId())) {
 			boolean ownerIsMember;
 			boolean publishable;
 			Long parts;
@@ -119,7 +141,7 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 		now = MomentHelper.getCurrentMoment();
 		isValid = true;
 
-		for (Campaign campaign : this.project.getCampaigns()) {
+		for (Campaign campaign : this.repository.findCampaignsByProjectId(this.project.getId())) {
 			boolean ownerIsMember;
 			boolean publishable;
 			Long milestones;
@@ -148,7 +170,7 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 		now = MomentHelper.getCurrentMoment();
 		isValid = true;
 
-		for (Strategy strategy : this.project.getStrategies()) {
+		for (Strategy strategy : this.repository.findStrategiesByProjectId(this.project.getId())) {
 			boolean ownerIsMember;
 			boolean publishable;
 			Long tactics;

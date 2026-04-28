@@ -24,17 +24,20 @@ public class ManagerProjectShowService extends AbstractService<Manager, Project>
 		Integer id;
 
 		id = super.getRequest().getData("id", Integer.class, null);
-		if (id == null)
-			this.project = null;
-		else
+		if (id == null || id.intValue() == 0)
+			this.project = super.newObject(Project.class);
+		else {
 			this.project = this.repository.findProjectByIdWithDetails(id.intValue());
+			if (this.project == null)
+				this.project = super.newObject(Project.class);
+		}
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
 
-		status = this.project != null && this.project.getManager() != null && this.project.getManager().isPrincipal();
+		status = this.project != null && this.project.getId() != 0 && this.project.getManager() != null && this.project.getManager().isPrincipal();
 		super.setAuthorised(status);
 	}
 
@@ -43,7 +46,8 @@ public class ManagerProjectShowService extends AbstractService<Manager, Project>
 		Tuple tuple;
 
 		tuple = super.unbindObject(this.project, "title", "keywords", "description", "kickOff", "closeOut", "draftMode");
-		ProjectSupport.putDetails(tuple, this.project);
+		tuple.put("id", this.project.getId() != 0 ? this.project.getId() : 0);
+		ProjectSupport.putDetails(tuple, this.project, this.repository);
 	}
 
 }

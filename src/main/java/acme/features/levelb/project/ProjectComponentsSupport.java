@@ -77,7 +77,7 @@ public final class ProjectComponentsSupport {
 		ProjectComponent result;
 
 		result = new ProjectComponent();
-		result.setId(campaign.getId());
+		result.setId(ProjectComponentsSupport.CAMPAIGN_OFFSET + campaign.getId());
 		result.setKind(ProjectComponent.Kind.CAMPAIGN);
 		result.setSourceId(campaign.getId());
 		result.setProjectId(campaign.getProject() == null ? 0 : campaign.getProject().getId());
@@ -99,7 +99,7 @@ public final class ProjectComponentsSupport {
 		ProjectComponent result;
 
 		result = new ProjectComponent();
-		result.setId(strategy.getId());
+		result.setId(ProjectComponentsSupport.STRATEGY_OFFSET + strategy.getId());
 		result.setKind(ProjectComponent.Kind.STRATEGY);
 		result.setSourceId(strategy.getId());
 		result.setProjectId(strategy.getProject() == null ? 0 : strategy.getProject().getId());
@@ -119,23 +119,35 @@ public final class ProjectComponentsSupport {
 		assert repository != null;
 
 		List<ProjectComponent> result;
+		ProjectComponent.Kind kind;
+		int decodedSourceId;
 		Invention invention;
 		Campaign campaign;
 		Strategy strategy;
 
 		result = new ArrayList<>();
+		kind = ProjectComponentsSupport.decodeKind(sourceId);
+		decodedSourceId = ProjectComponentsSupport.decodeSourceId(sourceId);
 
-		invention = repository.findInventionById(sourceId);
-		if (invention != null)
-			result.add(ProjectComponentsSupport.fromInvention(invention));
-
-		campaign = repository.findCampaignById(sourceId);
-		if (campaign != null)
-			result.add(ProjectComponentsSupport.fromCampaign(campaign));
-
-		strategy = repository.findStrategyById(sourceId);
-		if (strategy != null)
-			result.add(ProjectComponentsSupport.fromStrategy(strategy));
+		switch (kind) {
+		case INVENTION:
+			invention = repository.findInventionById(decodedSourceId);
+			if (invention != null)
+				result.add(ProjectComponentsSupport.fromInvention(invention));
+			break;
+		case CAMPAIGN:
+			campaign = repository.findCampaignById(decodedSourceId);
+			if (campaign != null)
+				result.add(ProjectComponentsSupport.fromCampaign(campaign));
+			break;
+		case STRATEGY:
+			strategy = repository.findStrategyById(decodedSourceId);
+			if (strategy != null)
+				result.add(ProjectComponentsSupport.fromStrategy(strategy));
+			break;
+		default:
+			break;
+		}
 
 		return result;
 	}
