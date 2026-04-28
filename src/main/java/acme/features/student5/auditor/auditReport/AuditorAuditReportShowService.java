@@ -20,18 +20,24 @@ public class AuditorAuditReportShowService extends AbstractService<Auditor, Audi
 
 	@Override
 	public void load() {
-		int entityId;
+		Integer entityId;
 
-		entityId = super.getRequest().getData("id", int.class);
-		this.entity = this.repo.findAuditReportById(entityId);
+		entityId = super.getRequest().getData("id", Integer.class, null);
+		if (entityId == null || entityId.intValue() == 0)
+			this.entity = super.newObject(AuditReport.class);
+		else {
+			this.entity = this.repo.findAuditReportById(entityId.intValue());
+			if (this.entity == null)
+				this.entity = super.newObject(AuditReport.class);
+		}
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
 
-		status = this.entity != null && //
-			(this.entity.getAuditor().isPrincipal() || !this.entity.getDraftMode());
+		status = this.entity != null && this.entity.getId() != 0 && //
+			(this.entity.getAuditor() != null && this.entity.getAuditor().isPrincipal() || Boolean.FALSE.equals(this.entity.getDraftMode()));
 
 		super.setAuthorised(status);
 	}
@@ -42,6 +48,7 @@ public class AuditorAuditReportShowService extends AbstractService<Auditor, Audi
 		Tuple tuple;
 
 		tuple = super.unbindObject(this.entity, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
+		tuple.put("id", this.entity.getId() != 0 ? this.entity.getId() : 0);
 		tuple.put("monthsActive", this.entity.getMonthsActive());
 		tuple.put("hours", this.entity.getHours());
 		isOwner = this.entity.getAuditor() != null && this.entity.getAuditor().isPrincipal();

@@ -25,17 +25,23 @@ public class SponsorSponsorshipShowAssociateProjectService extends AbstractServi
 
 	@Override
 	public void load() {
-		int id;
+		Integer id;
 
-		id = super.getRequest().getData("id", int.class);
-		this.sponsorship = this.repository.findSponsorshipById(id);
+		id = super.getRequest().getData("id", Integer.class, null);
+		if (id == null || id.intValue() == 0)
+			this.sponsorship = super.newObject(Sponsorship.class);
+		else {
+			this.sponsorship = this.repository.findSponsorshipById(id.intValue());
+			if (this.sponsorship == null)
+				this.sponsorship = super.newObject(Sponsorship.class);
+		}
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
 
-		status = this.sponsorship != null && this.sponsorship.getSponsor() != null && this.sponsorship.getSponsor().isPrincipal() && Boolean.FALSE.equals(this.sponsorship.getDraftMode());
+		status = this.sponsorship != null && this.sponsorship.getId() != 0 && this.sponsorship.getSponsor() != null && this.sponsorship.getSponsor().isPrincipal() && Boolean.FALSE.equals(this.sponsorship.getDraftMode());
 		super.setAuthorised(status);
 	}
 
@@ -44,6 +50,7 @@ public class SponsorSponsorshipShowAssociateProjectService extends AbstractServi
 		Tuple tuple;
 
 		tuple = super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "monthsActive", "totalMoney");
+		tuple.put("id", this.sponsorship.getId() != 0 ? this.sponsorship.getId() : 0);
 		this.putProjectData(tuple);
 	}
 

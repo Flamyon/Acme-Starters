@@ -22,17 +22,23 @@ public class AuditorAuditReportDeleteService extends AbstractService<Auditor, Au
 
 	@Override
 	public void load() {
-		int entityId;
+		Integer entityId;
 
-		entityId = super.getRequest().getData("id", int.class);
-		this.entity = this.repo.findAuditReportById(entityId);
+		entityId = super.getRequest().getData("id", Integer.class, null);
+		if (entityId == null || entityId.intValue() == 0)
+			this.entity = super.newObject(AuditReport.class);
+		else {
+			this.entity = this.repo.findAuditReportById(entityId.intValue());
+			if (this.entity == null)
+				this.entity = super.newObject(AuditReport.class);
+		}
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
 
-		status = this.entity != null && this.entity.getDraftMode() && this.entity.getAuditor().isPrincipal();
+		status = this.entity != null && this.entity.getId() != 0 && Boolean.TRUE.equals(this.entity.getDraftMode()) && this.entity.getAuditor() != null && this.entity.getAuditor().isPrincipal();
 
 		super.setAuthorised(status);
 	}
@@ -50,6 +56,9 @@ public class AuditorAuditReportDeleteService extends AbstractService<Auditor, Au
 	@Override
 	public void execute() {
 		Collection<AuditSection> auditSections;
+
+		if (this.entity.getId() == 0)
+			return;
 
 		auditSections = this.repo.findAuditSectionsByAuditReportId(this.entity.getId());
 		this.repo.deleteAll(auditSections);

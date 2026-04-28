@@ -1,6 +1,7 @@
 package acme.features.levelb.manager.projectmember;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,7 @@ public class ManagerProjectMemberListService extends AbstractService<Manager, Pr
 
 		projectId = super.getRequest().getData("projectId", int.class);
 		this.project = this.repository.findProjectById(projectId);
-		this.members = this.repository.findProjectMembersByProjectId(projectId);
+		this.members = this.project == null ? List.of() : this.repository.findProjectMembersByProjectId(projectId);
 	}
 
 	@Override
@@ -43,9 +44,9 @@ public class ManagerProjectMemberListService extends AbstractService<Manager, Pr
 	public void unbind() {
 		boolean showCreate;
 
-		showCreate = Boolean.TRUE.equals(this.project.getDraftMode()) && this.project.getManager().isPrincipal();
-		super.getResponse().addGlobal("projectId", this.project.getId());
-		super.getResponse().addGlobal("projectTitle", this.project.getTitle());
+		showCreate = this.project != null && this.project.getManager() != null && Boolean.TRUE.equals(this.project.getDraftMode()) && this.project.getManager().isPrincipal();
+		super.getResponse().addGlobal("projectId", this.project == null ? 0 : this.project.getId());
+		super.getResponse().addGlobal("projectTitle", this.project == null ? "-" : this.project.getTitle());
 		super.getResponse().addGlobal("showCreate", showCreate);
 		super.unbindObjects(this.members, "id", "memberFullName", "memberEmail", "roleLabel");
 	}

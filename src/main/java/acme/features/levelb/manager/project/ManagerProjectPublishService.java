@@ -30,17 +30,23 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 
 	@Override
 	public void load() {
-		int id;
+		Integer id;
 
-		id = super.getRequest().getData("id", int.class);
-		this.project = this.repository.findProjectByIdWithDetails(id);
+		id = super.getRequest().getData("id", Integer.class, null);
+		if (id == null || id.intValue() == 0)
+			this.project = super.newObject(Project.class);
+		else {
+			this.project = this.repository.findProjectByIdWithDetails(id.intValue());
+			if (this.project == null)
+				this.project = super.newObject(Project.class);
+		}
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
 
-		status = this.project != null && this.project.getManager() != null && this.project.getManager().isPrincipal() && Boolean.TRUE.equals(this.project.getDraftMode());
+		status = this.project != null && this.project.getId() != 0 && this.project.getManager() != null && this.project.getManager().isPrincipal() && Boolean.TRUE.equals(this.project.getDraftMode());
 		super.setAuthorised(status);
 	}
 
@@ -52,6 +58,9 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 	public void validate() {
 		boolean hasInventions;
 		boolean allComponentsPublishable;
+
+		if (this.project.getId() == 0)
+			return;
 
 		super.validateObject(this.project);
 
@@ -68,6 +77,9 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 		Collection<Invention> inventions;
 		Collection<Campaign> campaigns;
 		Collection<Strategy> strategies;
+
+		if (this.project.getId() == 0)
+			return;
 
 		inventions = this.repository.findInventionsByProjectId(this.project.getId());
 		campaigns = this.repository.findCampaignsByProjectId(this.project.getId());
@@ -89,6 +101,7 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 		Tuple tuple;
 
 		tuple = super.unbindObject(this.project, "title", "keywords", "description", "kickOff", "closeOut", "draftMode");
+		tuple.put("id", this.project.getId() != 0 ? this.project.getId() : 0);
 		ProjectSupport.putDetails(tuple, this.project, this.repository);
 	}
 

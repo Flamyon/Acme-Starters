@@ -42,11 +42,17 @@ public class ManagerProjectMemberCreateService extends AbstractService<Manager, 
 
 	@Override
 	public void load() {
-		int projectId;
+		Integer projectId;
 		String nomineeData;
 
-		projectId = super.getRequest().getData("projectId", int.class);
-		this.project = this.repository.findProjectById(projectId);
+		projectId = super.getRequest().getData("projectId", Integer.class, null);
+		if (projectId == null || projectId.intValue() == 0)
+			this.project = super.newObject(Project.class);
+		else {
+			this.project = this.repository.findProjectById(projectId.intValue());
+			if (this.project == null)
+				this.project = super.newObject(Project.class);
+		}
 
 		this.projectMember = super.newObject(ProjectMember.class);
 		this.projectMember.setProject(this.project);
@@ -67,7 +73,7 @@ public class ManagerProjectMemberCreateService extends AbstractService<Manager, 
 	public void authorise() {
 		boolean status;
 
-		status = this.project != null && this.project.getManager() != null && this.project.getManager().isPrincipal() && Boolean.TRUE.equals(this.project.getDraftMode());
+		status = this.project != null && this.project.getId() != 0 && this.project.getManager() != null && this.project.getManager().isPrincipal() && Boolean.TRUE.equals(this.project.getDraftMode());
 		super.setAuthorised(status);
 	}
 
@@ -79,6 +85,9 @@ public class ManagerProjectMemberCreateService extends AbstractService<Manager, 
 	public void validate() {
 		boolean validNominee;
 		boolean uniqueInProject;
+
+		if (this.project.getId() == 0)
+			return;
 
 		validNominee = this.nomineeAccount != null && this.nomineeRoleKind != null;
 		super.state(validNominee, "nominee", "manager.project-member.form.error.nominee");
@@ -94,6 +103,9 @@ public class ManagerProjectMemberCreateService extends AbstractService<Manager, 
 	@Override
 	@Transactional
 	public void execute() {
+		if (this.project.getId() == 0 || this.nomineeAccount == null || this.nomineeRoleKind == null)
+			return;
+
 		this.projectMember.setProject(this.project);
 		this.projectMember.setUserAccount(this.nomineeAccount);
 		this.projectMember.setRoleKind(this.nomineeRoleKind);
@@ -113,9 +125,15 @@ public class ManagerProjectMemberCreateService extends AbstractService<Manager, 
 		SelectChoices choices;
 		Tuple tuple;
 
-		inventors = this.repository.findNomineeInventorsByProjectId(this.project.getId(), MemberRole.INVENTOR);
-		spokespersons = this.repository.findNomineeSpokespersonsByProjectId(this.project.getId(), MemberRole.SPOKESPERSON);
-		fundraisers = this.repository.findNomineeFundraisersByProjectId(this.project.getId(), MemberRole.FUNDRAISER);
+		if (this.project.getId() == 0) {
+			inventors = List.of();
+			spokespersons = List.of();
+			fundraisers = List.of();
+		} else {
+			inventors = this.repository.findNomineeInventorsByProjectId(this.project.getId(), MemberRole.INVENTOR);
+			spokespersons = this.repository.findNomineeSpokespersonsByProjectId(this.project.getId(), MemberRole.SPOKESPERSON);
+			fundraisers = this.repository.findNomineeFundraisersByProjectId(this.project.getId(), MemberRole.FUNDRAISER);
+		}
 
 		sortedInventors = inventors.stream().sorted(this.roleComparator(ua -> ua.getUserAccount())).toList();
 		sortedSpokespersons = spokespersons.stream().sorted(this.roleComparator(ua -> ua.getUserAccount())).toList();
