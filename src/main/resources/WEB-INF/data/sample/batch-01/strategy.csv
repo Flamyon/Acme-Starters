@@ -1,6 +1,6 @@
 ﻿key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:fundraiser,key:project
 #BASE,"","","","","","","",""
-strategy-01,ST00-Str01,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2027/01/01 00:00,2027/09/01 10:00,http://lorem.com/ipsum,true,fundraiser-01,project-01
+strategy-01,ST00-Str01,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2027/01/01 00:00,2027/09/01 10:00,http://lorem.com/ipsum,false,fundraiser-01,project-01
 
 #TICKER,"","","","","","","",""
 strategy-02,ST00-Str02,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2027/01/01 00:00,2027/09/01 10:00,http://lorem.com/ipsum,true,fundraiser-01,

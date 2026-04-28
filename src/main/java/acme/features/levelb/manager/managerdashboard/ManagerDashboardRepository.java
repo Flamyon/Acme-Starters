@@ -1,4 +1,4 @@
-package acme.features.levelb.manager.managerDashboard;
+package acme.features.levelb.manager.managerdashboard;
 
 import java.util.List;
 

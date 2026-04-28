@@ -1,4 +1,4 @@
-package acme.features.levelb.manager.projectMember;
+package acme.features.levelb.manager.projectmember;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

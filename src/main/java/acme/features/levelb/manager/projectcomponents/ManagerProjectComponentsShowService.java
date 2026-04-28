@@ -1,4 +1,4 @@
-package acme.features.levelb.manager.projectComponents;
+package acme.features.levelb.manager.projectcomponents;
 
 import java.util.Collection;
 import java.util.List;
