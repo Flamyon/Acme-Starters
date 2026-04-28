@@ -43,7 +43,7 @@ public class ManagerProjectShowService extends AbstractService<Manager, Project>
 		Tuple tuple;
 
 		tuple = super.unbindObject(this.project, "title", "keywords", "description", "kickOff", "closeOut", "draftMode");
-		ProjectSupport.putDetails(tuple, this.project);
+		ProjectSupport.putDetails(tuple, this.project, this.repository);
 	}
 
 }

@@ -14,6 +14,8 @@ import acme.entities.student1.Inventor;
 import acme.entities.student2.Campaign;
 import acme.entities.student2.Spokesperson;
 import acme.entities.student3.Strategy;
+import acme.entities.student4.Sponsorship;
+import acme.entities.student5.AuditReport;
 import acme.realms.Fundraiser;
 import acme.realms.Manager;
 
@@ -23,7 +25,7 @@ public interface ProjectRepository extends AbstractRepository {
 	@Query("select p from Project p where p.id = :id")
 	Project findProjectById(@Param("id") int id);
 
-	@Query("select distinct p from Project p left join fetch p.manager left join fetch p.members pm left join fetch pm.userAccount left join fetch p.inventions i left join fetch p.campaigns c left join fetch p.strategies s left join fetch p.sponsorships sp left join fetch p.auditReports ar where p.id=:id")
+	@Query("select p from Project p left join fetch p.manager where p.id=:id")
 	Project findProjectByIdWithDetails(@Param("id") int id);
 
 	@Query("select p from Project p where p.manager.id = :managerId order by p.kickOff desc")
@@ -32,10 +34,10 @@ public interface ProjectRepository extends AbstractRepository {
 	@Query("select p from Project p where p.draftMode = false order by p.kickOff desc")
 	Collection<Project> findPublishedProjects();
 
-	@Query("select distinct p from Project p join p.members pm where pm.userAccount.id = :userAccountId and pm.roleKind = :roleKind order by p.kickOff desc")
+	@Query("select distinct p from ProjectMember pm join pm.project p where pm.userAccount.id = :userAccountId and pm.roleKind = :roleKind order by p.kickOff desc")
 	Collection<Project> findProjectsByRoleMemberUserAccountId(@Param("userAccountId") int userAccountId, @Param("roleKind") MemberRole roleKind);
 
-	@Query("select distinct p from Project p join p.members pm where p.draftMode = true and pm.userAccount.id = :userAccountId and pm.roleKind = :roleKind order by p.title asc")
+	@Query("select distinct p from ProjectMember pm join pm.project p where p.draftMode = true and pm.userAccount.id = :userAccountId and pm.roleKind = :roleKind order by p.title asc")
 	Collection<Project> findDraftProjectsByRoleMemberUserAccountId(@Param("userAccountId") int userAccountId, @Param("roleKind") MemberRole roleKind);
 
 	@Query("select count(pm) from ProjectMember pm where pm.project.id = :projectId and pm.userAccount.id = :userAccountId and pm.roleKind = :roleKind")
@@ -112,6 +114,12 @@ public interface ProjectRepository extends AbstractRepository {
 
 	@Query("select s from Strategy s where s.project.id = :projectId")
 	Collection<Strategy> findStrategiesByProjectId(@Param("projectId") int projectId);
+
+	@Query("select sp from Sponsorship sp where sp.project.id = :projectId")
+	Collection<Sponsorship> findSponsorshipsByProjectId(@Param("projectId") int projectId);
+
+	@Query("select ar from AuditReport ar where ar.project.id = :projectId")
+	Collection<AuditReport> findAuditReportsByProjectId(@Param("projectId") int projectId);
 
 	@Query("select s from Strategy s where s.project.id = :projectId and s.fundraiser.userAccount.id = :userAccountId")
 	Collection<Strategy> findStrategiesByProjectIdAndFundraiserUserAccountId(@Param("projectId") int projectId, @Param("userAccountId") int userAccountId);

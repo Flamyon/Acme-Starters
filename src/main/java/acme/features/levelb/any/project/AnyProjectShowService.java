@@ -40,7 +40,7 @@ public class AnyProjectShowService extends AbstractService<Any, Project> {
 		Tuple tuple;
 
 		tuple = super.unbindObject(this.project, "title", "keywords", "description", "kickOff", "closeOut", "draftMode", "manager.identity.fullName");
-		ProjectSupport.putDetails(tuple, this.project);
+		ProjectSupport.putDetails(tuple, this.project, this.repository);
 	}
 
 }

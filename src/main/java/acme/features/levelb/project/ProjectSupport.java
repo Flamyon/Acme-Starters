@@ -2,12 +2,14 @@
 package acme.features.levelb.project;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
 import acme.client.components.models.Tuple;
 import acme.entities.levelb.Project;
+import acme.entities.levelb.ProjectRepository;
 import acme.entities.levelb.ProjectMember;
 import acme.entities.student1.Invention;
 import acme.entities.student2.Campaign;
@@ -20,16 +22,40 @@ public final class ProjectSupport {
 	private ProjectSupport() {
 	}
 
-	public static void putDetails(final Tuple tuple, final Project project) {
+	public static void putDetails(final Tuple tuple, final Project project, final ProjectRepository repository) {
+		Collection<ProjectMember> members;
+		Collection<Invention> inventions;
+		Collection<Campaign> campaigns;
+		Collection<Strategy> strategies;
+		Collection<Sponsorship> sponsorships;
+		Collection<AuditReport> auditReports;
+
 		assert tuple != null;
 		assert project != null;
+		assert repository != null;
 
-		tuple.put("membersSummary", ProjectSupport.formatMembers(project.getMembers()));
-		tuple.put("inventionsSummary", ProjectSupport.formatInventions(project.getInventions()));
-		tuple.put("campaignsSummary", ProjectSupport.formatCampaigns(project.getCampaigns()));
-		tuple.put("strategiesSummary", ProjectSupport.formatStrategies(project.getStrategies()));
-		tuple.put("sponsorshipsSummary", ProjectSupport.formatSponsorships(project.getSponsorships()));
-		tuple.put("auditReportsSummary", ProjectSupport.formatAuditReports(project.getAuditReports()));
+		if (project.getId() == 0) {
+			members = Collections.emptyList();
+			inventions = Collections.emptyList();
+			campaigns = Collections.emptyList();
+			strategies = Collections.emptyList();
+			sponsorships = Collections.emptyList();
+			auditReports = Collections.emptyList();
+		} else {
+			members = repository.findProjectMembersByProjectId(project.getId());
+			inventions = repository.findInventionsByProjectId(project.getId());
+			campaigns = repository.findCampaignsByProjectId(project.getId());
+			strategies = repository.findStrategiesByProjectId(project.getId());
+			sponsorships = repository.findSponsorshipsByProjectId(project.getId());
+			auditReports = repository.findAuditReportsByProjectId(project.getId());
+		}
+
+		tuple.put("membersSummary", ProjectSupport.formatMembers(members));
+		tuple.put("inventionsSummary", ProjectSupport.formatInventions(inventions));
+		tuple.put("campaignsSummary", ProjectSupport.formatCampaigns(campaigns));
+		tuple.put("strategiesSummary", ProjectSupport.formatStrategies(strategies));
+		tuple.put("sponsorshipsSummary", ProjectSupport.formatSponsorships(sponsorships));
+		tuple.put("auditReportsSummary", ProjectSupport.formatAuditReports(auditReports));
 	}
 
 	private static String formatMembers(final Collection<ProjectMember> members) {
