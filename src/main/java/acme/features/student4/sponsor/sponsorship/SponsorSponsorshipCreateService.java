@@ -33,10 +33,7 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 
 	@Override
 	public void authorise() {
-		boolean status;
-		status = !super.getRequest().hasData("id", int.class);
-
-		super.setAuthorised(status);
+		super.setAuthorised(true);
 	}
 
 	@Override
