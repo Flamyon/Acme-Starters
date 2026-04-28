@@ -33,7 +33,7 @@
 
     <jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show-associate-project|associate-project')}">
-			<acme:submit code="sponsor.sponsorship.form.button.associate-project" action="/sponsor/sponsorship/associate-project"/>
+			<acme:submit code="sponsor.sponsorship.form.button.save-project-association" action="/sponsor/sponsorship/associate-project"/>
 			<jstl:if test="${projectId != 0}">
 				<acme:button code="sponsor.sponsorship.form.button.project" action="/any/project/show?id=${projectId}"/>
 			</jstl:if>
@@ -42,7 +42,7 @@
 		<jstl:when test="${_command == 'show' && draftMode == false}">
 			<acme:button code="sponsor.sponsorship.form.button.donations" action="/sponsor/donation/list?sponsorshipId=${id}"/>
 			<jstl:if test="${canAssociateProject}">
-				<acme:button code="sponsor.sponsorship.form.button.associate-project" action="/sponsor/sponsorship/show-associate-project?id=${id}"/>
+				<acme:button code="sponsor.sponsorship.form.button.manage-project-association" action="/sponsor/sponsorship/show-associate-project?id=${id}"/>
 			</jstl:if>
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">

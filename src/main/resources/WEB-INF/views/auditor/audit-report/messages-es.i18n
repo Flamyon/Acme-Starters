@@ -32,6 +32,8 @@ auditor.audit-report.form.button.update = Actualizar
 auditor.audit-report.form.button.publish = Publicar
 auditor.audit-report.form.button.delete = Eliminar
 auditor.audit-report.form.button.associate-project = Asociar proyecto
+auditor.audit-report.form.button.manage-project-association = Gestionar asociacion con proyecto
+auditor.audit-report.form.button.save-project-association = Guardar asociacion con proyecto
 auditor.audit-report.form.button.project = Ver proyecto
 auditor.audit-report.form.button.return-show = Volver al informe de auditoria
 
