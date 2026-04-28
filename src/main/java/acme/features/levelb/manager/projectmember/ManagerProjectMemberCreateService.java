@@ -1,10 +1,10 @@
-package acme.features.levelb.manager.projectMember;
+
+package acme.features.levelb.manager.projectmember;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,22 +18,26 @@ import acme.entities.levelb.MemberRole;
 import acme.entities.levelb.Project;
 import acme.entities.levelb.ProjectMember;
 import acme.entities.levelb.ProjectRepository;
+import acme.entities.student1.Inventor;
+import acme.entities.student2.Spokesperson;
+import acme.realms.Fundraiser;
+import acme.realms.Manager;
 
 @Service
 public class ManagerProjectMemberCreateService extends AbstractService<Manager, ProjectMember> {
 
 	@Autowired
-	private ProjectRepository repository;
+	private ProjectRepository	repository;
 
-	private ProjectMember projectMember;
+	private ProjectMember		projectMember;
 
-	private Project project;
+	private Project				project;
 
-	private String nomineeKey;
+	private String				nomineeKey;
 
-	private MemberRole nomineeRoleKind;
+	private MemberRole			nomineeRoleKind;
 
-	private UserAccount nomineeAccount;
+	private UserAccount			nomineeAccount;
 
 
 	@Override
@@ -113,9 +117,9 @@ public class ManagerProjectMemberCreateService extends AbstractService<Manager, 
 		spokespersons = this.repository.findNomineeSpokespersonsByProjectId(this.project.getId(), MemberRole.SPOKESPERSON);
 		fundraisers = this.repository.findNomineeFundraisersByProjectId(this.project.getId(), MemberRole.FUNDRAISER);
 
-		sortedInventors = inventors.stream().sorted(this.roleComparator(ua -> ua.getUserAccount())).collect(Collectors.toList());
-		sortedSpokespersons = spokespersons.stream().sorted(this.roleComparator(ua -> ua.getUserAccount())).collect(Collectors.toList());
-		sortedFundraisers = fundraisers.stream().sorted(this.roleComparator(ua -> ua.getUserAccount())).collect(Collectors.toList());
+		sortedInventors = inventors.stream().sorted(this.roleComparator(ua -> ua.getUserAccount())).toList();
+		sortedSpokespersons = spokespersons.stream().sorted(this.roleComparator(ua -> ua.getUserAccount())).toList();
+		sortedFundraisers = fundraisers.stream().sorted(this.roleComparator(ua -> ua.getUserAccount())).toList();
 
 		validKeys = new ArrayList<>();
 		sortedInventors.forEach(i -> validKeys.add(this.keyOf(MemberRole.INVENTOR, i.getUserAccount().getId())));
@@ -209,7 +213,7 @@ public class ManagerProjectMemberCreateService extends AbstractService<Manager, 
 	}
 
 	private <T> Comparator<T> roleComparator(final java.util.function.Function<T, UserAccount> accountAccessor) {
-		return Comparator.comparing((T element) -> this.surnameOf(accountAccessor.apply(element))).thenComparing(element -> this.nameOf(accountAccessor.apply(element)));
+		return Comparator.comparing((final T element) -> this.surnameOf(accountAccessor.apply(element))).thenComparing(element -> this.nameOf(accountAccessor.apply(element)));
 	}
 
 	private String keyOf(final MemberRole roleKind, final int userAccountId) {

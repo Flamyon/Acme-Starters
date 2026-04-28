@@ -1,4 +1,4 @@
-package acme.features.levelb.administrator.adBanner;
+package acme.features.levelb.administrator.adbanner;
 
 import java.util.Collection;
 

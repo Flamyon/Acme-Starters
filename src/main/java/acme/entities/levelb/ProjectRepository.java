@@ -17,7 +17,6 @@ import acme.entities.student3.Strategy;
 import acme.entities.student4.Sponsorship;
 import acme.entities.student5.AuditReport;
 import acme.realms.Fundraiser;
-import acme.realms.Manager;
 
 @Repository
 public interface ProjectRepository extends AbstractRepository {

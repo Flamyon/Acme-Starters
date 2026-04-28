@@ -1,4 +1,4 @@
-package acme.features.levelb.administrator.adBanner;
+package acme.features.levelb.administrator.adbanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
