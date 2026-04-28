@@ -36,14 +36,14 @@
 	</jstl:choose>
 
 	<jstl:if test="${acme:anyOf(_command, 'show-associate-project|associate-project')}">
-		<acme:submit code="auditor.audit-report.form.button.associate-project" action="/auditor/audit-report/associate-project"/>
+		<acme:submit code="auditor.audit-report.form.button.save-project-association" action="/auditor/audit-report/associate-project"/>
 		<jstl:if test="${projectId != 0}">
 			<acme:button code="auditor.audit-report.form.button.project" action="/any/project/show?id=${projectId}"/>
 		</jstl:if>
 		<acme:button code="auditor.audit-report.form.button.return-show" action="/auditor/audit-report/show?id=${id}"/>
 	</jstl:if>
 	<jstl:if test="${_command != 'create' && _command != 'show-associate-project' && _command != 'associate-project' && !draftMode && canAssociateProject}">
-		<acme:button code="auditor.audit-report.form.button.associate-project" action="/auditor/audit-report/show-associate-project?id=${id}"/>
+		<acme:button code="auditor.audit-report.form.button.manage-project-association" action="/auditor/audit-report/show-associate-project?id=${id}"/>
 	</jstl:if>
 
 	<jstl:if test="${_command != 'create' && _command != 'show-associate-project' && _command != 'associate-project' && draftMode}">
