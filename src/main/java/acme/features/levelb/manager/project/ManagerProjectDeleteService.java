@@ -10,6 +10,11 @@ import acme.entities.levelb.ProjectMember;
 import acme.client.services.AbstractService;
 import acme.entities.levelb.Project;
 import acme.entities.levelb.ProjectRepository;
+import acme.entities.student1.Invention;
+import acme.entities.student2.Campaign;
+import acme.entities.student3.Strategy;
+import acme.entities.student4.Sponsorship;
+import acme.entities.student5.AuditReport;
 import acme.features.levelb.project.ProjectSupport;
 import acme.realms.Manager;
 
@@ -51,24 +56,40 @@ public class ManagerProjectDeleteService extends AbstractService<Manager, Projec
 
 	@Override
 	public void validate() {
-		Long components;
-
-		if (this.project.getId() == 0)
-			return;
-
-		components = this.repository.countInventionsByProjectId(this.project.getId()) + this.repository.countCampaignsByProjectId(this.project.getId()) + this.repository.countStrategiesByProjectId(this.project.getId());
-		super.state(components == 0L, "draftMode", "acme.validation.project.has-components.message");
+		super.validateObject(this.project);
 	}
 
 	@Override
 	public void execute() {
 		Collection<ProjectMember> members;
+		Collection<Invention> inventions;
+		Collection<Campaign> campaigns;
+		Collection<Strategy> strategies;
+		Collection<Sponsorship> sponsorships;
+		Collection<AuditReport> auditReports;
 
 		if (this.project.getId() == 0)
 			return;
 
 		members = this.repository.findProjectMembersByProjectId(this.project.getId());
+		inventions = this.repository.findInventionsByProjectId(this.project.getId());
+		campaigns = this.repository.findCampaignsByProjectId(this.project.getId());
+		strategies = this.repository.findStrategiesByProjectId(this.project.getId());
+		sponsorships = this.repository.findSponsorshipsByProjectId(this.project.getId());
+		auditReports = this.repository.findAuditReportsByProjectId(this.project.getId());
+
+		inventions.forEach(i -> i.setProject(null));
+		campaigns.forEach(c -> c.setProject(null));
+		strategies.forEach(s -> s.setProject(null));
+		sponsorships.forEach(sp -> sp.setProject(null));
+		auditReports.forEach(ar -> ar.setProject(null));
+
 		this.repository.deleteAll(members);
+		this.repository.saveAll(inventions);
+		this.repository.saveAll(campaigns);
+		this.repository.saveAll(strategies);
+		this.repository.saveAll(sponsorships);
+		this.repository.saveAll(auditReports);
 		this.repository.delete(this.project);
 	}
 
