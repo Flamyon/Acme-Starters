@@ -56,7 +56,7 @@ public class ManagerProjectDeleteService extends AbstractService<Manager, Projec
 
 	@Override
 	public void validate() {
-		super.validateObject(this.project);
+		// No field validation on delete.
 	}
 
 	@Override
