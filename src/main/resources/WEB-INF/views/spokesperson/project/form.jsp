@@ -17,5 +17,6 @@
 
 	<jstl:if test="${showComponents}">
 		<acme:button code="spokesperson.project.form.button.components" action="/spokesperson/project-component/list?projectId=${id}"/>
+		<acme:button code="spokesperson.project.form.button.job-offers" action="/spokesperson/job-offer/list?projectId=${id}"/>
 	</jstl:if>
 </acme:form>
