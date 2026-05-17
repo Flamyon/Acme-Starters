@@ -34,8 +34,8 @@ public class JobicyExchange {
 
 
 	public JobicyExchange( //
-		@Value("${jobicy.http.connect-timeout-ms:4000}") final int connectTimeoutMs, //
-		@Value("${jobicy.http.read-timeout-ms:6000}") final int readTimeoutMs, //
+		@Value("${jobicy.http.connect-timeout-ms:10000}") final int connectTimeoutMs, //
+		@Value("${jobicy.http.read-timeout-ms:10000}") final int readTimeoutMs, //
 		@Value("${jobicy.network.use-system-proxies:true}") final boolean useSystemProxies, //
 		@Value("${jobicy.network.prefer-ipv4:true}") final boolean preferIpv4, //
 		@Value("${jobicy.proxy.host:}") final String proxyHost, //
