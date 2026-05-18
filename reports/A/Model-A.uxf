@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>464</x>
+      <y>288</y>
+      <w>264</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+JobOffer
+--
++ title: String
++ companyName: String
++ description: String
++ url: String
++ score: int
+
+bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
