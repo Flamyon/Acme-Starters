@@ -22,7 +22,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<artifactId>Acme-Starters</artifactId>
-	<version>B</version>
+	<version>A</version>
 	<packaging>war</packaging>
 	
 	<parent>
