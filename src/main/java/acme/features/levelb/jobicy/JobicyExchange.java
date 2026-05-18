@@ -1,3 +1,4 @@
+
 package acme.features.levelb.jobicy;
 
 import java.util.Arrays;
@@ -10,14 +11,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import acme.forms.JobOffer;
 
-@Service
+@Component
 public class JobicyExchange {
 
 	private static final Logger	LOG		= LoggerFactory.getLogger(JobicyExchange.class);
@@ -76,14 +77,11 @@ public class JobicyExchange {
 			if (response == null || response.getJobs() == null)
 				return;
 
-			response.getJobs().stream()
-				.filter(job -> job != null && this.normaliseUrl(job.getUrl()) != null)
-				.forEach(job -> {
-					final String key = this.keyFor(job);
-					if (key != null && !uniqueOffers.containsKey(key)) {
-						uniqueOffers.put(key, createJobOffer(job, key));
-					}
-				});
+			response.getJobs().stream().filter(job -> job != null && this.normaliseUrl(job.getUrl()) != null).forEach(job -> {
+				final String key = this.keyFor(job);
+				if (key != null && !uniqueOffers.containsKey(key))
+					uniqueOffers.put(key, this.createJobOffer(job, key));
+			});
 		} catch (final RestClientException e) {
 			JobicyExchange.LOG.warn("Jobicy query failed for keyword '{}': {}", keyword == null ? "<generic>" : keyword, e.getMessage());
 		}

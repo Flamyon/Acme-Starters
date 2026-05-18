@@ -1,18 +1,20 @@
+
 package acme.forms;
 
-import acme.client.components.basis.AbstractEntity;
+import acme.client.components.basis.AbstractForm;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class JobOffer extends AbstractEntity {
-	private static final long serialVersionUID = 1L;
+public class JobOffer extends AbstractForm {
 
-	private String title;
-	private String companyName;
-	private String description;
-	private String url;
+	private static final long	serialVersionUID	= 1L;
 
-	private int score; // Transient for sorting
+	private long				id;
+	private String				title;
+	private String				companyName;
+	private String				description;
+	private String				url;
+	private int					score;
 }
